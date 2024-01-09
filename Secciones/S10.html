@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 9 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 9 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 10  </title>
+
+      <body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Espacios con producto interior   </h1>     
+        
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Un espacio con producto interior es una pareja \((V,\langle \cdot , \cdot \rangle)\) donde 
+                \(V\) es un espacio vectorial sobre \(\mathbb{C}\) y 
+                \(\langle \cdot , \cdot \rangle : V\times V to \mathbb{C}\) satisface 
+                    <ol>
+                        <li>
+                            para todos \(x,y,z\in V, a\in \mathbb{C}\):
+                            \[
+                            \langle x+ay, z \rangle =a \langle x,y \rangle + \langle y,z \rangle;
+                            \]
+                        </li>
+                        <li>
+                            para todos \(x,y\in V\):
+                            \[
+                            \langle x,y \rangle =\overline{\langle y, x \rangle};
+                            \]
+                        </li>
+                        <li>
+                            para todo \(x\in V\), \(\langle x, x \rangle \geq 0\).
+                        </li>
+                        
+                        <li>Si además satisface se satisface 
+                            \[
+                            \langle x, x \rangle \Rightarrow x=0
+                            \]
+                            decimos que el producto interior es positivo definido.
+                        </li>
+
+                    </ol>
+                    Observación: para todos \(x,y,z\in V, a\in \mathbb{C}\)
+                    \[
+                    \langle x, ay+z \rangle = \overline{a}\langle x,y \rangle + \langle x,z \rangle 
+                    \]
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+            <h2 class="number-title"> Ejemplo </h2>
+            <p>
+                Sea \(S\) un conjunto cualquiera. Definimos 
+                \[
+                  \ell^2(S)=\{x:S\to \mathbb{C}: \sum_{s\in S}|x(x)|^2< +\infty\}  
+                \]
+                donde entendemos la serie como un límite en la red de subconjuntos finitos 
+                de \(S\)
+                \[
+                \sum_{s\in S}|x(x)|^2=\lim_{F\in \mathcal{P}_{fin}(S)} \sum_{s\in F}|x(s)|^2
+                \]
+                lo cual se puede probar es igual a 
+                \[
+                \sum_{s\in S}|x(x)|^2=\sup_{F\in \mathcal{P}_{fin}(S)}\left\{ \sum_{s\in F}|x(s)|^2\right\}
+                \]
+            </p>
+            <p>
+                Para \(x,y\in \ell^2(S)\) definimos 
+                \[
+                \langle x, y\rangle =\sum_{s\in S}x(s)y(s) 
+                \]
+                Con estas definiciones \((\ell^2(S),\langle \cdot, \cdot \rangle)\) es un 
+                espacio con producto interior definido positivo.
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Explicación  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=155" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+
+        </div>
+
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <h3> Desigualdad de Cauchy-Schwartz</h3>
+            <p>
+                Sea \((V,\langle \cdot, \cdot \rangle )\) un espacio con producto interior.
+            </p>
+            <p>
+                Para todos \(x,y\in V\)
+                \[
+                |\langle x, y \rangle | \leq (\langle x,x \rangle)^{1/2}(\langle y,y \rangle)^{1/2}
+                \]
+            </p>
+            <p>
+                Si el producto es positivo definido además se tiene que la igualdad en la desiguadad 
+                se da si y sólo si existe \(a_0\in \mathbb{C}\) tal que \(x=a_0y\).
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=522" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+
+        </div>
+        
+      </body>
+    
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+              Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior. Para 
+              \(x\in V\) definimos 
+              \[
+              \|x\|:=(\langle x, x \rangle)^{1/2}
+              \]
+              Entonces \(\| \cdot \|\) es una seminorma y si el producto interior es definido 
+              positivo entonces es una norma.
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1279" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+         
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
+          </p>
+          <p>
+              Para todos \(x,y\in V\) se vale:
+              <ol>
+                  <li>
+                      Identidad del paralelogramo
+                      \[
+                      \|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2)
+                      \]
+                  </li>
+                  <li>
+                      Identidad de polarización
+                      \[
+                      \langle x, y \rangle =\frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
+                      \]
+                  </li>
+              </ol>
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1484" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          </div>
+
+      </div>
+
+      <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+          <p>
+            Un espacio vectorial normado \((V,\|\cdot\|)\) se llama pre-Hilbert si 
+            existe un producto interior en \(\langle \cdot, \cdot \rangle: V\times V\to \mathbb{C}\) 
+            tal que, para todo \(x\in V\)
+            \[
+                \|x\|=\langle x, x \rangle^{1/2}.
+            \]
+          </p>
+
+      </div>
+
+      <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+              Un espacio vectorial normado \((V,\|\cdot\|)\) es 
+              pre-Hilbert si y sólo si su norma satisface la 
+              identidad del paralelogramo.
+          </p>
+          <p>
+              En dado caso la función 
+              \[
+              \langle x, y \rangle_0= \frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
+              \]
+              define un producto interior en \(V\) que satisace \(\|x\|= (\langle x, x\rangle_0 )^{1/2}\)
+              para todo \(x\in V\).
+          </p>
+
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=2316" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          </div>
+          
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
+          </p>
+          <p>
+              Denotamos 
+              \[
+              L=\{x\in V: \langle x,x \rangle =0\}
+              \]
+              Entonces \(L\) es un subespacio de \(V\).
+          </p>
+          <p>
+              En el espacio cociente \(V/L\) la función 
+              \[
+              \langle x+L, y+L \rangle := \langle x, y \rangle
+              \]
+              está bien definida y es un producto interior positivo definido.
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=4517" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          </div>
+
+
+          
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
+          </p>
+          <p>
+            Entonces el producto interior es una función continua, es decir 
+            \[
+            \lim_{n\to \infty} \langle x_n,y_n \rangle = \langle x, y \rangle 
+            \]
+            para toda sucesión \(((x_n,y_n))_{n=1}^\infty\) en \(V\times V\)  tal que 
+            \(\lim_{n\to \infty} (x_n,y_n)=(x,y)\) en \(V\times V\).
+          </p>
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=3" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          </div>
+      </div>
+  </head>
+
+
+
+ 

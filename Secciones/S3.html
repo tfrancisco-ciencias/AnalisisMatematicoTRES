@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+      <!-- This part restart counter of cards to start at n+1 -->
+      <style>
+        body.number-title{
+          counter-reset: sectionCounter 2 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 2 cardCounter ;
+        }
+      </style>
+  
+
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 3 </title>
+    
+  </head>
+  <body class="fondo-body" >
+
+    <h1 class="number-title flexbox"> Espacios de Banach  </h1>     
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definicion</h2>
+      <p>
+        Un espacio de Banach es un espacio vectorial normado completo.
+      </p>
+
+    </div>
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Sea \((X,d)\) un espacio métrico (ó topológico) compacto. Definimos 
+        \[
+          C(X):=\{f:X\to \mathbb{F}: \textrm{\(f\) continua en \(X\)}\}
+        \]
+        para \(f\in C(X)\) se define 
+        \[
+        \|f\|_\infty=\sup_{x\in X}\{|f(x)|\}
+        \]
+        
+      </p>
+      <p>
+        \((C(X),\|\cdot\|_\infty)\) es un espacio de Banach.
+      </p>
+      <p>
+        De manera similar el conjunto 
+        \[
+          B(X)=\{f:X\to \mathbb{F}: \textrm{\(f\) es acotada en \(X\)}\}
+        \]
+        es un espacio de Banach con la misma norma que \(C(X)\).
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=2014" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        El espacio de las funciones \(p\)-integrables en un espacio de medida, \(L_p(X,\Sigma,\mu)\), \(p\in [1,\infty)\).
+      </p>
+
+    </div>
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        El espacio de las funciones de variación acotada.
+      </p>
+      <p>
+        Una función \(f:[a,b]\to \mathbb{R}\) se llama de variación acotada si existe una constante 
+        \(M>0\) tal que, para toda partición de \([a,b]\), \(P=\{t_i\}_{i=0}^n\) tal que 
+        \[
+          \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \leq M
+        \]
+        Por ejemplo, toda función monótona y clase \(C^1\) en \([a,b]\) es de variación acotada en 
+        \([a,b]\).
+      </p>
+      <p>
+        Si \(f:[a,b]\to \mathbb{F}\) es de variavión acotada definimos 
+        \[
+          V_a^b(f)=\sup_{P}\left\{ \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \right\}
+        \]
+        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{F}\), por lo que 
+        \(V_a^b\) no define una norma en el espacio de funciones de variación acotada. Se define 
+        \[
+        BV([a,b])=\{f:[a,b]\to \mathbb{R}: V_a^b(f)<+\infty, f(a)=0\}.
+        \]
+        Entonces \(BV([a,b])\) es un espacio vectorial y \(\|f\|:=V_a^b(f)\) define una norma que lo 
+        convierte en espacio de Banach.
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=2413" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="definicion-box"> 
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Conjuntos dirigidos y redes</h3>
+      <p>
+        Un conjunto dirigido es un conjunto parcialmente ordenado \((A,\leq)\) con la propiedad 
+        de que para todos \(\alpha,\beta \in A\)  existe \(\gamma \in A\)  tal que 
+        \(\alpha \leq \gamma\) y \(\beta \leq \gamma\). 
+      </p>
+      <p>
+        Por ejemplo si \(S\) es un conjunto arbitrario y tomamos el conjunto de 
+        subconjuntos finitos de \(S\), denotado \(\mathcal{P}_{fin}(S)\), entonces 
+        ordenado con la contención éste se vuelve un conjunto dirigido.
+      </p>
+      <p>
+        Una red sobre un conjunto \(X\) es una función \(x: A \to X\) donde 
+        \(A\) es un conjunto dirigido.
+      </p>
+        <p>
+          Por ejemplo, si \(X\) es un espacio vectorial y \((x_n)_{n=1}^{\infty}\)
+          es una sucesión de elementos de \(X\) definimos \(s: \mathcal{P}_{fin}(\mathbb{N})\to X\)
+          por \(s(F)=\sum_{i\in F}x_i\). Entonces \(s\) es una red, la red de sumas parciales de la sucesión.
+        </p>
+        <p>
+          Notación: como en el caso de las sucesiones, una red  \(x:A\to X\) se denota mediante 
+          \((x_\alpha)_{\alpha\in A}\) donde \(x_\alpha=x(\alpha)\).
+        </p>
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=3026" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <h3> Convergencia de redes </h3>
+      <p>
+        Sea \((X,\tau)\) un espacio topológico. Una red \((x_\alpha)_{\alpha \in A}\) converge 
+        a un punto \(x_0\in X\) si para toda \(U\),  vecindad de \(x_0\),  existe \(\alpha_0\in A\) tal  que 
+        para toda \(\alpha \geq \alpha_0 \) se tiene \(x_\alpha \in U\). Notación 
+        \(\lim_{\alpha \in A}x_\alpha = x_0\).
+      </p>
+      <p>
+        Por ejemplo en espacios vectoriales normados \(\lim_{\alpha \in A}x_\alpha = x_0\) sii 
+        \(\lim_{\alpha \in A}\|x_\alpha -x_0\|=0\).
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=3460" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un conjunto y \(\tau_1, \tau_2\) dos topologías en \(X\). 
+      </p>
+      <p>
+        Las topologías son iguales si y sólo si tienen las mismas redes convergentes.
+      </p>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sean \((X,\tau_X), (Y,\tau_Y)\) dos espacios topológicos. La función 
+        \(f:(X,\tau_X)\to (Y)\) es continua en \(x_0\) sii para toda 
+        \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
+        \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
+      </p>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Red de Cauchy</h3>
+      <p>
+        Una red \((x_\alpha)_{\alpha \in A}\) en un espacio vectorial normado 
+        \(X\) se llama red de Cauhcy si para toda \(\varepsilon > 0 \) existe 
+        \(\alpha_0\in A\) tal que para todas \(\alpha, \beta \geq \alpha_0\)
+        \(\|x_\alpha - x_\beta \| < \varepsilon\).
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+       <h2 class="number-title"> Proposición </h2>
+       <p>
+         En un espacio de Banach toda red de Cauchy es convergente.
+       </p>
+
+       <button class="respButton hvr-grow felxbox"> Demostración </button>
+       <div class="resp-box flexbox">
+         <div class="flexbox">
+           <iframe width="500" height="400" class="video"
+           src="https://www.youtube.com/embed/jKYe5hxRC24?start=3857" allowfullscreen="true"> 
+           </iframe>
+         </div>
+       </div>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \((x_i)_{i\in I}\subseteq X\). Denotamos 
+        \(A=\mathcal{P}_{fin}(I)\) y definimos \(s:A \to X\) por 
+        \(s(F)=\sum_{i\in F}x_i\).
+      </p>
+      <p>
+        Si la red \(s\) converge a un punto \(x\in X\) decimos que la red 
+        \(\sum_{i\in F}x_i\) converge y escribimos \(x=\sum_{i\in I}x_i\).
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4460" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio de Banach y sea \((x_i)_{i\in I} \subset X\).
+      </p>
+      <p>
+        Si 
+        \(\sum_{i\in I}\|x_i\|\) es convergente en \(\mathbb{R}\) entonces 
+        \(\sum_{i\in I}x_i\) es convergente en \(X\).
+      </p>
+      <p>
+        Es decir, convergencia absoluta implica convergencia.
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/a0SuWrStL4s?start=39" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Un espacio vectorial normado es de Banach sii toda serie absolutamente convergente es convergente.
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4814" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+</body>

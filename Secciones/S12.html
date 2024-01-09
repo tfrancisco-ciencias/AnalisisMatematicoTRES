@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 11 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 11 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 12  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Bases ortonormales   </h1>     
+        
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Si \(\{e_\alpha\}_{\alpha \in A}\) es un conjunto ortonormal, las 
+                siguientes condiciones son equivalentes.
+            </p>
+            <ol>
+                <li>
+                    para todo \(x\in H\):
+                    \[
+                    x=\sum_{\alpha \in A} \langle x, e_\alpha \rangle e_\alpha 
+                    \]
+                </li>
+                <li>
+                    para todos \(x,y\in H\):
+                    \[
+                    \langle x,y \rangle =\sum_{\alpha \in A} 
+                    \langle x,e_\alpha \rangle \langle e_\alpha, y\rangle 
+                    \]
+                </li>
+                <li>
+                    para todo \(x\in H\):
+                    \[
+                    \|x\|^2 =\sum_{\alpha \in A}|\langle x, e_\alpha \rangle|^2
+                    \]
+                </li>
+                <li>
+                    \(\{e_\alpha\}_{\alpha \in A}\) no está contenido propiamente 
+                    en otro conjunto ortonormal.
+                </li>
+                <li>
+                    \((\{e_{\alpha}\}_{\alpha \in A})^\perp=\{0\}\).
+                </li>
+                <li>
+                    \(\overline{\span(\{e_\alpha\}_{\alpha \in A})}=H\).
+                </li>
+            </ol>
+
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=739" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+        </div>
+
+    
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert. Un 
+                conjunto ortonormal que satisface cualquiera (y por lo tanto todos) de las 
+                condiciones del teorema anterior se llama una base ortonormal de \(H\).
+            </p>
+            <p>
+                Si \(\{e_\alpha\}_{\alpha \in A}\) es una base ortonormal los 
+                números \(\langle u,e_\alpha \rangle \) se llaman los coeficientes de Fourier
+                de \(u\) con respecto a la base \(\{e_\alpha\}_{\alpha\in A}\).
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=1863" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2 class="number-title"> Ejemplo</h2>
+
+            <p>
+                Definimos 
+                \[
+                L_2((-\pi,\pi))=\left\{ f:(-\pi, \pi)\to \mathbb{C}: \int_{-\pi}^\pi |f(t)|^2d\lambda(t)< + \infty \right\}
+                \]
+                donde \(\lambda\) es la medida de Lebesgue sobre los Borelianos de \((-\pi,\pi)\).
+            </p>
+            <p>
+                Denotamos \(e_n:(-\pi,\pi)\to \mathbb{C},\) \(e_n(t)=\frac{e^{int}}{\sqrt{2\pi}}\),
+                \(n\in \mathbb{Z}\).
+            </p>
+            <p>
+                Por la Teoría de series de  Fourier, para toda \(f\in L_2((-\pi,\pi))\)
+                \[
+                f(t)=\sum_{n\in \mathbb{Z}} c_n e^{int}\ c.d. 
+                \]
+                con 
+                \[
+                c_n:=\int_{-\pi}^{\pi} f(t)e^{-int}d\lambda(t)
+                \]
+            </p>
+            <button class="respButton hvr-grow felxbox"> Explicación  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2024" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert, \(H\ne \{0\}\).
+            </p>
+            <p>
+                Entonces \(H\) tiene una base ortonornal.
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2211" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.
+            </p>
+            <p>
+                Si \(\{e_\alpha\}_{\alpha \in A}\) y \(\{f_\beta\}_{\beta\in B}\) son 
+                dos bases ortonormales de \(H\) entonces 
+                \[
+                \#(A)=\#(B).
+                \]
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2442" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(H\) un espacio de Hilbert. La dimensión de \(H\) se define como la 
+                cardinalidad de una base ortonormal. Por el teorema anterior la dimensión no 
+                depende de la base ortonormal que se tome.
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2915" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="definicion-box">
+            <h2 class="number-title"> Definicióm </h2>
+            <p>
+                Dos espacios de Hilbert \((H_1,\langle \cdot, \cdot \rangle_1 )\),
+                \((H_1,\langle \cdot, \cdot \rangle_1 )\) son isomorfos sii 
+                existe \(\Phi: H_1 \to H_2\) tal que 
+            </p>
+            <ol>
+                <li>
+                    \(\Phi\) es biyección,
+                </li>
+                <li>
+                    \(\Phi\) es lineal,
+                </li>
+                <li>
+                    para todos \(x,y\in H_1\):
+                    \(\langle \Phi(x),\Phi(y) \rangle_2=\langle x, y \rangle_1\).
+                </li>
+            </ol>
+
+
+        </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Dos espacios de Hilbert son isomorfos sii tienen la misma dimensión.
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=3137" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Si \((H,\langle \cdot, \cdot \rangle )\) es un espacio de Hilbert no nulo y 
+                \(\{e_\alpha\}_{\alpha \in A}\) es base ortonormal entonces 
+                \(H\) es isomorfo \(\ell^2(A)\).
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=3915" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
+
+</body>
+

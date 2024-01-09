@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 5 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 5 cardCounter ;
+      }
+    </style>
+
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 6 </title>
+    
+  </head>
+
+  <body class="fondo-body" >
+
+    <h1 class="number-title flexbox"> Extensión y separación  </h1>     
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y\leq X\) un subespacio. 
+        Si \(\phi:Y\to \mathbb{F}\) es una funcional lineal acotada entonces 
+        existe \(\tilde{\phi}:X\to \mathbb{F}\) funcional lineal acotada 
+        tal que 
+        <ol>
+            <li>
+                \(\tilde{\phi}|_Y=\phi\).
+            </li>
+            <li>
+                \(\|\tilde{\phi}\|=\|\phi\|\).
+            </li>
+        </ol>
+      </p>
+
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=4328" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
+      
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Corolario </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
+        existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=75" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Si \(\varphi(x)=0\) para todo 
+            \(\varphi \in X^*\) entonces \(x=0\).
+        </p>
+
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/6AMGijAkn5c?start=298" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+        
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Sea \(X\) un espacio vectorial (sobre \(\mathbb{R}\)) normado  y \(\varphi:X\to \mathbb{R}\) lineal, 
+        \(\varphi\ne 0\). 
+        <ol>
+          <li>
+            Si \(A \subseteq X\) es convexo entonces \(\varphi(A)\) es convexo.
+          </li>
+          <li>
+            Si \(A\subseteq X\) es convexo y abierto entonces \(\varphi(A)\) es abierto en \(\mathbb{R}\).
+          </li>
+        </ol>
+      </p>
+      <p>
+
+      </p>
+
+    </div>
+ 
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(A,B\subseteq X\) convexos, no vacíos y ajenos.
+      </p>
+      <ol>
+          <li>
+              Si \(A\) es abierto entonces existe \(\varphi\in X^*\) y \(c\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c \leq \Re(\varphi(b))
+              \]
+              para todo \(a\in A\) y \(b\in B\).
+          </li>
+          <li>
+              Si \(A\) es compacto y \(B\) es cerrado entonces existe \(\varphi\in X^*\) 
+              y \(c_1,c_2\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c_1 < c_2 <  \Re(\varphi(b))
+              \]
+
+          </li>
+      </ol>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=1290" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Sea \(C \subseteq Y^*\)
+            convexo y \(\omega^*\)-cerrado. Si \(\psi_0 \notin C\) entonces 
+            existe \(x\in X\) y \(c_1,c_2\in \mathbb{R}\) tal que 
+            \[
+            \Re(\hat{x}(\varphi)) < c_1 < c_2 < \Re(\hat{x}(\psi_0))
+            \]
+            para toda \(\varphi\in C\).
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y \leq X\) un subespacio vectorial. Si 
+        \(\varphi: Y\to \mathbb{F}\) es lineal y acotada entonces existe 
+        \(\overline{\varphi}: \overline{Y} \to \mathbb{F}\), lineal acotada tal que 
+        <ol>
+          <li>
+            \(\overline{\varphi}|_{Y}=\varphi\).
+          </li>
+          <li>
+            \(\|\overline{\varphi}\|=\|\varphi\|\).
+          </li>
+        </ol>
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=416" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+</body>

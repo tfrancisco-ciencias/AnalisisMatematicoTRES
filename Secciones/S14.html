@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 13 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 13 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 14  </title>
+
+<body class="fondo-body">
+
+
+        <h1 class="number-title flexbox"> El adjunto  </h1>     
+    
+    
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sean \(H,K\) espacios de  Hilbert y \(T:H\to K\) un operadore lineal  acotado. Existe 
+            un único operador lineal acotado \(T^*: K\to H\) tal que 
+            \[
+            \langle Tx,y \rangle = \langle x,T^*y \rangle
+            \]
+            para todos \(x\in H, y\in K\).
+        </p>
+        <p>
+            Además si  \(S:H\to K \) es lineal acotado y \(a\in \mathbb{C}\) entonces 
+            <ol>
+                <li>
+                    \((aS+T)^*=\overline{a}S^*+T^*\).
+                </li>
+                <li>
+                    \((ST)^*=T^*S^*\).
+                </li>
+                <li>
+                    \((T^*)^*=T\).
+                </li>
+                <li>
+                    \(\|T\|=\|T^*\|\).
+                </li>
+                <li>
+                    \(\|T^*T\|=\|T\|^2\).
+                </li>
+            </ol>
+        </p>
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/B0NvOq_rmdQ?start=2878" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sean \(H,K\) espacios de Hilbert y \(T:H\to K\) lineal acotada. 
+        </p>
+        <p>
+            \(T\) es
+            un isomorfimo de espacios de Hilbert sii \(TT^*=I=T^*T\).
+        </p>
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/B0NvOq_rmdQ?start=4155" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Dado un operador \(T:H\to H\) denotamos 
+            \(\ker(T)=\{x\in H: Tx=0\}\), \(\ran(T)=\{Tx: x\in H\).
+        </p>
+        <p>
+            Para todo operador acotado \(T:H\to H\) se cumple 
+            \[
+                \ker(T)=\ran(T^*)^\perp, \quad \ker(T^*)=\ran(T)^\perp 
+            \]
+        </p>
+        <button class="respButton hvr-grow felxbox"> Demostración   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=121" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        
+    </div>
+
+
+    
+    
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador lineal acotado definido en un espacio de Hilbert.
+            </p>
+            <ol>
+                <li>
+                    \(T\) se llama unitario si \(TT^*=id_H=T^*T\).
+                    
+                </li>
+                <li>
+                    \(T\) se llama normal si \(TT^*=T^*T\).
+                </li>
+                <li>
+                    \(T\) se llama autoadjunto si \(T=T^*\).
+                </li>
+                <li>
+                    \(T\) se llama positivo si para todo \(x\in H\), \(\langle Tx,x\rangle \geq 0\).
+                    En tal caso denotamos \(T\geq 0\).
+                </li>
+            </ol>
+            <p>
+                Observación: \(SS^* \geq 0\) para todo operador \(S\).
+            </p>
+            <p>
+                Nota: más adelante se probará que \(T\geq 0\) sii existe un operador \(S\) tal que \(T=S^*S\).
+            </p>
+
+        </div>
+
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(T\) un operador lineal acotado actuando en un espacio de Hilbert \(H\).
+            </p>
+            <ol>
+                <li>
+                    \(T\) es autoadjunto sii \(\langle Tx, x \rangle \in \mathbb{R}\) para toda 
+                    \(x\in H\).
+                </li>
+                <li>
+                    \(T\) es unitario sii \(T\) es suprayectivo y \(\|Tx\|=\|x\|\) para toda 
+                    \(x\in H\).
+                </li>
+                <li>
+                    \(T\) es normal sii \(\|Tx\|=\|T^*x\|\) para toda \(x\in H\).
+                </li>
+                <li>
+                    Todo operador \(T \geq 0\) es autoadjunto.
+                </li>
+            </ol>
+            <button class="respButton hvr-grow felxbox"> Demostración   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=907" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Dado un espacio de Hilbert \(H\) denotamos 
+                \[
+                \mathbb{B}(H)=\{T:H\to H| \textrm{\(T\) es lineal acotado}\}
+                \]
+            </p>
+            <p>
+                Los subconjuntos 
+                <ul>
+                    <li>
+                        \( \{T\in \mathbb{B}(T): T=T^*\}\)
+                    </li>
+                    <li>
+                        \( \{T\in \mathbb{B}(T): TT^*=id_H=T^*T\}\)
+                    </li>
+                    <li>
+                        \( \{T\in \mathbb{B}(T): TT^*=T^*T\}\)
+                    </li>
+                    <li>
+                        \( \{T\in \mathbb{B}(T): T \geq 0\}\)
+                    </li>
+                </ul>
+                son cerrados en \(\mathbb{B}(H)\) (con respecto a la norma de operadores).
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=1609" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Dado un espacio de Hilbert \(H\) denotamos 
+                \begin{eqnarray*}
+                \mathbb{B}(H)_{sa}&=&\{T\in \mathbb{B}(H)| T=T^*\},\\
+                \mathbb{B}(H)_{+}&=&\{T\in \mathbb{B}(H)| T \geq 0\}, \\
+                \mathbb{U}(H)&=&\{T\in \mathbb{B}(H)| TT^*=id_H=T^*T\}.
+                \end{eqnarray*}
+            </p>
+            <p>
+               Entonces \(\mathbb{B}(H)_{sa}\) es un subespacio sobre \(\mathbb{R}\),
+               \(\mathbb{B}(H)_{+}\) es un cono sobre \(\mathbb{R}\) y 
+               \(\mathbb{U}(H)\) es un grupo bajo la muliplicación.
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=1794" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        </div>
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definicióm  </h2>
+            <p>
+                En \(\mathbb{B}(H)_{sa}\) definimos \(S\leq T\) sii \(T-S\in \mathbb{B}(H)_+\). 
+                En esta definición \((\mathbb{B}(H), \leq )\) es un conjunto parcialmente ordenado.
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Explicación   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=2060" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Lema </h2>
+            <p>
+                Sean \(S,T\in \mathbb{B}(H)_{sa}\).
+                <ol>
+                    <li>
+                        \(-\|T\|id_H \leq T \leq \|T\| id_H\).
+                    </li>
+                    <li>
+                        Si \(R\in \mathbb{B}(H)\) y \(S\leq T\) entonces 
+                        \(R^*SR \leq R^*TR\).
+                    </li>
+                </ol>
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=2542" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2 class="number-title"> Ejemplo</h2>
+            <p>
+                Sea \((X,\Sigma,\mu)\) un espacio de medida \(\sigma\)-finito. Para 
+                \(g\in L_\infty(X)\) definimos \(M_g:L_2(X)\to L_2(X)\) por 
+                \(M_g(f)=gf\). Entonces \(M_g\) tiene las siguientes propiedades 
+            </p>
+            <ol> 
+                <li>
+                    \(M_g\) es un operador lineal acotado con \(\|M_g\|=\|g\|_\infty\).
+                </li>
+                <li>
+                    \(M_{\alpha g_1+g_2}=\alpha M_{g_1}+M_{g_2}\).
+                </li>
+                <li>
+                    \((M_g)^*=M_{\overline{g}}\).
+                </li>
+                <li>
+                    \(M_g = (M_g)^*\) sii \(g=\overline{g}\) c.d. rel. \(\mu\).
+                </li>
+                <li>
+                    \(M_g \geq 0\) sii \(g\geq 0\) c.d. rel. \(\mu\).
+                </li>
+                <li>
+                    \(M_g\) es unitario sii \(|g|=1\) c.d. rel. \(\mu\).
+                </li>
+                <li>
+                    En el caso \(X=[0,1]\), \(\Sigma=\) los borelianos de \([0,1]\)
+                    y \(\mu\) la medida de Lebesgue y \(g(x)=x\), \(M_g\) es autoadjunto 
+                    pero no tiene valores propios.
+                </li>
+            </ol>
+
+
+
+            <button class="respButton hvr-grow felxbox"> Explicación   </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/DwFWXNqIJD8?start=3043" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+        </div>
+
+        <div class="nota-box">
+            <h2 class="number-title"> Nota </h2>
+            <h3> El adjunto </h3>
+            <p>
+                En esta nota se explora la relación del adjunto en espacios 
+                de Hilbert con el adjunto en espacios de Banach.
+            </p>
+            <p>
+                En esta sección dado \(X\) un espacio de Banach denotamos 
+                \[
+                X^\#=\{ \varphi: X\to\mathbb{C}: \varphi \quad \textrm{es lineal y acotada} \}
+                \]
+            </p>
+            <p>
+                Dado un operador lineal acotado entre espacios de Banach \(T:X\to Y\)
+                definimos \(T^\#: Y^\# \to X^\#\) por \(T\psi = \psi \circ T\).
+            </p>
+            <p>
+                Si \(X\) es un espacio de Hilbert el Teorema de representación de Riesz prueba que la función 
+                \(J:X\to X^\#\) dada por \(z\mapsto J_z\) con \(J_z: X \to \mathbb{C}\)
+                \(J_z=\langle x, z \rangle\) satisface 
+                <ol>
+                    <li>
+                        \(J_{z_1+\alpha z_2}=J_{z_1}+\overline{\alpha}J_{z_2}\),
+                    </li>
+                    <li>
+                        \(\|J_z\|=\|z\|\), 
+                    </li>
+                    <li>
+                        \(J\) es una biyección.
+                    </li>
+                </ol>
+                Nota que con la notación anterior se cumple 
+                \[
+                \langle  x,J^{-1}(\varphi)\rangle = \langle x,z \rangle
+                \]
+            </p>
+            <p>
+                La relación entre los adjuntos es que el siguiente diagrama 
+                conmuta
+                \begin{matrix} 
+                Y^\# & \underset{T^\#}{\rightarrow} & X^\#  \\
+                \uparrow \small{J} & & \downarrow \small{J^{-1}}\\
+                 Y  & \underset{T^*}{\rightarrow}  &  X
+                \end{matrix}
+            </p>
+            <p>
+                donde \(T^*\) es el adjunto en espacios de Hilbert.
+            </p>
+        </div>
+</body>

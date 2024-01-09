@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 3 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 3 cardCounter ;
+      }
+    </style>
+
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 4 </title>
+    
+  </head>
+
+  <body class="fondo-body" >
+
+    <h1 class="number-title flexbox"> Funcionales lineales acotadas </h1>     
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
+        se llama funcional lineal acotada si 
+        <ol>
+          <li>
+            \(\varphi\) es \(\mathbb{F}\)-lineal, 
+          </li>
+          <li>
+            existe una constante \(M> 0\) tal que \(|\varphi(x)|\leq M\|x\|\)
+            para toda \(x\in X\).
+          </li>
+        </ol>
+      </p>
+
+
+    </div>
+
+
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplos</h2>
+      <ol>
+        <li>
+      <p>
+        Sea \((M,d)\) un espacio métrico compacto y 
+        \(X=C(M)\) dotado con la norma infinito. Dado \(t_0\in M\)
+        la función \(\varphi_{t_0}:X\to \mathbb{F}\) dada por 
+        \(\varphi_{t_0}(f)=f(t_0)\) es lineal acotada con \(\|\varphi_{t_0}\|=1\).
+
+      </p>
+      </li>
+      <li>
+        <p>
+          Sea \((X,\Sigma,\mu)\) un espacio de medida finita. Definimos 
+          \(\varphi:L_\infty(X)\to \mathbb{F}\) por 
+          \[
+          \varphi(f)=\int_X f(x)d\mu(x)
+          \]
+          Entonces \(\varphi\) es lineal acotada con \(\|\varphi\|=\mu(X)\).
+        </p>
+      </li>
+      <li>
+        <p>
+          Sea \((X,\Sigma,\mu)\) un espacio de medida y \(p\in (1,\infty)\). 
+          Dada \(g\in L_q(X)\), con \(\frac{1}{p}+\frac{1}{q}=1\), definimos 
+          \(\varphi_g:L_p(X)\to \mathbb{F}\) por 
+          \[
+          \varphi_g(f)=\int_X fgd\mu
+          \]
+          Entonces \(\varphi_g\) es lineal acotada con \(\|\varphi_g\|=\|g\|_{q}\).
+        </p>
+      </li>
+      
+    </ol>
+
+    <button class="respButton hvr-grow felxbox"> Explicación </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/a0SuWrStL4s?start=932" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(\varphi: X\to \mathbb{F}\) funcional lineal. Las siguientes condiciones son 
+        equivalentes.
+      </p>
+      <ol>
+        <li>
+          \(\varphi\) es acotada.
+        </li>
+        <li>
+          \(\varphi\) es continua en todo \(X\).
+        </li>
+        <li>
+          \(\varphi\) es continua en  \(0\).
+        </li>
+      </ol>
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. El espacio dual de \(X\) (ó espacio conjugado) se define como 
+        \[
+          X^*=\{\varphi:X\to \mathbb{F}: \textrm{\(\varphi\) es acotada}\}.
+        \]
+      </p>
+      <p>
+        Dada \(\varphi \in X^*\) definimos 
+        \[
+        \|\varphi\|=\inf_{M>0}\{|\varphi(x)|\leq M\|x\|, \, \textrm{para toda}\, x\in X \}
+        \]
+      </p>
+      <p>
+        Obsevación: para todo \(x\in X\), \(|\varphi(x)|\leq \|\varphi\| \|x\|\).
+      </p>
+
+        <button class="respButton hvr-grow felxbox"> Explicación </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Si \(\varphi:X\to \mathbb{F}\) es lineal acotada entonces 
+        <ol>
+          <li>
+              \( \|\varphi\|=\sup_{x\in X, \|x\|\leq 1}\{|\varphi(x)| \}. \)
+          </li>
+          <li>
+            \((X^*,\| \cdot\|)\) es un espacio vectorial normado.
+          </li>
+        </ol>
+      </p>
+
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=2220" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Entonces \((X^*,\|\cdot\|)\) es un espacio 
+        de Banach.
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/a0SuWrStL4s?start=2772" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box"> 
+      <h2 class="number-title"> Nota</h2>
+      <p>
+        La definición de funcional lineal acotada se puede extender. Sean 
+        \(X\) y \(Y\) dos espacios vectoriales normado. Una función lineal 
+        \(T:X\to Y\) se llama acotado si 
+        \[
+        \sup_{x\in X, \|x\|\leq 1}\{ \|Tx\|\} < +\infty
+        \]
+      </p>
+      <p>
+        Con las mismas ideas que se usaron para funcionales lineales acotadas se puede probar el 
+        siguiente resultado.
+      </p>
+
+
+    </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema</h2>
+      <p>
+        Sea \(X\) y \(Y\) espacios vectoriales normados y 
+        \(T:X\to Y\) lineal. Las siguientes condiciones 
+        son equivalentes.
+      </p>
+      <ol>
+        <li>
+          \(T\) es acotada.
+        </li>
+        <li>
+          \(T\) es continua en todo \(X\).
+        </li>
+        <li>
+          \(T\) es continua en  \(0\).
+        </li>
+      </ol>
+      <p>
+        Por \(\mathbb{B}(X,Y)\) denotamos a el conjunto de funciones lineales acotadas 
+        de \(X\) en \(Y\). En \(\mathbb{B}(X,Y)\) la función 
+        \[
+        \|T\|:=\sup_{x\in X, \|x\|\leq 1}\{ \|Tx\|\} 
+        \]
+        define una norma. Si además \(Y\) es de Banach 
+        entonces \((\mathbb{B}(X,Y),\|\cdot\|)\) es de Banach.
+      </p>
+
+    </div>
+</body>

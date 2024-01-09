@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 1  </title>
+    
+  </head>
+
+
+  
+  <body class="fondo-body" >
+<!-- Contenido inicia abajo -->
+    <h1 class="number-title flexbox"> Preliminares  </h1>     
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(V\) un espacio vectorial. De manera directa 
+        se puede probar que todo subespacio \(W\subseteq V\)
+        induce una relación de equivalencia en \(V\) mediante
+        \[
+            x' \sim x \Leftrightarrow x'-x \in W
+        \]
+        Si \([x]\) denota la clase de equivalencia de un 
+        elemento \(x\in V\) entonces 
+        \[
+        [x]=\{v\in V: v \sim x \}=\{v\in V: v-x \in W\}=
+        \{v\in V: v=x+w, w\in W \}
+        \]
+        Por lo tanto si defimos \(x+W:=\{x+w:w\in W\}\) tenemos 
+        \([x]=x+W\).
+    </p>
+    <p>
+        El conjunto de clases de equivalencia se denota por 
+        \(V/W\) y tiene estructura de espacio vectorail sobre 
+        \(\mathbb{F}\) si definimos las operaciones como
+        \[
+        (x+W)+(y+W)=(x+y)+W, \alpha (x+W)=(\alpha x)+W
+        \]
+        donde \(x,y\in V\) y \(\alpha \in \mathbb{F}\).
+    </p>
+    <p>
+        Con estas opereciones el cero del espacio \(V/W\) es 
+        \([0]=0+W=W\).
+    </p>
+    <p>
+        El mapeo conciente de define como 
+        \[\pi: V\to V/W, \pi(x)=x+W\]
+    </p>
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+        Sea \(V\) un espacio vectorial y \(W\) un subespacio.  El 
+        mapeo cociente \(\pi:V\to V/W\) es lineal con \(\ker(\pi)=\{0\}\).
+    </p>
+
+</div>
+
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición</h2>
+        <p>
+            Una funcional lineal en el espacio vectorial  \(V\)
+            es simplemente una función lineal de \(V\) en el campo,
+            \(\varphi:V\to \mathbb{F}\).    
+        </p>
+        <p>
+            La siguiente proposición prueba que las funcionales 
+            lineales en \(V\) están en correspondencia uno a uno con 
+            los subespacios de codimensión 1 de \(V\).
+        </p>
+        
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>    
+    <p>
+        Sea \(V\) un espacio vectorial.
+    </p>
+    <ol>
+        <li>
+            Sea \(W\leq V\) un subespacio. Entonces:
+            \(\dim(V/W)=1\) si y sólo si existe 
+            \(\varphi:V\to \mathbb{F}\) funcional lineal tal que 
+            \(\ker(\varphi)=W\).
+        </li>
+        <li>
+            Sean \(\varphi, \psi:V \to \mathbb{F}\) dos 
+            funcionales lineales con \(\varphi\ne 0\).  Entonces:
+            \(\psi\) es un múltiplo de \(\varphi\) si y sólo 
+            si \(\psi\) restringido a \(\ker(\varphi)\) es cero.
+        </li>
+        <li>
+            Sean \(\varphi_1, \dots, \varphi_n, \psi:V\to \mathbb{F}\)
+            funcionales lineales con \(\varphi_i\ne 0\) para todo 
+            \(i=1,\dots, n\). Entonces:
+            \(\psi\)  es combinación lineal de las 
+            \(\varphi_1,\dots, \varphi_n\) si y sólo si 
+            \(\left. \psi \right|_{\cap_{i=1}^n\ker(\varphi_i)}=0\).
+        </li>
+    </ol>
+</div>
+
+
+<div class="definicion-box">  
+    <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(V\) un espacio vectorial. Un subconjunto \(A\subseteq V\) se llama absorbente si
+            para todo \(x\in V\) existe \(t>0\) tal que \(x\in tA\).
+        </p>
+        <p>
+            Nota: todo subconjunto absorbente \(A\) satisface que 
+            \(0 \in A\).
+        </p>
+        <p>
+            Ejemplos.
+        </p>
+        <ol>
+            <li> En \(\mathbb{R}^n\) la bola abierta 
+                de radio \(r\), \(A=\{x\in \mathbb{R}^n: \|x\| < r\}\),
+                es absorbente. Más en general, en un espacio vectorial normado
+                toda bola abierta centrada en cero es absorbente.
+            </li>
+            <li>
+                En \(\mathbb{R}^2\) un espiral que sale del origen.
+            </li>
+        </ol>
+
+        <button class="respButton hvr-grow felxbox"> Explicación </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/jd2JEcYKHGg?start=48" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
+
+        
+</div>
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(V\) un espacio vectorial. Un subconjunto 
+        \(C \subseteq V\) se llama convexo si para todos 
+        \(x,y\in C\) se cunple que el segmento que une \(x\)
+        conn \(y\) está contenido en \(C\), es decir para todos 
+        \(s,t \geq 1\) que satistacen \(s+t=1\) se cumple que 
+        \(tx+sy\in C\).
+    </p>
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+        Prueba que un conjunto \(C \subset V\) es convexo si y sólo si 
+        para todos \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
+        con \(t_i\geq 0\) y \(t_1+\cdots + t_n=1\) se tiene que 
+        \(t_1x_1+\cdots t_nx_n\in C\).
+    </p>
+    <p>
+       Nota: a una expresión de la forma \(t_1x_1+\cdots + t_nx_n\)  con 
+       \(t_i \geq 0\) y \(t_1+\cdots + t_n=1\), se le llama una combinacion 
+       lineal convexa.
+    </p>
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+        Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces 
+        para todos \(s,t>0\) se cunple 
+        \[
+        sC+tC=(s+t)C.
+        \]
+    </p>
+</div>
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
+        balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
+    </p>
+
+</div>
+ 
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición</h2>
+    <p>
+      Sea \(V\) un espacio vectorial. Una funcional sublineal 
+      es una función \(\rho:V\to \mathbb{R}\) que satisface
+      <ol>
+        <li> para todos \(x,y\in V\), \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
+        <li> para todo \(x\in V\) y \(t\geq 0\), \(\rho(tx)=t\rho(x)\).</li>
+        <p>
+          Si además satisafce la condición 
+          <li>
+            \[
+            \rho(ax)=|a|\rho(x)
+          \]
+          </li>
+          
+          para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
+        </p>
+      </ol>
+    </p>
+    
+    <p> Ejemplos</p>
+    <ol>
+      <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
+        de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
+      definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
+      </li>
+      <li>
+        Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
+        a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
+        en \(\mathbb{F}\). Dado un 
+        subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
+        \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\). Entonces \(\rho\) es una seminorma.
+      </li>
+
+    </ol>
+    <p>
+      Observación: si \(\rho\) es una seminorma en \(V\) entonces para todos \(x,y\in V\):
+      \[
+      \rho(0)=0, 0 \leq \rho(x), |\rho(x)-\rho(y)|\leq \rho(x-y)
+      \]
+    </p>
+  </div>
+
+
+
+
+  <div class="definicion-box"> 
+    <h2 class="number-title"> Definición </h2>
+    <p>
+      Sea \(V\) un espacio vectorial y \(A\subseteq V\) un conjunto 
+      absorbente. La funcional de Minkowski de \(A\), denotada \(\mu_A\),
+      es la función \(\mu_A:V\to [0,\infty)\) dada por
+      \[
+        \mu_A(x)=\inf\{t>0: x\in tA \}
+      \]
+      Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
+    </p>
+
+
+    <button class="respButton hvr-grow felxbox"> Explicación </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/jd2JEcYKHGg?start=358" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+      Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. Define 
+      \[
+        A:=\{x\in V: \rho(x)< 1\}
+      \]
+      Entonces \(A\) es convexo y absorbente. Si además \(\rho\)
+      es una seminorma entonces \(A\) es balanceado y 
+      \(\mu_A=\rho.\)
+    </p>
+
+    <button class="respButton hvr-grow felxbox"> Demostración </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/jd2JEcYKHGg?start=410" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+      <p>
+        Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
+        <ol>
+          <li>
+            la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
+          </li>
+          <li>
+            Si además definimos 
+            \[
+            B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
+            \]
+            entonces \(B\subseteq A \subseteq C \) y 
+            \[
+            \mu_B=\mu_A=\mu_C.
+            \]
+          </li>
+          <li>
+            Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
+            seminorma.
+          </li>
+        </ol> 
+      </p>
+
+    <button class="respButton hvr-grow felxbox"> Demostración </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/jd2JEcYKHGg?start=1226" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+</body>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+      <!-- This part restart counter of cards to start at n+1 -->
+      <style>
+        body.number-title{
+          counter-reset: sectionCounter 1 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 1 cardCounter ;
+        }
+      </style>
+  
+
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 2 </title>
+    
+  </head>
+  <body class="fondo-body" >
+
+    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
+
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
+        \(\rho:V\to \mathbb{R}\) una funcional sublineal.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        \[
+          \varphi(x)\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(\tilde{\varphi}(x)\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jd2JEcYKHGg?t=3100" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+
+  
+    </div>
+
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
+        \(\rho:V\to \mathbb{R}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=179" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+
+
+      
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\).
+      </p>
+      <ol>
+        <li>
+          Supongamos que \(\varphi: V\to \mathbb{C}\) es  \(\mathbb{C}\)-lineal y defimamos 
+          \(\varphi_r(x)=\Re(\varphi(x))\), para \(x\in V\). Entonces \(\varphi_r\)
+          es \(\mathbb{R}\)-lineal y para todo \(x\in  V\)
+          \[
+            \varphi(x)=\varphi_r(x)-i\varphi_r(ix).
+           \]
+        </li>
+        <li>
+          Supongamos que \(\psi:V\to \mathbb{R}\) es \(\mathbb{R}\)-lineal. Entonces
+          existe \(\varphi:V\to \mathbb{C}\), \(\mathbb{C}\)-lineal tal que 
+          \(\Re(\varphi)=\psi\).
+        </li>
+      </ol>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=435" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+ 
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
+        \(\rho:V\to \mathbb{C}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{C}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{C}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=1180" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+</body>
