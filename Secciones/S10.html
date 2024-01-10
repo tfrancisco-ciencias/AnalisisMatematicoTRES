@@ -1,15 +1,13 @@
-<!DOCTYPE html PUBLIC >
+<DOCTYPE html>
+  <html lang="es">
 
-<html lang="es">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <head>
     <!-- Following part is mathjax, for latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
     <!-- This part is for jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
@@ -20,55 +18,66 @@
         tex: {
           macros: {
             sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1]
+            seg: ["\\overrightarrow{#1}", 1],
+            cer: "\\operatorname{cer}",
+            inte: "\\operatorname{int}"
           },
           tags: "ams" /* this part is for numbered equations */
         }
       };
     </script>
 
-
     <!-- CSS -->
 
-    <link rel="stylesheet" , href="../style.css" />
-
+    <link rel="stylesheet" , href="../styles.css" />
 
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
-        body.number-title{
-          counter-reset: sectionCounter 9 cardCounter ;
-        }
-        h1.number-title{
-          counter-reset: sectionCounter 9 cardCounter ;
-        }
-      </style>
-  
-    
-    <!-- Top Menu  -->
+      body.number-title{
+        counter-reset: sectionCounter 9 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 9 cardCounter ;
+      }
+    </style>
 
 
-        <header class="main-header">
-          <h1> Análisis Funcional  </h1>
-         <nav class="top-nav">
-           <ul>
-              <li> <a href="../Home.html"> Inicio  </a> </li>
-              <li> <a href="../Secciones.html"> Secciones  </a> </li>
-            </ul>
-          </nav>
-          <nav class="small-nav" align=right>
-            <button onclick="myFunction()">Claro/Obscuro 
-          </nav>
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <h1 class="calculo-title"> Análisis Matemático TRES</h1>
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../InfoPrimerDia.html"> Información general </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+     
+    </nav>
+    <label class="switch">
+      <input type="checkbox" onclick="myFunction()">
+      <span class="slider"></span>
+    </label>
+
+  </header>
+
+<!-- This part is for title in tab-->
+<title id="Sec"> § 10 </title>
 
 
-        </header>
+<body class="flexbox card fondo-body">
 
-      <!-- This part is for title in tab-->
-      <title> § 10  </title>
 
-      <body class="fondo-body">
+  <div class="flexbox">
+    <h1 class="number-title flexbox"> Espacios con producto interior </h1>     
 
-        <h1 class="number-title flexbox"> Espacios con producto interior   </h1>     
-        
+    <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
+    <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
+
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
         <div class="definicion-box">
             <h2 class="number-title"> Definición </h2>
             <p>
