@@ -95,7 +95,7 @@
     </p>
     <p>
         El conjunto de clases de equivalencia se denota por 
-        \(V/W\) y tiene estructura de espacio vectorail sobre 
+        \(V/W\) y tiene estructura de espacio vectorial sobre 
         \(\mathbb{F}\) si definimos las operaciones como
         \[
         (x+W)+(y+W)=(x+y)+W, \alpha (x+W)=(\alpha x)+W
@@ -116,7 +116,7 @@
     <h2 class="number-title"> Proposición</h2>
     <p>
         Sea \(V\) un espacio vectorial y \(W\) un subespacio.  El 
-        mapeo cociente \(\pi:V\to V/W\) es lineal con \(\ker(\pi)=\{0\}\).
+        mapeo cociente \(\pi:V\to V/W\) es lineal con \(\ker(\pi)=W\).
     </p>
 
 </div>
@@ -148,13 +148,14 @@
             Sea \(W\leq V\) un subespacio. Entonces:
             \(\dim(V/W)=1\) si y sólo si existe 
             \(\varphi:V\to \mathbb{F}\) funcional lineal tal que 
-            \(\ker(\varphi)=W\).
+            \(\ker(\varphi)=W\). 
         </li>
         <li>
             Sean \(\varphi, \psi:V \to \mathbb{F}\) dos 
             funcionales lineales con \(\varphi\ne 0\).  Entonces:
             \(\psi\) es un múltiplo de \(\varphi\) si y sólo 
-            si \(\psi\) restringido a \(\ker(\varphi)\) es cero.
+            si \(\psi\) restringido a \(\ker(\varphi)\) es cero
+            (otra forma es decir \(\ker(\varphi) \subseteq \ker(\psi)\)).
         </li>
         <li>
             Sean \(\varphi_1, \dots, \varphi_n, \psi:V\to \mathbb{F}\)
@@ -162,13 +163,53 @@
             \(i=1,\dots, n\). Entonces:
             \(\psi\)  es combinación lineal de las 
             \(\varphi_1,\dots, \varphi_n\) si y sólo si 
-            \(\left. \psi \right|_{\cap_{i=1}^n\ker(\varphi_i)}=0\).
+            \(\left. \psi \right|_{\cap_{i=1}^n\ker(\varphi_i)}=0\)
+            (es decir \(\cap_{i=1}^n \ker(\varphi_i) \subseteq \ker(\psi)\)).
         </li>
     </ol>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(X,Y\) dos esapcios vectoriales, \(W\subseteq X\) un subespacio
+    y \(T:X\to Y\) una función lineal. Prueba que existe una función lineal 
+    \(\tilde{T}:X/W \to Y \) tal que \(\tilde{T} \circ \pi =T \) si y sólo si 
+    \(W\subseteq \ker(T)\), donde \(\pi\) es la proyección de \(X\) en \(X/W\).
+  </p>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un conjunto distinto del vacío y considera el espacio de funciones 
+    \[
+    F(X)=\{f:X \to \mathbb{F} \}
+    \]
+    <ol>
+      <li>
+        Fija un \(x_0\in X\) y considera \(W=\{f\in F(X): f(x_0)=1\}\). Prueba que 
+    \(W\) es un subespacio de \(F(X)\) y que \(\dim(F(X)/W)=1\).
+      </li>
+      <li>
+        Fija ahora \(x_1,x_0\in X\), \(x_1\neq x_2\) y define 
+        \(V=\{f\in F(X): f(x_0)=0, f(x_1)=0\}\). Prueba que \(V\) es un subespacio 
+        y encuentra la dimensión de \(F(X)/V\)
+      </li>
+      <li>
+        ¿Se valen los mismos resultados de los dos incisos anteriores si cambiamos 
+        \(F(X)\) por \(C(X)\), el espacio de funciones continuas sobre \(X\)? para 
+        esta parte suponemos que \(X\) es un espacio métrico.
+      </li>
+    </ol>
+    
+  </p>
+</div>
+
 
 <div class="definicion-box">  
+
     <h2 class="number-title"> Definición </h2>
         <p>
             Sea \(V\) un espacio vectorial. Un subconjunto \(A\subseteq V\) se llama absorbente si
