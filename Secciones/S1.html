@@ -247,8 +247,25 @@
           </div>
         </div>
 
+</div>
 
-        
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Prueba que \(\mathbb{Q}\times \mathbb{Q} \) no es un subconjunto absorbente de 
+    \(\mathbb{R}^2\).
+  </p>
+
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio (conjetura Bojko)</h2>
+  <p>
+    Sea \((V,\|\cdot\|)\) un espacio vectorial normado completo y 
+    \(A\subseteq V\) numerable. Entonces \(A\) no es absorbente.
+  </p>
+
 </div>
 
 <div class="definicion-box">
@@ -291,23 +308,20 @@
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
-  <p>
-    Prueba que la intersección de conjuntos convexos es convexo.
-  </p>
-  <p>
-    Da un ejemplo de que unión de conjuntos convexos no es necesariamente 
-    convexo.
-  </p>
-
-
-</div>
-
-<div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
-    <p>
-        Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
-        balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
-    </p>
+  <ol>
+    <li>
+      Prueba que la intersección de conjuntos convexos es convexo.
+    </li>
+    <li>
+      Da un ejemplo de que unión de conjuntos convexos no es necesariamente 
+      convexo.
+    </li>
+    <li>
+      Prueba que la imagen directa de subconjuntos convexos bajo funciones lineales 
+      sigue siendo convexo.
+    </li>
+  </ol>
+  
 
 </div>
  
@@ -317,21 +331,19 @@
     <h2 class="number-title"> Definición</h2>
     <p>
       Sea \(V\) un espacio vectorial. Una funcional sublineal 
-      es una función \(\rho:V\to \mathbb{R}\) que satisface
+      es una función \(\rho:V\to \mathbb{R}\) que satisface, para todos 
+      \(x,y\in V\), y todo \(t\in \mathbb{R}\), \(t>0\):
       <ol>
-        <li> para todos \(x,y\in V\), \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
-        <li> para todo \(x\in V\) y \(t\geq 0\), \(\rho(tx)=t\rho(x)\).</li>
-        <p>
-          Si además satisafce la condición 
-          <li>
+        <li> \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
+        <li> \(\rho(tx)=t\rho(x)\).</li>
+      </ol>
+      Si además satisafce la condición 
+          <p>
             \[
             \rho(ax)=|a|\rho(x)
           \]
-          </li>
-          
           para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
-        </p>
-      </ol>
+          </p>
     </p>
     
     <p> Ejemplos</p>
@@ -343,19 +355,40 @@
       <li>
         Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
         a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
-        en \(\mathbb{F}\). Dado un 
+        en \(\mathbb{R}\). Dado un 
         subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
-        \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\). Entonces \(\rho\) es una seminorma.
+        \(\rho(f)=\sup_{x\in K}\{f(x)\}\). Entonces \(\rho\) es una funcional 
+        sublineal y no es en general una seminorma. Si la modificamos como 
+        \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\) obtenemos una seminorma. 
       </li>
 
     </ol>
-    <p>
-      Observación: si \(\rho\) es una seminorma en \(V\) entonces para todos \(x,y\in V\):
-      \[
-      \rho(0)=0, 0 \leq \rho(x), |\rho(x)-\rho(y)|\leq \rho(x-y)
-      \]
-    </p>
+    
   </div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+
+  <p>
+    Si \(\rho\) es una seminorma en \(V\) entonces satisface 
+    <ol>
+      <li>
+        \(\rho(0)=0\),
+      </li>
+      <li>
+          \(0 \leq \rho(x) \), para toda \(x\),
+      </li>
+      <li>
+        para todos \(x,y\in V\),
+        \(
+        |\rho(x)-\rho(y)|\leq \rho(x-y)
+        \)
+      </li>
+    </ol>
+  
+  </p>
+
+</div>
 
 
 
@@ -371,6 +404,9 @@
       \]
       Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
     </p>
+    <p>
+      Observación: \(\mu_A(0)=0\).
+    </p>
 
 
     <button class="respButton hvr-grow felxbox"> Explicación </button>
@@ -383,6 +419,8 @@
     </div>
     
   </div>
+
+
 
 
 
@@ -409,6 +447,16 @@
 
   </div>
 
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>
+      Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
+      balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
+  </p>
+
+</div>
 
 
 
