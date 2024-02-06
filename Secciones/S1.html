@@ -449,11 +449,14 @@
     <p>
       Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. Define 
       \[
-        A:=\{x\in V: \rho(x)< 1\}
+        B:=\{x\in V: \rho(x)< 1\}, \, C:=\{x\in V: \rho(x) \leq  1\}
       \]
-      Entonces \(A\) es convexo y absorbente. Si además \(\rho\)
-      es una seminorma entonces \(A\) es balanceado y 
-      \(\mu_A=\rho.\)
+      Entonces \(B\) y \(C\) son convexos y absorbentes y 
+      \[
+      \mu_B=\rho= \mu_C.
+      \]
+      Si además \(\rho\)
+      es una seminorma entonces \(B\) y \(C\) son balanceados.
     </p>
 
     <button class="respButton hvr-grow felxbox"> Demostración </button>
@@ -493,9 +496,9 @@
             \[
             B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
             \]
-            entonces \(B\subseteq A \subseteq C \) y 
+            entonces \(B \subseteq A \subseteq C \) y 
             \[
-            \mu_B=\mu_A=\mu_C.
+            \mu_{B}=\mu_A=\mu_{C}.
             \]
           </li>
           <li>
