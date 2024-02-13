@@ -260,7 +260,7 @@
 </div>
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio</h2>
+  <h2 class="number-title" id="Ejer:SupraCompatibleAbsorbente"> Ejercicio</h2>
   <p>
     Sean \(X,Y\) espacios vectoriales y \(f:X\to Y\) lineal y suprayectiva. Prueba que 
     si \(A\subseteq X\) es absorbente entonces \(f(A)\subseteq Y\) es absorbente.
@@ -270,7 +270,7 @@
 
 
 <div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio</h2>
+  <h2 class="number-title" id="Ejer:RestricccionAbsorbente"> Ejercicio</h2>
   <p>
     Sea \(V\) un espacio vectorial y \(W\subseteq V\) un subespacio. Sea 
     \(A\subseteq V\) un subconjunto absorbete (em \(V\)). Define 
@@ -282,9 +282,66 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio (conjetura Yair-Yahir)</h2>
   <p>
-    Sea \((V,\|\cdot\|)\) un espacio vectorial normado completo y 
+    Sea \(V\) un espacio vectorial (real o complejo) 
+    de dimensión mayor o igual a 2 y 
     \(A\subseteq V\) numerable. Entonces \(A\) no es absorbente.
   </p>
+
+  <button class="respButton hvr-grow felxbox"> Demostración </button>
+  <div class="resp-box flexbox">
+    
+  
+  <p>
+    Caso 1: finito dimensional.
+  </p>
+  <p> 
+    Sea \(V\) un espacio con  \(2\leq \dim(V)=n < \infty\)
+    y \(A \subseteq V\) contable.   
+  </p>
+  <p>
+    Razonando por contradicción supongamos que \(A\subseteq V\) 
+    es absorbente. Al ser \(V\)
+    de dimensión \(n\) sabemos que existe 
+    \(\phi: V \rightarrow \mathbb{K}^{n} \) un isomorfismo. 
+    Por ser \(\phi\) inyectiva, \(\phi(A)\) es contable y por ser 
+    suprayectiva  \(\phi(A)\) es absorbente (ver <a href="#Ejer:SupraCompatibleAbsorbente">Ejercicio 1.9</a>).
+    Por ende  \(\phi(A)\subseteq\mathbb{K}^{n}\) es un conjunto contable y absorbente.
+  </p>
+  
+  <p>
+    Al ser \(\phi(A)\) contable podemos escribir 
+    \(\phi(A)=\left\lbrace v_{i} | i\in\mathbb{N}\right\rbrace\). Ya que \(\phi(A)\) 
+    es absorbente, si para todo  todo \(x\in \mathbb{R}\) consideramos el vector  
+    \(v= \left(1,x,0,...,0\right) \in\mathbb{R}^n\) entonces  existen 
+    \(i \in \mathbb{N}\)\  y \(t>0\) tales que
+    \[
+      \begin{align*} 
+        \left(1,x,0,...,0\right)&=t v_j \\ 
+        \end{align*}
+      \]
+      escribiendo \(v_i=(v_i(1),v_i(2),\dots)\) llegamos a que 
+      \[
+      \begin{eqnarray*} 
+        1=tv_{j}(1) \\
+        x= tv_j(2)
+      \end{eqnarray*}
+      \]
+      de lo que se sigue que \(t=1/v_{j}(1)\) y por lo tanto \(x=\frac{v_j(2)}{v_j(1)}\). Finalmente, 
+      ya que el conjunto \(\{ \frac{v_i(2)}{v_i(1)}| i\in \mathbb{N}, \, v_i(1)\ne 0\}\) es numerable llegamos 
+      a una contradicción pues \(x\in \mathbb{K}\) es arbitrario.
+      
+  </p>
+    <p>
+      Caso 2: caso infinito dimensional.
+    </p>
+    <p>
+      Sea \(V\) un espacio vectorial real o complejo con \(2\leq \dim(V)\).
+      Tomemos \(u,v\in V\) linealmente independientes y denotemos \(W=\textrm{span}(u,v)\). Nota que 
+      \(\dim(W)=2\).
+      Por otra parte si suponemos que existe \(A \subseteq V\) contable y absorbente en \(V\) entonces, 
+      \(A\cap W\) tambien es absorbente en \(W\) (ver <a href="#Ejer:RestricccionAbsorbente">Ejercicio 1.10</a>) y además contable, esto contradice el primer caso.
+    </p>
+  </div>
 
 </div>
 
@@ -350,7 +407,7 @@
 <div class="definicion-box">
     <h2 class="number-title"> Definición</h2>
     <p>
-      Sea \(V\) un espacio vectorial. Una funcional sublineal 
+      Sea \(V\) un espacio vectorial (real o complejo). Una funcional sublineal 
       es una función \(\rho:V\to \mathbb{R}\) que satisface, para todos 
       \(x,y\in V\), y todo \(t\in \mathbb{R}\), \(t>0\):
       <ol>

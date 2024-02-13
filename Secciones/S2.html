@@ -289,6 +289,47 @@
 
     </div>
 
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Por \(\ell_\infty\) denotamos al conjunto de 
+        sucesiones acotadas con valores reales. Es decir 
+        \(x\in \ell_\infty\) si y sólo si \(x:\mathbb{N}\to \mathbb{R}\)
+        y \(\sup_{n\in \mathbb{N}}\{|x(n)|\} < +\infty\).
+
+      </p>
+      <p>
+        Define \(T:\ell_\infty \to \ell_\infty\) por 
+        \(Tx(n)=x(n+1)\), \(n\in \mathbb{N}\) (traslación hace la derecha).
+      </p>
+      <p>
+        Prueba que existe una funcional lineal real, 
+        \(\varphi: \ell_\infty \to \mathbb{R}\), que satisface 
+        \[
+        \begin{eqnarray*} 
+        \varphi(Tx)&=&\varphi(x),\\
+        \liminf_{n\to \infty} x(n)\leq & \varphi(x) & \leq \limsup_{n\to \infty} x(n)
+        \end{eqnarray*}
+        \]
+        para toda \(x\in \ell_\infty\).
+      </p>
+      <p>
+        Suegerencia: define 
+        \[
+        \varphi_n(x)=\frac{1}{n}\sum_{i=1}^n x(i).
+        \]
+       y \(W=\{x\in \ell_\infty| \lim_{n\to \infty}\varphi_n(x)\, \textrm{existe}\}\).
+       Define  \(\varphi: W \to \mathbb{R}\) por \(\varphi(x)=\lim_{n\to \infty}\varphi_n(x)\)
+        y considera \(\rho:\ell_\infty \to \mathbb{R}\) dada por 
+        \(\rho(x)=\limsup_{n\to \infty} \varphi_n(x)\).
+
+
+      </p>
+
+
+    </div>
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio</h2>
       <p>
