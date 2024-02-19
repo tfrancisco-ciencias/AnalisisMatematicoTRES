@@ -109,7 +109,13 @@
         \[
           B(X)=\{f:X\to \mathbb{F}: \textrm{\(f\) es acotada en \(X\)}\}
         \]
-        es un espacio de Banach con la misma norma que \(C(X)\).
+        es un espacio de Banach con la misma norma que \(C(X)\). Nota que para 
+        el espacio \(B(X)\) no es necesario dar estructura de espacio métrico 
+        (o topológico) a \(X\), éste puede ser cualquier conjunto no vacío.
+      </p>
+      <p>
+        Este ejemplo se puede generalizar reemplazando \(\mathbb{F}\) por cualquier espacio de Banach, 
+        pues lo importante es que el codominio es compacto.
       </p>
 
       <button class="respButton hvr-grow felxbox"> Demostración </button>
@@ -144,31 +150,40 @@
         \[
           \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \leq M
         \]
-        Por ejemplo, toda función monótona y clase \(C^1\) en \([a,b]\) es de variación acotada en 
+        
+      </p>
+      <p>
+        Por ejemplos: 
+        <ol>
+          <li>
+            toda función monótona en \([a,b]\) es de variación acotada en 
         \([a,b]\).
+          </li>
+          <li>
+            toda función clase \(C^1\) en \([a,b]\) es de variación acotada en 
+            \([a,b]\).
+          </li>
+        </ol> 
       </p>
       <p>
         Si \(f:[a,b]\to \mathbb{F}\) es de variavión acotada definimos 
         \[
           V_a^b(f)=\sup_{P}\left\{ \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \right\}
         \]
-        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{F}\), por lo que 
+        donde el supremo se toma sobre todas las particiones de \([a,b]\). Por ejemplo 
+        para toda función constante \(f=c\), \(V_a^b(f)=0\).
+        
+      </p>
+      <p>
+        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{R}\), por lo que 
         \(V_a^b\) no define una norma en el espacio de funciones de variación acotada. Se define 
         \[
-        BV([a,b])=\{f:[a,b]\to \mathbb{R}: V_a^b(f)<+\infty, f(a)=0\}.
+        BV([a,b])=\{f:[a,b]\to \mathbb{R}: V_a^b(f)<+\infty \}.
         \]
-        Entonces \(BV([a,b])\) es un espacio vectorial y \(\|f\|:=V_a^b(f)\) define una norma que lo 
+        Entonces \(BV([a,b])\) es un espacio vectorial y \(\|f\|:=V_a^b(f)+|f(a)|\) define una norma que lo 
         convierte en espacio de Banach.
       </p>
 
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=2413" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
     </div>
 
     <div class="definicion-box"> 
@@ -198,14 +213,6 @@
           \((x_\alpha)_{\alpha\in A}\) donde \(x_\alpha=x(\alpha)\).
         </p>
 
-        <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=3026" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
     </div>
     
 
@@ -213,41 +220,20 @@
       <h2 class="number-title"> Definición </h2>
       <h3> Convergencia de redes </h3>
       <p>
-        Sea \((X,\tau)\) un espacio topológico. Una red \((x_\alpha)_{\alpha \in A}\) converge 
-        a un punto \(x_0\in X\) si para toda \(U\),  vecindad de \(x_0\),  existe \(\alpha_0\in A\) tal  que 
-        para toda \(\alpha \geq \alpha_0 \) se tiene \(x_\alpha \in U\). Notación 
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una red \((x_\alpha)_{\alpha \in A}\) converge 
+        a un punto \(x_0\in X\) si para toda \(\varepsilon > 0 \),  existe \(\alpha_0\in A\) tal  que 
+        para toda \(\alpha \geq \alpha_0 \) se tiene \(\| x_\alpha -x_0 \| < \varepsilon \). Notación: 
         \(\lim_{\alpha \in A}x_\alpha = x_0\).
       </p>
-      <p>
-        Por ejemplo en espacios vectoriales normados \(\lim_{\alpha \in A}x_\alpha = x_0\) sii 
-        \(\lim_{\alpha \in A}\|x_\alpha -x_0\|=0\).
-      </p>
-
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=3460" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
+    
     </div>
+
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
       <p>
-        Sea \(X\) un conjunto y \(\tau_1, \tau_2\) dos topologías en \(X\). 
-      </p>
-      <p>
-        Las topologías son iguales si y sólo si tienen las mismas redes convergentes.
-      </p>
-    </div>
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <p>
-        Sean \((X,\tau_X), (Y,\tau_Y)\) dos espacios topológicos. La función 
-        \(f:(X,\tau_X)\to (Y)\) es continua en \(x_0\) sii para toda 
+        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. Una función 
+        \(f:X\to Y\) es continua en \(x_0\) sii para toda 
         \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
         \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
       </p>
