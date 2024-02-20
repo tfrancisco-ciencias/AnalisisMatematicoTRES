@@ -229,8 +229,33 @@
     </div>
 
 
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sea \((x_\alpha)_{\alpha \in A}\)
+          una red en \(X\) y supón que \(\lim_{\alpha \in A}x_\alpha = x_0\) y 
+          \(\lim_{\alpha \in A}x_\alpha = x_1\). Prueba que \(x_0=x_1\).
+     </p>
+     </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sean \((x_\alpha)_{\alpha \in A}, (y_\alpha)_{\alpha \in A}\)
+          dos redes en \(X\) tal que \(\lim_{\alpha \in A} x_\alpha = x_0\) y \(\lim_{\alpha \in A} y_\alpha = y_0\). Prueba que 
+          para todo escalar \(\lambda\),
+          \[
+          \lim_{\alpha \in A} (\lambda x_\alpha+ y_\alpha)=\lambda x_0+y_0
+          \]
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
       <p>
         Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. Una función 
         \(f:X\to Y\) es continua en \(x_0\) sii para toda 
@@ -238,6 +263,25 @@
         \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
       </p>
 
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(A\) un conjunto dirigido y \(x:A\to X\) una red en el conjunto \(X\). Una subred de 
+        \(x\) es pre-componer \(x\) con una función estrictamente creciente. Es decir es 
+        una red de la forma \(x\circ \varphi : B \to X\), donde \(B\) es un conjunto dirigido y 
+        \(\varphi: B\to A\) es estrictamente creciente. Al igual que con sucesiones una subred 
+        de \((x_\alpha)_{\alpha \in A}\) se puede denotar como \((x_{\alpha_\beta})_{\beta\in B}\), 
+        donde \(x_{\alpha_\beta}=x(\varphi(\beta))\).
+      </p>
+
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado y 
+        \((x_\alpha)_{\alpha\in A}\) una red en \(X\). Prueba que si 
+        \(\lim_{\alpha \in A}x_\alpha = x\) y si \((x_{\alpha_\beta})_{\beta \in B}\)
+        es una subred entonces \(\lim_{\beta \in B} x_{\alpha_\beta}=x\).
+      </p>
     </div>
 
     <div class="definicion-box">
@@ -330,4 +374,50 @@
         </div>
       </div>
     </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. En el 
+        producto cartesiano \(X\times Y\) considera la norma \(\|(x,y)\|=\|x\|_X+\|y\|_Y\). Prueba que 
+        \((X\times Y, \|\cdot\|)\) es un espacio de Banach si y sólo si \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\)
+        son espacios de Banach.
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(\mathcal{X}=\{ (X_i, \|\cdot\|_i)\}_{i\in I}\) una familia arbitraria de espacios de Banach. Define 
+        \[
+        \ell_\infty(\mathcal{X})=\{ (x_i)_{i\in I}\in \Pi_{i\in I}X_i | \sup_{i\in I}\{\|x_i\|_i\} < +\infty \}
+        \]
+        y  define 
+        \[
+        \|x\|_\infty= \sup_{i\in I}\{\|x_i\|_i\}
+        \]
+        
+      </p>
+      <ol>
+        <li>
+            Prueba que \((\ell_\infty(\mathcal{X}), \|\cdot\|_\infty)\) es un espacio de Banach.
+        </li>
+        <li>
+          Supón además que \(I\) es un conjunto dirigido. Define 
+          \[
+          c_0(\mathcal{X})=\{ (x_i)_{i\in I}\in \ell_\infty(\mathcal{X})| \lim_{i\in I}\|x_i\|_i=0 \}
+          \]
+          Prueba que \((c_0(\mathcal{X}), \|\cdot\|_\infty)\) es un espacio de Banach.
+        </li>
+      </ol>
+      <p>
+        Nota: \(\Pi_{i\in I}X_i\) denota al producto cartesiano de los espacios, 
+        es decir \((x_i)_{i\in I}\in \Pi_{i\in I}X_i\)  si y sólo si para toda \(i\in I\), \(x_i\in X_i\).
+      </p>
+
+    </div>
+
 </body>
