@@ -79,7 +79,7 @@
     <div class="definicion-box">
       <h2 class="number-title"> Definición </h2>
       <p>
-        Sea \(X\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
         se llama funcional lineal acotada si 
         <ol>
           <li>
@@ -90,6 +90,20 @@
             para toda \(x\in X\).
           </li>
         </ol>
+        
+        <p>
+          Nota: gracias a la linealidad de \(\varphi\) la segunda condición es equivalente 
+          decir que \(\varphi\) está acotada 
+          en la esfera unitaria \(S=\{x\in X: \|x\|=1\}\) o equivalente a decir que 
+          es acotada en la bola cerrada \(B=\{x\in X: \|x\| \leq 1\}\).
+        </p>
+        <p>
+          Si \(\varphi\) es una funcional lineal acotada definimos su norma como 
+          \[
+          \|\varphi\|=\sup_{\|x\|\leq 1}\{|\varphi(x)| \}
+          \]
+        </p>
+        
       </p>
 
 
@@ -100,6 +114,17 @@
     <div class="info-box">
       <h2 class="number-title"> Ejemplos</h2>
       <ol>
+        <li>
+          Si \(\varphi: \mathbb{F}^n \to \mathbb{F}\) es lineal, por un Teorema de Riesz existe 
+          un vector \(y \in \mathbb{F}\) tal que \(\varphi(x)=\langle x, y \rangle\), 
+          para toda \(x\in \mathbb{F}\). Por la desigualdad de Cauchy-Schwartz, 
+          \(|\langle x, y \rangle | \leq \|x\|_2\|y\|_2\). Por lo tanto toda función 
+          lineal de \(\mathbb{F}^n\) en \(\mathbb{F}\) es acotada con \(\|\varphi\|=\|y\|_2\).
+          <p>
+            Nota: en \(\mathbb{F}=\mathbb{R}\), \(\langle x, y \rangle =\sum_{i=1}^n x_iy_i\), 
+            en \(\mathbb{F}=\mathbb{C}\), \(\langle x, y \rangle =\sum_{i=1}^n x_i\overline{y_i}\).
+          </p>
+        </li>
         <li>
       <p>
         Sea \((M,d)\) un espacio métrico compacto y 
@@ -133,14 +158,14 @@
       
     </ol>
 
-    <button class="respButton hvr-grow felxbox"> Explicación </button>
+    <!-- <button class="respButton hvr-grow felxbox"> Explicación </button>
     <div class="resp-box flexbox">
       <div class="flexbox">
         <iframe width="500" height="400" class="video"
         src="https://www.youtube.com/embed/a0SuWrStL4s?start=932" allowfullscreen="true"> 
         </iframe>
       </div>
-    </div>
+    </div>-->
     </div>
 
 
@@ -162,14 +187,14 @@
         </li>
       </ol>
 
-        <button class="respButton hvr-grow felxbox"> Demostración </button>
+  <!--      <button class="respButton hvr-grow felxbox"> Demostración </button>
         <div class="resp-box flexbox">
           <div class="flexbox">
             <iframe width="500" height="400" class="video"
             src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
             </iframe>
           </div>
-        </div>
+        </div>-->
 
     </div>
 
@@ -181,24 +206,16 @@
           X^*=\{\varphi:X\to \mathbb{F}: \textrm{\(\varphi\) es acotada}\}.
         \]
       </p>
-      <p>
-        Dada \(\varphi \in X^*\) definimos 
-        \[
-        \|\varphi\|=\inf_{M>0}\{|\varphi(x)|\leq M\|x\|, \, \textrm{para toda}\, x\in X \}
-        \]
-      </p>
-      <p>
-        Obsevación: para todo \(x\in X\), \(|\varphi(x)|\leq \|\varphi\| \|x\|\).
-      </p>
+     
 
-        <button class="respButton hvr-grow felxbox"> Explicación </button>
+        <!-- <button class="respButton hvr-grow felxbox"> Explicación </button>
         <div class="resp-box flexbox">
           <div class="flexbox">
             <iframe width="500" height="400" class="video"
             src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
             </iframe>
           </div>
-        </div>
+        </div>-->
     </div>
 
 
@@ -208,7 +225,7 @@
         Sea \(X\) un espacio vectorial normado. Si \(\varphi:X\to \mathbb{F}\) es lineal acotada entonces 
         <ol>
           <li>
-              \( \|\varphi\|=\sup_{x\in X, \|x\|\leq 1}\{|\varphi(x)| \}. \)
+              \( \|\varphi\|=\inf\{M>0| |\varphi(x)|\leq M \|x\| \, \textrm{para toda \(x\in X\)} \} \)
           </li>
           <li>
             \((X^*,\| \cdot\|)\) es un espacio vectorial normado.
@@ -217,14 +234,14 @@
       </p>
 
 
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
         <div class="resp-box flexbox">
           <div class="flexbox">
             <iframe width="500" height="400" class="video"
             src="https://www.youtube.com/embed/a0SuWrStL4s?start=2220" allowfullscreen="true"> 
             </iframe>
           </div>
-        </div>
+        </div> -->
     </div>
 
 
@@ -292,4 +309,209 @@
       </p>
 
     </div>
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y\leq X\) un subespacio. 
+        Si \(\phi:Y\to \mathbb{F}\) es una funcional lineal acotada entonces 
+        existe \(\tilde{\phi}:X\to \mathbb{F}\) funcional lineal acotada 
+        tal que 
+        <ol>
+            <li>
+                \(\tilde{\phi}|_Y=\phi\).
+            </li>
+            <li>
+                \(\|\tilde{\phi}\|=\|\phi\|\).
+            </li>
+        </ol>
+      </p>
+
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=4328" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
+      
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Corolario </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
+        existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=75" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Si \(\varphi(x)=0\) para todo 
+            \(\varphi \in X^*\) entonces \(x=0\).
+        </p>
+
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/6AMGijAkn5c?start=298" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+        
+
+    </div>
+
+    
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(A,B\subseteq X\) convexos, no vacíos y ajenos.
+      </p>
+      <ol>
+          <li>
+              Si \(A\) es abierto entonces existe \(\varphi\in X^*\) y \(c\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c \leq \Re(\varphi(b))
+              \]
+              para todo \(a\in A\) y \(b\in B\).
+          </li>
+          <li>
+              Si \(A\) es compacto y \(B\) es cerrado entonces existe \(\varphi\in X^*\) 
+              y \(c_1,c_2\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c_1 < c_2 <  \Re(\varphi(b))
+              \]
+
+          </li>
+      </ol>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=1290" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Sea \(C \subseteq Y^*\)
+            convexo y \(\omega^*\)-cerrado. Si \(\psi_0 \notin C\) entonces 
+            existe \(x\in X\) y \(c_1,c_2\in \mathbb{R}\) tal que 
+            \[
+            \Re(\hat{x}(\varphi)) < c_1 < c_2 < \Re(\hat{x}(\psi_0))
+            \]
+            para toda \(\varphi\in C\).
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y \leq X\) un subespacio vectorial. Si 
+        \(\varphi: Y\to \mathbb{F}\) es lineal y acotada entonces existe 
+        \(\overline{\varphi}: \overline{Y} \to \mathbb{F}\), lineal acotada tal que 
+        <ol>
+          <li>
+            \(\overline{\varphi}|_{Y}=\varphi\).
+          </li>
+          <li>
+            \(\|\overline{\varphi}\|=\|\varphi\|\).
+          </li>
+        </ol>
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=416" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio métrico (o topológico) compacto. Prueba que 
+        \(C(X)\) es de dimensión finita si y sólo si \(X\) es finito.  
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Prueba que \(X\) es de dimensión finita 
+        si y sólo si toda función lineal de \(X\) en el campo es acotada.
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Prueba que \(\ell_1(\mathbb{Z})^*\) es linealmente isométricamente isomorfo a 
+        \(\ell_\infty(\mathbb{Z})\).
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio de Banach y \(Y \subset  X\) un subespacio. Fija \(x\in X\) y denota 
+        \[
+        d=\inf \{ \|x-y\|: y \in Y \}
+        \]
+        
+      </p>
+      <p>
+        Si \(d>0\) prueba que existe \(\varphi\in X^*\) tal que \(\varphi|_Y=0\), \(\varphi(x)=1\) 
+        y \(\|\varphi\|=1/d\).
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios de Banach. En el producto cartesiano 
+        define 
+        \begin{eqnarray*} 
+        \|(x,y)\|_1&=&\|x\|_X+\|y\|_y \\
+        \|(x,y)\|_\infty &=& \max\{\|x\|_X, \|y\|_Y \}
+        \end{eqnarray*}
+        Prueba que ambas normas hacen \(X\times Y\) un espacio de Banach y que 
+        el dual de \((X\times Y,\|\cdot\|_1)\)  es \((X^*\times Y^*, \|\cdot\|_\infty)\).
+      </p>
+
+
+    </div>
+
 </body>
