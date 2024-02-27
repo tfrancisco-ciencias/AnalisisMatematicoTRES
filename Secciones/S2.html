@@ -268,6 +268,34 @@
               para todo \(w\in W\cap P\) entonces existe \(F\), funcional lineal en \(X\), 
               tal que \(F|_{W}=f\) y \(F(x)\geq 0\) para todo \(x\in P\).
             </p>
+            <p>
+              Sugerencias: 
+              <ol>
+                <li>
+                  Para \(x\in X\) define 
+                  \begin{eqnarray*} 
+                    A=\{ y\in W : x\leq y \} \\
+                    B= \{z\in W : z \leq x \}
+                  \end{eqnarray*}
+                  Prueba que \(A\ne \emptyset, B\ne \emptyset\). Hint: para \(B\) considera \(-x\).
+                </li>
+                <li>
+                  Para \(x\in X\) define 
+                  \[
+                  \rho(x)=\inf\{f(y)| y\in A \}
+                  \]
+                  Prueba que \(\rho\) está bien definida y es sublineal.
+                </li>
+                <li>
+                  Prueba que \(f(w)\leq \rho(w)\) para todo \(w\in W\).
+                </li>
+                <li>
+                  Aplica un Teorema de extensión para encontrar \(F:X\to \mathbb{R}\) 
+                  una extensión lineal de \(f\) que satisface \(F(x)\leq \rho(x)\) 
+                  para toda \(x\in X\). Finalmente prueba \(F(x)\geq 0\) para toda \(x\in P\).
+                </li>
+              </ol>
+            </p>
 
           </li>
         </ol>
