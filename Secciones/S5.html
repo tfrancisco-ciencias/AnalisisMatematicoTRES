@@ -80,6 +80,100 @@
    ///////////////////////////////// -->
 
 
+   <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(X\) un conjunto. Una topología en \(X\) es una familia de subcojuntos de  
+        \(X\), \(\tau\),  que satisface 
+        <ol>
+            <li>
+                \(\tau\) es cerrado bajo uniones arbitrarias, es decir si 
+                \(\{U_i\}_{i\in I}\subset \tau\) es una colección arbitraria 
+                (numerable, no numerable, etc) entonces \(\cup_{i\in I}U_i \in \tau\).
+            </li>
+            <li>
+                \(\tau\) es cerrado bajo intersecciones finitas, es decir si \(n\) es un natural 
+                arbitrario y 
+                \(U_1,\dots, U_n \in \tau \) entonces \(\cap_{i=1}^n U_i \in \tau\).
+            </li>
+            <li>
+                \(\emptyset, X \in \tau\).
+            </li>
+        </ol>
+        A los subconjuntos de \(\tau\) se les llama subconjuntos abiertos.
+    </p>
+    <p>
+        EL interior de un subconjunto \(A \subseteq X\) es la unión de todos los subconjuntos 
+        abiertos contenidos de \(A\):
+        \(\textrm{int}(A)=\cup \{ U\in \tau : U \subseteq A\}\)
+    </p>
+    <h3> Ejemplos </h3>
+    <ol type="a">
+        <li>
+            Las familias  \(\tau = \{\emptyset, X\}\) y \(\tau=P(X)\) (la potencia de \(X\)) son dos topologías 
+            en \(X\). Tomando el orden dadan por la contención, la primera es la más pequeña y la segunda la más grande.
+        </li>
+        <li>
+            Sea \((X,d)\) un espacio métrico. Definimos una topología en \(X\) de la siguiente manera:
+            un subconjunto \(U\subseteq X\) es abierto si para todo \(x_0\in U\) existe 
+            \(r>0\) tal que \(B_r(x_0)\subseteq U\).
+        </li>
+    </ol>
+       <p>
+        Una base para la topología \(\tau\) es una familia de abiertos, \(\beta \subseteq \tau \)
+        que satisface: para todo \(U\in \tau\) existen una familia de elementos de la 
+        base \(\{ V_i\}_{i\in I} \subset \beta\) tal que \(U=\cup_{i\in I}V_i\). Por 
+        ejemplo para la topología generada por un espacio métrico \((X,d)\), una base es la 
+        familia de bolas abiertas, \(\beta=\{ B_r(x): r>0, x\in X\}\).
+       </p> 
+       <p>
+        Observación: la intersección arbitraria de topologías en un conjunto \(X\) es de nuevo  una topología 
+        en \(X\). Así pues dado un subconjunto \(F \subseteq X\)
+       </p>
+       
+   </div>
+
+   <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sean \((X,\tau_X)\) y \((Y,\tau_Y)\) dos espacios  topológicos. Decimos que una función 
+        \(f:X\to Y\) es continua (con respecto a las topologías \(\tau_X\), \(\tau_Y\)) sii 
+        para todo \(U\in \tau_Y\), \(f^{-1}(U)\in \tau_X\). Es decir, imagen inversa de abiertos es abierta.
+    </p>
+
+   </div>
+
+
+   <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \((X,\tau)\) un espacio topológico y \(x_0\in X\). Una vecindad de \(x_0\) es un subconjunto 
+        \( A \subseteq X\) para el cual existe un  \(U  \in \tau \) con \(x\in U \subseteq A\). En otras palabras 
+        es un conjunto para el cual \(x\) está en su interior. 
+    </p>
+    <p>
+        Una base de vecindades de \(x_0\) es una  familia de vecindades, \(\beta_{x_0}\), 
+        con la propiedad de que dada \(A\), cualquier vecindad de \(x_0\), existe \(B \in \beta_{x_0}\),
+        con la propiedad de que \(B \subseteq A\).
+    </p>
+    <p>
+        Por ejemplo para la topología generada por un espacio métrico, \((X,d)\), 
+        la familia \(\{B_{1/n}(x) \}_{n=1}^\infty\), es una base de vecindades en \(x_0\).
+    </p>
+</div>
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \((X,\tau)\) un espacio topológico y \((x_\lambda)_{\lambda \in \Lambda}\) una red en \(X\). 
+        Decimos que la red converge al punto \(x\in X\) si para toda \(V\), vecindad de \(x\), 
+        existe \(\lambda_0 \in \Lambda\) que satisface, \(x_\lambda \in V\) para todo \(\lambda \geq \lambda_0\).
+    </p>
+</div>
+
+
+
    <div class="teorema-box">
     <h2 class="number-title"> Teorema </h2>
     <p>
