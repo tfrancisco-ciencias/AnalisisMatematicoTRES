@@ -146,18 +146,14 @@
             familia que estamos intersectando para la definición de \(\tau_{\mathcal{U}}\)
             es no vacía y por lo tanto \(\tau_{\mathcal{U}}\) está bien definida.
        </p>
-       
-   </div>
-
-   <div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
-    <p>
+       <h3> Continuidad</h3>
+       <p>
         Sean \((X,\tau_X)\) y \((Y,\tau_Y)\) dos espacios  topológicos. Decimos que una función 
         \(f:X\to Y\) es continua (con respecto a las topologías \(\tau_X\), \(\tau_Y\)) sii 
         para todo \(U\in \tau_Y\), \(f^{-1}(U)\in \tau_X\). Es decir, imagen inversa de abiertos es abierta.
     </p>
-
    </div>
+
 
 
    <div class="definicion-box">
@@ -207,19 +203,23 @@
         <h2 class="number-title"> Definición </h2>
         <p>
             Sea \(X\) un conjunto cualquiera y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
-            Dada una familia \(\mathcal{F}\) de funciones de \(X\) en \(Y_i\) la 
-            topología débil generada por la familia se define como la 
+            Para cada \(i\in I\) supón que tenemos \(f_i: X\to Y_i\)  una función cualquiera
+            y denotemos \(\mathcal{F}=\{f_i\}_{i\in I}\). Nota: los espacios \(Y_i\) pueden repetirse. 
+        </p>
+        <p>
+            La 
+            topología débil generada por la familia \(\mathcal{F}\) se define como la 
             topología más débil (más chica) que hace a todas las funciones de \(\mathcal{F}\) continuas.
             Es decir es la topología generada por la familia de subconjuntos:
             \[
-            \{f^{-1}(U): f\in \mathcal{F},f:X\to Y_i, U\in \tau_i\}
+            \{f_i^{-1}(U_i): f_i:X\to Y_i, U_i \in \tau_i\}
             \]
         </p>
         <p>
             Otra forma de escribirlo es: 
             \[
             \tau_{\mathcal{F}}:=\cap\left\{\tau \subset P(X): \textrm{\(\tau\) es topología y} 
-            \,  f^{-1}(\tau_i)\subseteq \tau, \forall f:X\to Y_i, f\in \mathcal{F} 
+            \,  f_i^{-1}(\tau_i)\subseteq \tau, \forall i \in I
              \right\}
             \]
         </p>
@@ -233,13 +233,12 @@
         <h2 class="number-title" id="Lema:BaseTopoDebil"> Lema</h2>
         <p>
             Sea \(X\ne \emptyset\), \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de 
-            espacios topológicos y \(\mathcal{F}\) una familia de funciones de 
-            \(X\) en \(Y_i\). Para cada \(i\) supongamos que \(\beta_i\) es una 
+            espacios topológicos y \(\mathcal{F}=\{f_i:X\to Y_i\}\) una familia de funciones. 
+            Para cada \(i\) supongamos que \(\beta_i\) es una 
             base para \(\tau_i\). La familia 
             \[
-            \beta:=\left\{\cap_{s=1}^n f_s^{-1}(U_s): n\in \mathbb{N},
-            f_s\in \mathcal{F}, f_s:X\to Y_{i_s}, U_{i_s}\in \beta_{i_s},
-            s=1,\dots, n\right\}
+            \beta:=\left\{\cap_{s=1}^n f_{i_s}^{-1}(U_{i_s}): n\in \mathbb{N},
+            i_1,\dots, i_n \in I, U_{i_s}\in \beta_{i_s} \right\}
             \]
             es una base para \(\tau_{\mathcal{F}}\), es decir, para todo \(V \in \tau_{\mathcal{F}}\)
             existe una familia de conjuntos \( \{V_j\}_{j\in J}\subseteq  \beta\) tal que 
@@ -293,8 +292,8 @@
     <div class="prop-box">
         <h2 class="number-title" id="Prop:RedesConvergentesTopDebil"> Proposición </h2>
         <p>
-            Sea \(X\) un conjunto y \((Y,\tau_Y)\) un espacio topológico. 
-            Sea  \(\mathcal{F}\) una familia de funciones de \(X\) en \(Y\) y 
+            Sea \(X\) un conjunto y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
+            Sea  \(\mathcal{F}=\{f_i:X\to Y_i\}_{i\in I}\) una familia de funciones y 
             dotemos a \(X\) con la topología débil generada por \(\mathcal{F}\).
         </p>
         <p>
