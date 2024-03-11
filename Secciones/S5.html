@@ -100,12 +100,17 @@
                 \(\emptyset, X \in \tau\).
             </li>
         </ol>
-        A los subconjuntos de \(\tau\) se les llama subconjuntos abiertos.
+        A los subconjuntos de \(\tau\) se les llama subconjuntos abiertos. Un conjunto se llama cerrado si 
+        su complemento es abierto.
     </p>
     <p>
-        EL interior de un subconjunto \(A \subseteq X\) es la unión de todos los subconjuntos 
+        El interior de un subconjunto \(A \subseteq X\) es la unión de todos los subconjuntos 
         abiertos contenidos de \(A\):
-        \(\textrm{int}(A)=\cup \{ U\in \tau : U \subseteq A\}\)
+        \(\textrm{int}(A)=\cup \{ U\in \tau : U \subseteq A\}\).
+    </p>
+    <p>
+        La cerradura de un subconjunto \(A\subseteq X\) es la intersección de todos los subconjuntos 
+        cerrados que contienen a \(A\): \(\overline{A}=\cap\{ F: A\subseteq F, F^c \in \tau\}\).
     </p>
     <h3> Ejemplos </h3>
     <ol type="a">
@@ -119,16 +124,27 @@
             \(r>0\) tal que \(B_r(x_0)\subseteq U\).
         </li>
     </ol>
+    <h3> Base </h3>
        <p>
         Una base para la topología \(\tau\) es una familia de abiertos, \(\beta \subseteq \tau \)
         que satisface: para todo \(U\in \tau\) existen una familia de elementos de la 
-        base \(\{ V_i\}_{i\in I} \subset \beta\) tal que \(U=\cup_{i\in I}V_i\). Por 
+        base \(\{ V_j\}_{j\in J} \subset \beta\) tal que \(U=\cup_{j\in I}V_j\). Por 
         ejemplo para la topología generada por un espacio métrico \((X,d)\), una base es la 
         familia de bolas abiertas, \(\beta=\{ B_r(x): r>0, x\in X\}\).
        </p> 
+       <h3> Topología generada </h3>
        <p>
         Observación: la intersección arbitraria de topologías en un conjunto \(X\) es de nuevo  una topología 
-        en \(X\). Así pues dado un subconjunto \(F \subseteq X\)
+        en \(X\). Así pues dado una familia de subsonjuntos  \( \mathcal{U} \subseteq P(X)\) se define la 
+        topología generada por \(\mathcal{U}\) como 
+        \[
+        \tau_{\mathcal{U}}=\cap\{ \tau \subseteq P(X): \textrm{\(\tau\) es topología y \(\mathcal{U}\subseteq \tau \)} \} 
+        \]
+        Nota que si tomamos \(\tau\) como el conjunto potencia de \(X\) entonces 
+        en la definición anterior \(\mathcal{U}\subseteq \tau\). En particular 
+             la 
+            familia que estamos intersectando para la definición de \(\tau_{\mathcal{U}}\)
+            es no vacía y por lo tanto \(\tau_{\mathcal{U}}\) está bien definida.
        </p>
        
    </div>
@@ -186,80 +202,47 @@
 
 
   
-    <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>
-            Sea \(X\) un conjunto Una topología en \(X\) es una familia 
-            de subconjuntos de \(X\), denotada por \(\tau\), que satisface:
-            <ol>
-                <li> \(\emptyset, X \in \tau\).</li>
-                <li> Si \( \mathcal{U} \subseteq \tau \) 
-                    es una familia <b>arbitraria</b> de elementos en \(\tau\) entonces 
-                    \(\cup \mathcal{U}\in \tau\).</li>
-                <li> Si \(\mathcal{U} \tau \) es una familia <b>finita</b> 
-                    de elementos en \(\tau\) entonces \(\cap \mathcal{U}\in \tau\).
-                </li>
-            </ol>
-            Por ejemplo, todo conjunto \(X\) tiene al menos dos topologías: la 
-            topología más chica, \(\tau=\{\emptyset,X\}\); la más grande que es la potencia de \(X\), 
-            \(\tau=\{A: A\subseteq X\}\).
-        </p>
-        <p>
-            Dados dos topologiás \(\tau_1,\tau_2\) en \(X\) decimos que \(\tau_1\)
-            es más débil o más chica que \(\tau_2\) sii \(\tau_1 \subseteq \tau_2.\)
-        </p>
-        <p>
-            Observación: la intersección arbitraria de topologías vuelve a hacer una 
-            topología.
-        </p>
-        <p>
-            Dada una función entre dos espacios topológicos \(f:(X,\tau_X)\to (Y,\tau_Y)\)
-            decimos que es continua sii para todo \(U\in \tau_Y\), \(f^{-1}(U)\in \tau_X\). Por 
-            \(C((X,\tau_X),(Y,\tau_Y))\) denotamos al conjunto de funciones continuas de 
-            \((X,\tau_X)\) a \((Y,\tau_Y)\).
-        </p>
-    </div>
 
     <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
         <p>
-            Sea \(X\) un conjunto cualquiera y \((Y,\tau_Y)\) un espacio topológico. 
-            Dada una familia \(\mathcal{F}\) de funciones de \(X\) en \(Y\) la 
+            Sea \(X\) un conjunto cualquiera y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
+            Dada una familia \(\mathcal{F}\) de funciones de \(X\) en \(Y_i\) la 
             topología débil generada por la familia se define como la 
-            topología más débil que hace a todas las funciones de \(\mathcal{F}\) continuas, 
-            es decir 
+            topología más débil (más chica) que hace a todas las funciones de \(\mathcal{F}\) continuas.
+            Es decir es la topología generada por la familia de subconjuntos:
             \[
-            \tau_{\mathcal{F}}:=\cap\left\{\tau: \textrm{\(\tau\) es topología y } 
-            \mathcal{F}\subseteq
-            C((X,\tau),(Y,\tau_Y)) \right\}
+            \{f^{-1}(U): f\in \mathcal{F},f:X\to Y_i, U\in \tau_i\}
             \]
         </p>
         <p>
-            observación: si tomamos \(\tau\) como el conjunto potencia de \(X\) entonces 
-            toda función de \(X\) en \(Y\) es continua en particular 
-            \(\mathcal{F}\subseteq C((X,\tau),(Y,\tau_Y))\) por lo que la 
-            familia que estamos intersectando para la definición de \(\tau_{\mathcal{F}}\)
-            es no vacía y por lo tanto \(\tau_{\mathcal{F}}\) está bien definida.
+            Otra forma de escribirlo es: 
+            \[
+            \tau_{\mathcal{F}}:=\cap\left\{\tau \subset P(X): \textrm{\(\tau\) es topología y} 
+            \,  f^{-1}(\tau_i)\subseteq \tau, \forall f:X\to Y_i, f\in \mathcal{F} 
+             \right\}
+            \]
         </p>
         <p>
-            Nota: la definición anterior sigue funcionando si cada elemento de 
-            \(\mathcal{F}\) tiene un codominio diferente, es decir, 
-            para cada \(f\) existe un espacio topológico \((Y_f,\tau_f)\) tal que 
-            \(f:X\to Y_f\).
+            
         </p>
+        
     </div>
 
     <div class="prop-box">
         <h2 class="number-title" id="Lema:BaseTopoDebil"> Lema</h2>
         <p>
-            La familia 
+            Sea \(X\ne \emptyset\), \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de 
+            espacios topológicos y \(\mathcal{F}\) una familia de funciones de 
+            \(X\) en \(Y_i\). Para cada \(i\) supongamos que \(\beta_i\) es una 
+            base para \(\tau_i\). La familia 
             \[
-            \beta:=\left\{\cap_{i=1}^n f_i^{-1}(U_i): n\in \mathbb{N},
-            f_1,\dots, f_n\in \mathcal{f},
-            U_1,\dots, U_n\in \tau_Y \right\}
+            \beta:=\left\{\cap_{s=1}^n f_s^{-1}(U_s): n\in \mathbb{N},
+            f_s\in \mathcal{F}, f_s:X\to Y_{i_s}, U_{i_s}\in \beta_{i_s},
+            s=1,\dots, n\right\}
             \]
             es una base para \(\tau_{\mathcal{F}}\), es decir, para todo \(V \in \tau_{\mathcal{F}}\)
-            existe una familia de conjuntos \( \{V_i\}_{i\in I}\subseteq  \beta\) tal que 
+            existe una familia de conjuntos \( \{V_j\}_{j\in J}\subseteq  \beta\) tal que 
             \(V=\cup_{i\in I}V_i\).
         </p>
     </div>
