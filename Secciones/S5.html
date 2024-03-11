@@ -22,7 +22,8 @@
               cer: "\\operatorname{cer}",
               inte: "\\operatorname{int}"
             },
-            tags: "ams" /* this part is for numbered equations */
+            tags: "ams" , /* this part is for numbered equations */
+            
           }
         };
       </script>
@@ -81,7 +82,8 @@
 
 
    <div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
+    <h2 class="number-title" id="Lema:DefIniciales"> Definición </h2>
+
     <p>
         Sea \(X\) un conjunto. Una topología en \(X\) es una familia de subcojuntos de  
         \(X\), \(\tau\),  que satisface 
@@ -132,6 +134,18 @@
         ejemplo para la topología generada por un espacio métrico \((X,d)\), una base es la 
         familia de bolas abiertas, \(\beta=\{ B_r(x): r>0, x\in X\}\).
        </p> 
+       <p>
+        Son equivalentes:
+        <ol>
+            <li>
+                \(\beta\) es una base.
+            </li>
+            <li>
+                para toda \(U\in \tau \) y para todo \(x\in U\) existe \(V \in \beta\) tal que 
+                \(x\in V \subseteq U\).
+            </li>
+        </ol>
+       </p>
        <h3> Topología generada </h3>
        <p>
         Observación: la intersección arbitraria de topologías en un conjunto \(X\) es de nuevo  una topología 
@@ -157,7 +171,7 @@
 
 
    <div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
+    <h2 class="number-title" id="Lema:DefPuntuales"> Definición </h2>
     <p>
         Sea \((X,\tau)\) un espacio topológico y \(x_0\in X\). Una vecindad de \(x_0\) es un subconjunto 
         \( A \subseteq X\) para el cual existe un  \(U  \in \tau \) con \(x\in U \subseteq A\). En otras palabras 
@@ -172,8 +186,31 @@
         Por ejemplo para la topología generada por un espacio métrico, \((X,d)\), 
         la familia \(\{B_{1/n}(x) \}_{n=1}^\infty\), es una base de vecindades en \(x_0\).
     </p>
+
+    <h3> Continuidad puntual</h3>
+    <p>
+        Sean \((X,\tau_X)\), \((Y,\tau_Y)\) espacios topológico y 
+        \(f:X\to Y\) una función. La función \(f\) es continua en 
+        \(x_0\in X\) sii para toda \(U\) vecindad de \(f(x_0)\) existe una vecindad \(V\), de \(x_0\), 
+        tal que \(V\subseteq f^{-1}(U)\).
+    </p>
+    <p>
+        La condición \(V\subseteq f^{-1}(U)\) es equivalente a \(f(V)\subseteq U\).
+    </p>
 </div>
 
+<div class="lema-box">
+    <h2 class="number-title"> Lema </h2>
+    <p>
+        Sean \((X,\tau_X)\), \((Y,\tau_Y)\) espacios topológico y 
+        \(f:X\to Y\) una función.
+    </p>
+    <p>
+        Entonces \(f\) es continua en \(X\) (ver <a href="#Lema:DefIniciales"> Definición 5.1</a>) si y sólo si \(f\) es continua en \(x\) 
+        para todo \(x\in X\) (ver <a href="#Lema:DefPuntuales"> Definición 5.2</a>).
+    </p>
+
+</div>
 
 <div class="definicion-box">
     <h2 class="number-title"> Definición </h2>
@@ -182,8 +219,39 @@
         Decimos que la red converge al punto \(x\in X\) si para toda \(V\), vecindad de \(x\), 
         existe \(\lambda_0 \in \Lambda\) que satisface, \(x_\lambda \in V\) para todo \(\lambda \geq \lambda_0\).
     </p>
+    <p>
+        En tal caso escribimos \(\lim_{\lambda} x_\lambda = x\) o si queremos aclarar la topología 
+        que se usa podemos escribir \(\lim_{\lambda} x_\lambda \overset{\tau}{=} x \).
+    </p>
 </div>
 
+<div class="teorema-box">
+    <h2 class="number-title"> Teorema </h2>
+    <p>
+        Sea \((X,\tau)\) un espacio topológico y \(E\subseteq X\).
+    </p>
+    <p>
+        Enotnces \(x\in \overline{E}\) si y sólo si existe una red de 
+        elementos de \(E\), \((x_\lambda)_{\lambda \in \Lambda} \subset E\), tal que \(\lim_{\lambda}x_\lambda =x\).
+    </p>
+
+</div>
+
+
+
+<div class="teorema-box">
+    <h2 class="number-title"> Teorema </h2>
+    <p>
+        Sean \((X,\tau_X)\), \((Y,\tau_y)\)  espacios topológicos y \(f:X\to Y\). 
+    </p>
+    <p>
+        Enotnces \(f\) es continua en \(x_0\) si y sólo si para toda red en \(X\), 
+        \((x_\lambda)_{\lambda \in \Lambda}\) con \(\lim_{\lambda} x_\lambda =x_0 \)
+        se cumple \(\lim_{\lambda }f(x_\lambda)=f(x_0)\).
+
+    </p>
+
+</div>
 
 
    <div class="teorema-box">
@@ -193,6 +261,12 @@
     </p>
     <p>
       Las topologías son iguales si y sólo si tienen las mismas redes convergentes.
+    </p>
+    <p>
+        Es decir
+        \[
+        \lim_{\lambda} x_\lambda \overset{\tau_1}{=}x \Leftrightarrow \lim_{\lambda} x_\lambda \overset{\tau_2}{=}x
+        \]
     </p>
   </div>
 
@@ -299,8 +373,8 @@
         <p>
             Una red \((x_\alpha)_{\alpha\in A}\) en \(X\) converge a 
             un punto \(x\) en la topología débil \(\tau_{\mathcal{F}}\) si y sólo si,
-            para toda \(f\in \mathcal{F}\), \(\lim_{\alpha \in A}f(x_\alpha)=f(x)\)
-            en \(Y\).
+            para toda \(f_i\in \mathcal{F}\), \(\lim_{\alpha \in A}f_i(x_\alpha)\overset{\tau_i}{=}f_i(x)\)
+            en \(Y_i\).
         </p>
     </div>
  
@@ -308,8 +382,8 @@
     <div class="prop-box">
         <h2 class="number-title"> Proposición </h2>
         <p>
-            Sea \(X\) un conjunto y \((Y,\tau_Y)\) un espacio topológico. 
-            Sea  \(\mathcal{F}\) una familia de funciones de \(X\) en \(Y\) y 
+            Sea \(X\) un conjunto y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
+            Sea  \(\mathcal{F}=\{f_i:X\to Y_i\}_{i\in I}\) una familia de funciones y 
             dotemos a \(X\) con la topología débil generada por \(\mathcal{F}\).
         </p>
         <p>
@@ -318,7 +392,7 @@
             tal que \(f(x_1)\ne f(x_2)\).
         </p>
         <p>
-            Si \((Y,\tau_Y)\) es Hausdorff y \(\mathcal{F}\) separa los 
+            Si \((Y_i,\tau_i)\) es Hausdorff para todo \(i\) y \(\mathcal{F}\) separa los 
             puntos de \(X\) entonces \((X,\tau_{\mathcal{F}})\) es Hausdorff.
         </p>
     </div>
@@ -328,7 +402,7 @@
         <p>
             Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
             y \(X^*\) su dual. Dado \(x\in X\) definimos \(\hat{x}:X^*\to \mathbb{F}\)
-            por \(\hat{x}(\varphi)=\varphi(x)\).
+            por \(\hat{x}(\varphi)=\varphi(x)\). También se suele denotar \(\iota_x=\hat{x}\).
         </p>
         <p>
             La topología débil generada por 
@@ -345,16 +419,20 @@
 
     </div>
 
+
+
     <div class="prop-box">
         <h2 class="number-title"> Proposición </h2>
         <p>
-            En el espacio topológico \((X^*,\omega^*)\) las operaciones de suma 
-            y producto por un escalar son continuas.
+            Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
+            y \(X^*\) su dual dotado con la topología \(\omega^*\). Entonces las operaciones de suma 
+            y producto escalar son continuas en la topología \(\omega^*\).
         </p>
-
         
+        
+    </div>
 
-        <button class="respButton hvr-grow "> Demostración </button>
+    <!--     <button class="respButton hvr-grow "> Demostración </button>
         <div class="resp-box flexbox ">
         <p>
             Usando redes es suficiente probar que si \((\varphi_\alpha)_{\alpha \in A}\)
@@ -403,7 +481,7 @@
         </div>
         
         
-     </div>
+     </div>-->
 
     <div class="nota-box">
         <h2 class="number-title"> Nota</h2>
