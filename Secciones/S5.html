@@ -543,8 +543,45 @@
           </div>
         </div>
 
+    </div>
 
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2> 
+        <p>
+            Sabemos que \((\ell_1(\mathbb{N}),\|\cdot\|_1 )^*\) es linealmente 
+            isométricamente isomorfo a \((\ell_\infty, \|\cdot\|)\), donde la 
+            identificación está dada por \(y\in \ell_1(\mathbb{N}) \mapsto \varphi_y \in \ell_\infty(\mathbb{N})\)
+            donde 
+            \[
+            \varphi(y)=\sum_{k=1}^\infty x(k)y(k)
+            \]
+        </p>
+        <p>
+            Por lo tanto, con este isomorfismo, podemos pasar la topología \(\omega^*\) en \(\ell_1(\mathbb{N})\)
+            a \(\ell_\infty(\mathbb{N})\), a la cual vamos a seguir llamando la topología \(\omega^*\). Es decir, 
+            dada una red \((x_\lambda)_{\lambda \in \Lambda} \subset \ell_\infty(\mathbb{N})\) y 
+             \(x\in \ell_\infty(\mathbb{N})\) entonces: 
+             \begin{eqnarray*} 
+             \lim_\lambda x_\lambda & = & x \quad \textrm{en \((\ell_\infty(\mathbb{N}), \omega^*)\)} \\
+             & \Leftrightarrow  & \\
+             \lim_{\lambda }\varphi_{x_\lambda} &=& \varphi_x \quad \textrm{ en \((\ell_1(\mathbb{N}), \omega^*) \) } \\
+             & \Leftrightarrow & \\
+            \lim_{\lambda} \sum_{n=1}^\infty x_\lambda(k)y(k) &= &\sum_{n=1}^\infty x(k)y(k), \quad \textrm{para todo \(y\in \ell_1(\mathbb{Z})\)}
+             \end{eqnarray*} 
+            Nota: lo importante para entender la convergencia en \((\ell_\infty(N), \omega^*)\) son la primera y última equivalencias.
+        </p>
+       
+            <p> 
+                Sea \((x_\lambda)_{\lambda \in \Lambda } \subset \ell_\infty(\mathbb{N})\) una red tal que 
+                existe \(M>0 \) con, \(\|x_\lambda \|_\infty \leq M\), para toda \(\lambda\). Prueba que 
+                \(\lim_{\lambda}x_\lambda=x\) en \((\ell_\infty(\mathbb{N}), \omega^*)\) si y sólo si, para toda \(k\in \mathbb{N}\), 
+                \(\lim_{\lambda}x_\lambda(k)=x(k)\) en el campo. Es decir, en conjuntos acotados convergencia en la topología 
+                \(\omega^*\) coincide con la convergencia puntual.
+            </p>
         
+
     </div>
 </body>
 
