@@ -177,6 +177,20 @@
             </div>
           </div>
   
+
+
+          <div class="lema-box">
+            <h2 class="number-title"> Lema </h2>
+            <p>
+              Sean \(X,Y\) espacios vectoriales y \(T:X\to Y\) una función lineal. Denotamos
+              \(M=\ker(T)\). Para \([x]\in X/M\) denota \(S([x])=Tx\). Prueba que \(S\) no depende 
+              del representante de la clase \([x]\) y que define una función lineal 
+              \(S:X/M \to T(Y)\) que es lineal y biyectiva.
+            </p>
+          </div>
+
+
+
           <div class="teorema-box">
             <h2 class="number-title"> Teorema </h2>
             <h3> Mapeo abierto</h3>
@@ -198,8 +212,17 @@
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \(X\) un espacio vectorial y \(\|\cdot\|_1, \||cdot\|_2\) dos  normas 
-              que hacen \(X\) espacio de Banach y tal que, existe una constante \(c>0\) con  
+              Recuerda que dos normas, \(\|\cdot\|_1\) y \(\|\cdot\|_2\) dos normas en un espacio vectorial 
+              \(X\). Decimos que son equivalentes si existen constantes \(c,d>0\) tales que 
+              \begin{eqnarray*} 
+                \|x\|_1 \leq c \|x\|_2,\\
+                \|x\|_2 \leq d \|x\|_1
+              \end{eqnarray*}
+              para todo \(x\in X\).
+            </p>
+            <p>
+              Sea \(X\) un espacio vectorial y \(\|\cdot\|_1, \|\cdot\|_2\) dos  normas 
+              que hacen a \(X\) un espacio de Banach y tal que existe una constante \(c>0\) con  
                \(\|x\|_1\leq c \|x\|_2\), para todo \(x\in X\). Prueba que \(\|\cdot\|_1\) y 
                \(\|\cdot\|_2\) son equivalentes.
             </p>
@@ -213,6 +236,15 @@
             </p>
           </div>
 
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(X\) un espacio de Banach y \(M\subseteq X\) un subespacio de dimensión finita. Prueba que 
+              \(M\) es cerrado.
+            </p>
+
+          </div>
+
 
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
@@ -222,128 +254,31 @@
               \(T:X\to Y\), biyección, con \(T\) y \(T^{-1}\) operadores lineales acotados.
              </p>
           </div>
+  
 
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+                Sea \(X\) un espacio de Banach y \(M \subseteq X\) un espacio finito dimensional. Prueba que 
+                para cualquier \(x_0\in X\) existe un \(m_0\in M\) tal que 
+                \[
+                \| [x_0]\|=\|x_0-m_0\|.
+                \]
+            </p>
 
+          </div>
 
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sean \(X,Y\) dos espacios de Banach y \(T:X\to Y\) un operador lineal acotado.
+            </p>
+            <p>
+              Prueba que \(X/\ker(T)\) es isomorfo, en la categoría de espacios de Banach, a 
+              \(T(X)\) si y sólo si \(T(X)\) es cerrado en \(Y\). 
+            </p>
+          </div>
 
-  
-          <div class="definicion-box">
-            <h2 class="number-title"> Definición </h2>
-            <p>
-              Sea \(f:X\to Y\) una función. La gráfica de \(f\) se define como 
-              \[
-              G(f)=\{(x,y)\in X\times Y: y=f(x)\}.
-              \]
-            </p>
-            <p>
-              Si \(X,Y\) son espacios vectoriales y \(f\) es lineal entonces 
-              \(G(f)\) es un subespacio de \(X\times Y\).
-            </p>
-  
-          </div>
-          
-          
-          <div class="prop-box">
-            <h2 class="number-title"> Lema</h2>
-            <p>
-              Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) lineal.
-            </p>
-            <p>
-              En \(X\times Y\) consideramos la norma dada por \(\|(x,y)\|=\|x\|+\|y\|\). Entonces 
-              \(G(T)\) es cerrado en \(X\times Y\) sii siempre que  una sucesión \((x_n)_{n=1}^\infty\subseteq X\)
-              satisface \(\lim_{n\to \infty} x_n=x\) en \(X\) y \(\lim_{n\to \infty}Tx_n=y\) en \(Y\)
-              entonces \(y=Tx\).
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/bY0F49TkNZA?start=4275" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="prop-box">
-            <h2 class="number-title"> Corolario</h2>
-            <p>
-              Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) un operador lineal acotado. Entonces 
-              \(G(T)\) es un subespacio cerrado de \(X\times Y\).
-            </p>
-  
-          </div>
-  
-  
-  
-          <div class="teorema-box">
-            <h2 class="number-title"> Teorema</h2>
-            <h3> Gráfica cerrada</h3>
-            <p>
-              Sean \(X,Y\) espacios de Banach y \(T:X\to Y\) lineal.
-            </p>
-            <p>
-              \(T\) es acotado sii \(G(T)\) es cerrada.
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/bY0F49TkNZA?start=4654" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="prop-box">
-            <h2 class="number-title"> Proposición </h2>
-            <p>
-              Sea \(X\) un espacio de Banach y \(Y,Z\) subespacios cerrados de \(X\) con 
-              <ul>
-                <li>
-                  \(X=Y+Z\).
-                </li>
-                <li>
-                  \(Y\cap Z=\{0\}\).
-                </li>
-              </ul>
-              Entonces la proyección \(E:X\to Y\) es acotada.
-            </p>
-  
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/95twdVecbIQ?start=202" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-            
-  
-          </div>
-  
-  
-          <div class="prop-box">
-            <h2 class="number-title"> Corolario</h2>
-            <p>
-              Sea \(X\) un espacio de Banach y \(Y,Z\leq X\) subespacios cerrados de \(X\)
-              con \(Y\cap Z=\{0\}\).
-            </p>
-            <p>
-              \(Y+Z\) es cerrado sii existe \(C>0\) tal que 
-              \(\|y\| \leq C\|y+z\|\), para todos \(y\in Y,z\in Z\).
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/95twdVecbIQ?start=831" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-          </div>
-  
         </body>
       
     </head>
