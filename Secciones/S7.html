@@ -183,10 +183,19 @@
             <h2 class="number-title"> Lema </h2>
             <p>
               Sean \(X,Y\) espacios vectoriales y \(T:X\to Y\) una función lineal. Denotamos
-              \(M=\ker(T)\). Para \([x]\in X/M\) denota \(S([x])=Tx\). Prueba que \(S\) no depende 
-              del representante de la clase \([x]\) y que define una función lineal 
-              \(S:X/M \to T(Y)\) que es lineal y biyectiva.
+              \(M=\ker(T)\). Para \([x]\in X/M\) denota \(S([x])=Tx\). 
             </p>
+            <ol>
+              <li>
+                Prueba que \(S\) no depende 
+              del representante de la clase \([x]\) y que define una función
+              \(S:X/M \to T(Y)\) que es lineal y biyectiva.
+              </li>
+              <li>
+                Prueba que si además \(T\) es acotada entonces \(S\) también y 
+                \(\|T\|=\|S\|\).
+              </li>
+            </ol>
           </div>
 
 
@@ -256,17 +265,6 @@
           </div>
   
 
-          <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
-            <p>
-                Sea \(X\) un espacio de Banach y \(M \subseteq X\) un espacio finito dimensional. Prueba que 
-                para cualquier \(x_0\in X\) existe un \(m_0\in M\) tal que 
-                \[
-                \| [x_0]\|=\|x_0-m_0\|.
-                \]
-            </p>
-
-          </div>
 
           <div class="ejercicio-box"> 
             <h2 class="number-title"> Ejercicio</h2>
@@ -278,6 +276,61 @@
               \(T(X)\) si y sólo si \(T(X)\) es cerrado en \(Y\). 
             </p>
           </div>
+
+
+
+
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+                Sea \(X\) un espacio de Banach y \(M \subseteq X\) un espacio finito dimensional. Prueba que 
+                para cualquier \(x_0\in X\) existe un \(m_0\in M\) tal que 
+                \[
+                \| [x_0]\|=\|x_0-m_0\|.
+                \]
+            </p>
+            <p>
+              Sugerencia: utiliza la compacidad de las bolas cerradas relativas a \(M\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sea \(X\) un epacio vectorial normado y \(M\subseteq X\) un subespacio cerrado. Prueba 
+              que si \(X\) es separable entonces \(X/M\) también.
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(X\) un espacio vectorial normado y \(M\subseteq X\) un subespacio 
+              cerrado propio de \(X\). 
+            </p>
+            <p>
+              Por \(M^\perp\) denotamos al conjuntos de \(f\in X^*\) tal que 
+              restringidas a \(M\) sean idénticamente cero. Nota que \(M^\perp\)
+              es un subespacio cerrado de \(X^*\).
+            </p>
+            <ol>
+              <li>
+                Prueba que \((X/M)^*\) es isométricamente isomorfo a 
+                \(M^\perp\). Sugerencia: considera la función 
+                \(T:M^\perp (X/M)^*\), dada por \((Tf)([x])=f(x)\), para 
+                \(f\in M^\perp\). Inicia probando que \(T\) está bien definida.
+              </li>
+              <li>
+                Prueba que \(\|[x]\|=\max\{ |f(x)|: f\in M^\perp, \|f\|=1\}\). Sugerencia:
+                usa el Teorema de Extensión de Hahn-Banach.
+              </li>
+            </ol>
+          </div>
+
 
         </body>
       
