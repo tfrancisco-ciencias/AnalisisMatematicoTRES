@@ -162,7 +162,7 @@
           </div>
           
           <div class="teorema-box">
-            <h2 class="number-title"> Teorema </h2>
+            <h2 class="number-title" id="Teo:BanachIsomorfismo"> Teorema </h2>
             <p>
               Sean \(X\), \(Y\) espacios de Banach y sea \(T:X\to Y\) lineal acotada. Si 
               \(T\) es biyectiva entonces \(T^{-1}\) existe y es lineal acotada.
@@ -246,13 +246,61 @@
           </div>
   
 
+
+
+          <div class="ejercicio-box"> 
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sean \(X,Y\) dos espacios de Banach y \(T:X\to Y\) un operador lineal acotado.
+            </p>
+            <p>
+              Prueba que \(X/\ker(T)\) es isomorfo, en la categoría de espacios de Banach, a 
+              \(T(X)\) si y sólo si \(T(X)\) es cerrado en \(Y\). 
+            </p>
+          </div>
+
+          
+          <div class="ejercicio-box">
+            <h2 class="number-title" id="Ejer:Vecindades&Suprayectividad"> Ejercicio </h2>
+            <p>
+              Sea \(X\) un espacio vectorial normado. Para \(A\subseteq X\) no vacío y \(\varepsilon > 0\) 
+              definimos la vecindad de radio \(\varepsilon\) como 
+              \[
+              V_\varepsilon(A)=\{x\in X: \textrm{existe \(a\in A\) con \(\|x-a\|< \varepsilon \)}\}
+              \] 
+            </p>
+            <ol type="i">
+              <li>
+                Prueba que para toda \(r>0\), \(rV_\varepsilon(A)=V_{r\varepsilon}(rA)\)
+              </li>
+              <li>
+                Supón que \(X\) es un espacio de Banach, \(Y\) un espacio vectorial normado y 
+                \(T:X\to Y\) lineal acotado que satisface: existen \(R >0\) y \(\varepsilon\in (0,1)\)  tal que 
+                \[
+                (Y)_1 \subseteq V_\varepsilon(T((X)_R))
+                \]
+                Prueba que \(T\) es suprayectiva.
+                <p>
+                  Sugerencia: revisa la prueba del <a href="#Teo:BanachIsomorfismo"> Teorema 7.5</a> 
+                  para probar que existe \(M>0\) tal que \((Y)_1 \subseteq T((X)_M)\) y de ésta última 
+                  contención prueba que \(T\) es suprayectiva.
+                </p>
+              </li>  
+
+            </ol>
+          </div>
+
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
               Sea \(X\) un espacio de Banach separable. Pruba que existe un operador lineal 
               acotado y suprayectivo \(T:\ell_1(\mathbb{N})\to X\).
             </p>
+            <p>
+              Sugerencia: usa el <a href="#Ejer:Vecindades&Suprayectividad">Ejercicio 7.10</a>
+            </p>
           </div>
+
 
 
 
@@ -265,16 +313,6 @@
             </p>
           </div>
 
-          <div class="ejercicio-box"> 
-            <h2 class="number-title"> Ejercicio</h2>
-            <p>
-              Sean \(X,Y\) dos espacios de Banach y \(T:X\to Y\) un operador lineal acotado.
-            </p>
-            <p>
-              Prueba que \(X/\ker(T)\) es isomorfo, en la categoría de espacios de Banach, a 
-              \(T(X)\) si y sólo si \(T(X)\) es cerrado en \(Y\). 
-            </p>
-          </div>
 
 
 
