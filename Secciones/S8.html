@@ -206,6 +206,17 @@
 
 
         <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio</h2>
+          <p>
+            Prueba que el Teorema de la gráfica cerrada implica en Teorema del mapeo abierto.
+          </p>
+          <p>
+            Este ejercicio muestra que, en la categoría de espacios de Banach, ambos Teoremas 
+            son equivalentes.
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
           <h2 class="number-title"> Ejercicio </h2>
           <p>
             Sean \(X,Y\) espacios vectoriales normados con \(X\) finito dimensional. Prueba que 
@@ -233,11 +244,118 @@
             la función \(f:X\to Y\) es cerrada. Prueba que \(f\) es continua en \(X\).
           </p>
           <p>
+            Da un ejemplo que muestre que la compacidad de \(Y\) no puede ser omitida.
+          </p>
+          <p>
             Este en un análogo al teorema de la gráfica cerrada en espacios métricos.
           </p>
         </div>
 
 
+        <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+          <p>
+            Sean \(X,Y\) dos espacios vectoriales normados y dotamos a \(X\times Y\) con una 
+            norma que haga a las proyecciones continuas. Sea \(D \subseteq X\) un subespacio 
+            (no necesariamente cerrado). Decimos que el operador lineal \(T:D \to X\) es cerrado 
+            si su gráfica \(G(T)\subseteq X\times Y\) es un subespacio cerrado. 
+          </p>
+          <p>
+            Esta definición sustituye la definición de continuidad para operadores que no 
+            están definidos en todo el espacio, pues si \(G(T)\) es cerrado entonces  se cumple  que si  
+            \(\lim_{n\to \infty }x_n=x\) en \(X\) y \(\lim_{n\to \infty} Tx_n=y\) en \(Y\) entonces \(x\in D\)
+            y \(Tx=y\). Además por el Teorema de la gráfica cerrada, en la categoría de espacios de Banach, ésta definición 
+            es equivalente al de operador acotado.
+          </p>
+
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados y \(D\subseteq X\) un subespacio. 
+            Si \(D\) es cerrado y \(T:D\to Y\) es acotado entonces \(T\) es cerrado.
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <h3> Operador cerrado pero no acotado </h3>
+          <p>
+            Tomamos \(X=Y=C[0,1]\) con la norma uniforme y consideramos el subespacio \(D\)
+            como las funciones de clase \(C^1\). Definimos \(T:D\to Y\) por \(Tf=f'\).
+          </p>
+          <ol>
+            <li>
+              Prueba que \(T\) es un operador cerrado.
+            </li>
+            <li>
+              Prueba que \(T\) no es acotado, es decir 
+              \[
+              \sup_{\|f\|_\infty  \leq 1}\{ \|Tf\|_\infty\}=+\infty.
+              \]
+            </li>
+          </ol>
+          <p>
+
+          </p>
+        </div>
+
+
+        <div class="lema-box">
+          <h2 class="number-title"> Lema  </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados, \(D\subseteq X\) un subespacio y 
+            \(T:D\to Y\) un operador lineal cerrado. Si \(T\) es inyectivo y 
+            \(T^{-1}:T(D) \to X\) es su inversa  entonces \(T^{-1}\) también 
+            es un operador lineal cerrado.
+          </p>
+
+        </div>
+
+
+        <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados con \(X\) de Banach. Sea 
+            \(D\subseteq X\) un subespacio y \(T:D\to Y\) un operador lineal cerrado.
+          </p>
+          <p>
+            Si \(T(D)\) es de la segunda categoría en \(Y\) entonces: 
+          </p>
+          <ol>
+            <li>
+              \(T(D)=Y\), es decir, \(T\) es suprayectivo.
+            </li>
+            <li>
+              Existe una constante \(m>0\) tal que para todo \(x\in D\), \(\|Tx\| \geq m \|x\|\).
+            </li>
+            <li>
+              \(T^{-1}:Y\to X\) existe y es un operador lineal acotado.
+            </li>
+          </ol>
+
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title">  Ejercicio </h2>
+          <p>
+            Sea \(X\) un espacio vectorial normado y \(D\subseteq X\) un subespacio. Prueba que si 
+            \(T:D\to X\) es un operador cerrado entonces \(T-\lambda I\) tambien es cerrado. Nota: por \(I\)
+            denotamos a la función identidad en \(X\) y \(\lambda\) denota un escalar.
+          </p>
+
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(X\) un espacio vectorial normado y \(D_T,D_S\subseteq X\) dos subespacios. 
+            Si \(T:D_T \to X\) y \(S:D_S\to X\) son dos operadores cerrados ¿ se sigue que 
+            la suma \(T+S\), definida en \(D_A\cap D_B\), es un operador cerrado?
+          </p>
+        </div>
 
       </body>
     
