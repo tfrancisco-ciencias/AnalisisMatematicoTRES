@@ -20,7 +20,8 @@
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
             cer: "\\operatorname{cer}",
-            inte: "\\operatorname{int}"
+            inte: "\\operatorname{int}",
+            span: "\\operatorname{span}"
           },
           tags: "ams" /* this part is for numbered equations */
         }
@@ -63,14 +64,14 @@
   </header>
 
 <!-- This part is for title in tab-->
-<title id="Sec"> § 10 </title>
+<title id="Sec"> § 9 </title>
 
 
 <body class="flexbox card fondo-body">
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Espacios con producto interior </h1>     
+    <h1 class="number-title flexbox"> Bases ortonormales  </h1>     
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -78,277 +79,365 @@
 
   <!--    Contenido empiaza abajo
  ///////////////////////////////// -->
+
+
+
+
+ <div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <h3> Pitágoras</h3>
+  <p>
+      Sea \(H\) un espacio con 
+      producto interior positivo definido.
+  </p>
+  <p>
+      Si \(\{x_i\}_{i=1}^n\) es una familia tal que \(\langle x_i, x_j \rangle =0\)
+      para \(i\ne j\) entonces 
+      \[
+      \left\| \sum_{i=1}^n x_i\right\|^2 =\sum_{i=1}^n\|x_i\|^2
+      \]
+  </p>
+
+
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+      Sea \(H\)  un espacio de Hilbert 
+      y sea \(\{x_\alpha\}_{\alpha \in A}\) sea una familia ortogonal 
+      de vectores. 
+  </p>
+
+  <p>
+      Entonces \(\sum_{\alpha \in A} x_\alpha \)  converge en \(H\)  
+      sii \(\sum_{\alpha \in A}\|x_\alpha\|^2\) converge en \(\mathbb{R}\).
+  </p>
+  <p>
+      En tal caso se tiene 
+      \[
+      \left\| \sum_{\alpha \in A} x_\alpha \right\|^2=\sum_{\alpha \in A}\|x_\alpha\|^2
+      \]
+  </p>
+
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=3294" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Proposición </h2>
+  <p>
+       Sea \(H\) un espacio de Hilbert y 
+       sea \(\{x_\alpha\}_{\alpha \in A}\) un conjunto ortonormal y 
+       \(u\in H\). Entonces: 
+  </p>
+  <ol>    
+      <li>
+         Desigualdad de Bessel: 
+         \[\sum_{\alpha \in A}|\langle u, x_\alpha \rangle|^2 \leq \|u\|^2\]
+      </li>
+      <li>
+          La serie \(\sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha \)
+          converge y 
+          \[
+          u-\sum_{\alpha \in A} \langle u, x_\alpha \rangle \in (\left\{ x_\alpha\right\}_{\alpha \in A})^\perp
+          \]
+      </li>
+      <li>
+          \[
+          \left\| u-\sum_{\alpha \in A} \langle u, x_\alpha \rangle \right\|^2=
+          \|u\|^2 -\sum_{\alpha \in A} |\langle u, x_\alpha \rangle|^2
+          \]
+      </li>
+  </ol>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=4033" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+  
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Corolario</h2>
+  <p>
+      Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.
+  </p>
+  <p>
+      Sea \(\{y_\alpha\}_{\alpha \in A}\) un conjunto ortonormal y 
+      \(Y=\overline{\span(\{y_\alpha\}_{\alpha \in A})}\).
+  </p>
+  <p>
+      Si \(x_0=y_0+z_0\) con \(y_0\in Y\) y \(z_0\in Y^\perp\) entonces 
+      \[
+      y_0=\sum_{\alpha \in A} \langle x, y_\alpha \rangle y_\alpha
+      \]
+  </p>
+  <p>
+      Además, son equivalentes:
+      <ol>
+          <li>
+              \(u\in Y \),
+          </li>
+          <li>
+              \(u=\sum_{\alpha \in A}  \langle u,x_\alpha \rangle y_\alpha\)
+          </li>
+          <li>
+              \( \|u\|^2=\sum_{\alpha \in A}|\langle u, y_\alpha \rangle|^2 \)
+          </li>
+      </ol>
+  </p>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=118" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Si \(\{e_\alpha\}_{\alpha \in A}\) es un conjunto ortonormal, las 
+                siguientes condiciones son equivalentes.
+            </p>
+            <ol>
+                <li>
+                    para todo \(x\in H\):
+                    \[
+                    x=\sum_{\alpha \in A} \langle x, e_\alpha \rangle e_\alpha 
+                    \]
+                </li>
+                <li>
+                    para todos \(x,y\in H\):
+                    \[
+                    \langle x,y \rangle =\sum_{\alpha \in A} 
+                    \langle x,e_\alpha \rangle \langle e_\alpha, y\rangle 
+                    \]
+                </li>
+                <li>
+                    para todo \(x\in H\):
+                    \[
+                    \|x\|^2 =\sum_{\alpha \in A}|\langle x, e_\alpha \rangle|^2
+                    \]
+                </li>
+                <li>
+                    \(\{e_\alpha\}_{\alpha \in A}\) no está contenido propiamente 
+                    en otro conjunto ortonormal.
+                </li>
+                <li>
+                    \((\{e_{\alpha}\}_{\alpha \in A})^\perp=\{0\}\).
+                </li>
+                <li>
+                    \(\overline{\span(\{e_\alpha\}_{\alpha \in A})}=H\).
+                </li>
+            </ol>
+
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=739" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+        </div>
+
+    
+
         <div class="definicion-box">
             <h2 class="number-title"> Definición </h2>
             <p>
-                Un espacio con producto interior es una pareja \((V,\langle \cdot , \cdot \rangle)\) donde 
-                \(V\) es un espacio vectorial sobre \(\mathbb{C}\) y 
-                \(\langle \cdot , \cdot \rangle : V\times V to \mathbb{C}\) satisface 
-                    <ol>
-                        <li>
-                            para todos \(x,y,z\in V, a\in \mathbb{C}\):
-                            \[
-                            \langle x+ay, z \rangle =a \langle x,y \rangle + \langle y,z \rangle;
-                            \]
-                        </li>
-                        <li>
-                            para todos \(x,y\in V\):
-                            \[
-                            \langle x,y \rangle =\overline{\langle y, x \rangle};
-                            \]
-                        </li>
-                        <li>
-                            para todo \(x\in V\), \(\langle x, x \rangle \geq 0\).
-                        </li>
-                        
-                        <li>Si además satisface se satisface 
-                            \[
-                            \langle x, x \rangle \Rightarrow x=0
-                            \]
-                            decimos que el producto interior es positivo definido.
-                        </li>
-
-                    </ol>
-                    Observación: para todos \(x,y,z\in V, a\in \mathbb{C}\)
-                    \[
-                    \langle x, ay+z \rangle = \overline{a}\langle x,y \rangle + \langle x,z \rangle 
-                    \]
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert. Un 
+                conjunto ortonormal que satisface cualquiera (y por lo tanto todos) de las 
+                condiciones del teorema anterior se llama una base ortonormal de \(H\).
             </p>
-
+            <p>
+                Si \(\{e_\alpha\}_{\alpha \in A}\) es una base ortonormal los 
+                números \(\langle u,e_\alpha \rangle \) se llaman los coeficientes de Fourier
+                de \(u\) con respecto a la base \(\{e_\alpha\}_{\alpha\in A}\).
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=1863" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
         </div>
 
-
         <div class="info-box">
-            <h2 class="number-title"> Ejemplo </h2>
-            <p>
-                Sea \(S\) un conjunto cualquiera. Definimos 
-                \[
-                  \ell^2(S)=\{x:S\to \mathbb{C}: \sum_{s\in S}|x(x)|^2< +\infty\}  
-                \]
-                donde entendemos la serie como un límite en la red de subconjuntos finitos 
-                de \(S\)
-                \[
-                \sum_{s\in S}|x(x)|^2=\lim_{F\in \mathcal{P}_{fin}(S)} \sum_{s\in F}|x(s)|^2
-                \]
-                lo cual se puede probar es igual a 
-                \[
-                \sum_{s\in S}|x(x)|^2=\sup_{F\in \mathcal{P}_{fin}(S)}\left\{ \sum_{s\in F}|x(s)|^2\right\}
-                \]
-            </p>
-            <p>
-                Para \(x,y\in \ell^2(S)\) definimos 
-                \[
-                \langle x, y\rangle =\sum_{s\in S}x(s)y(s) 
-                \]
-                Con estas definiciones \((\ell^2(S),\langle \cdot, \cdot \rangle)\) es un 
-                espacio con producto interior definido positivo.
-            </p>
+            <h2 class="number-title"> Ejemplo</h2>
 
+            <p>
+                Definimos 
+                \[
+                L_2((-\pi,\pi))=\left\{ f:(-\pi, \pi)\to \mathbb{C}: \int_{-\pi}^\pi |f(t)|^2d\lambda(t)< + \infty \right\}
+                \]
+                donde \(\lambda\) es la medida de Lebesgue sobre los Borelianos de \((-\pi,\pi)\).
+            </p>
+            <p>
+                Denotamos \(e_n:(-\pi,\pi)\to \mathbb{C},\) \(e_n(t)=\frac{e^{int}}{\sqrt{2\pi}}\),
+                \(n\in \mathbb{Z}\).
+            </p>
+            <p>
+                Por la Teoría de series de  Fourier, para toda \(f\in L_2((-\pi,\pi))\)
+                \[
+                f(t)=\sum_{n\in \mathbb{Z}} c_n e^{int}\ c.d. 
+                \]
+                con 
+                \[
+                c_n:=\int_{-\pi}^{\pi} f(t)e^{-int}d\lambda(t)
+                \]
+            </p>
             <button class="respButton hvr-grow felxbox"> Explicación  </button>
             <div class="resp-box flexbox">
               <div class="flexbox">
                 <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=155" allowfullscreen="true"> 
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2024" allowfullscreen="true"> 
                 </iframe>
               </div>
             </div>
-            </div>
+        </div>
 
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert, \(H\ne \{0\}\).
+            </p>
+            <p>
+                Entonces \(H\) tiene una base ortonornal.
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2211" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
         </div>
 
 
         <div class="teorema-box">
             <h2 class="number-title"> Teorema </h2>
-            <h3> Desigualdad de Cauchy-Schwartz</h3>
             <p>
-                Sea \((V,\langle \cdot, \cdot \rangle )\) un espacio con producto interior.
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.
             </p>
             <p>
-                Para todos \(x,y\in V\)
+                Si \(\{e_\alpha\}_{\alpha \in A}\) y \(\{f_\beta\}_{\beta\in B}\) son 
+                dos bases ortonormales de \(H\) entonces 
                 \[
-                |\langle x, y \rangle | \leq (\langle x,x \rangle)^{1/2}(\langle y,y \rangle)^{1/2}
+                \#(A)=\#(B).
                 \]
-            </p>
-            <p>
-                Si el producto es positivo definido además se tiene que la igualdad en la desiguadad 
-                se da si y sólo si existe \(a_0\in \mathbb{C}\) tal que \(x=a_0y\).
             </p>
 
             <button class="respButton hvr-grow felxbox"> Demostración  </button>
             <div class="resp-box flexbox">
               <div class="flexbox">
                 <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=522" allowfullscreen="true"> 
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2442" allowfullscreen="true"> 
                 </iframe>
               </div>
             </div>
-            </div>
-
         </div>
-        
-      </body>
-    
 
-      <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-              Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior. Para 
-              \(x\in V\) definimos 
-              \[
-              \|x\|:=(\langle x, x \rangle)^{1/2}
-              \]
-              Entonces \(\| \cdot \|\) es una seminorma y si el producto interior es definido 
-              positivo entonces es una norma.
-          </p>
 
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(H\) un espacio de Hilbert. La dimensión de \(H\) se define como la 
+                cardinalidad de una base ortonormal. Por el teorema anterior la dimensión no 
+                depende de la base ortonormal que se tome.
+            </p>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
             <div class="resp-box flexbox">
               <div class="flexbox">
                 <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1279" allowfullscreen="true"> 
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=2915" allowfullscreen="true"> 
                 </iframe>
               </div>
             </div>
+        </div>
+        <div class="definicion-box">
+            <h2 class="number-title"> Definicióm </h2>
+            <p>
+                Dos espacios de Hilbert \((H_1,\langle \cdot, \cdot \rangle_1 )\),
+                \((H_1,\langle \cdot, \cdot \rangle_1 )\) son isomorfos sii 
+                existe \(\Phi: H_1 \to H_2\) tal que 
+            </p>
+            <ol>
+                <li>
+                    \(\Phi\) es biyección,
+                </li>
+                <li>
+                    \(\Phi\) es lineal,
+                </li>
+                <li>
+                    para todos \(x,y\in H_1\):
+                    \(\langle \Phi(x),\Phi(y) \rangle_2=\langle x, y \rangle_1\).
+                </li>
+            </ol>
+
+
+        </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Dos espacios de Hilbert son isomorfos sii tienen la misma dimensión.
+            </p>
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=3137" allowfullscreen="true"> 
+                </iframe>
+              </div>
             </div>
-         
-      </div>
+        </div>
 
-      <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
-          </p>
-          <p>
-              Para todos \(x,y\in V\) se vale:
-              <ol>
-                  <li>
-                      Identidad del paralelogramo
-                      \[
-                      \|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2)
-                      \]
-                  </li>
-                  <li>
-                      Identidad de polarización
-                      \[
-                      \langle x, y \rangle =\frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
-                      \]
-                  </li>
-              </ol>
-          </p>
+        <div class="prop-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Si \((H,\langle \cdot, \cdot \rangle )\) es un espacio de Hilbert no nulo y 
+                \(\{e_\alpha\}_{\alpha \in A}\) es base ortonormal entonces 
+                \(H\) es isomorfo \(\ell^2(A)\).
+            </p>
 
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1484" allowfullscreen="true"> 
-              </iframe>
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=3915" allowfullscreen="true"> 
+                </iframe>
+              </div>
             </div>
-          </div>
-          </div>
-
-      </div>
-
-      <div class="definicion-box">
-          <h2 class="number-title"> Definición </h2>
-          <p>
-            Un espacio vectorial normado \((V,\|\cdot\|)\) se llama pre-Hilbert si 
-            existe un producto interior en \(\langle \cdot, \cdot \rangle: V\times V\to \mathbb{C}\) 
-            tal que, para todo \(x\in V\)
-            \[
-                \|x\|=\langle x, x \rangle^{1/2}.
-            \]
-          </p>
-
-      </div>
-
-      <div class="teorema-box">
-          <h2 class="number-title"> Teorema </h2>
-          <p>
-              Un espacio vectorial normado \((V,\|\cdot\|)\) es 
-              pre-Hilbert si y sólo si su norma satisface la 
-              identidad del paralelogramo.
-          </p>
-          <p>
-              En dado caso la función 
-              \[
-              \langle x, y \rangle_0= \frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
-              \]
-              define un producto interior en \(V\) que satisace \(\|x\|= (\langle x, x\rangle_0 )^{1/2}\)
-              para todo \(x\in V\).
-          </p>
-
-
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=2316" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-          </div>
-          
-      </div>
-
-      <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
-          </p>
-          <p>
-              Denotamos 
-              \[
-              L=\{x\in V: \langle x,x \rangle =0\}
-              \]
-              Entonces \(L\) es un subespacio de \(V\).
-          </p>
-          <p>
-              En el espacio cociente \(V/L\) la función 
-              \[
-              \langle x+L, y+L \rangle := \langle x, y \rangle
-              \]
-              está bien definida y es un producto interior positivo definido.
-          </p>
-
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=4517" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-          </div>
-
-
-          
-      </div>
-
-      <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
-          </p>
-          <p>
-            Entonces el producto interior es una función continua, es decir 
-            \[
-            \lim_{n\to \infty} \langle x_n,y_n \rangle = \langle x, y \rangle 
-            \]
-            para toda sucesión \(((x_n,y_n))_{n=1}^\infty\) en \(V\times V\)  tal que 
-            \(\lim_{n\to \infty} (x_n,y_n)=(x,y)\) en \(V\times V\).
-          </p>
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=3" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-          </div>
-      </div>
-  </head>
+        </div>
 
 
 
- 
+</body>
+

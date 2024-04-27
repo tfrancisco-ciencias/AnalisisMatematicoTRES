@@ -20,7 +20,8 @@
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
             cer: "\\operatorname{cer}",
-            inte: "\\operatorname{int}"
+            inte: "\\operatorname{int}",
+            span: "\\operatorname{span}"
           },
           tags: "ams" /* this part is for numbered equations */
         }
@@ -70,7 +71,7 @@
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Reflexividad  </h1>     
+    <h1 class="number-title flexbox"> Espacios de Hilbert </h1>     
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -79,206 +80,590 @@
   <!--    Contenido empiaza abajo
  ///////////////////////////////// -->
         <div class="definicion-box">
-          <h2 class="number-title"> Definición </h2>
-          <p>
-            Sea \((X,\|\cdot\|)\) un espacio vectorial normado.
-          </p>
-          <p>
-            Dado \(x\in X\) denotamos \(\hat{x}\) a la función 
-            \begin{eqnarray*} 
-            \hat{x}:X^* \to \mathbb{F} \\
-            \hat{x}(\varphi)=\varphi(x)
-            \end{eqnarray*}
-          </p>
-          <p>
-            Es inmediato que \(\hat{x}\) es lineal y además es acotada pues 
-            para toda \(\varphi \in X^*\):
-            \[
-            |\hat{x}(\varphi)|=|\varphi(x)|\leq \|\varphi\| \|x\|
-            \]
-            por lo que \(\|\hat{x}\| \leq \|x\| \). De hecho, \(\|\hat{x}\|=\|x\|\)
-            pues por Hahn-Banach, exsite \(\varphi_0\in X^*\) con \(\|\varphi_0\|=1\)
-            y \(\varphi_0(x)=\|x\|\), por lo tanto 
-
-            \begin{eqnarray*} 
-            \|x\| \geq \|\hat{x}\| = \sup_{\varphi\in X^*, \|\varphi\| \leq 1 }\{ |\hat{x}(\varphi)| \}
-            \geq  |\hat{x}(\varphi_0)|=\|x\|.
-            \end{eqnarray*}
-          </p>
-          <p>
-            Se sigue que la función 
-            \begin{eqnarray*}
-            \hat{ }: X &\to & X^{**} \\
-            x & \mapsto  & \hat{x}
-            \end{eqnarray*}
-            es una isometría lineal. Por lo tanto podemos pensar a 
-            \(\hat{X}\) como una copia de \(X\) metido en \(X^**\).
-          </p>
-
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/95twdVecbIQ?start=2386" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-        
-        </div>
-
-
-        <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-            Sea \((X,\|\cdot\|)\) un esapcio vectorial normado y 
-            \(Y \leq X\) un subespacio de dimensión finita.
-          </p>
-          <p>
-            Entonces \(Y\) es cerrado.
-          </p>
-
-
-
-          <button class="respButton hvr-grow felxbox"> Demostración  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/95twdVecbIQ?start=2805" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="definicion-box">
-          <h2 class="number-title"> Definición </h2>
-          <p>
-            Un espacio vectorial normado \((X,\|\cdot\|)\) se llama reflexivo si 
-            \(\hat{X}=X^{**}\).
-          </p>
-          <p>
-            Más concreta mente \(X\) es relfexivo sii para toda \(\Phi : X^*\to \mathbb{F}\),
-            lineal acotada, existe un \(x\in X\) tal que: 
-            \[
-            \Phi(\varphi)=\varphi(x), \forall \varphi \in X^*.
-            \]
-          </p>
-
-          <button class="respButton hvr-grow felxbox"> Explicación  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/95twdVecbIQ?start=3229" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-          
-        </div>
-
-
-
-        <div class="nota-box">
-          <h2 class="number-title"> Ejemplo</h2>
-          <p>
-            Todo espacio vectorial normado de dimensión finita es reflexivo.
-          </p>
-        </div>
-
-        <div class="definicion-box">
-          <h2 class="number-title"> Definición </h2>
-          <p>
-            Sea \((X,\|\cdot\|)\) un espacio vectorial normado. La topología 
-            débil en \(X\), denotada \(\omega\), es la toplogía débil inducida 
-            por la familia de funcionales lineales acotadas, es decir por \(X^*\).
-          </p>
-          <p>
-            Para \(x_0\in X\) la familia de conjuntos 
-            \begin{eqnarray*}
-            V(x_0;\varphi_1, \dots, \varphi_n,\varepsilon)&=& \cap_{i=1}^n\varphi_i^{-1}(B_\varepsilon(x_0)) \\
-            &=& \{x\in X : |\varphi_i(x)-\varphi_i(x_0)|<\varepsilon, i=1,\dots, n \}
-            \end{eqnarray*}
-            forma una base de vecindades de la topología \(\omega\) alrededor de \(x_0\).
-          </p>
-          <p>
-            En términos de redes, una red \((x_\alpha)_{\alpha \in A}\subset X\)
-            converge a \(x\in X\) en la topología \(\omega\) sii 
-            para todo \(\varphi \in X^*\):
-            \[
-              \lim_{\alpha \in A}\varphi(x_\alpha)=\varphi(x) \quad \textrm{en \(\mathbb{F}\)}.
-            \]
-            
-          </p>
-          <p>
-
-          </p>
-
-
-          <button class="respButton hvr-grow felxbox"> Explicación  </button>
-          <div class="resp-box flexbox">
-            <div class="flexbox">
-              <iframe width="500" height="400" class="video"
-              src="https://www.youtube.com/embed/95twdVecbIQ?start=3434" allowfullscreen="true"> 
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="prop-box">
-          <h2 class="number-title"> Proposición </h2>
-          <p>
-            Sea \((X,\|\cdot\|)\) un espacio vectorial normado.
-          </p>
-          <p>
-            \((X,\omega)\) es homeomorfo a \((\hat{X},\omega^*)\). El 
-            homeomorfismo es simplemente:  \( \hat{}: X\to \hat{X}\).
-          </p>
-
-        </div>
-
-        <div class="nota-box">
-          <h2 class="number-title"> Notación </h2>
-          <p>
-            Si \((Z,\|\cdot\|)\) es un espacio vectorial normado denotamos la 
-            bola cerrada unitaria como
-            \[
-            (Z)_1:=\{z\in Z: \|z\|\leq 1\}.
-            \]
-          </p>
-
-        </div>
-
-          <div class="teorema-box">
-            <h2 class="number-title"> Teorema </h2>
-            <h3> Goldstein</h3>
+            <h2 class="number-title" id="Def:ProductoInterior"> Definición </h2>
             <p>
-              Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Se tiene que 
-              \( \hat{(X)_1} \) es \(\omega^*\)-denso en \((X^{**})_1\).
+                Un espacio con producto interior es una pareja \((V,\langle \cdot , \cdot \rangle)\) donde 
+                \(V\) es un espacio vectorial sobre \(\mathbb{F}\) y 
+                \(\langle \cdot , \cdot \rangle : V\times V \to \mathbb{F}\) satisface que para todos 
+                \(x,y,z\in V\) y  \( a\in \mathbb{F} \): 
+                    <ol>
+                        <li>
+                            \[
+                            \langle x+ay, z \rangle =a \langle x,y \rangle + \langle y,z \rangle;
+                            \]
+                        </li>
+                        <li>
+                            \[
+                            \langle x,y \rangle =\overline{\langle y, x \rangle};
+                            \]
+                        </li>
+                        <li>
+                          \( \langle x, x \rangle \geq 0\) y la igualdad se da si y sólo si \(x=0\).
+                        </li>
+
+
+                    </ol>
+                    Observación: para todos \(x,y,z\in V, a\in \mathbb{F}\)
+                    \[
+                    \langle x, ay+z \rangle = \overline{a}\langle x,y \rangle + \langle x,z \rangle 
+                    \]
+            </p>
+            <p>
+              Nota: en algunos textos para la definición de producto interior el inciso 3 sólo pide 
+              \(\langle x,x  \rangle  \geq 0\) y cuando se tiene el sí y sólo si: 
+              \(\langle x, x \rangle =0 \Leftrightarrow x=0\), se le llama producto positivo definido.
+
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+            <h2 class="number-title" id="Ejemplo:EspacioHilbert"> Ejemplo </h2>
+            <p>
+                Sea \(S\) un conjunto cualquiera. Definimos 
+                \[
+                  \ell^2(S)=\{x:S\to \mathbb{C}: \sum_{s\in S}|x(x)|^2< +\infty\}  
+                \]
+                donde entendemos la serie como un límite en la red de subconjuntos finitos 
+                de \(S\)
+                \[
+                \sum_{s\in S}|x(x)|^2=\lim_{F\in \mathcal{P}_{fin}(S)} \sum_{s\in F}|x(s)|^2
+                \]
+                lo cual se puede probar es igual a 
+                \[
+                \sum_{s\in S}|x(x)|^2=\sup_{F\in \mathcal{P}_{fin}(S)}\left\{ \sum_{s\in F}|x(s)|^2\right\}
+                \]
+            </p>
+            <p>
+                Para \(x,y\in \ell^2(S)\) definimos 
+                \[
+                \langle x, y\rangle =\sum_{s\in S}x(s)y(s) 
+                \]
+                Con estas definiciones \((\ell^2(S),\langle \cdot, \cdot \rangle)\) es un 
+                espacio con producto interior. 
+            </p>
+
+            <!-- <button class="respButton hvr-grow felxbox"> Explicación  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=155" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>--> 
+
+        </div>
+
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <h3> Desigualdad de Cauchy-Schwartz</h3>
+            <p>
+                Sea \((V,\langle \cdot, \cdot \rangle )\) un espacio con producto interior.
+            </p>
+            <p>
+                Para todos \(x,y\in V\)
+                \[
+                |\langle x, y \rangle | \leq (\langle x,x \rangle)^{1/2}(\langle y,y \rangle)^{1/2}
+                \]
+            </p>
+            <p>
+                Además la igualdad 
+                se da si y sólo si existe \(a_0\in \mathbb{C}\) tal que \(x=a_0y\).
             </p>
 
             <button class="respButton hvr-grow felxbox"> Demostración  </button>
             <div class="resp-box flexbox">
               <div class="flexbox">
                 <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/95twdVecbIQ?start=3958" allowfullscreen="true"> 
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=522" allowfullscreen="true"> 
                 </iframe>
               </div>
             </div>
             
+        </div>
+        
+      
+    
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+              Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior. Para 
+              \(x\in V\) definimos 
+              \[
+              \|x\|:=(\langle x, x \rangle)^{1/2}
+              \]
+              Entonces \(\| \cdot \|\) es una norma. 
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1279" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+         
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
+          </p>
+          <p>
+              Para todos \(x,y\in V\) se vale:
+              <ol>
+                  <li>
+                      Identidad del paralelogramo
+                      \[
+                      \|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2)
+                      \]
+                  </li>
+                  <li>
+                      Identidad de polarización
+                      \[
+                      \langle x, y \rangle =\frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
+                      \]
+                  </li>
+              </ol>
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=1484" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+      
+
+      </div>
+
+      <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+          <p>
+            Un espacio vectorial normado \((V,\|\cdot\|)\) se llama pre-Hilbert si 
+            existe un producto interior en \(\langle \cdot, \cdot \rangle: V\times V\to \mathbb{C}\) 
+            tal que, para todo \(x\in V\)
+            \[
+                \|x\|=\langle x, x \rangle^{1/2}.
+            \]
+          </p>
+
+      </div>
+
+      <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+              Un espacio vectorial normado \((V,\|\cdot\|)\) es 
+              pre-Hilbert si y sólo si su norma satisface la 
+              identidad del paralelogramo.
+          </p>
+          <p>
+              En dado caso la función 
+              \[
+              \langle x, y \rangle_0= \frac{1}{4}(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2)
+              \]
+              define un producto interior en \(V\) que satisace \(\|x\|= (\langle x, x\rangle_0 )^{1/2}\)
+              para todo \(x\in V\).
+          </p>
+
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=2316" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          
+          
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto que satisface los incisos 1 y 2 
+            de la <a href="#Def:ProductoInterior">Definición 9.1 </a> de producto interior y que sólo satisface \(\langle x, x \rangle \geq 0\)
+            para todo \(x\in V\).
+          </p>
+          <p>
+              Denotamos 
+              \[
+              L=\{x\in V: \langle x,x \rangle =0\}
+              \]
+              Entonces \(L\) es un subespacio de \(V\).
+          </p>
+          <p>
+              En el espacio cociente \(V/L\) la función 
+              \[
+              \langle x+L, y+L \rangle := \langle x, y \rangle
+              \]
+              está bien definida y es un producto interior.
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/vlv5BZJiu2c?start=4517" allowfullscreen="true"> 
+              </iframe>
+            </div>
+        
           </div>
 
 
-           <div class="teorema-box">
-             <h2 class="number-title"> Teorema </h2>
-             <p>
-              Sea \((X,\|\cdot\|)\) un espacio vectorial normado.
-             </p>
-             <p>
-               \(X\) es reflexivo si y sólo si  \((X)_1\) es \(\omega\)-compacto.
-             </p>
-           </div> 
-      </body>
-    
+          
+      </div>
+
+      <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \((V, \langle \cdot, \cdot \rangle)\) un espacio con producto interior.
+          </p>
+          <p>
+            Entonces el producto interior es una función continua, es decir 
+            \[
+            \lim_{n\to \infty} \langle x_n,y_n \rangle = \langle x, y \rangle 
+            \]
+            para toda sucesión \(((x_n,y_n))_{n=1}^\infty\) en \(V\times V\)  tal que 
+            \(\lim_{n\to \infty} (x_n,y_n)=(x,y)\) en \(V\times V\).
+          </p>
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=3" allowfullscreen="true"> 
+              </iframe>
+            </div>
+        
+          </div>
+      </div>
+
+
+
+<!--///////////////////////////////////////////////////////////--> 
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>
+      Un espacio de Hilbert es una pareja \((H,\langle \cdot, \cdot \rangle )\)
+      donde \(H\) es un espacio vectorial sobre \(\mathbb{C}\), \(\langle \cdot, \cdot \rangle\)
+      es un producto interior positivo definido en \(H\) de tal forma que la norma que induce 
+      es completa.
+  </p>
+  <p>
+    Por ejemplo, los espacios \((\ell_2(S), \langle \cdot, \cdot \rangle )\) del 
+    <a href="#Ejemplo:EspacioHilbert" >Ejemplo 9.2 </a> son de Hilbert.
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+      Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert y 
+      sea \(\emptyset \ne C \subseteq H\) un subconjunto convexo y cerrado.
+  </p>
+  <p>
+      Entonces existe un único \(y_0\in C\) de norma mínima. Es decir 
+      \[
+      \|y_0\|=\inf_{y\in C}\{\|y\|\}
+      \]
+  </p>
+
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=411" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+  
+  
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Corolario</h2>
+  <p>
+      Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert 
+      y \(\emptyset \ne C \subseteq H\) un convexo cerrado.
+  </p>
+  <p>
+      Para todo \(x_0\in H\) exsite un único \(y_0\in C\) tal que 
+      \[
+      \|y_0-x_0\| = \inf_{y\in C}\{\|y-x_0 \|\}.
+      \]
+  </p>
+  <p>
+      Además, para todo \(y\in C\):
+      \[
+      \textrm{Re} \langle y_0-x_0,y_0 \rangle \leq \textrm{Re} \langle y_0-x_0,y \rangle
+      \]
+      donde \(\textrm{Re}\) denota la parte real.
+  </p>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=1127" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+  
+</div>
+
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>
+      Dos vectores \(x,y\in H\) en un espacio con producto interior se llama 
+      ortogonales sii \(\langle x, y \rangle =0\).
+  </p>
+  <p>
+      Dado \(S\subseteq H\) denotamos 
+      \[
+         S^\perp=\{x\in H: \langle x, s \rangle =0, \ \textrm{para todo }\ s\in S\} 
+      \]
+  </p>
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Lema</h2>
+  <p>
+      Sea  \(H\) un espacio con producto interior y \(S\subseteq H\).
+  </p>
+  <ol>
+      <li>
+          \(S\subseteq (S^\perp)^\perp\).
+      </li>
+      <li>
+          Si \(S\subseteq T\) entonces \(T^\perp \subseteq S^\perp \).
+      </li>
+      <li>
+          \(S^\perp = (\span(S))^\perp\).
+      </li>
+      <li>
+          \(S^\perp= \overline{S}^\perp \).
+      </li>
+  </ol>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=1660" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Proposición </h2>
+  <p>
+      Sea \(H\) un espacio con 
+      producto interior y  \(S\subseteq H\).
+  </p>
+  <p>
+      Entonces \(S^\perp\) es un subespacio 
+      cerrado de \(H\).
+  </p>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=1842" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+      Sea \(H\) un espacio de Hilbert
+      y \(Y\leq H\) un subespacio cerrado.
+  </p>
+  <p>
+      Todo \(x_0\in H\) se puede expresar de manera única como 
+      \[
+      x_0=y_0+z_0
+      \]
+      con \(y_0\in Y\) y \(z_0\in Y^\perp\). Es decir \(H=Y\oplus Y^\perp\).
+
+  </p>
+  <p>
+      Es más 
+      \[
+          \|x_0-y_0\| =\inf_{y\in Y}\{\|x_0-y\|\}
+      \]
+  </p>
+
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=2244" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Corolario </h2>
+  <p>
+      Sea \(H\) un espacio de Hilbert y sea 
+      \(Y\leq H\) un subespacio cerrado y \(\emptyset \ne S \subseteq H\).
+  </p>
+  <p>
+      Entonces 
+      \[
+      (Y^\perp)^\perp=Y, \quad (S^\perp)^\perp= \overline{\span(S)}. 
+      \]
+  </p>
+
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=2825" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="prop-box">
+  <h2 class="number-title"> Corolario </h2>
+  <h3> Teorema de representación de Riesz </h3>
+  <p>
+    Sea \(H\) un espacio de Hilbert y \(\varphi:H \to \mathbb{F}\) una funcional lineal acotada. Entonces 
+    existe un único vector \(x_0\in H\) tal que \(\varphi(x)=\langle x, x_0\rangle\) para toda 
+    \(x\in H\). Además \(\|\varphi\|=\|x_0\|\).
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(H\) un espacio ode Hilbert y \(\|\cdot\|\) la norma generada por su producto interior.
+  </p>
+  <p>
+    Para \(p\in [1, \infty) \) define 
+    \[
+    \ell_p(H)=\{x:\mathbb{N} \to H: \sum_{i=1}^\infty \|x(i)\|^p < \infty\}
+    \]
+    y para \(x\in \ell_p(H)\)
+    \[
+    \|x\|_p:=\left(\sum_{i=1}^\infty \|x(i)\|^p  \right)^{1/p}
+    \]
+    Prueba 
+  </p>
+  <ol>
+    <li>
+      para \(p\in (1,\infty)\), \(q\in (1,\infty)\) su exponente conjugado y \(x\in \ell_p, y\in \ell_q\),
+      \[
+      \sum_{i=1}^\infty |x(i)||y(i)|\leq \|x\|_p\|y\|_q.
+      \]
+    </li>
+    <li>
+      \((H,\|\cdot\|_p)\) es un espacio de Banach que es de Hilbert si y sólo si \(p=2\).
+    </li>
+    <li>
+      Halla la condición sobre \(x\) y \(y\) que garantice la igualdad en el primer inciso.
+    </li>
+  </ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(H\) un espacio de Hilbert, \(M\subseteq H\) un subespacio cerrado y \(P:H\to M\) 
+    la proyección ortogonal sobre \(M\). Prueba 
+  </p>
+  <ol>
+      <li>
+        \( \|x-Px\|\leq \|x-m\|\), para toda \(m\in M\).
+      </li>
+      <li>
+        \( \|x-Px\|\leq \sqrt{ \|x\|^2 \|Px\|^2 \|}\), para toda \(m\in M\).
+      </li>
+      <li>
+        \((H/M, \|\cdot\|_{H/M})\) es un espacio de Hilbert con el producto interior 
+        dado por 
+        \[
+        \langle [x], [y]\rangle_{H/M} = \langle x-Px, y-Py \rangle 
+        \]
+        donde \([x]\) denot la clase de \(x\) en \(H/M\).
+      </li>
+  </ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i\in I}\) una familia de subespacios cerrados que 
+    satisfacen \(M_i \perp M_j\), para todo \(i\ne j\). Prueba que 
+    \[
+    \overline{\span(\cup_{i\in I}M_i)}=\oplus_{i\in I } M_i 
+    \]
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    En el espacio de Hilbert \(\ell_2(\mathbb{N})\) define 
+    \[ 
+    L=\{x\in \ell_2(\mathbb{N}): |x(i)|\leq \frac{1}{i}, \forall i\in \mathbb{N}\}
+    \]
+    (el ladrillo de Hilbert). Prueba 
+  </p>
+  <ol>
+    <li>
+      \(L\) es compacto.
+    </li>
+    <li>
+      \(\textrm{int}(L)=\emptyset\).
+    </li>
+  </ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \((X,\langle \cdot,  \cdot \rangle )\) un espacio con producto interior. Supón que 
+    \((M^\perp)^\perp=M\) para todo subespacio cerrado de \(X\). Prueba que  \(X\) es un espacio 
+    de Hilbert.
+  </p>
+  <p>
+    Sugerencia: prueba que el operador \(T:H\to H^*\) dada por \(Tx=\varphi_x\), donde 
+    \(\varphi_x(y)=\langle x, y \rangle \), es suprayectivo. 
+  </p>
+</div>
+
+
+    </body>
   </head>
 
 
 
+ 
