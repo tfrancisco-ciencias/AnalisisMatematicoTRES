@@ -223,32 +223,135 @@
   </p>
   <ol>    
       <li>
-         Desigualdad de Bessel: 
-         \[\sum_{\alpha \in A}|\langle u, x_\alpha \rangle|^2 \leq \|u\|^2\]
-      </li>
-      <li>
           La serie \(\sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha \)
-          converge y 
-          \[
-          u-\sum_{\alpha \in A} \langle u, x_\alpha \rangle \in (\left\{ x_\alpha\right\}_{\alpha \in A})^\perp
-          \]
-      </li>
-      <li>
+          converge en \(H\) y 
           \[
           \left\| u-\sum_{\alpha \in A} \langle u, x_\alpha \rangle \right\|^2=
           \|u\|^2 -\sum_{\alpha \in A} |\langle u, x_\alpha \rangle|^2
           \]
+          
       </li>
+
+      <li>
+         Desigualdad de Bessel: 
+         \[\sum_{\alpha \in A}|\langle u, x_\alpha \rangle|^2 \leq \|u\|^2\]
+      </li>
+      <li>
+        Finalmente 
+        \[
+          u-\sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha \in (\left\{ x_\beta\right\}_{\beta \in A})^\perp
+        \]
+      </li>
+      
+      
   </ol>
 
-  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  inciso 1 </button>
+  <div class="resp-box flexbox">
+  <div class="flexbox">
+  <p>
+    Para  \(F\subseteq A\) un conjunto finito, no vacío, de las propiedades del 
+    producto interior se sigue que 
+    \begin{eqnarray*} 
+    \left\| u - \sum_{\alpha \in F} \langle u, x_\alpha \rangle x_\alpha \right\|^2 &=& 
+    \langle u - \sum_{\alpha \in F} \langle u, x_\alpha \rangle x_\alpha  , 
+    u - \sum_{\beta \in F} \langle u, x_\beta \rangle x_\beta  \rangle \\
+    &=&
+    \| u\|^2 \\
+    &-&  \langle \sum_{\alpha \in F} \langle u, x_\alpha \rangle x_\alpha, u   \rangle \\
+    &-&    \langle u, \sum_{\beta \in F} \langle u, x_\beta \rangle x_\beta   \rangle \\
+    &+&  \langle \sum_{\alpha \in F} \langle u, x_\alpha \rangle x_\alpha, 
+    \sum_{\beta \in F} \langle u, x_\beta \rangle x_\beta    \rangle \\
+    &=& \| u\|^2 \\
+    &-& \sum_{\alpha \in F}   \langle u, x_\alpha \rangle \langle  x_\alpha, u   \rangle \\
+    &-&   \sum_{\beta \in F}  \overline{\langle u, x_\beta} \rangle  \langle u, x_\beta   \rangle \\
+    &+&  \sum_{\alpha \in F} \sum_{\beta \in F}  \langle u, x_\alpha \rangle  \overline{\langle u, x_\beta \rangle} \langle  x_\alpha, 
+      x_\beta    \rangle \\
+    &=& \| u\|^2\\
+    &-& 2 \sum_{\alpha \in F}|\langle u, x_\alpha \rangle |^2 \\
+    &+& \sum_{\alpha \in F} |\langle u, x_\alpha \rangle|^2 \\
+    &=& \| u\|^2 \\
+    &-& \sum_{\alpha \in F}|\langle u, x_\alpha \rangle |^2 
+    \end{eqnarray*}
+  </p>
+  <p>
+    En resumen tenemos:
+    \begin{equation}\label{Eqn:Aux1Bessel}
+     \left\| u - \sum_{\alpha \in F} \langle u, x_\alpha \rangle x_\alpha \right\|^2 = \|u\|^2-\sum_{\alpha \in F}|\langle u, x_\alpha \rangle |^2 .
+    \end{equation}
+    Como las normas son no negativos tenemos que para todo subconjunto finito \(F\subseteq A\), 
+    \[
+    \sum_{\alpha \in F}|\langle u, x_\alpha \rangle |^2  \leq \|u\|^2,
+    \]
+    y tomando supremos llegamos a
+    \[
+    \sup_{F \in \mathcal{P}_{\textrm{fin}}(A)} \left\{ \sum_{\alpha \in F} |\langle u, x_\alpha\rangle|^2 \right\} \leq \|u\|^2 < +\infty
+    \]
+  </p>
+  <p>
+    Se sigue que la serie \(\sum_{\alpha \in A} |\langle u, x_\alpha\rangle |^2\) converge en \(\mathbb{R}\) y como 
+    los vectores \(x_\alpha\) son unitarios también tenemos que la serie \(\sum_{\alpha \in A} \|\langle u, x_\alpha \rangle x_\alpha\|^2\)
+    es convergente y usando el Teorema 10.2 concluimos que la serie 
+    \[
+    \sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha
+    \]
+    converge en \(H\). 
+  </p>
+
+  <p>
+    Finalmente usando que la norma es continua, tomando límite en \eqref{Eqn:Aux1Bessel} sobre 
+    la red de subconjuntos finitos  
+    llegamos a 
+    \[
+    \left\| u - \sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha \right\|^2 
+    = \|u\|^2-\sum_{\alpha \in A}|\langle u, x_\alpha \rangle |^2 
+    \]
+  </p>
+ </div>
+ </div>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  inciso 2 </button>
+  <div class="resp-box flexbox">
+  <div class="flexbox">
+  <p>
+    Directamente usando la identidad del inciso 1 y que las normas son no negativas, llegamos a 
+    la desigualdad de Bessel 
+    \[
+    \sum_{\alpha \in A} |\langle u, x_\alpha \rangle|^2 \leq \|u\|^2
+    \]
+  </p>
+  </div>
+  </div>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  inciso 3 </button>
+  <div class="resp-box flexbox">
+  <div class="flexbox">
+  <p>
+    Para probar éste inciso es suficiente probar que 
+    \[
+    \langle u - \sum_{\alpha \in A}\langle u, x_\alpha \rangle x_\alpha  , x_\beta \rangle =0
+    \]
+    para toda \(\beta \in A\). Pero, usando la continuidad del producto interior 
+    y que los vectores \(x_\alpha\) son ortogonales dos a dos y unitarios, tenemos: 
+    \begin{eqnarray*} 
+     \langle u - \sum_{\alpha \in A}\langle u, x_\alpha \rangle x_\alpha  , x_\beta \rangle&=&
+     \langle u, x_\beta \rangle - \sum_{\alpha \in A} \langle u, x_\alpha \rangle \langle x_\alpha, x_\beta \rangle \\
+     &=& \langle u, x_\beta \rangle - \langle u, x_\beta \rangle \\
+     &=& 0
+    \end{eqnarray*}
+  </p>
+  </div>
+  </div>
+
+  <!-- <button class="respButton hvr-grow felxbox"> Demostración   </button>
   <div class="resp-box flexbox">
     <div class="flexbox">
       <iframe width="500" height="400" class="video"
       src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=4033" allowfullscreen="true"> 
       </iframe>
     </div>
-  </div>
+  </div>-->
   
 
 </div>
@@ -256,7 +359,7 @@
 <div class="prop-box">
   <h2 class="number-title"> Corolario</h2>
   <p>
-      Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.
+      Sea \(H\) un espacio de Hilbert.
   </p>
   <p>
       Sea \(\{y_\alpha\}_{\alpha \in A}\) un conjunto ortonormal y 
