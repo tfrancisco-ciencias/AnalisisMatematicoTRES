@@ -64,7 +64,7 @@
   </header>
 
 <!-- This part is for title in tab-->
-<title id="Sec"> § 9 </title>
+<title id="Sec"> § 10 </title>
 
 
 <body class="flexbox card fondo-body">
@@ -88,7 +88,7 @@
   <h3> Pitágoras</h3>
   <p>
       Sea \(H\) un espacio con 
-      producto interior positivo definido.
+      producto interior.
   </p>
   <p>
       Si \(\{x_i\}_{i=1}^n\) es una familia tal que \(\langle x_i, x_j \rangle =0\)
@@ -99,6 +99,26 @@
   </p>
 
 
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+     
+  <p>
+    Por definición de la norma  y de las propiedades del producto interior obtenemos:
+    \begin{eqnarray*} 
+    \left\| \sum_{i=1}^n x_i\right\|^2 &=& \langle \sum_{i=1}^n x_i, \sum_{j=1}^n x_j \rangle \\
+    &=& \sum_{i=1}^n \sum_{j=1}^n \langle x_i, x_j \rangle 
+    \end{eqnarray*}
+    pero al ser los vectores ortogonales, \(\langle x_i, x_j \rangle =0 \) para \(i\ne j\) por lo que 
+    la expresión anterior se simplifica a 
+    \begin{eqnarray*} 
+    \left\| \sum_{i=1}^n x_i\right\|^2 &=& \sum_{i=1}^n  \langle x_i, x_i \rangle \\
+    &=& \sum_{i=1}^n \|x_i\|^2
+    \end{eqnarray*}
+
+  </p>
+    </div>
+  </div>
 </div>
 
 <div class="teorema-box">
@@ -124,12 +144,74 @@
   <button class="respButton hvr-grow felxbox"> Demostración  </button>
   <div class="resp-box flexbox">
     <div class="flexbox">
-      <iframe width="500" height="400" class="video"
-      src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=3294" allowfullscreen="true"> 
-      </iframe>
-    </div>
-  </div>
+  <p>
+    \(\Rightarrow ]\) Supongamos que la suma \(\sum_{\alpha \in A} x_\alpha\) existe en \(H\), es decir 
+    existe \(x\in H\) tal que 
+    \[
+    x=\lim_{F\in \mathcal{P}_{\textrm{fin}}(A)} \sum_{\alpha \in F } x_\alpha 
+    \]
+    en el sentido de redes, donde \(\mathcal{P}_{\textrm{fin}}(A)\) denota 
+    el conjunto de subconjuntos finitos de \(A\).
+  </p>
+  <p>
+   Usando que la norma es continua obtenemos que 
+   \[
+   \|x\|^2=\lim_{F\in \mathcal{P}_{\textrm{fin}}(A)} \| \sum_{\alpha \in F } x_\alpha \|^2
+   \]
+   pero como el conjunto \(\{x_\alpha\}_{\alpha \in A}\) es ortogonal el Teorema de Pitágora 
+   implica  que 
+   \[
+   \|x\|^2=\lim_{F\in \mathcal{P}_{\textrm{fin}}(A)}  \sum_{\alpha \in F }\| x_\alpha \|^2
+   \]
+   Por lo tanto la serie \(\sum_{\alpha \in A}\| x_\alpha \|^2\) converge 
+    en \(\mathbb{R}\) y 
+    \[
+   \left\| \sum_{\alpha \in A} x_\alpha \right\|^2 =\|x\|^2=\sum_{\alpha \in A }\| x_\alpha \|^2 
+    \]
+  </p>
 
+  <p>
+    \(\Leftarrow ]\)  Supongamos que \(\sum_{\alpha \in A }\| x_\alpha \|^2\) converge en \(\mathbb{R}\). Se sigue que
+    es de Cauchy y por lo tanto  
+    para \(\varepsilon > 0\) existe un \(F_0 \in  \mathcal{P}_{\textrm{fin}}(A)\) tal que si \(E_1,E_2 \in \mathcal{P}_{\textrm{fin}(A)}\)
+    y \(F_0\subseteq E_1,E_2\)
+    entonces 
+    \begin{equation}\label{Eqn:Aux1}
+    \left| \sum_{\alpha \in E_1} \|x_\alpha\|^2 - \sum_{\alpha \in E_2} \|x_\alpha\|_2 \right| < \varepsilon^2.
+    \end{equation}
+  </p>
+  <p>
+    Por otro lado, para probar que \(\sum_{\alpha \in A} x_\alpha\) converge en \(H\) vamos a probar que 
+    la red de sumas parciales es de Cauchy.  Tomamos conjuntos fijos y arbitrarios, \(F_1,F_2\in \mathcal{P}_{\textrm{fin}}(A)\), 
+    se sigue que:
+  </p>
+  <p>
+    \begin{eqnarray*} 
+      \left\| \sum_{\alpha \in F_1} x_\alpha  - \sum_{\alpha \in F_2} x_\alpha \right\|^2 &=& 
+      \left\| \sum_{\alpha \in F_1\setminus F_2} x_\alpha  - \sum_{\alpha \in F_2\setminus F_1} x_\alpha \right\|^2 \\
+      &=& \sum_{\alpha \in F_1\setminus F_2} \|x_\alpha\|^2  +  \sum_{\alpha \in F_2\setminus F_1} \|x_\alpha \|^2 \\
+    \end{eqnarray*}
+    donde la primera igualdad se debe al cancelar los términos iguales y la segunda es por el Teorema de Pitágoras.
+    
+  </p>
+  <p>
+    Ahora, usando que \((F_1\setminus F_2) \cup (F_2\setminus F_1) = F_1\triangle F_2 = (F_1\cup F_2)\setminus (F_1\cap F_2)\)
+    podemos reescribir 
+    \begin{eqnarray*} 
+      \left\| \sum_{\alpha \in F_1} x_\alpha  - \sum_{\alpha \in F_2} x_\alpha \right\|^2 &=& 
+      &=& \sum_{\alpha \in F_1\cup F_2} \|x_\alpha\|^2  -  \sum_{\alpha \in F_2\cap F_1} \|x_\alpha \|^2 \\
+    \end{eqnarray*}
+  </p>
+  <p>
+    Finalmente, si pedimos que \(F_0 \subseteq F_1,F_2\) y tomamos \(E_1=F_1\cup F_2\) y \(E_2=F_1\cap F_2\) en 
+     \eqref{Eqn:Aux1} obtenemos que \(F_0\subseteq E_1,E_2\) y por lo tanto 
+
+    \begin{eqnarray*} 
+      \left\| \sum_{\alpha \in F_1} x_\alpha  - \sum_{\alpha \in F_2} x_\alpha \right\|^2 < \varepsilon^2
+      \end{eqnarray*}
+  </p>
+</div>
+</div>
 </div>
 
 <div class="prop-box">
