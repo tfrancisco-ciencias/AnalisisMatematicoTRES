@@ -2,7 +2,8 @@
   <html lang="es">
 
 
-  <head>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <!-- Following part is mathjax, for latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -20,11 +21,25 @@
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
             cer: "\\operatorname{cer}",
-            inte: "\\operatorname{int}"
+            inte: "\\operatorname{int}",
+            lspan: "\\operatorname{span}"
           },
           tags: "ams" /* this part is for numbered equations */
         }
       };
+    </script>
+
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
     </script>
 
     <!-- CSS -->
@@ -46,7 +61,7 @@
   <!-- Top Menu -->
 
   <header class="main-header">
-    <h1 class="calculo-title"> Análisis Matemático TRES</h1>
+    <h1 > Análisis Matemático TRES</h1>
     <nav class="top-nav">
       <ul>
         <li> <a href="../Home.html"> Inicio  </a> </li>
@@ -55,7 +70,8 @@
       </ul>
      
     </nav>
-    <label class="switch">
+
+<label class="switch">
       <input type="checkbox" onclick="myFunction()">
       <span class="slider"></span>
     </label>
@@ -66,7 +82,7 @@
 <title id="Sec"> § 11 </title>
 
 
-<body class="flexbox card fondo-body">
+<body class="fondo-body">
 
 
   <div class="flexbox">
@@ -88,8 +104,7 @@
             </p>
         </div>
 
-
-        <div class="info-box"> 
+<div class="info-box">
             <h2 class="number-title"> Ejemplo </h2>
             <p>
                 Para un conjunto \(A\ne \emptyset\) definimos 
@@ -106,8 +121,9 @@
             Entonces \((\ell^2(A), \langle \cdot, \cdot \rangle )\)
             es un espacio de Hilbert.
         </div>
+        
 
-        <div class="teorema-box">
+        <div class="teorema-box"> 
             <h2 class="number-title"> Teorema </h2>
             <p>
                 Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert y 
@@ -129,9 +145,11 @@
                 </iframe>
               </div>
             </div>
-            </div>
-            
         </div>
+
+
+
+        
 
         <div class="prop-box">
             <h2 class="number-title"> Corolario</h2>
@@ -159,7 +177,6 @@
                 src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=1127" allowfullscreen="true"> 
                 </iframe>
               </div>
-            </div>
             </div>
         </div>
 
@@ -192,7 +209,7 @@
                     Si \(S\subseteq T\) entonces \(T^\perp \subseteq S^\perp \).
                 </li>
                 <li>
-                    \(S^\perp = (\span(S))^\perp\).
+                    \(S^\perp = (\(S))^\perp \).
                 </li>
                 <li>
                     \(S^\perp= \overline{S}^\perp \).
@@ -231,6 +248,40 @@
             </div>
             </div>
         </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert
+                y \(Y\leq H\) un subespacio cerrado.
+            </p>
+            <p>
+                Todo \(x_0\in H\) se puede expresar de manera única como 
+                \[
+                x_0=y_0+z_0
+                \]
+                con \(y_0\in Y\) y \(z_0\in Y^\perp\). Es decir \(H=Y\oplus Y^\perp\).
+
+            </p>
+            <p>
+                Es más 
+                \[
+                    \|x_0-y_0\| =\inf_{y\in Y}\{\|x_0-y\|\}
+                \]
+            </p>
+
+
+            <button class="respButton hvr-grow felxbox"> Demostración  </button>
+            <div class="resp-box flexbox">
+              <div class="flexbox">
+                <iframe width="500" height="400" class="video"
+                src="https://www.youtube.com/embed/yF_oh2O3_Kc?start=2244" allowfullscreen="true"> 
+                </iframe>
+              </div>
+            </div>
+            </div>
+        </div>
+
 
         <div class="teorema-box">
             <h2 class="number-title"> Teorema </h2>
@@ -425,6 +476,5 @@
     
         </div>
 
-
-
      </body>   
+     </head>

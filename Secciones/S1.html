@@ -2,7 +2,8 @@
   <html lang="es">
 
 
-  <head>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <!-- Following part is mathjax, for latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -27,6 +28,19 @@
       };
     </script>
 
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
     <!-- CSS -->
 
     <link rel="stylesheet" , href="../styles.css" />
@@ -46,7 +60,7 @@
   <!-- Top Menu -->
 
   <header class="main-header">
-    <h1 class="calculo-title"> Análisis Matemático TRES</h1>
+    <h1 > Análisis Matemático TRES</h1>
     <nav class="top-nav">
       <ul>
         <li> <a href="../Home.html"> Inicio  </a> </li>
@@ -55,7 +69,8 @@
       </ul>
      
     </nav>
-    <label class="switch">
+
+<label class="switch">
       <input type="checkbox" onclick="myFunction()">
       <span class="slider"></span>
     </label>
@@ -69,8 +84,8 @@
   <!-- Contenido inicia abajo -->
 </head>
 
-  <body class="flexbox card fondo-body">
-    <div class="flexbox"></div>
+  <body class="fondo-body">
+    
     <h1 class="number-title flexbox"> Preliminares  </h1>     
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
@@ -126,16 +141,57 @@
 
 
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2>
+      <div class="prop-box">
+        <h2 class="number-title"> Lema</h2>
         <p>
           Sean \(X,Y\) dos esapcios vectoriales, \(W\subseteq X\) un subespacio
-          y \(T:X\to Y\) una función lineal. Prueba que existe una función lineal 
+          y \(T:X\to Y\) una función lineal. Existe una función lineal 
           \(\tilde{T}:X/W \to Y \) tal que \(\tilde{T} \circ \pi =T \) si y sólo si 
           \(W\subseteq \ker(T)\), donde \(\pi\) es la proyección de \(X\) en \(X/W\).
         </p>
 
       </div>
+
+
+
+            <div class="definicion-box">
+                <h2 class="number-title"> Definición </h2>
+                <p>
+                    Sea \(V\) un espacio vectorial. Un subconjunto 
+                    \(C \subseteq V\) se llama convexo si para todos 
+                    \(x,y\in C\) se cunple que el segmento que une \(x\)
+                    conn \(y\) está contenido en \(C\), es decir para todos 
+                    \(s,t \geq 1\) que satistacen \(s+t=1\) se cumple que 
+                    \(tx+sy\in C\).
+                </p>
+            </div>
+
+            <div class="prop-box">
+                <h2 class="number-title"> Proposición </h2>
+                <p>
+                    Prueba que un conjunto \(C \subset V\) es convexo si y sólo si 
+                    para todos \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
+                    con \(t_i\geq 0\) y \(t_1+\cdots + t_n=1\) se tiene que 
+                    \(t_1x_1+\cdots t_nx_n\in C\).
+                </p>
+                <p>
+                  Nota: a una expresión de la forma \(t_1x_1+\cdots + t_nx_n\)  con 
+                  \(t_i \geq 0\) y \(t_1+\cdots + t_n=1\), se le llama una combinacion 
+                  lineal convexa.
+                </p>
+            </div>
+
+            <div class="prop-box">
+                <h2 class="number-title"> Proposición</h2>
+                <p>
+                    Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces 
+                    para todos \(s,t>0\) se cumple 
+                    \[
+                    sC+tC=(s+t)C.
+                    \]
+                </p>
+            </div>
+
 
       <div class="definicion-box">
           <h2 class="number-title"> Definición</h2>
@@ -187,33 +243,46 @@
             </div>
 
 
-            <div class="ejercicio-box">
-              <h2 class="number-title"> Ejercicio </h2>
-              <p>
-                Sea \(X\) un conjunto distinto del vacío y considera el espacio de funciones 
-                \[
-                F(X)=\{f:X \to \mathbb{F} \}
-                \]
+            
+
+            <div class="definicion-box">
+                <h2 class="number-title"> Definición</h2>
+                <p>
+                  Sea \(V\) un espacio vectorial (real o complejo). Una funcional sublineal 
+                  es una función \(\rho:V\to \mathbb{R}\) que satisface, para todos 
+                  \(x,y\in V\), y todo \(t\in \mathbb{R}\), \(t\geq 0\):
+                  <ol>
+                    <li> \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
+                    <li> \(\rho(tx)=t\rho(x)\).</li>
+                  </ol>
+                  Si además satisafce la condición 
+                      <p>
+                        \[
+                        \rho(ax)=|a|\rho(x)
+                      \]
+                      para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
+                      </p>
+                </p>
+                
+                <p> Ejemplos</p>
                 <ol>
-                  <li>
-                    Fija un \(x_0\in X\) y considera \(W=\{f\in F(X): f(x_0)=0\}\). Prueba que 
-                \(W\) es un subespacio de \(F(X)\) y que \(\dim(F(X)/W)=1\).
+                  <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
+                    de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
+                  definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
                   </li>
                   <li>
-                    Fija ahora \(x_1,x_0\in X\), \(x_1\neq x_2\) y define 
-                    \(V=\{f\in F(X): f(x_0)=0, f(x_1)=0\}\). Prueba que \(V\) es un subespacio 
-                    y encuentra la dimensión de \(F(X)/V\)
+                    Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
+                    a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
+                    en \(\mathbb{R}\). Dado un 
+                    subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
+                    \(\rho(f)=\sup_{x\in K}\{f(x)\}\). Entonces \(\rho\) es una funcional 
+                    sublineal y no es en general una seminorma. Si la modificamos como 
+                    \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\) obtenemos una seminorma. 
                   </li>
-                  <li>
-                    ¿Se valen los mismos resultados de los dos incisos anteriores si cambiamos 
-                    \(F(X)\) por \(C(X)\), el espacio de funciones continuas sobre \(X\)? para 
-                    esta parte suponemos que \(X\) es un espacio métrico.
-                  </li>
+
                 </ol>
                 
-              </p>
-            </div>
-
+              </div>
 
             <div class="definicion-box">  
 
@@ -224,7 +293,7 @@
                     </p>
                     <p>
                         Nota: todo subconjunto absorbente \(A\) satisface que 
-                        \(0 \in A\).
+                        \(0 \in A\). Simplemente se toma \(x=0\) en la definición anterior.
                     </p>
                     <p>
                         Ejemplos.
@@ -251,6 +320,167 @@
 
             </div>
 
+            
+
+
+
+
+
+                            <div class="definicion-box"> 
+                <h2 class="number-title"> Definición </h2>
+                <p>
+                  Sea \(V\) un espacio vectorial y \(A\subseteq V\) un conjunto 
+                  absorbente. La funcional de Minkowski de \(A\), denotada \(\mu_A\),
+                  es la función \(\mu_A:V\to [0,\infty)\) dada por
+                  \[
+                    \mu_A(x)=\inf\{t>0: x\in tA \}
+                  \]
+                  Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
+                </p>
+                <p>
+                  Observación: \(\mu_A(0)=0\).
+                </p>
+
+
+                <button class="respButton hvr-grow felxbox"> Explicación </button>
+                <div class="resp-box flexbox">
+                  <div class="flexbox">
+                    <iframe width="500" height="400" class="video"
+                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=358" allowfullscreen="true"> 
+                    </iframe>
+                  </div>
+                </div>
+                
+              </div>
+
+
+
+                          <div class="definicion-box">
+              <h2 class="number-title"> Definición </h2>
+              <p>
+                  Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
+                  balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
+              </p>
+
+            </div>
+
+
+
+              <div class="prop-box">
+                <h2 class="number-title"> Proposición </h2>
+                  <p>
+                    Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
+                    <ol>
+                      <li>
+                        la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
+                      </li>
+                      <li>
+                        Si además definimos 
+                        \[
+                        B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
+                        \]
+                        entonces \(B \subseteq A \subseteq C \) y 
+                        \[
+                        \mu_{B}=\mu_A=\mu_{C}.
+                        \]
+                      </li>
+                      <li>
+                        Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
+                        seminorma.
+                      </li>
+                    </ol> 
+                  </p>
+
+                <button class="respButton hvr-grow felxbox"> Demostración </button>
+                <div class="resp-box flexbox">
+                  <div class="flexbox">
+                    <iframe width="500" height="400" class="video"
+                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=1226" allowfullscreen="true"> 
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="prop-box">
+                <h2 class="number-title"> Proposición </h2>
+                <p>
+                  Esta proposición es como el regreso de la proposición anterior. 
+                </p>
+                <p>
+                  Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. 
+                  <ol>
+                    <li>
+                      Si \(\rho \geq 0\) define 
+                      \[
+                       B:=\{x\in V: \rho(x)< 1\}, \, C:=\{x\in V: \rho(x) \leq  1\}
+                      \]
+                        Entonces \(B\) y \(C\) son convexos y absorbentes y 
+                      \[
+                       \mu_B=\rho= \mu_C.
+                      \]
+                    </li>  
+                    <li>
+                      Si además \(\rho\)
+                      es una seminorma entonces \(B\) y \(C\) son balanceados.
+                    </li>
+                  </ol>
+                  
+                </p>
+
+                <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
+                <div class="resp-box flexbox">
+                  <div class="flexbox">
+                    <iframe width="500" height="400" class="video"
+                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=410" allowfullscreen="true"> 
+                    </iframe>
+                  </div>
+                </div>-->
+
+              </div>
+
+
+      <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \((V,\|\cdot\|)\) un espacio vectorial normado y \(\emptyset \ne A\subseteq V\) 
+        un conjunto abierto y convexo. Prueba que si \(f:V\to \mathbb{R}\) es funcional lineal no cero 
+        entonces \(f(A)\) es abierto convexo en \(\mathbb{R}\).
+      </p>
+
+     </div>
+
+      <div class="ejercicio-box">
+        <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(X\) un conjunto distinto del vacío y considera el espacio de funciones 
+            \[
+              F(X)=\{f:X \to \mathbb{F} \}
+            \]
+          <ol>
+            <li>
+                Fija un \(x_0\in X\) y considera \(W=\{f\in F(X): f(x_0)=0\}\). Prueba que 
+                \(W\) es un subespacio de \(F(X)\) y que \(\dim(F(X)/W)=1\).
+            </li>
+            <li>
+                Fija ahora \(x_1,x_0\in X\), \(x_1\neq x_2\) y define 
+                \(V=\{f\in F(X): f(x_0)=0, f(x_1)=0\}\). Prueba que \(V\) es un subespacio 
+                y encuentra la dimensión de \(F(X)/V\)
+            </li>
+            <li>
+                ¿Se valen los mismos resultados de los dos incisos anteriores si cambiamos 
+                \(F(X)\) por \(C(X)\), el espacio de funciones continuas sobre \(X\)? para 
+                esta parte suponemos que \(X\) es un espacio métrico.
+            </li>
+          </ol>
+                
+           </p>
+      </div>
+
+
+
 
             <div class="ejercicio-box">
               <h2 class="number-title"> Ejercicio </h2>
@@ -261,38 +491,16 @@
 
             </div>
 
-            <div class="ejercicio-box">
-              <h2 class="number-title" id="Ejer:SupraCompatibleAbsorbente"> Ejercicio</h2>
-              <p>
-                Sean \(X,Y\) espacios vectoriales y \(f:X\to Y\) lineal y suprayectiva. Prueba que 
-                si \(A\subseteq X\) es absorbente entonces \(f(A)\subseteq Y\) es absorbente.
-              </p>
 
-            </div>
-
-
-            <div class="ejercicio-box">
-              <h2 class="number-title" id="Ejer:RestricccionAbsorbente"> Ejercicio</h2>
-              <p>
-                Sea \(V\) un espacio vectorial y \(W\subseteq V\) un subespacio. Sea 
-                \(A\subseteq V\) un subconjunto absorbete (em \(V\)). Define 
-                \(A'=A\cap W\). Prueba que \(A'\) es absorbeten (en \(W\)).
-              </p>
-
-            </div>
-
-            <div class="ejercicio-box">
+    <div class="ejercicio-box">
               <h2 class="number-title"> Ejercicio (conjetura Yair-Yahir)</h2>
               <p>
                 Sea \(V\) un espacio vectorial (real o complejo) 
                 de dimensión mayor o igual a 2 y 
                 \(A\subseteq V\) numerable. Entonces \(A\) no es absorbente.
               </p>
-
-              <button class="respButton hvr-grow felxbox"> Demostración </button>
+              <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
               <div class="resp-box flexbox">
-                
-              
               <p>
                 Caso 1: finito dimensional.
               </p>
@@ -343,47 +551,30 @@
                   Por otra parte si suponemos que existe \(A \subseteq V\) contable y absorbente en \(V\) entonces, 
                   \(A\cap W\) tambien es absorbente en \(W\) (ver <a href="#Ejer:RestricccionAbsorbente">Ejercicio 1.10</a>) y además contable, esto contradice el primer caso.
                 </p>
-              </div>
+              </div>-->
+            </div>        
+
+            <div class="ejercicio-box">
+              <h2 class="number-title" id="Ejer:SupraCompatibleAbsorbente"> Ejercicio</h2>
+              <p>
+                Sean \(X,Y\) espacios vectoriales y \(f:X\to Y\) lineal y suprayectiva. Prueba que 
+                si \(A\subseteq X\) es absorbente entonces \(f(A)\subseteq Y\) es absorbente.
+              </p>
 
             </div>
 
-            <div class="definicion-box">
-                <h2 class="number-title"> Definición </h2>
-                <p>
-                    Sea \(V\) un espacio vectorial. Un subconjunto 
-                    \(C \subseteq V\) se llama convexo si para todos 
-                    \(x,y\in C\) se cunple que el segmento que une \(x\)
-                    conn \(y\) está contenido en \(C\), es decir para todos 
-                    \(s,t \geq 1\) que satistacen \(s+t=1\) se cumple que 
-                    \(tx+sy\in C\).
-                </p>
+
+            <div class="ejercicio-box">
+              <h2 class="number-title" id="Ejer:RestricccionAbsorbente"> Ejercicio</h2>
+              <p>
+                Sea \(V\) un espacio vectorial y \(W\subseteq V\) un subespacio. Sea 
+                \(A\subseteq V\) un subconjunto absorbete (em \(V\)). Define 
+                \(A'=A\cap W\). Prueba que \(A'\) es absorbeten (en \(W\)).
+              </p>
+
             </div>
 
-            <div class="prop-box">
-                <h2 class="number-title"> Proposición </h2>
-                <p>
-                    Prueba que un conjunto \(C \subset V\) es convexo si y sólo si 
-                    para todos \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
-                    con \(t_i\geq 0\) y \(t_1+\cdots + t_n=1\) se tiene que 
-                    \(t_1x_1+\cdots t_nx_n\in C\).
-                </p>
-                <p>
-                  Nota: a una expresión de la forma \(t_1x_1+\cdots + t_nx_n\)  con 
-                  \(t_i \geq 0\) y \(t_1+\cdots + t_n=1\), se le llama una combinacion 
-                  lineal convexa.
-                </p>
-            </div>
-
-            <div class="prop-box">
-                <h2 class="number-title"> Proposición</h2>
-                <p>
-                    Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces 
-                    para todos \(s,t>0\) se cunple 
-                    \[
-                    sC+tC=(s+t)C.
-                    \]
-                </p>
-            </div>
+            
 
             <div class="ejercicio-box">
               <h2 class="number-title"> Ejercicio </h2>
@@ -399,52 +590,35 @@
                   Prueba que la imagen directa de subconjuntos convexos bajo funciones lineales 
                   sigue siendo convexo.
                 </li>
+                <li>
+                  Prueba que la suma de dos conjuntos convexos vuelve a ser convexa.
+                </li>
               </ol>
               
 
             </div>
             
 
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+                Sea \(\rho:V \to \mathbb{R}\) una funcional sublineal. Prueba que 
+                la parte positiva, \(\rho^+\), también es una funcional sublineal.
+              </p>
 
-            <div class="definicion-box">
-                <h2 class="number-title"> Definición</h2>
-                <p>
-                  Sea \(V\) un espacio vectorial (real o complejo). Una funcional sublineal 
-                  es una función \(\rho:V\to \mathbb{R}\) que satisface, para todos 
-                  \(x,y\in V\), y todo \(t\in \mathbb{R}\), \(t>0\):
-                  <ol>
-                    <li> \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
-                    <li> \(\rho(tx)=t\rho(x)\).</li>
-                  </ol>
-                  Si además satisafce la condición 
-                      <p>
-                        \[
-                        \rho(ax)=|a|\rho(x)
-                      \]
-                      para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
-                      </p>
-                </p>
-                
-                <p> Ejemplos</p>
-                <ol>
-                  <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
-                    de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
-                  definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
-                  </li>
-                  <li>
-                    Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
-                    a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
-                    en \(\mathbb{R}\). Dado un 
-                    subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
-                    \(\rho(f)=\sup_{x\in K}\{f(x)\}\). Entonces \(\rho\) es una funcional 
-                    sublineal y no es en general una seminorma. Si la modificamos como 
-                    \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\) obtenemos una seminorma. 
-                  </li>
+           </div>   
 
-                </ol>
-                
-              </div>
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+                Sea \(\rho:V \to \mathbb{R}\) una funcional sublineal. Da un 
+                ejemplo que muestre que 
+                la parte negativa, \(\rho^-\), no es una funcional sublineal.
+              </p>
 
+           </div>   
+
+            
             <div class="ejercicio-box">
               <h2 class="number-title"> Ejercicio </h2>
 
@@ -472,138 +646,8 @@
 
 
 
-              <div class="definicion-box"> 
-                <h2 class="number-title"> Definición </h2>
-                <p>
-                  Sea \(V\) un espacio vectorial y \(A\subseteq V\) un conjunto 
-                  absorbente. La funcional de Minkowski de \(A\), denotada \(\mu_A\),
-                  es la función \(\mu_A:V\to [0,\infty)\) dada por
-                  \[
-                    \mu_A(x)=\inf\{t>0: x\in tA \}
-                  \]
-                  Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
-                </p>
-                <p>
-                  Observación: \(\mu_A(0)=0\).
-                </p>
 
-
-                <button class="respButton hvr-grow felxbox"> Explicación </button>
-                <div class="resp-box flexbox">
-                  <div class="flexbox">
-                    <iframe width="500" height="400" class="video"
-                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=358" allowfullscreen="true"> 
-                    </iframe>
-                  </div>
-                </div>
-                
-              </div>
-
-
-
-
-
-              <div class="prop-box">
-                <h2 class="number-title"> Proposición </h2>
-                <p>
-                  Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. Define 
-                  \[
-                    B:=\{x\in V: \rho(x)< 1\}, \, C:=\{x\in V: \rho(x) \leq  1\}
-                  \]
-                  Entonces \(B\) y \(C\) son convexos y absorbentes y 
-                  \[
-                  \mu_B=\rho= \mu_C.
-                  \]
-                  Si además \(\rho\)
-                  es una seminorma entonces \(B\) y \(C\) son balanceados.
-                </p>
-
-                <button class="respButton hvr-grow felxbox"> Demostración </button>
-                <div class="resp-box flexbox">
-                  <div class="flexbox">
-                    <iframe width="500" height="400" class="video"
-                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=410" allowfullscreen="true"> 
-                    </iframe>
-                  </div>
-                </div>
-
-              </div>
-
-
-
-            <div class="definicion-box">
-              <h2 class="number-title"> Definición </h2>
-              <p>
-                  Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
-                  balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
-              </p>
-
-            </div>
-
-
-
-              <div class="prop-box">
-                <h2 class="number-title"> Proposición </h2>
-                  <p>
-                    Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
-                    <ol>
-                      <li>
-                        la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
-                      </li>
-                      <li>
-                        Si además definimos 
-                        \[
-                        B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
-                        \]
-                        entonces \(B \subseteq A \subseteq C \) y 
-                        \[
-                        \mu_{B}=\mu_A=\mu_{C}.
-                        \]
-                      </li>
-                      <li>
-                        Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
-                        seminorma.
-                      </li>
-                    </ol> 
-                  </p>
-
-                <button class="respButton hvr-grow felxbox"> Demostración </button>
-                <div class="resp-box flexbox">
-                  <div class="flexbox">
-                    <iframe width="500" height="400" class="video"
-                    src="https://www.youtube.com/embed/jd2JEcYKHGg?start=1226" allowfullscreen="true"> 
-                    </iframe>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="prop-box">
-                <h2 class="number-title"> Proposición </h2>
-                  <p>
-                    Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
-                    <ol>
-                      <li>
-                        la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
-                      </li>
-                      <li>
-                        Si además definimos 
-                        \[
-                        B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
-                        \]
-                        entonces \(B \subseteq A \subseteq C \) y 
-                        \[
-                        \mu_{B}=\mu_A=\mu_{C}.
-                        \]
-                      </li>
-                      <li>
-                        Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
-                        seminorma.
-                      </li>
-                    </ol> 
-                  </p>
-
-              </div>
+      
 
               <div class="quiz-box">
                 <h2> Quiz  </h2>
