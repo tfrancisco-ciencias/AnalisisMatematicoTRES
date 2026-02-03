@@ -85,7 +85,7 @@
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
+    <h1 class="number-title flexbox"> Espacios de Banach  </h1>     
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -93,319 +93,535 @@
 
   <!--    Contenido empiaza abajo
  ///////////////////////////////// -->
-
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
-      <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
-        \(\rho:V\to \mathbb{R}\) una funcional sublineal.
-      </p>
-      <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
-        \[
-          \varphi(x)\leq \rho(x), \forall x\in W.
-        \]
-      </p>
-      <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
-        tal que 
-        <ol>
-          <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
-          </li>
-          <li>
-            para todo \(x\in V\), \(\tilde{\varphi}(x)\leq \rho(x)\).
-          </li>
-        </ol>
-      </p>
-
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jd2JEcYKHGg?t=3100" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-
   
-    </div>
 
-
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
+      <div class="definicion-box">
+      <h2 class="number-title"> Definicion</h2>
       <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
-        \(\rho:V\to \mathbb{R}\) una seminorma.
+        Sea \(X\) un espacio vectorial (real o complejo). Una norma en \(X\) es una 
+         \(\|\cdot\|: X \to \mathbb{R}\) que satisface, 
+         para todos \(x,y\in X\) y escalar \(\alpha\): 
+        <ol>
+          <li>
+            \(\|x\| \geq 0\) y \(\|x\|=0\) si y sólo si \(\|x\|=0\).
+          </li>
+          <li>
+            \(\|\alpha x \| =|\alpha|\|x\|\)
+          </li>
+          <li>
+            Desigualdad del triángulo: \(\|x+y\|\leq \|x+y\|\).
+          </li>
+        </ol>
+        Es decir, una norma es una seminorma con la propiedad de que 
+        el único vector de norma 0 es el vector 0.
       </p>
       <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        El espacio \(X\) se vuelve un espacio métrico si consideramos 
+        la métrica inducida por la norma, \(d:X\times X \to X\),
         \[
-          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        d(x,y)=\|x-y\|.
         \]
       </p>
       <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
-        tal que 
-        <ol>
-          <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
-          </li>
-          <li>
-            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
-          </li>
-        </ol>
+        Si no se indica lo contrario, siempre que se hable de continuidad en 
+        un espacio vectorial normado se referira a la continuidad con respecto a esta métrica.
       </p>
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=179" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
+  </div>
 
-
-      
-    </div>
-
-    <div class="prop-box">
-      <h2 class="number-title"> Lema </h2>
-      <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\).
-      </p>
-      <ol>
-        <li>
-          Supongamos que \(\varphi: V\to \mathbb{C}\) es  \(\mathbb{C}\)-lineal y defimamos 
-          \(\varphi_r(x)=\Re(\varphi(x))\), para \(x\in V\). Entonces \(\varphi_r\)
-          es \(\mathbb{R}\)-lineal y para todo \(x\in  V\)
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <h3> La otra desigualdad del triángulo </h3>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Para todos \(x,y\in X\)
+          se cumple 
           \[
-            \varphi(x)=\varphi_r(x)-i\varphi_r(ix).
-           \]
-        </li>
-        <li>
-          Supongamos que \(\psi:V\to \mathbb{R}\) es \(\mathbb{R}\)-lineal. Entonces
-          existe \(\varphi:V\to \mathbb{C}\), \(\mathbb{C}\)-lineal tal que 
-          \(\Re(\varphi)=\psi\).
-        </li>
-      </ol>
+          |\|x\|-\|y\||\leq \|x-y\|.
+          \]
+         </p>
 
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=435" allowfullscreen="true"> 
-          </iframe>
-        </div>
       </div>
-    </div>
 
- 
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
-      <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
-        \(\rho:V\to \mathbb{R}\) una seminorma.
-      </p>
-      <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{C}\) que satisaface
-        \[
-          |\varphi(x)|\leq \rho(x), \forall x\in W.
-        \]
-      </p>
-      <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{C}\)
-        tal que 
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición  </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. 
+        </p>
         <ol>
           <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+            La función suma, \(+:X\times X \to X\), es continua.
           </li>
           <li>
-            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+            La función multiplicación escalar, \(\cdot: \mathbb{F}\times X \to X\), es continua.
+          </li>
+          <li>
+            La función norma, \(\|\cdot\|: X \to \mathbb{R}\), es continua.
           </li>
         </ol>
+
+      </div>
+
+      <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Dada una sucesión en 
+          \((x_n)_{n=1}^\infty\), la serie generada por la sucesión 
+          es la sucesión formada por las sumas parciales, es decir \((\sum_{n=1}^N x_n)_{N=1}^\infty\).
+          Decimos que la serie converge en \(X\) si el siguiente límite existe en \(X\):
+          \[
+            \lim_{N\to \infty} \sum_{n=1}^N x_n          
+          \]
+          y lo denotamos como \(\sum_{n=1}^\infty x_n\). También podemos referirnos a esto como que la 
+          sucesión \((x_n)_{n=1}^\infty\) es sumable.
+        </p>
+        <p>
+          Por ejemplo, fijemos \(p\in [1,\infty) \) y consideremos el espacio vectorial
+          \[
+          \ell_p=\{x=(x(n))_{n=1}^\infty:  \sum_{n=1}^\infty |x(n)|^p < \infty\}.
+          \]
+          Si \(e_n\) es la sucesión que tiene todas las 
+          entradas cero, excepto la \(n\)-ésima entrada donde tiene un 1, se cumple
+          que, para todo \(x\in \ell_p\):
+          \[
+          x=\sum_{n=1}^\infty x(n)e_n.
+          \] 
+        </p>
+
+      </div>
+
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado y \((x_n)_{n=1}^\infty, (y_n)_{n=1}^\infty\)
+          dos sucesiones  sumables. Entonces se cumplen:
+          <ol>
+            <li>
+              \(\lim_{n\to \infty}x_n =0\).
+            </li>
+            <li>
+              La sucesión \((x_n+y_n)_{n=1}^\infty\) es sumable y 
+              \(\sum_{n=1}^\infty (x_n+y_n)=\sum_{n=1}^\infty x_n + \sum_{n=1}^\infty x_n\).
+            </li>
+            <li>
+              Sea \(\alpha\) un escalar. La sucesión \((\alpha x_n)_{n=1}^\infty\)
+              es sumable y \(\sum_{n=1}^\infty \alpha x_n = \alpha (\sum_{n=1}^\infty x_n)\).
+            </li>
+            <li>
+              Considerando el caso \(\sum_{n=1}^\infty \|x_n\| =+\infty\), se cumple:
+              \[
+              \| \sum_{n=1}^\infty x_n \| \leq \sum_{n=1}^\infty \|x_n\| 
+              \]
+              
+            </li>
+          </ol>
+        </p>
+
+      </div>
+
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definicion</h2>
+      <p>
+        Un espacio de Banach es un espacio vectorial normado completo.
       </p>
 
+    </div>
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Sea \((X,d)\) un espacio métrico (ó topológico) compacto. Definimos 
+        \[
+          C(X):=\{f:X\to \mathbb{F}: \textrm{\(f\) continua en \(X\)}\}
+        \]
+        para \(f\in C(X)\) se define 
+        \[
+        \|f\|_\infty=\sup_{x\in X}\{|f(x)|\}
+        \]
+        
+      </p>
+      <p>
+        \((C(X),\|\cdot\|_\infty)\) es un espacio de Banach.
+      </p>
+      <p>
+        De manera similar el conjunto 
+        \[
+          B(X)=\{f:X\to \mathbb{F}: \textrm{\(f\) es acotada en \(X\)}\}
+        \]
+        es un espacio de Banach con la misma norma que \(C(X)\). Nota que para 
+        el espacio \(B(X)\) no es necesario dar estructura de espacio métrico 
+        (o topológico) a \(X\), éste puede ser cualquier conjunto no vacío.
+      </p>
+      <p>
+        Este ejemplo se puede generalizar reemplazando \(\mathbb{F}\) por cualquier espacio de Banach, 
+        pues lo importante es que el codominio es compacto.
+      </p>
 
       <button class="respButton hvr-grow felxbox"> Demostración </button>
       <div class="resp-box flexbox">
         <div class="flexbox">
           <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=1180" allowfullscreen="true"> 
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=2014" allowfullscreen="true"> 
           </iframe>
         </div>
       </div>
+
     </div>
 
+
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        El espacio de las funciones \(p\)-integrables en un espacio de medida, \(L_p(X,\Sigma,\mu)\), \(p\in [1,\infty)\).
+      </p>
+
+    </div>
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        El espacio de las funciones de variación acotada.
+      </p>
+      <p>
+        Una función \(f:[a,b]\to \mathbb{R}\) se llama de variación acotada si existe una constante 
+        \(M>0\) tal que, para toda partición de \([a,b]\), \(P=\{t_i\}_{i=0}^n\) tal que 
+        \[
+          \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \leq M
+        \]
+        
+      </p>
+      <p>
+        Por ejemplos: 
+        <ol>
+          <li>
+            toda función monótona en \([a,b]\) es de variación acotada en 
+        \([a,b]\).
+          </li>
+          <li>
+            toda función clase \(C^1\) en \([a,b]\) es de variación acotada en 
+            \([a,b]\).
+          </li>
+        </ol> 
+      </p>
+      <p>
+        Si \(f:[a,b]\to \mathbb{F}\) es de variavión acotada definimos 
+        \[
+          V_a^b(f)=\sup_{P}\left\{ \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \right\}
+        \]
+        donde el supremo se toma sobre todas las particiones de \([a,b]\). Por ejemplo 
+        para toda función constante \(f=c\), \(V_a^b(f)=0\).
+        
+      </p>
+      <p>
+        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{R}\), por lo que 
+        \(V_a^b\) no define una norma en el espacio de funciones de variación acotada. Se define 
+        \[
+        BV([a,b])=\{f:[a,b]\to \mathbb{R}: V_a^b(f)<+\infty \}.
+        \]
+        Entonces \(BV([a,b])\) es un espacio vectorial y \(\|f\|:=V_a^b(f)+|f(a)|\) define una norma que lo 
+        convierte en espacio de Banach.
+      </p>
+
+    </div>
+
+    <div class="definicion-box"> 
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Conjuntos dirigidos y redes</h3>
+      <p>
+        Un conjunto dirigido es un conjunto parcialmente ordenado \((A,\leq)\) con la propiedad 
+        de que para todos \(\alpha,\beta \in A\)  existe \(\gamma \in A\)  tal que 
+        \(\alpha \leq \gamma\) y \(\beta \leq \gamma\). 
+      </p>
+      <p>
+        Por ejemplo si \(S\) es un conjunto arbitrario y tomamos el conjunto de 
+        subconjuntos finitos de \(S\), denotado \(\mathcal{P}_{fin}(S)\), entonces 
+        ordenado con la contención éste se vuelve un conjunto dirigido.
+      </p>
+      <p>
+        Una red sobre un conjunto \(X\) es una función \(x: A \to X\) donde 
+        \(A\) es un conjunto dirigido.
+      </p>
+        <p>
+          Por ejemplo, si \(X\) es un espacio vectorial y \((x_n)_{n=1}^{\infty}\)
+          es una sucesión de elementos de \(X\) definimos \(s: \mathcal{P}_{fin}(\mathbb{N})\to X\)
+          por \(s(F)=\sum_{i\in F}x_i\). Entonces \(s\) es una red, la red de sumas parciales de la sucesión.
+        </p>
+        <p>
+          Notación: como en el caso de las sucesiones, una red  \(x:A\to X\) se denota mediante 
+          \((x_\alpha)_{\alpha\in A}\) donde \(x_\alpha=x(\alpha)\).
+        </p>
+
+    </div>
+    
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <h3> Convergencia de redes </h3>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una red \((x_\alpha)_{\alpha \in A}\) converge 
+        a un punto \(x_0\in X\) si para toda \(\varepsilon > 0 \),  existe \(\alpha_0\in A\) tal  que 
+        para toda \(\alpha \geq \alpha_0 \) se tiene \(\| x_\alpha -x_0 \| < \varepsilon \). Notación: 
+        \(\lim_{\alpha \in A}x_\alpha = x_0\).
+      </p>
+    
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sea \((x_\alpha)_{\alpha \in A}\)
+          una red en \(X\) y supón que \(\lim_{\alpha \in A}x_\alpha = x_0\) y 
+          \(\lim_{\alpha \in A}x_\alpha = x_1\). Prueba que \(x_0=x_1\).
+     </p>
+     </div>
 
 
 
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Sea \(X\) un espacio vectorial sobre \(\mathbb{R}\) y supon que existe \(P\subseteq X\) un 
-        conjunto que satisface:
-        <ul>
-          <li>
-            si \(x,y\in P\) entonces \(x+y \in P\),
-          </li>
-          <li>
-            si \(x\in P\) y \(t\geq 0\) entonces \(tx\in P\),
-          </li>
-          <li>
-            si \(x\in P\) y \(-x\in P\) entonces \(x=0\).
-          </li>
-        </ul>
-        Demuestra lo siguiente.
-        <ol>
-          <li>
-            La relación definida en \(X\) como \(x\leq y\) sii \(y-x\in P\) es un orden parcial.
-          </li>
-          <li>
-            <p>
-              Teorema de Extensión de Krein
-            </p> 
-            <p>
-              Sea \(W\subseteq X\) un subespacio que 
-            satisface que para todo \(x\in X\) existe \(w\in W\) tal que \(x\leq w\).
-            </p>
-            <p>
-              Si \(f\) es una funcional lineal en \(W\) tal que \(f(w)\geq 0\)
-              para todo \(w\in W\cap P\) entonces existe \(F\), funcional lineal en \(X\), 
-              tal que \(F|_{W}=f\) y \(F(x)\geq 0\) para todo \(x\in P\).
-            </p>
-            <p>
-              Sugerencias: 
-              <ol>
-                <li>
-                  Para \(x\in X\) define 
-                  \begin{eqnarray*} 
-                    A=\{ y\in W : x\leq y \} \\
-                    B= \{z\in W : z \leq x \}
-                  \end{eqnarray*}
-                  Prueba que \(A\ne \emptyset, B\ne \emptyset\). Hint: para \(B\) considera \(-x\).
-                </li>
-                <li>
-                  Para \(x\in X\) define 
-                  \[
-                  \rho(x)=\inf\{f(y)| y\in A \}
-                  \]
-                  Prueba que \(\rho\) está bien definida y es sublineal.
-                </li>
-                <li>
-                  Prueba que \(f(w)\leq \rho(w)\) para todo \(w\in W\).
-                </li>
-                <li>
-                  Aplica un Teorema de extensión para encontrar \(F:X\to \mathbb{R}\) 
-                  una extensión lineal de \(f\) que satisface \(F(x)\leq \rho(x)\) 
-                  para toda \(x\in X\). Finalmente prueba \(F(x)\geq 0\) para toda \(x\in P\).
-                </li>
-              </ol>
-            </p>
-
-          </li>
-        </ol>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sean \((x_\alpha)_{\alpha \in A}, (y_\alpha)_{\alpha \in A}\)
+          dos redes en \(X\) tal que \(\lim_{\alpha \in A} x_\alpha = x_0\) y \(\lim_{\alpha \in A} y_\alpha = y_0\). Prueba que 
+          para todo escalar \(\lambda\),
+          \[
+          \lim_{\alpha \in A} (\lambda x_\alpha+ y_\alpha)=\lambda x_0+y_0
+          \]
       </p>
-        
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. Una función 
+        \(f:X\to Y\) es continua en \(x_0\) sii para toda 
+        \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
+        \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
+      </p>
+
     </div>
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
+      <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Sea \(V\) un espacio vectorial, \(A\subseteq V\) un conjunto convexo y absorbente, con 
-        funcional de Minkowski \(\mu_A\).  Sea  
-        \(x_0\in V\) con la propiedad de que existe un \(\varepsilon_0\in (0,1)\) tal que 
-        \(x_0\notin sA\) para toda \(s\in (1-\varepsilon_0, 1+ \varepsilon_0)\). Prueba que existe 
-        \(f:V\to \mathbb{R}\) funcional lineal 
-        tal que \(f(a)\leq 1 \) para toda \(a\in A\) y \(1+\varepsilon_0 =f(x_0)\).
+        Sean \(B\) y \(A\) dos copos. Una función \(\varphi:B\to A\) se llama 
+        cofinal si para toda \(a\in A\) existe \(b\in B\) tal que 
+        \(a\leq \varphi(b)\).
       </p>
+      <p>
+        Sea \(A\) un conjunto dirigido y \(x:A\to X\) una red en el conjunto \(X\). 
+        Una subred de 
+        \(x\) es pre-componer \(x\) con una función estrictamente creciente y cofinal. Es decir es 
+        una red de la forma \(x\circ \varphi : B \to X\), donde \(B\) es un conjunto dirigido y 
+        \(\varphi: B\to A\) es estrictamente creciente. Al igual que con sucesiones una subred 
+        de \((x_\alpha)_{\alpha \in A}\) se puede denotar como \((x_{\alpha_\beta})_{\beta\in B}\), 
+        donde \(x_{\alpha_\beta}=x(\varphi(\beta))\).
+      </p>
+
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado y 
+        \((x_\alpha)_{\alpha\in A}\) una red en \(X\). Prueba que si 
+        \(\lim_{\alpha \in A}x_\alpha = x\) y si \((x_{\alpha_\beta})_{\beta \in B}\)
+        es una subred entonces \(\lim_{\beta \in B} x_{\alpha_\beta}=x\).
+      </p>
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Red de Cauchy</h3>
+      <p>
+        Una red \((x_\alpha)_{\alpha \in A}\) en un espacio vectorial normado 
+        \(X\) se llama red de Cauhcy si para toda \(\varepsilon > 0 \) existe 
+        \(\alpha_0\in A\) tal que para todas \(\alpha, \beta \geq \alpha_0\)
+        \(\|x_\alpha - x_\beta \| < \varepsilon\).
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+       <h2 class="number-title"> Proposición </h2>
+       <p>
+         En un espacio de Banach toda red de Cauchy es convergente.
+       </p>
+
+       <button class="respButton hvr-grow felxbox"> Demostración </button>
+       <div class="resp-box flexbox">
+         <div class="flexbox">
+           <iframe width="500" height="400" class="video"
+           src="https://www.youtube.com/embed/jKYe5hxRC24?start=3857" allowfullscreen="true"> 
+           </iframe>
+         </div>
+       </div>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \((x_i)_{i\in I}\subseteq X\). Denotamos 
+        \(A=\mathcal{P}_{fin}(I)\) y definimos \(s:A \to X\) por 
+        \(s(F)=\sum_{i\in F}x_i\).
+      </p>
+      <p>
+        Si la red \(s\) converge a un punto \(x\in X\) decimos que la red 
+        \(\sum_{i\in F}x_i\) converge y escribimos \(x=\sum_{i\in I}x_i\).
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4460" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio de Banach y sea \((x_i)_{i\in I} \subset X\).
+      </p>
+      <p>
+        Si 
+        \(\sum_{i\in I}\|x_i\|\) es convergente en \(\mathbb{R}\) entonces 
+        \(\sum_{i\in I}x_i\) es convergente en \(X\).
+      </p>
+      <p>
+        Es decir, convergencia absoluta implica convergencia.
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/a0SuWrStL4s?start=39" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
       
 
     </div>
 
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Un espacio vectorial normado es de Banach sii toda serie absolutamente convergente es convergente.
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4814" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
 
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
+      <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Por \(\ell_\infty\) denotamos al conjunto de 
-        sucesiones acotadas con valores reales. Es decir 
-        \(x\in \ell_\infty\) si y sólo si \(x:\mathbb{N}\to \mathbb{R}\)
-        y \(\sup_{n\in \mathbb{N}}\{|x(n)|\} < +\infty\).
-
+        Sean \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. En el 
+        producto cartesiano \(X\times Y\) considera la norma \(\|(x,y)\|=\|x\|_X+\|y\|_Y\). Prueba que 
+        \((X\times Y, \|\cdot\|)\) es un espacio de Banach si y sólo si \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\)
+        son espacios de Banach.
       </p>
-      <p>
-        Define \(T:\ell_\infty \to \ell_\infty\) por 
-        \(Tx(n)=x(n+1)\), \(n\in \mathbb{N}\) (traslación hace la derecha).
-      </p>
-      <p>
-        Prueba que existe una funcional lineal real, 
-        \(\varphi: \ell_\infty \to \mathbb{R}\), que satisface 
-        \[
-        \begin{eqnarray*} 
-        \varphi(Tx)&=&\varphi(x),\\
-        \liminf_{n\to \infty} x(n)\leq & \varphi(x) & \leq \limsup_{n\to \infty} x(n)
-        \end{eqnarray*}
-        \]
-        para toda \(x\in \ell_\infty\).
-      </p>
-      <p>
-        Suegerencia: define 
-        \[
-        \varphi_n(x)=\frac{1}{n}\sum_{i=1}^n x(i).
-        \]
-       y \(W=\{x\in \ell_\infty| \lim_{n\to \infty}\varphi_n(x)\, \textrm{existe}\}\).
-       Define  \(\varphi: W \to \mathbb{R}\) por \(\varphi(x)=\lim_{n\to \infty}\varphi_n(x)\)
-        y considera \(\rho:\ell_\infty \to \mathbb{R}\) dada por 
-        \(\rho(x)=\limsup_{n\to \infty} \varphi_n(x)\).
-
-
-      </p>
-
 
     </div>
-    
+
 
     <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
+      <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Sea  \((V,\|\cdot\|)\) un espacio vectorial real normado y \(A \subseteq V\) un 
-        subconjunto convexo y abierto. Si \(x_0\notin A\) prueba que existe una 
-        funcional lineal \(f:V\to \mathbb{R}\) y \(c>0\) tal que \(f(a) < c \leq  f(x_0)\) para toda 
-        \(a\in A\).
+        Sea \(\mathcal{X}=\{ (X_i, \|\cdot\|_i)\}_{i\in I}\) una familia arbitraria de espacios de Banach. Define 
+        \[
+        \ell_\infty(\mathcal{X})=\{ (x_i)_{i\in I}\in \Pi_{i\in I}X_i | \sup_{i\in I}\{\|x_i\|_i\} < +\infty \}
+        \]
+        y  define 
+        \[
+        \|x\|_\infty= \sup_{i\in I}\{\|x_i\|_i\}
+        \]
+        
+      </p>
+      <ol>
+        <li>
+            Prueba que \((\ell_\infty(\mathcal{X}), \|\cdot\|_\infty)\) es un espacio de Banach.
+        </li>
+        <li>
+          Supón además que \(I\) es un conjunto dirigido. Define 
+          \[
+          c_0(\mathcal{X})=\{ (x_i)_{i\in I}\in \ell_\infty(\mathcal{X})| \lim_{i\in I}\|x_i\|_i=0 \}
+          \]
+          Prueba que \((c_0(\mathcal{X}), \|\cdot\|_\infty)\) es un espacio de Banach.
+        </li>
+      </ol>
+      <p>
+        Nota: \(\Pi_{i\in I}X_i\) denota al producto cartesiano de los espacios, 
+        es decir \((x_i)_{i\in I}\in \Pi_{i\in I}X_i\)  si y sólo si para toda \(i\in I\), \(x_i\in X_i\).
       </p>
 
     </div>
+
+
+
+
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2> 
+      <p>
+        Prueba que cualesquiera dos normas en un espacio vectorial de dimensión finita son equivalentes.
+      </p>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio de Banach y \(M\subseteq X\) un subespacio de dimensión finita. Prueba que 
+        \(M\) es cerrado.
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \(X\), \(Y\) espacios vectoriales normados con \(\dim(X)=\dim(Y)< +\infty\). Prueba que 
+        \(X\) e \(Y\) son isomorfos en la categoría de espacios de Banach. Es decir, existe 
+        \(T:X\to Y\), biyección, con \(T\) y \(T^{-1}\) operadores lineales acotados.
+       </p>
+    </div>
+
 
 
     <div class="quiz-box">
       <h2> Quiz  </h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado y 
+        \((x_i)_{i\in I} \subseteq X\) una familia arbitraria de conjuntos. 
+        
+      </p>
       <ol>
           <li>
             <p>
-              Define \(\rho: c \to \mathbb{R}\) por 
-              \[
-                \rho(x)=\max\{ |x_1|, |\lim_{n\to \infty}x_n|\}
-              \]
-
-              Prueba  que \(\rho\) es una seminorma.
+              Escribe la definición de que \(\sum_{i\in I}\|x_i\|\) exista en el sentido de redes.  
             </p>
+            
+              
           </li>
           <li>
             <p>
-              Sea \(c_0:=\{ x\in c| \lim_{n\to \infty} x_n=0\}\). Prueba 
-              que existe una funcional lineal \(f:c \to \mathbb{R}\) tal que 
-              \(|f(x)| \leq \rho(x)\) para todo \(x\in c\) y que \(f(x)=x_1\) 
-              para toda \(x\in c_0\).
+              Denota \(s= \sum_{i\in I}\|x_i\|\).    Prueba que 
+                \[
+                \sup_{F\in P_{\textrm{fin}}(I)}\{\sum_{i\in F} \|x_i\|\}= s 
+                \]
+                Hint: unión de conjuntos.
+            </p>
+            <p>
+              
             </p>
           </li>
       </ol>
