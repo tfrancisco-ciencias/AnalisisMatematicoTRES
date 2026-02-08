@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
   <html lang="es">
 
 
@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../main.js"></script>
 
 
-    <!-- Next part is for new coomands -->
+    <!-- Next part is for new commands -->
     <script>
       window.MathJax = {
         tex: {
@@ -103,7 +103,7 @@
          para todos \(x,y\in X\) y escalar \(\alpha\): 
         <ol>
           <li>
-            \(\|x\| \geq 0\) y \(\|x\|=0\) si y sólo si \(\|x\|=0\).
+            \(\|x\| \geq 0\) y \(\|x\|=0\) si y solo si \(\|x\|=0\).
           </li>
           <li>
             \(\|\alpha x \| =|\alpha|\|x\|\)
@@ -125,6 +125,45 @@
       <p>
         Si no se indica lo contrario, siempre que se hable de continuidad en 
         un espacio vectorial normado se referira a la continuidad con respecto a esta métrica.
+      </p>
+      
+      <p>Ejemplos </p>
+      <ol>
+        <li>
+          En \(\mathbb{R}^n\) y dado \(p\in [1,\infty)\) definimos las normas-\(p\)
+          como 
+          \[
+          \|x\|_p=\left(\sum_{j=1}^n |x_j|^p \right)^{1/p}.
+          \]
+          Además tenemos la norma infinito 
+          \[
+          \|x\|_\infty = \max_{i=1,\dots, n}\{|x_i| \}.
+          \]
+
+        </li>
+        <li>
+          Generalizando el ejemplo anterior definimos 
+          \[
+          \ell_p=\left\{(x(n))_{n=1}^\infty : \sum_{n=1}^\infty |x(n)|^p < +\infty\right\},
+          \]
+          y definimos las normas-\(p\)
+          como 
+          \[
+          \|(x(n))_{n=1}^\infty\|_p=\left( \sum_{n=1}^\infty |x(n)|^p \right)^{1/p},
+          \]
+           y el espacio \(\ell_\infty\)
+           \[
+           \ell_\infty = \{ (x(n))_{n=1}^\infty : \sup_{n\in \mathbb{N}}\{|x(n)|\}< +\infty \},
+           \]
+           y definimos la norma-infinito como 
+           \[
+           \|(x(n))_{n=1}^\infty\|_\infty=\sup_{n\in \mathbb{N}}\{|x(n)|\}.
+           \]
+        </li>
+      </ol>
+      <p>
+        Nota: dada una sucesión \(x\), por \(x(n)\) denotamos la \(n\)-ésima entrada 
+        de la sucesión \(n\). En notación \(x=(x(n))_{n=1}^\infty\).
       </p>
   </div>
 
@@ -160,6 +199,25 @@
 
       </div>
 
+
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. 
+        </p>
+        <ol>
+          <li>
+            Si \(V\subseteq X\) es un subespacio vectorial entonces \(\overline{V}\)
+            también es un subespacio vectorial.
+          </li>
+          <li>
+            Si \(C\subseteq X\) es un subconjunto convexo entonces \(\overline{C}\)
+            también es convexo.
+          </li>
+        </ol>
+
+      </div>
+
       <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
         <p>
@@ -174,10 +232,8 @@
           sucesión \((x_n)_{n=1}^\infty\) es sumable.
         </p>
         <p>
-          Por ejemplo, fijemos \(p\in [1,\infty) \) y consideremos el espacio vectorial
-          \[
-          \ell_p=\{x=(x(n))_{n=1}^\infty:  \sum_{n=1}^\infty |x(n)|^p < \infty\}.
-          \]
+          Por ejemplo, fijemos \(p\in [1,\infty) \) y consideremos el espacio vectorial normado 
+          \((\ell_p,\|\cdot\|_p)\).
           Si \(e_n\) es la sucesión que tiene todas las 
           entradas cero, excepto la \(n\)-ésima entrada donde tiene un 1, se cumple
           que, para todo \(x\in \ell_p\):
@@ -205,28 +261,27 @@
               Sea \(\alpha\) un escalar. La sucesión \((\alpha x_n)_{n=1}^\infty\)
               es sumable y \(\sum_{n=1}^\infty \alpha x_n = \alpha (\sum_{n=1}^\infty x_n)\).
             </li>
-            <li>
-              Considerando el caso \(\sum_{n=1}^\infty \|x_n\| =+\infty\), se cumple:
-              \[
-              \| \sum_{n=1}^\infty x_n \| \leq \sum_{n=1}^\infty \|x_n\| 
-              \]
-              
-            </li>
+  
           </ol>
         </p>
 
       </div>
 
 
+
+
     <div class="definicion-box">
       <h2 class="number-title"> Definicion</h2>
       <p>
-        Un espacio de Banach es un espacio vectorial normado completo.
+        Un espacio de Banach es un espacio vectorial normado completo. Es decir, toda sucesión 
+        de Cauchy converge a un punto del espacio.
       </p>
-
     </div>
+
+      
     <div class="info-box">
       <h2 class="number-title"> Ejemplo</h2>
+      <h3> Espacio de funciones continuas </h3>
       <p>
         Sea \((X,d)\) un espacio métrico (ó topológico) compacto. Definimos 
         \[
@@ -270,17 +325,28 @@
 
     <div class="info-box">
       <h2 class="number-title"> Ejemplo</h2>
+      <h3> Los espacios \(\mathcal{L}_p\)</h3>
       <p>
-        El espacio de las funciones \(p\)-integrables en un espacio de medida, \(L_p(X,\Sigma,\mu)\), \(p\in [1,\infty)\).
+        Sea \((X,\Sigma, \mu)\) un espacio de medida. Fijamos \(p\in [1,\infty)\).
+        El espacio de las funciones \(p\)-integrables 
+        \[ 
+        \mathcal{L}_p(X,\Sigma,\mu)=\{f\in M(X,\Sigma): \int |f|^p d\mu < +\infty  \}
+        \]
+        es un espacio de Banach con la norma (identificando funciones iguales casi dondequiera)
+        \[
+        \|f\|_p=\left(\int |f|^pd\mu \right)^{1/p}
+        \] 
+        Nota: \(M(X,\Sigma)\) denota al espacio vectorial de funciones \(f:X\to \mathbb{F}\),
+        que son Borel medibles. 
       </p>
 
     </div>
 
     <div class="info-box">
       <h2 class="number-title"> Ejemplo </h2>
-      <p>
+      <h3>
         El espacio de las funciones de variación acotada.
-      </p>
+      </h3>
       <p>
         Una función \(f:[a,b]\to \mathbb{R}\) se llama de variación acotada si existe una constante 
         \(M>0\) tal que, para toda partición de \([a,b]\), \(P=\{t_i\}_{i=0}^n\) tal que 
@@ -290,7 +356,7 @@
         
       </p>
       <p>
-        Por ejemplos: 
+        Por ejemplo: 
         <ol>
           <li>
             toda función monótona en \([a,b]\) es de variación acotada en 
@@ -307,7 +373,7 @@
         \[
           V_a^b(f)=\sup_{P}\left\{ \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \right\}
         \]
-        donde el supremo se toma sobre todas las particiones de \([a,b]\). Por ejemplo 
+        donde el supremo se toma sobre todas las particiones de \([a,b]\). Por ejemplo, 
         para toda función constante \(f=c\), \(V_a^b(f)=0\).
         
       </p>
@@ -323,6 +389,148 @@
 
     </div>
 
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. 
+        </p>
+        <p>
+          Una sucesión \((x_n)_{n=1}^\infty\)
+          en \(X\) se llama absolutamente sumable si la serie 
+          \[
+          \sum_{n=1}^\infty \|x_n\|
+          \]
+          es convergente. También decimos que la serie \(\sum_{n=1}^\infty x_n\) es absolutamente convergente.
+
+        </p>
+        
+      </div>
+
+
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio de Banach.
+        </p>
+        <p>
+          Toda sucesión absolutamente sumable es sumable. Además 
+          \[
+          \| \sum_{n=1}^\infty x_n \| \leq \sum_{n=1}^\infty \|x_n\|
+          \] 
+        </p>
+
+      </div>
+
+
+      <div class="prop-box">
+        <h2 class="number-title"> Teorema </h2>
+      <p> 
+        Sea \((X,\|\cdot\|)\)  un espacio vectorial normado.
+      </p>
+      <p>
+        \(X\) es de Banach si y solo si toda sucesión absolutamente sumable 
+        es sumable. 
+      </p>
+
+      </div>
+
+      <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio de Banach. Un subespacio \(Y\subseteq X\)
+          es de Banach si y solo si \(Y\) es cerrado.
+        </p>
+
+      </div>
+
+
+
+      <div class="prop-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) es un espacio vectorial normado.
+        </p>
+        <p>
+          Sea \(\{x_1,\dots, x_n\}\) un subconjunto linealmente independiente. Entonces 
+          existe un \(c>0\) tal que 
+          \[
+          \| \alpha_1 x_1 + \cdots + \alpha_n x_n \| \geq c(|\alpha_1|+\cdots+ |\alpha_n|)
+          \]
+          para todos escalares \(\alpha_1,\dots, \alpha_n \in \mathbb{F}\).
+        </p>
+      </div>
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Todo subespacio 
+          vectorial \(Y\subseteq X\) de dimensión finita es completo, es decir es de Banach. 
+        </p>
+        <p>
+          En particular todo espacio vectorial normado de dimensión finita es de Banach.
+        </p>
+      </div>
+
+
+      <div class="definicion-box"> 
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Sea \(X\) un espacio vectorial. Dos normas en \(X\), \(\|\cdot\|_1\) y 
+          \(\| \cdot \|_2\) se llaman equivalentes si existen constantes positivas \(a,b\) tal que 
+          \[
+          \|x\|_1 \leq a\|x\|_2 , \|x\|_2 \leq b\|x \|_1
+          \]
+        </p>
+         <p>
+          Nota: esta definición define una realción de equivalencia sobre el conjunto de 
+          normas en \(X\).
+         </p>
+      </div>
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \(X\) un espacio vectorial normado. Entonces cualesquiera dos normas son 
+          equivalentes. 
+        </p>
+      </div>
+
+
+      <div class="prop-box">
+        <h2 class="number-title"> Lema de Riesz </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sean \(Y,Z\) subespacios de 
+          \(X\) con:
+          <ol>
+            <li>
+              \(Y\) es un subespacio propio de \(Z\).
+          </li>
+          <li>
+            \(Y\) es cerrado.
+          </li>
+          </ol>
+          
+        </p>
+        <p>
+          Entonces para todo \(t\in (0,1)\) existe \(z\in Z\) tal que \(\|z\|=1\) y 
+          \[
+          \|y-z\| \geq t , \quad \textrm{para todo \(y\in Y\)}.
+          \]
+        </p>
+      </div>
+
+
+
+      <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+          Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Entonces 
+          la bola unitaria cerrada es compacta si y solo si \(X\) es finito dimensional.
+        </p>
+      </div>
+
     <div class="definicion-box"> 
       <h2 class="number-title"> Definición  </h2>
       <h3> Conjuntos dirigidos y redes</h3>
@@ -332,7 +540,7 @@
         \(\alpha \leq \gamma\) y \(\beta \leq \gamma\). 
       </p>
       <p>
-        Por ejemplo si \(S\) es un conjunto arbitrario y tomamos el conjunto de 
+        Por ejemplo, si \(S\) es un conjunto arbitrario y tomamos el conjunto de 
         subconjuntos finitos de \(S\), denotado \(\mathcal{P}_{fin}(S)\), entonces 
         ordenado con la contención éste se vuelve un conjunto dirigido.
       </p>
@@ -367,6 +575,234 @@
 
 
     <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado, \(A,B\subseteq X\).
+      </p>
+     <ol>
+      <li>
+        Prueba \(\overline{A}=\cap_{n=1}^\infty (A+B_{1/n}(0))\),
+        donde \(B_{1/n}(0)=\{x\in X: \|x\|< 1/n\}\).
+      </li>
+      <li>
+        \(A^o + B^o \subseteq (A+B)^o\), \(\overline{A}+\overline{B} \subseteq \overline{(A+B)}\).
+        Da ejemplos que muestren que la contención puede ser propia.
+      </li>
+      
+     </ol>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado, \(A,B\subseteq X\) y 
+        \(\alpha \in \mathbb{F}\).
+      </p>
+      <ol>
+        <li>
+        Si \(A\) y \(B\) son compactos entonces \(\alpha A+ B\) también es compacto.
+      </li>
+      <li>
+        Si \(A\) es compacto y \(B\) es cerrado entonces \(\alpha A+B\) es cerrado. 
+      </li>
+      <li>
+        Da un ejemplo de dos cerrados \(A\) y \(B\) tal que \(A+B\) no es cerrado.
+      </li>
+      </ol>
+    </div>
+    
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sea \(n\in \mathbb{N}\) y
+        \(\{x_i\}_{i=1}^n\) un conjunto linealmente independiente. Para 
+        cada \(\alpha=(\alpha_1,\dots, \alpha_n)\in \mathbb{F}^n\) denotamos 
+        \(\|\alpha\|_2=(\sum_{i=1}^n |\alpha_i|^2)^{1/2}\).
+      </p>
+      <p>
+        Supon que  \(K_0 \subseteq \mathbb{F}^n\) satisface 
+        \[
+        \inf_{\alpha \in K_0}\{\|\sum_{i=1}^n \alpha_i x_i \| \} =0
+        \]
+        Prueba que 
+        \[
+        \inf_{\alpha \in K_0}\{\|\alpha\|_2 \} =0
+        \]
+      </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Definimos 
+        \[
+        c=\{x:\ell_\infty: \lim_{n\to \infty}x(n)\, \textrm{existe}\}
+        \]
+        y 
+        \[
+        c_0=\{x\in c: \lim_{n\to \infty} x(n)=0\}.
+        \]
+      </p>
+      <p>
+        Prueba que \(c\) y \(c_0\) (con la norma \(\|\cdot\|_\infty\)) son espacios de Banach.
+      </p>
+      <p>
+        Como espacios vectoriales sobre \(\mathbb{F}\) prueba que \(\dim_\mathbb{F}(c)=\dim_\mathbb{F}(c_0)=\#\mathbb{R}\)
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box"> 
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Da un ejemplo de un \((X,\|\cdot\|)\) espacio vectorial normado y \(Y\) un subespacio propio 
+        que pruebe que en general no existe \( x \in X\setminus Y \)
+         tal que \(\|x\|=1\) y que \(\|x-y\|\geq 1\), para toda \(y\in Y\).
+      </p>
+      <p>
+        Sugerencia: tomar \(X=\{x\in C([0,1]): x(0)=0\}\) con la norma uniforme. Tomar 
+        \[
+        Y=\left\{y\in X: \int_0^1 y(t)dt=0\right\}
+        \]
+      </p>
+      <p>
+        Supon que existe \(x_1\in X\setminus Y\), con \(\|x_1\|=1\), tal que \(\|x_1-y\|\geq 1 \) para toda \(y\in Y\).
+      </p>
+      <p>
+        Para cada \(z \in X\setminus Y\) define 
+        \[
+        c=\left(\int_0^1 x_1(t)dt \right)\left( \int_0^1 z(t)dt\right)^{-1}
+        \]
+        Entonces \(x-cz\in Y\) y por lo tanto \(\|cz\| \geq 1\), o equivalentemente 
+        \[
+        \left|\int_0^1 z(t)dt \right| \leq \left| \int_0^1 x_1(t)dt\right|\|z\|
+        \]
+      </p>
+      <p>
+        Encuentra una sucesión \((z_n)_{n=1}^\infty\) en \(X\setminus Y\)
+         con \(\|z_n\|=1\) para toda \(n\) y que \(\lim_{n\to \infty} \left| \int_0^1 z_n(t)dt\right|=1\)
+         y llega a una contradicción.
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. En el 
+        producto cartesiano \(X\times Y\) considera la norma \(\|(x,y)\|=\|x\|_X+\|y\|_Y\). Prueba que 
+        \((X\times Y, \|\cdot\|)\) es un espacio de Banach si y solo si \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\)
+        son espacios de Banach.
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado y \(Y \subseteq X\)
+        un subespacio cerrado. En el espacio cociente \(X/Y\) define 
+        \[
+        \|[x]\|=\inf\{ \|x'\| : x'\in [x] \}
+        \]
+        Prueba que la ecuación anterior define una norma en \(X/Y\) y que 
+        si \(X\) es de Banach entonces \(X/Y\) también.
+      </p>
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una sucesión 
+        de vectores \((x_n)_{n=1}^\infty\) se llama base de Shauder si 
+        para todo \(x\in X\) existe una única sucesión de escalares 
+        \((\alpha_n)_{n=1}^\infty\) que satisface 
+        \[
+        \lim_{N\to \infty} \left\|x-\sum_{n=1}^n \alpha_n x_n \right\|=0.
+        \]
+        lo cual escribiemos como, \(x=\sum_{n=1}^\infty \alpha_n x_b\).
+      </p>
+      <p>
+        Prueba que si \(X\) admite una base de Shauder entonces 
+        \(X\) es separable.
+      </p>
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2> 
+      <p>
+        Prueba que \((\ell_\infty, \|\cdot\|_\infty)\) no admite una base de Shauder.
+      </p>
+      <p>
+        Hint: prueba que \(\ell_\infty\) no es separable.
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Sea \(X\) un espacio vectorial. Sea \(C\subseteq X\) un subconjunto convexo
+        y \(z\in C\). Decimos que \(z\) es punto extremo de \(C\) si:
+        siempre que \(z=(1-t)x+ty\), con \(t\in (0,1)\) y \(x,y\in C\) se cumple que 
+        \(x=y=z\).
+      </p>
+      <ol>
+        <li>
+          Sea \(X\) un espacio vectorial normado.  Prueba que si \(z\)
+          es punto extremo de \(B=\{x\in X: \|x\|\leq 1\}\) entonces, 
+          \(\|z\|=1\).
+        </li>
+        <li>
+          Si \(X=\mathcal{L}_p\) (para algún espacio de medida, con \(p\in [1,\infty)\)) prueba que 
+          \(z\) es punto extremo de \(B=\{x\in X: \|x\|_p\leq 1\}\)
+          si y solo si \(\|x\|_p=1\).
+        </li>
+      </ol>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Prueba que la bola unitaria cerrada de \(\mathcal{L}_1([0,1])\) no tiene puntos extremos.
+      </p>
+      <p>
+        Sugerencia: para \(z\in \mathcal{L}_1([0,1],\mathbb{B}_{[0,1]},\lambda)\) con \(\|z\|=1\) define 
+        \[
+        A=\left\{t\in [0,1]: \int_{[0,t)}|z(s)|d\lambda(s) \leq 1/2 \right\}
+        \]
+        sea \(t_0=\sup(A)\) y considera \(x=2\chi_{[0,t_0)}\).
+      </p>
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(K\) un espacio métrico compacto.
+      </p>
+      <p>
+        Describe los puntos extremos de la bola cerrada unitaria del espacio 
+        \((C(K),\|\cdot\|_\infty)\).
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
       <p>
           Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Sea \((x_\alpha)_{\alpha \in A}\)
@@ -391,16 +827,6 @@
     </div>
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. Una función 
-        \(f:X\to Y\) es continua en \(x_0\) sii para toda 
-        \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
-        \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
-      </p>
-
-    </div>
 
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
@@ -427,39 +853,38 @@
       </p>
     </div>
 
-    <div class="definicion-box">
-      <h2 class="number-title"> Definición  </h2>
-      <h3> Red de Cauchy</h3>
-      <p>
+    <div class="ejercicio-box">
+       <h2 class="number-title"> Ejercicio </h2>
+       <p>
         Una red \((x_\alpha)_{\alpha \in A}\) en un espacio vectorial normado 
-        \(X\) se llama red de Cauhcy si para toda \(\varepsilon > 0 \) existe 
+        \(X\) se llama red de Cauchy si para toda \(\varepsilon > 0 \) existe 
         \(\alpha_0\in A\) tal que para todas \(\alpha, \beta \geq \alpha_0\)
         \(\|x_\alpha - x_\beta \| < \varepsilon\).
       </p>
-
-    </div>
-
-    <div class="prop-box">
-       <h2 class="number-title"> Proposición </h2>
        <p>
          En un espacio de Banach toda red de Cauchy es convergente.
        </p>
 
-       <button class="respButton hvr-grow felxbox"> Demostración </button>
-       <div class="resp-box flexbox">
-         <div class="flexbox">
-           <iframe width="500" height="400" class="video"
-           src="https://www.youtube.com/embed/jKYe5hxRC24?start=3857" allowfullscreen="true"> 
-           </iframe>
-         </div>
-       </div>
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. Una función 
+        \(f:X\to Y\) es continua en \(x_0\) sii para toda 
+        \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
+        \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
+      </p>
 
     </div>
 
-    <div class="definicion-box">
-      <h2 class="number-title"> Definición</h2>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Sea \(X\) un espacio vectorial normado y \((x_i)_{i\in I}\subseteq X\). Denotamos 
+        Sea \((X, \|\cdot\|)\) un espacio vectorial normado y \((x_i)_{i\in I}\subseteq X\) una red. Denotamos 
         \(A=\mathcal{P}_{fin}(I)\) y definimos \(s:A \to X\) por 
         \(s(F)=\sum_{i\in F}x_i\).
       </p>
@@ -467,23 +892,8 @@
         Si la red \(s\) converge a un punto \(x\in X\) decimos que la red 
         \(\sum_{i\in F}x_i\) converge y escribimos \(x=\sum_{i\in I}x_i\).
       </p>
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4460" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición</h2>
       <p>
-        Sea \(X\) un espacio de Banach y sea \((x_i)_{i\in I} \subset X\).
-      </p>
-      <p>
-        Si 
+        Si \(X\) es de Banach y
         \(\sum_{i\in I}\|x_i\|\) es convergente en \(\mathbb{R}\) entonces 
         \(\sum_{i\in I}x_i\) es convergente en \(X\).
       </p>
@@ -491,43 +901,7 @@
         Es decir, convergencia absoluta implica convergencia.
       </p>
 
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/a0SuWrStL4s?start=39" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-      
-
-    </div>
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <p>
-        Un espacio vectorial normado es de Banach sii toda serie absolutamente convergente es convergente.
-      </p>
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/jKYe5hxRC24?start=4814" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sean \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\) dos espacios vectoriales normados. En el 
-        producto cartesiano \(X\times Y\) considera la norma \(\|(x,y)\|=\|x\|_X+\|y\|_Y\). Prueba que 
-        \((X\times Y, \|\cdot\|)\) es un espacio de Banach si y sólo si \((X,\|\cdot\|_X)\) y \((Y,\|\cdot\|_Y)\)
-        son espacios de Banach.
-      </p>
-
+    
     </div>
 
 
@@ -558,42 +932,21 @@
       </ol>
       <p>
         Nota: \(\Pi_{i\in I}X_i\) denota al producto cartesiano de los espacios, 
-        es decir \((x_i)_{i\in I}\in \Pi_{i\in I}X_i\)  si y sólo si para toda \(i\in I\), \(x_i\in X_i\).
+        es decir \((x_i)_{i\in I}\in \Pi_{i\in I}X_i\)  si y solo si para toda \(i\in I\), \(x_i\in X_i\).
       </p>
 
     </div>
 
 
 
-
-
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2> 
-      <p>
-        Prueba que cualesquiera dos normas en un espacio vectorial de dimensión finita son equivalentes.
-      </p>
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \(X\) un espacio de Banach y \(M\subseteq X\) un subespacio de dimensión finita. Prueba que 
-        \(M\) es cerrado.
-      </p>
-
-    </div>
-
-
-    <div class="ejercicio-box">
+   <!-- <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
       <p>
         Sean \(X\), \(Y\) espacios vectoriales normados con \(\dim(X)=\dim(Y)< +\infty\). Prueba que 
         \(X\) e \(Y\) son isomorfos en la categoría de espacios de Banach. Es decir, existe 
         \(T:X\to Y\), biyección, con \(T\) y \(T^{-1}\) operadores lineales acotados.
        </p>
-    </div>
+    </div> -->
 
 
 

@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
   <html lang="es">
 
 
@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../main.js"></script>
 
 
-    <!-- Next part is for new coomands -->
+    <!-- Next part is for new commands -->
     <script>
       window.MathJax = {
         tex: {
@@ -129,7 +129,7 @@
           </li>
           <li>
             Si \(V\) es un espacio de dimensión finita, \(W\subseteq V\) un subespacio propio 
-            y \(f:W\to \mathbb{F}\) es una función lineal entonces existe \(f^*:V\to \mathbb{F}\)
+            y \(f:W\to \mathbb{F}\) es una función lineal entonces, existe \(f^*:V\to \mathbb{F}\)
             lineal tal que \(f^*\) restringida a \(W\) coincide con \(f\).
           </li>
         </ol>
@@ -204,9 +204,9 @@
                 <h2 class="number-title"> Definición </h2>
                 <p>
                     Sea \(V\) un espacio vectorial. Un subconjunto 
-                    \(C \subseteq V\) se llama convexo si para todos 
-                    \(x,y\in C\) se cunple que el segmento que une \(x\)
-                    conn \(y\) está contenido en \(C\), es decir para todos 
+                    \(C \subseteq V\) se llama convexo si para todo 
+                    \(x,y\in C\) se cumple que el segmento que une \(x\)
+                    conn \(y\) está contenido en \(C\), es decir para todo
                     \(s,t \geq 1\) que satistacen \(s+t=1\) se cumple que 
                     \(tx+sy\in C\).
                 </p>
@@ -216,7 +216,7 @@
                 <h2 class="number-title"> Proposición </h2>
                 <p>
                     Prueba que un conjunto \(C \subset V\) es convexo si y sólo si 
-                    para todos \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
+                    para cualesquiera \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
                     con \(t_i\geq 0\) y \(t_1+\cdots + t_n=1\) se tiene que 
                     \(t_1x_1+\cdots t_nx_n\in C\).
                 </p>
@@ -230,8 +230,8 @@
             <div class="prop-box">
                 <h2 class="number-title"> Proposición</h2>
                 <p>
-                    Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces 
-                    para todos \(s,t>0\) se cumple 
+                    Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces, 
+                    para todo \(s,t>0\) se cumple 
                     \[
                     sC+tC=(s+t)C.
                     \]
@@ -295,7 +295,7 @@
                 <h2 class="number-title"> Definición</h2>
                 <p>
                   Sea \(V\) un espacio vectorial (real o complejo). Una funcional sublineal 
-                  es una función \(\rho:V\to \mathbb{R}\) que satisface, para todos 
+                  es una función \(\rho:V\to \mathbb{R}\) que satisface, para todo
                   \(x,y\in V\), y todo \(t\in \mathbb{R}\), \(t\geq 0\):
                   <ol>
                     <li> \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
@@ -306,7 +306,7 @@
                         \[
                         \rho(ax)=|a|\rho(x)
                       \]
-                      para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
+                      para cualesquiera \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
                       </p>
                 </p>
                 
@@ -314,14 +314,14 @@
                 <ol>
                   <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
                     de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
-                  definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
+                  definimos \(\rho(f)=|f(x_0)|\). Entonces, \(\rho\) es una seminorma. 
                   </li>
                   <li>
                     Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
                     a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
                     en \(\mathbb{R}\). Dado un 
                     subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
-                    \(\rho(f)=\sup_{x\in K}\{f(x)\}\). Entonces \(\rho\) es una funcional 
+                    \(\rho(f)=\sup_{x\in K}\{f(x)\}\). Entonces, \(\rho\) es una funcional 
                     sublineal y no es en general una seminorma. Si la modificamos como 
                     \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\) obtenemos una seminorma. 
                   </li>
@@ -430,13 +430,13 @@
                         \[
                         B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
                         \]
-                        entonces \(B \subseteq A \subseteq C \) y 
+                        entonces, \(B \subseteq A \subseteq C \) y 
                         \[
                         \mu_{B}=\mu_A=\mu_{C}.
                         \]
                       </li>
                       <li>
-                        Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
+                        Finalmente, si \(A\) es balanceado entonces, \(\mu_A\) es una 
                         seminorma.
                       </li>
                     </ol> 
@@ -468,14 +468,14 @@
                       \[
                        B:=\{x\in V: \rho(x)< 1\}, \, C:=\{x\in V: \rho(x) \leq  1\}
                       \]
-                        Entonces \(B\) y \(C\) son convexos y absorbentes y 
+                        Entonces, \(B\) y \(C\) son convexos y absorbentes y 
                       \[
                        \mu_B=\rho= \mu_C.
                       \]
                     </li>  
                     <li>
                       Si además \(\rho\)
-                      es una seminorma entonces \(B\) y \(C\) son balanceados.
+                      es una seminorma entonces, \(B\) y \(C\) son balanceados.
                     </li>
                   </ol>
                   
@@ -498,7 +498,7 @@
       <p>
         Sea \((V,\|\cdot\|)\) un espacio vectorial normado y \(\emptyset \ne A\subseteq V\) 
         un conjunto abierto y convexo. Prueba que si \(f:V\to \mathbb{R}\) es funcional lineal no cero 
-        entonces \(f(A)\) es abierto convexo en \(\mathbb{R}\).
+        entonces, \(f(A)\) es abierto convexo en \(\mathbb{R}\).
       </p>
 
      </div>
@@ -548,7 +548,7 @@
               <p>
                 Sea \(V\) un espacio vectorial (real o complejo) 
                 de dimensión mayor o igual a 2 y 
-                \(A\subseteq V\) numerable. Entonces \(A\) no es absorbente.
+                \(A\subseteq V\) numerable. Entonces, \(A\) no es absorbente.
               </p>
               <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
               <div class="resp-box flexbox">
@@ -609,7 +609,7 @@
               <h2 class="number-title" id="Ejer:SupraCompatibleAbsorbente"> Ejercicio</h2>
               <p>
                 Sean \(X,Y\) espacios vectoriales y \(f:X\to Y\) lineal y suprayectiva. Prueba que 
-                si \(A\subseteq X\) es absorbente entonces \(f(A)\subseteq Y\) es absorbente.
+                si \(A\subseteq X\) es absorbente entonces, \(f(A)\subseteq Y\) es absorbente.
               </p>
 
             </div>
@@ -674,7 +674,7 @@
               <h2 class="number-title"> Ejercicio </h2>
 
               <p>
-                Si \(\rho\) es una seminorma en \(V\) entonces satisface 
+                Si \(\rho\) es una seminorma en \(V\) entonces, satisface 
                 <ol>
                   <li>
                     \(\rho(0)=0\),
@@ -683,7 +683,7 @@
                       \(0 \leq \rho(x) \), para toda \(x\),
                   </li>
                   <li>
-                    para todos \(x,y\in V\),
+                    para todo \(x,y\in V\),
                     \(
                     |\rho(x)-\rho(y)|\leq \rho(x-y)
                     \)
@@ -717,4 +717,5 @@
                 </ol>
                 
               </div>
+
 </body>
