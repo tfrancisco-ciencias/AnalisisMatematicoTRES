@@ -348,7 +348,7 @@
         El espacio de las funciones de variación acotada.
       </h3>
       <p>
-        Una función \(f:[a,b]\to \mathbb{R}\) se llama de variación acotada si existe una constante 
+        Una función \(f:[a,b]\to \mathbb{F}\) se llama de variación acotada si existe una constante 
         \(M>0\) tal que, para toda partición de \([a,b]\), \(P=\{t_i\}_{i=0}^n\) tal que 
         \[
           \sum_{i=1}^n|f(t_{i})-f(t_{i-1})| \leq M
@@ -378,7 +378,7 @@
         
       </p>
       <p>
-        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{R}\), por lo que 
+        Nota que \(V_a^b(f+c)=V_a^b(f)\) para toda constante \(c\in \mathbb{F}\), por lo que 
         \(V_a^b\) no define una norma en el espacio de funciones de variación acotada. Se define 
         \[
         BV([a,b])=\{f:[a,b]\to \mathbb{R}: V_a^b(f)<+\infty \}.
@@ -479,11 +479,11 @@
           Sea \(X\) un espacio vectorial. Dos normas en \(X\), \(\|\cdot\|_1\) y 
           \(\| \cdot \|_2\) se llaman equivalentes si existen constantes positivas \(a,b\) tal que 
           \[
-          \|x\|_1 \leq a\|x\|_2 , \|x\|_2 \leq b\|x \|_1
+          \|x\|_1 \leq a\|x\|_2 , \, \|x\|_2 \leq b\|x \|_1, \, \forall \, x\in X.
           \]
         </p>
          <p>
-          Nota: esta definición define una realción de equivalencia sobre el conjunto de 
+          Nota: esta definición induce una realción de equivalencia sobre el conjunto de 
           normas en \(X\).
          </p>
       </div>
@@ -492,7 +492,7 @@
       <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
         <p>
-          Sea \(X\) un espacio vectorial normado. Entonces cualesquiera dos normas son 
+          Sea \(X\) un espacio vectorial finito dimensional. Entonces, cualesquiera dos normas son 
           equivalentes. 
         </p>
       </div>
