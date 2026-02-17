@@ -85,7 +85,8 @@
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
+    <h1 class="number-title flexbox"> Teoremas de extensión
+    y funcionales lineales acotadas </h1>
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -97,7 +98,7 @@
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
+      <h3> Extensión de Hahn-Banach (funcionales sublineales)</h3>
       <p>
         Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
         \(\rho:V\to \mathbb{R}\) una funcional sublineal.
@@ -138,7 +139,7 @@
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
+      <h3> Extensión de Hahn-Banach (seminorma:caso real)</h3>
       <p>
         Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
         \(\rho:V\to \mathbb{R}\) una seminorma.
@@ -210,7 +211,7 @@
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
+      <h3> Extensión de Hahn-Banach (seminorma: caso complejo)</h3>
       <p>
         Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
         \(\rho:V\to \mathbb{R}\) una seminorma.
@@ -248,6 +249,347 @@
 
 
 
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{F}\). Una funcional lineal de \(V\)
+        es simplemente una función lineal con dominio \(V\) y codominio \(\mathbb{F}\).
+      </p>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
+        se llama funcional lineal acotada si 
+        <ol>
+          <li>
+            \(\varphi:X\to \mathbb{F}\) es lineal, 
+          </li>
+          <li>
+            existe una constante \(M> 0\) tal que \(|\varphi(x)|\leq M\|x\|\)
+            para toda \(x\in X\).
+          </li>
+        </ol>
+        
+        <p>
+          Nota: gracias a la linealidad de \(\varphi\) la segunda condición es equivalente a
+          decir que \(\varphi\) está acotada 
+          en la esfera unitaria \(S=\{x\in X: \|x\|=1\}\) o equivalente a decir que 
+          es acotada en la bola cerrada \(B=\{x\in X: \|x\| \leq 1\}\).
+        </p>
+        <p>
+          Si \(\varphi\) es una funcional lineal acotada definimos su norma como 
+          \[
+          \|\varphi\|=\sup_{\|x\|\leq 1}\{|\varphi(x)| \}
+          \]
+        </p>
+        
+      </p>
+
+
+    </div>
+
+
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplos</h2>
+      <ol>
+        <li>
+          Si \(\varphi: \mathbb{F}^n \to \mathbb{F}\) es lineal, por un Teorema de Riesz existe 
+          un vector \(y \in \mathbb{F}\) tal que \(\varphi(x)=\langle x, y \rangle\), 
+          para toda \(x\in \mathbb{F}\). Por la desigualdad de Cauchy-Schwartz, 
+          \(|\langle x, y \rangle | \leq \|x\|_2\|y\|_2\). Por lo tanto toda función 
+          lineal de \(\mathbb{F}^n\) en \(\mathbb{F}\) es acotada con \(\|\varphi\|=\|y\|_2\).
+          <p>
+            Nota: en \(\mathbb{F}=\mathbb{R}\), \(\langle x, y \rangle =\sum_{i=1}^n x_iy_i\), 
+            en \(\mathbb{F}=\mathbb{C}\), \(\langle x, y \rangle =\sum_{i=1}^n x_i\overline{y_i}\).
+          </p>
+        </li>
+        <li>
+      <p>
+        Sea \((M,d)\) un espacio métrico compacto y 
+        \(X=C(M)\) dotado con la norma infinito. Dado \(t_0\in M\)
+        la función \(\varphi_{t_0}:X\to \mathbb{F}\) dada por 
+        \(\varphi_{t_0}(f)=f(t_0)\) es lineal acotada con \(\|\varphi_{t_0}\|=1\).
+
+      </p>
+      </li>
+      <li>
+        <p>
+          Sea \((X,\Sigma,\mu)\) un espacio de medida finita. Definimos 
+          \(\varphi:L_\infty(X)\to \mathbb{F}\) por 
+          \[
+          \varphi(f)=\int_X f(x)d\mu(x)
+          \]
+          Entonces \(\varphi\) es lineal acotada con \(\|\varphi\|=\mu(X)\).
+        </p>
+      </li>
+      <li>
+        <p>
+          Sea \((X,\Sigma,\mu)\) un espacio de medida y \(p\in (1,\infty)\). 
+          Dada \(g\in L_q(X)\), con \(\frac{1}{p}+\frac{1}{q}=1\), definimos 
+          \(\varphi_g:L_p(X)\to \mathbb{F}\) por 
+          \[
+          \varphi_g(f)=\int_X fgd\mu
+          \]
+          Entonces \(\varphi_g\) es lineal acotada con \(\|\varphi_g\|=\|g\|_{q}\).
+        </p>
+      </li>
+      
+    </ol>
+    </div>
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(\varphi: X\to \mathbb{F}\) una funcional lineal. Las siguientes condiciones son 
+        equivalentes.
+      </p>
+      <ol>
+        <li>
+          \(\varphi\) es acotada.
+        </li>
+        <li>
+          \(\varphi\) es Lipschitz continua.
+        </li>
+        <li>
+          \(\varphi\) es continua en  \(0\).
+        </li>
+      </ol>
+</div>
+
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. 
+        <ol>
+          <li>
+            Si \(\varphi:X\to \mathbb{F}\) es lineal acotada entonces 
+              \[ \|\varphi\|=\inf\{M>0| |\varphi(x)|\leq M \|x\| \, \textrm{para toda \(x\in X\)} \} \]
+          </li>
+          <li>
+            \((X^*,\| \cdot\|)\) es un espacio vectorial normado.
+          </li>
+        </ol>
+      </p>
+      </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. El espacio dual de \(X\) (ó espacio conjugado) se define como 
+        \[
+          X^*=\{\varphi:X\to \mathbb{F}: \textrm{\(\varphi\) es funcional lineal acotada}\}.
+        \]
+      </p>
+      </div>
+
+
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        El espacio \(\ell_1(\mathbb{Z})^*\) es linealmente isométricamente isomorfo a 
+        \(\ell_\infty(\mathbb{Z})\).
+      </p>
+      <p>
+        Es decir, existe \(\Phi: \ell_\infty(\mathbb{Z}) \to \ell_1(\mathbb{Z})^*\)
+        lineal, biyectiva que además satisface \(\|\Phi(x)\|=\|x\|_\infty\), 
+        para toda \(x\in \ell_\infty(\mathbb{Z})\).
+      </p>
+      <p>
+        Sugerencia: dada \(x\in \ell_\infty(\mathbb{Z})\) define 
+        \(\varphi_x: \ell_1(\mathbb{Z}) \to \mathbb{F}\) por 
+        \[
+        \varphi_x(y)=\sum_{n\in \mathbb{Z}} x_ny_n
+        \]
+        Prueba que \(\varphi_x\) es lineal acotada con \(\|\varphi_x\|=\|x\|_\infty\).
+      </p>
+      <p>
+        Prueba que \(x\mapsto \varphi_x\) es un isomorfismo lineal. 
+      </p>
+
+    </div>
+
+      <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Entonces \((X^*,\|\cdot\|)\) es un espacio 
+        de Banach.
+      </p>
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/a0SuWrStL4s?start=2772" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Hahn-Banach (funcionales lineales acotadas)</h3>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y\leq X\) un subespacio. 
+        Si \(\phi:Y\to \mathbb{F}\) es una funcional lineal acotada entonces 
+        existe \(\tilde{\phi}:X\to \mathbb{F}\) funcional lineal acotada 
+        tal que 
+        <ol>
+            <li>
+                \(\tilde{\phi}|_Y=\phi\).
+            </li>
+            <li>
+                \(\|\tilde{\phi}\|=\|\phi\|\).
+            </li>
+        </ol>
+      </p>
+
+
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=4328" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
+      
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Corolario </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
+        existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
+      </p>
+      <p>
+        Por lo tanto tenemos que 
+        \[
+        \sup\{|\phi(x)| : \phi \in X^*, \|\phi\|\leq 1 \}=\|x\|
+        \]
+      </p>
+      
+      
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Si \(\varphi(x)=0\) para todo 
+            \(\varphi \in X^*\) entonces \(x=0\).
+        </p>
+
+    </div>
+
+    
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(A,B\subseteq X\) convexos, no vacíos y ajenos.
+      </p>
+      <ol>
+          <li>
+              Si \(A\) es abierto entonces existe \(\varphi\in X^*\) y \(c\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c \leq \Re(\varphi(b))
+              \]
+              para todo \(a\in A\) y \(b\in B\).
+          </li>
+          <li>
+              Si \(A\) es compacto y \(B\) es cerrado entonces existe \(\varphi\in X^*\) 
+              y \(c_1,c_2\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c_1 < c_2 <  \Re(\varphi(b))
+              \]
+
+          </li>
+      </ol>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=1290" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado y \(Y \leq X\) un subespacio vectorial. Si 
+        \(\varphi: Y\to \mathbb{F}\) es lineal y acotada entonces existe 
+        \(\overline{\varphi}: \overline{Y} \to \mathbb{F}\), lineal acotada tal que 
+        <ol>
+          <li>
+            \(\overline{\varphi}|_{Y}=\varphi\).
+          </li>
+          <li>
+            \(\|\overline{\varphi}\|=\|\varphi\|\).
+          </li>
+        </ol>
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/6AMGijAkn5c?start=416" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio</h2>
+      <p>
+        Por \(\ell_\infty\) denotamos al conjunto de 
+        sucesiones acotadas con valores reales. Es decir 
+        \(x\in \ell_\infty\) si y sólo si \(x:\mathbb{N}\to \mathbb{R}\)
+        y \(\sup_{n\in \mathbb{N}}\{|x(n)|\} < +\infty\).
+
+      </p>
+      <p>
+        Define \(T:\ell_\infty \to \ell_\infty\) por 
+        \(Tx(n)=x(n+1)\), \(n\in \mathbb{N}\) (traslación hace la derecha).
+      </p>
+      <p>
+        Prueba que existe una funcional lineal real, 
+        \(\varphi: \ell_\infty \to \mathbb{R}\), que satisface 
+        \[
+        \begin{eqnarray*} 
+        \varphi(Tx)&=&\varphi(x),\\
+        \liminf_{n\to \infty} x(n)\leq & \varphi(x) & \leq \limsup_{n\to \infty} x(n)
+        \end{eqnarray*}
+        \]
+        para toda \(x\in \ell_\infty\).
+      </p>
+      <p>
+        Suegerencia: define 
+        \[
+        \varphi_n(x)=\frac{1}{n}\sum_{i=1}^n x(i).
+        \]
+       y \(W=\{x\in \ell_\infty| \lim_{n\to \infty}\varphi_n(x)\, \textrm{existe}\}\).
+       Define  \(\varphi: W \to \mathbb{R}\) por \(\varphi(x)=\lim_{n\to \infty}\varphi_n(x)\)
+        y considera \(\rho:\ell_\infty \to \mathbb{R}\) dada por 
+        \(\rho(x)=\limsup_{n\to \infty} \varphi_n(x)\).
+
+
+      </p>
+
+
+    </div>
 
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
@@ -334,45 +676,6 @@
 
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
-      <p>
-        Por \(\ell_\infty\) denotamos al conjunto de 
-        sucesiones acotadas con valores reales. Es decir 
-        \(x\in \ell_\infty\) si y sólo si \(x:\mathbb{N}\to \mathbb{R}\)
-        y \(\sup_{n\in \mathbb{N}}\{|x(n)|\} < +\infty\).
-
-      </p>
-      <p>
-        Define \(T:\ell_\infty \to \ell_\infty\) por 
-        \(Tx(n)=x(n+1)\), \(n\in \mathbb{N}\) (traslación hace la derecha).
-      </p>
-      <p>
-        Prueba que existe una funcional lineal real, 
-        \(\varphi: \ell_\infty \to \mathbb{R}\), que satisface 
-        \[
-        \begin{eqnarray*} 
-        \varphi(Tx)&=&\varphi(x),\\
-        \liminf_{n\to \infty} x(n)\leq & \varphi(x) & \leq \limsup_{n\to \infty} x(n)
-        \end{eqnarray*}
-        \]
-        para toda \(x\in \ell_\infty\).
-      </p>
-      <p>
-        Suegerencia: define 
-        \[
-        \varphi_n(x)=\frac{1}{n}\sum_{i=1}^n x(i).
-        \]
-       y \(W=\{x\in \ell_\infty| \lim_{n\to \infty}\varphi_n(x)\, \textrm{existe}\}\).
-       Define  \(\varphi: W \to \mathbb{R}\) por \(\varphi(x)=\lim_{n\to \infty}\varphi_n(x)\)
-        y considera \(\rho:\ell_\infty \to \mathbb{R}\) dada por 
-        \(\rho(x)=\limsup_{n\to \infty} \varphi_n(x)\).
-
-
-      </p>
-
-
-    </div>
     
 
     <div class="ejercicio-box">
@@ -385,6 +688,101 @@
       </p>
 
     </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((X,\Sigma, \mu)\) un espacio de medida y \(1< p < +\infty\) con \(1< q < +\infty\) su exponente 
+        conjugado. Prueba que \((L_p(X), \|\cdot\|_p)^*\) es linealmente isométricamente isomorfo a 
+        \((L_q(X),\|\cdot\|_q)\).
+      </p>
+
+    </div>
+
+
+        <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio métrico (o topológico) compacto. Prueba que 
+        \(C(X)\) es de dimensión finita si y sólo si \(X\) es finito.  
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Prueba que \(X\) es de dimensión finita 
+        si y sólo si toda función lineal de \(X\) en el campo es acotada.
+      </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Prueba que \(\ell_\infty(\mathbb{Z})\) no es separable.
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \(X\) un espacio de Banach y \(Y \subset  X\) un subespacio. Fija \(x\in X\) y denota 
+        \[
+        d=\inf \{ \|x-y\|: y \in Y \}
+        \]
+        
+      </p>
+      <p>
+        Si \(d>0\) prueba que existe \(\varphi\in X^*\) tal que \(\varphi|_Y=0\), \(\varphi(x)=1\) 
+        y \(\|\varphi\|=1/d\).
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios de Banach. En el producto cartesiano 
+        define 
+        \begin{eqnarray*} 
+        \|(x,y)\|_1&=&\|x\|_X+\|y\|_y \\
+        \|(x,y)\|_\infty &=& \max\{\|x\|_X, \|y\|_Y \}
+        \end{eqnarray*}
+        Prueba que ambas normas hacen \(X\times Y\) un espacio de Banach y que 
+        el dual de \((X\times Y,\|\cdot\|_1)\)  es \((X^*\times Y^*, \|\cdot\|_\infty)\).
+      </p>
+
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((X,\|\cdot\|)\) un espacio de Banach y \(X^*\) su dual. Prueba que si \(X^*\) es separable 
+        entonces \(X\) también es separable. 
+      </p>
+      <p>
+        Sugerencia: sea \(\{\varphi_n\}_{n=1}^\infty\) un subconjunto denso en \(X^*\). Para todo 
+        \(n\in \mathbb{N}\) asegura de que existe un vector  unitario \(x_n\in X\) 
+        tal que \(|\varphi(x_n)| \geq \frac{1}{2}\|\varphi_n\|\). Prueba que el 
+        espacio vectorial generado por \(\{x_n\}_{n=1}^\infty\) es denso en \(X\).
+      </p>
+      <p>
+        El regreso no es cierto. Por ejemplo \(\ell_1(\mathbb{Z})\) es separable 
+        pero \(\ell_\infty(\mathbb{Z})\) no es separable.
+      </p>
+
+    </div>
+
 
 
     <div class="quiz-box">
