@@ -85,497 +85,373 @@
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Funcionales lineales acotadas  </h1>     
+    <h1 class="number-title flexbox"> Operadores lineales acotados </h1>
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
-<!-- Contenido inicia abajo -->
-    <div class="definicion-box">
-      <h2 class="number-title"> Definición </h2>
-      <p>
-        Sea \((X,\|\cdot\|)\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
-        se llama funcional lineal acotada si 
-        <ol>
-          <li>
-            \(\varphi\) es \(\mathbb{F}\)-lineal, 
-          </li>
-          <li>
-            existe una constante \(M> 0\) tal que \(|\varphi(x)|\leq M\|x\|\)
-            para toda \(x\in X\).
-          </li>
-        </ol>
-        
-        <p>
-          Nota: gracias a la linealidad de \(\varphi\) la segunda condición es equivalente 
-          decir que \(\varphi\) está acotada 
-          en la esfera unitaria \(S=\{x\in X: \|x\|=1\}\) o equivalente a decir que 
-          es acotada en la bola cerrada \(B=\{x\in X: \|x\| \leq 1\}\).
-        </p>
-        <p>
-          Si \(\varphi\) es una funcional lineal acotada definimos su norma como 
-          \[
-          \|\varphi\|=\sup_{\|x\|\leq 1}\{|\varphi(x)| \}
-          \]
-        </p>
-        
-      </p>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición</h2>
+  <p>
+    Un operador lineal es simplemente una función lineal entre dos espacios vectoriales. 
+    Si \(T\) es un operador lineal por \(D(T)\) denotamos su dominio y \(R(T)\) su rango.
+  </p>
+  <p>
+    Sean \((X,\|\cdot\|_X)\), \((Y,\|\cdot\|_Y)\) espacios vectoriales normados. Si 
+    \(T\) es un operador lineal con \(D(T)\subseteq X\) y \(R(T) \subseteq Y\) decimos 
+    que \(T\) es acotado (o está acotado) si existe \(M>0\) tal que 
+    \[
+    \|Tx\|_Y \leq M \|x\|_X
+    \]
+    para todo \(x\in D(T)\). Lo anterior también se puede reescribir como 
+    \[
+    \sup_{x\in D(T), \|x\|_X \leq 1}\{ \|Tx\|_Y\} < +\infty.
+    \]
+  </p>
+  <p>
+    Si \(T\) es un operador lineal acotado denotamos 
+    \[
+    \|T\|=\sup_{x\in D(T), \|x\|_X \leq 1}\{ \|Tx\|_Y\}
+    \]
+    al cual llamamos la norma del operador.
+  </p>
+  <p>
+    Observaciones.
+  </p>
+  
+  <ol>
+    <li>
+    Por definición de la norma de operador tenemos la siguiente desigualdad 
+    \[
+    \|Tx\|_Y \leq \|T\| \|x\|_X
+    \]
+    para toda \(x\in X\).
+  </li>
+    <li>
+    Al igual que en las funcionales lineales acotadas también se 
+    puede calcular la norma como 
+    \[
+    \|T\|=\sup_{x\in D(T), \|x\|_X = 1}\{ \|Tx\|_Y\}
+    \]
+  </li>
+  </ol>
+  
+  <p>
+    Nota: si las normas de los espacios \(X,Y\) son claras podemos 
+    evitar el uso de los subíndices. Asi podemos escribir 
+    \[
+    \|T\|=\sup_{x\in D(T), \|x\|= 1}\{ \|Tx\|\}
+    \]
+    entendiendo qué norma se aplica en cada vector.
+  </p>
+</div>
+
+<div class="info-box">
+  <h2 class="number-title"> Ejemplos </h2>
+  <ol>
+    <li>
+      El operador cero: \(T:X \to Y\), \(Tx=0\) para todo \(x\in X\). Es claro que 
+      \(\|T\|=0\).
+    </li>
+    <p>
+    </p>
+    <li>
+      El operador indentidad: \(T:X\to X\), \(Tx=x\) para todo \(x\in X\). Es directo 
+      ver que \(\|T\|=1\).
+    </li>
+    <p></p>
+    <li>
+      Tomamos \(X=Y=C([0,1])\) con la norma uniforme. Por \(T\) denotamos el operador derivada con dominio 
+      \(D(T)\) igual al  espacio de  polinomios de una variable. Es decir \(Tx=x'\). El operador 
+      \(T\) no es acotado. En efecto, para 
+      \(n\in \mathbb{N}\) denotamos \(x_n(t)=t^n\). Entonces \(\|x_n\|=1\), pero 
+      \((Tx_n)(t)=x_n'(t)=nt^{n-1}\) por lo que para \(n\geq 2\), \(\|Tx_n\|=n\) y por lo tanto 
+      \[
+      \sup_{x\in D(T),\|x\|=1}\{\|Tx\|\}=\infty.
+      \]
+    </li>
+  </ol>
+</div>
 
 
-    </div>
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2> 
+  <p>
+    Si \(X\) es un espacio vectorial normado de dimensión finita entonces 
+    todo operador lineal \(T:X\to Y\), donde \(Y\) es cualquier espacio vectorial normado, 
+    es acotado. 
+  </p>
+
+</div>
 
 
-
-    <div class="info-box">
-      <h2 class="number-title"> Ejemplos</h2>
-      <ol>
-        <li>
-          Si \(\varphi: \mathbb{F}^n \to \mathbb{F}\) es lineal, por un Teorema de Riesz existe 
-          un vector \(y \in \mathbb{F}\) tal que \(\varphi(x)=\langle x, y \rangle\), 
-          para toda \(x\in \mathbb{F}\). Por la desigualdad de Cauchy-Schwartz, 
-          \(|\langle x, y \rangle | \leq \|x\|_2\|y\|_2\). Por lo tanto toda función 
-          lineal de \(\mathbb{F}^n\) en \(\mathbb{F}\) es acotada con \(\|\varphi\|=\|y\|_2\).
-          <p>
-            Nota: en \(\mathbb{F}=\mathbb{R}\), \(\langle x, y \rangle =\sum_{i=1}^n x_iy_i\), 
-            en \(\mathbb{F}=\mathbb{C}\), \(\langle x, y \rangle =\sum_{i=1}^n x_i\overline{y_i}\).
-          </p>
-        </li>
-        <li>
-      <p>
-        Sea \((M,d)\) un espacio métrico compacto y 
-        \(X=C(M)\) dotado con la norma infinito. Dado \(t_0\in M\)
-        la función \(\varphi_{t_0}:X\to \mathbb{F}\) dada por 
-        \(\varphi_{t_0}(f)=f(t_0)\) es lineal acotada con \(\|\varphi_{t_0}\|=1\).
-
-      </p>
-      </li>
-      <li>
-        <p>
-          Sea \((X,\Sigma,\mu)\) un espacio de medida finita. Definimos 
-          \(\varphi:L_\infty(X)\to \mathbb{F}\) por 
-          \[
-          \varphi(f)=\int_X f(x)d\mu(x)
-          \]
-          Entonces \(\varphi\) es lineal acotada con \(\|\varphi\|=\mu(X)\).
-        </p>
-      </li>
-      <li>
-        <p>
-          Sea \((X,\Sigma,\mu)\) un espacio de medida y \(p\in (1,\infty)\). 
-          Dada \(g\in L_q(X)\), con \(\frac{1}{p}+\frac{1}{q}=1\), definimos 
-          \(\varphi_g:L_p(X)\to \mathbb{F}\) por 
-          \[
-          \varphi_g(f)=\int_X fgd\mu
-          \]
-          Entonces \(\varphi_g\) es lineal acotada con \(\|\varphi_g\|=\|g\|_{q}\).
-        </p>
-      </li>
-      
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal.
+    Las siguientes condiciones son equivalentes:
+    <ol>
+      <li> \(T\) es acotado. </li>
+      <li> \(T\) es Lipchitz continua. </li>
+      <li> \(T\) es continua en cero.</li>
     </ol>
+  </p>
+</div>
 
-    <!-- <button class="respButton hvr-grow felxbox"> Explicación </button>
-    <div class="resp-box flexbox">
-      <div class="flexbox">
-        <iframe width="500" height="400" class="video"
-        src="https://www.youtube.com/embed/a0SuWrStL4s?start=932" allowfullscreen="true"> 
-        </iframe>
-      </div>
-    </div>-->
-    </div>
-
-
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición</h2>
-      <p>
-        Sea \(\varphi: X\to \mathbb{F}\) una función  lineal. Las siguientes condiciones son 
-        equivalentes.
-      </p>
-      <ol>
-        <li>
-          \(\varphi\) es acotada.
-        </li>
-        <li>
-          \(\varphi\) es Lipschitz continua.
-        </li>
-        <li>
-          \(\varphi\) es continua en  \(0\).
-        </li>
-      </ol>
-
-  <!--      <button class="respButton hvr-grow felxbox"> Demostración </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>-->
-
-    </div>
-
-    <div class="definicion-box">
-      <h2 class="number-title"> Definición </h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado. El espacio dual de \(X\) (ó espacio conjugado) se define como 
-        \[
-          X^*=\{\varphi:X\to \mathbb{F}: \textrm{\(\varphi\) es acotada}\}.
-        \]
-      </p>
-     
-
-        <!-- <button class="respButton hvr-grow felxbox"> Explicación </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>-->
-    </div>
+<div class="coro-box">
+  <h2 class="number-title"> Corolario </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal acotdo.
+    Entonces \(\ker(T)\) es un subconjunto cerrado de \(D(T)\).
+  </p>
+</div>
 
 
-    <div class="prop-box">
-      <h2 class="number-title"> Lema</h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado. 
-        <ol>
-          <li>
-            Si \(\varphi:X\to \mathbb{F}\) es lineal acotada entonces 
-              \[ \|\varphi\|=\inf\{M>0| |\varphi(x)|\leq M \|x\| \, \textrm{para toda \(x\in X\)} \} \]
-          </li>
-          <li>
-            \((X^*,\| \cdot\|)\) es un espacio vectorial normado.
-          </li>
-        </ol>
-      </p>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2> 
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T: D(T)\subseteq X \to Y\)
+    un operador lineal acotado. Entonces existe un único operador lineal 
+    acotado \(\overline{T}:\overline{D(T)} \to Y\) tal que 
+    <ol>
+      <li>
+        \(\overline{T}|_{D(T)}=T\).
+      </li>
+      <LI>
+        \(\|\overline{T}\|=\|T\|\).
+      </LI>
+    </ol>
+  </p>
+   
+</div>
+
+<div class="nota-box">
+  <h2 class="number-title"> Nota </h2>
+  <p>
+    Por el teorema anterior siempre que tenemos un operador lineal acotado 
+    \(T:D(T)\subseteq X \to Y\), el espacio ambiente \(X\) pasa a segundo plano
+    pues siempre podemos extender \(T\) a \(\overline{D(T)}\) y seguimos 
+    obteniendo un operador lineal acotado con la misma norma. Además si 
+    el espacio ambiente \(X\) es de Banach entonces \(\overline{D(T)}\) también 
+    es de Banach. 
+   </p>
+   <p>
+    Así pues, siempre que hablamos de un operador lineal acotado  
+    podemos pensar el operador como \(T:X\to Y\).
+   </p>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados. Por \(B(X,Y)\) denotamos 
+    al conjunto de los operadores lineales acotados con dominio \(X\) y codominio \(Y\). 
+    Con la norma de operadores \(B(X,Y)\) es un espacio vectorial normado.
+  </p>
+</div>
 
 
-      <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/a0SuWrStL4s?start=2220" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div> -->
-    </div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados. Si 
+    \(Y\) es un espacio de Banach entonces \(B(X,Y)\), con la norma de operadores, 
+    también es un espacio de Banach. 
+  </p>
+</div>
 
 
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado. Entonces \((X^*,\|\cdot\|)\) es un espacio 
-        de Banach.
-      </p>
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/a0SuWrStL4s?start=2772" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-    </div>
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado y \(M\subseteq X\) un subespacio cerrado. 
+    Por \(\pi:X\to X/M\) denotamos el mapeo cociente, es decir \(\pi(x)=[x]\).
+  </p> 
+  <p>
+    Entonces \(\pi\) es un operador lineal acotado y si \(M\ne X\), \(\|\pi\|=1\).
+  </p>
+  <p>
+    Además \(\pi\) es un mapeo abierto (es decir, manda conjuntos abiertos en conjuntos abiertos).
+  </p>
 
-    <!-- <div class="info-box"> 
-      <h2 class="number-title"> Nota</h2>
-      <p>
-        La definición de funcional lineal acotada se puede extender. Sean 
-        \(X\) y \(Y\) dos espacios vectoriales normado. Una función lineal 
-        \(T:X\to Y\) se llama acotado si 
-        \[
-        \sup_{x\in X, \|x\|\leq 1}\{ \|Tx\|\} < +\infty
-        \]
-      </p>
-      <p>
-        Con las mismas ideas que se usaron para funcionales lineales acotadas se puede probar el 
-        siguiente resultado.
-      </p>
+</div>
 
-
-    </div>
-
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema</h2>
-      <p>
-        Sea \(X\) y \(Y\) espacios vectoriales normados y 
-        \(T:X\to Y\) lineal. Las siguientes condiciones 
-        son equivalentes.
-      </p>
-      <ol>
-        <li>
-          \(T\) es acotada.
-        </li>
-        <li>
-          \(T\) es Lipschitz continua en todo \(X\).
-        </li>
-        <li>
-          \(T\) es continua en  \(0\).
-        </li>
-      </ol>
-      <p>
-        Por \(\mathbb{B}(X,Y)\) denotamos a el conjunto de funciones lineales acotadas 
-        de \(X\) en \(Y\). En \(\mathbb{B}(X,Y)\) la función 
-        \[
-        \|T\|:=\sup_{x\in X, \|x\|\leq 1}\{ \|Tx\|\} 
-        \]
-        define una norma. Si además \(Y\) es de Banach 
-        entonces \((\mathbb{B}(X,Y),\|\cdot\|)\) es de Banach.
-      </p>
-
-    </div>--> 
-
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado y \(Y\leq X\) un subespacio. 
-        Si \(\phi:Y\to \mathbb{F}\) es una funcional lineal acotada entonces 
-        existe \(\tilde{\phi}:X\to \mathbb{F}\) funcional lineal acotada 
-        tal que 
-        <ol>
-            <li>
-                \(\tilde{\phi}|_Y=\phi\).
-            </li>
-            <li>
-                \(\|\tilde{\phi}\|=\|\phi\|\).
-            </li>
-        </ol>
-      </p>
-
-
-        <button class="respButton hvr-grow felxbox"> Demostración </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/a0SuWrStL4s?start=4328" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
-
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) un operador lineal 
+    acotado. Por el <a>Corolario </a>, \(\ker(T)\) es cerrado y con la norma cociente 
+    (ver <a>Ejercicio</a>) \(X/\ker(T)\) se vuelve un espacio vectorial normado. 
+    Sea \(\pi:X\to X/\ker(T)\) el mapeo cociente.
+  </p>
+    <p>
+      Si \(S:X\to Y\) es un operador lineal acotado con la 
+      propiedad de que  \(S|_{\ker(T)}=0\)
+      enontces existe un único operador lineal acotado, \(\tilde{S}:X/\ker(T)\to Y\)
+      tal que \(\tilde{S}\circ \pi =S\) y  \(\|\tilde{S}\|=\|S\|\).
+    </p>
+    <p>
       
-    </div>
-
-    <div class="prop-box">
-      <h2 class="number-title"> Corolario </h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
-        existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
-      </p>
-      <p>
-        Por lo tanto tenemos que 
-        \[
-        \sup\{|\phi(x)| : \phi \in X^*, \|\phi\|\leq 1 \}=\|x\|
-        \]
-      </p>
-      
-      
-    </div>
-
-
-    <div class="prop-box">
-        <h2 class="number-title"> Corolario</h2>
-        <p>
-            Sea \(X\) un espacio vectorial normado. Si \(\varphi(x)=0\) para todo 
-            \(\varphi \in X^*\) entonces \(x=0\).
-        </p>
-
-
-        <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/6AMGijAkn5c?start=298" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>-->
-        
-
-    </div>
-
     
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
+    </p>
+  </ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados con \(Y\) finito dimensional. Supón 
+    que \(T:X\to Y\) es un operador lineal suprayectivo. Prueba:
+  </p>
+  <ol>
+    <li>
+      \(T\) es un mapeo abierto.
+    </li>
+    <li>
+      Si \(\ker(T)\) es cerrado entonces \(T\) es continuo.
+    </li>
+  </ol>
+  <p>
+    Hint: empieza considerando el caso \(\dim(Y)=1\).
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado de dimensión infinita y \(Y\) un espacio 
+    vectorial normado no trivial. Prueba que existe \(T:X\to Y\) 
+    un operador lineal no acotado.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <h3> El adjunto en espacios vectoriales normados</h3>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) un operador lineal.
+    Definimos el operador adjunto de \(T\) como la función \(T^*:Y^*\to X^*\) donde 
+    dado \(\psi \in Y^*\), \(T^*\psi\) es la funcional lineal en \(X^*\) dada por 
+    \((T\psi)(x)=\psi(Tx)\). Prueba 
+  </p>
+  <ol>
+    <li>
+      \(T^*\) es lineal.
+    </li>
+    <p></p>
+    <li>
+      Si \(S:X\to Y\) es un operador lineal y \(\alpha \in \mathbb{F}\) entonces, 
+      \((T+\alpha S)^*=T^*+\alpha S^*\).
+    </li>
+    <p></p>
+    <li>
+      Si \(T:X\to Y\) es invertible (es decir, inyectiva y suprayectiva) entonces 
+      \(T^*\) es invertible con \((T^*)^{-1}=(T^{-1})^*\).
+    </li>
+    <p></p>
+    <li>
+      Si \(R:Y \to Z\) es un operador lineal entonces \((R\circ T)^*=T^*\circ S^*\).
+    </li>
+    <p></p>
+    <li>
+      Si \(T\in B(X,Y)\) entonces \(T^*\in B(Y^*,X^*)\) y \(\|T\|=\|T^*\|\).
+    </li>
+    
+  </ol>
+  <p>
+    Nota: los incisos anteriores muestran que el operador \(*:B(X,Y)\to B(Y^*, X^*)\)
+    es lineal acotado con norma igual a 1.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados, \(T\in B(X,Y)\) y 
+    \(T^*\in B(Y^*,X^*)\) su operador adjunto. Prueba 
+  </p>
+  <ol>
+    <li>
+      \(T^*\) es inyectivo si y sólo si \(R(T)\) es denso en \(Y\).
+    </li>
+    <li>
+      \(T\) es inyectivo si y sólo si \(R(T^*)\) separa los puntos de \(X\).
+    </li>
+  </ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) lineal.
+  </p>
+  <ol>
+    <li>
+      \(T\in B(X,Y)\) es un isomorfismo isométrico si y sólo si \(T^*\in B(Y^*,X^*) \)
+      es un isomorfismo isométrico. 
       <p>
-        Sea \(X\) un espacio vectorial normado y \(A,B\subseteq X\) convexos, no vacíos y ajenos.
+        Nota: una función lineal es un isomorfismo isométrico 
+      sii es inyectivo, suprayectivo y preserva las normas.
       </p>
-      <ol>
-          <li>
-              Si \(A\) es abierto entonces existe \(\varphi\in X^*\) y \(c\in \mathbb{R}\) tal que 
-              \[
-              \Re(\varphi(a)) < c \leq \Re(\varphi(b))
-              \]
-              para todo \(a\in A\) y \(b\in B\).
-          </li>
-          <li>
-              Si \(A\) es compacto y \(B\) es cerrado entonces existe \(\varphi\in X^*\) 
-              y \(c_1,c_2\in \mathbb{R}\) tal que 
-              \[
-              \Re(\varphi(a)) < c_1 < c_2 <  \Re(\varphi(b))
-              \]
+    </li>
+    <p></p>
+    <li>
+      Si \(T\in B(X,Y)\) entonces \(\overline{R(T)}=^{\perp}(\ker(T^*))\).
+    </li>
+    <p></p>
+    <li>
+      Si \(Y=\mathbb{F}\) entonces \(T^*\psi =\psi(1)T \) para todo \(\psi \in \mathbb{F}^*\).
+    </li>
+  </ol>
+</div>
 
-          </li>
-      </ol>
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado y \(S\subseteq X\) no vacío. Definimos 
+    el anulador de \(S\), denotado \(S^\perp\) como 
 
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/6AMGijAkn5c?start=1290" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-    </div>
+    \[
+    S^\perp = \{\varphi \in X^*: \varphi(x)=0, \quad \forall x\in S  \}.
+    \]
 
-   <!-- <div class="teorema-box">
-        <h2 class="number-title"> Teorema </h2>
-        <p>
-            Sea \(X\) un espacio vectorial normado. Sea \(C \subseteq Y^*\)
-            convexo y \(\omega^*\)-cerrado. Si \(\psi_0 \notin C\) entonces 
-            existe \(x\in X\) y \(c_1,c_2\in \mathbb{R}\) tal que 
-            \[
-            \Re(\hat{x}(\varphi)) < c_1 < c_2 < \Re(\hat{x}(\psi_0))
-            \]
-            para toda \(\varphi\in C\).
-        </p>
-
-    </div>-->
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \((X,\Sigma, \mu)\) un espacio de medida y \(1< p < +\infty\) con \(1< q < +\infty\) su exponente 
-        conjugado. Prueba que \((L_p(X), \|\cdot\|_p)^*\) es linealmente isométricamente isomorfo a 
-        \((L_q(X),\|\cdot\|_q)\).
-      </p>
-
-    </div>
-
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición</h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado y \(Y \leq X\) un subespacio vectorial. Si 
-        \(\varphi: Y\to \mathbb{F}\) es lineal y acotada entonces existe 
-        \(\overline{\varphi}: \overline{Y} \to \mathbb{F}\), lineal acotada tal que 
-        <ol>
-          <li>
-            \(\overline{\varphi}|_{Y}=\varphi\).
-          </li>
-          <li>
-            \(\|\overline{\varphi}\|=\|\varphi\|\).
-          </li>
-        </ol>
-      </p>
-
-      <button class="respButton hvr-grow felxbox"> Demostración </button>
-      <div class="resp-box flexbox">
-        <div class="flexbox">
-          <iframe width="500" height="400" class="video"
-          src="https://www.youtube.com/embed/6AMGijAkn5c?start=416" allowfullscreen="true"> 
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \(X\) un espacio métrico (o topológico) compacto. Prueba que 
-        \(C(X)\) es de dimensión finita si y sólo si \(X\) es finito.  
-      </p>
-
-    </div>
+    Dado \(F\subset X^*\), no vacío, definimos el pre-aniquilador de \(F\) como
+    \[
+    ^{\perp} F=\{x\in X: \varphi(x)=0, \quad \forall \varphi\in F\}.
+    \]
+    Prueba 
+  </p>
+  <ol>
+    <li>
+      \(S^\perp\) es un subespacio cerrado de \(X^*\).
+    </li>
+    <p></p>
+    <li>
+      \(^{\perp} F\) es un subespacio cerrado de \(X\).
+    </li>
+    <p></p>
+    <li>
+      Si \(M\subseteq X\) es un subespacio de \(X\) entonces, 
+      \( (M^*,\|\cdot\|_{M^*})\) es isométricamente isomorfo a 
+      \((X^*/M^\perp, \|\cdot\|_{X^*/M^\perp})\).
+    </li>
+    <p></p>
+    <li>
+      Prueba que \(^\perp(S^\perp)=\overline{span(S)}\).
+    </li>
+  </ol>
+</div>
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \(X\) un espacio vectorial normado. Prueba que \(X\) es de dimensión finita 
-        si y sólo si toda función lineal de \(X\) en el campo es acotada.
-      </p>
-
-    </div>
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Prueba que \(\ell_1(\mathbb{Z})^*\) es linealmente isométricamente isomorfo a 
-        \(\ell_\infty(\mathbb{Z})\).
-      </p>
-      <p>
-        Sugerencia: dada \(x\in \ell_\infty(\mathbb{Z})\) define 
-        \(\varphi_x: \ell_1(\mathbb{Z}) \to \mathbb{F}\) por 
-        \[
-        \varphi_x(y)=\sum_{n\in \mathbb{Z}} x_ny_n
-        \]
-        Prueba que \(\varphi_x\) es lineal acotada con \(\|\varphi_x\|=\|x\|_\infty\).
-      </p>
-      <p>
-        Prueba que \(x\mapsto \varphi_x\) es un isomorfismo lineal. 
-      </p>
-
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Prueba que \(\ell_\infty(\mathbb{Z})\) no es separable.
-      </p>
-
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \(X\) un espacio de Banach y \(Y \subset  X\) un subespacio. Fija \(x\in X\) y denota 
-        \[
-        d=\inf \{ \|x-y\|: y \in Y \}
-        \]
-        
-      </p>
-      <p>
-        Si \(d>0\) prueba que existe \(\varphi\in X^*\) tal que \(\varphi|_Y=0\), \(\varphi(x)=1\) 
-        y \(\|\varphi\|=1/d\).
-      </p>
-
-    </div>
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sean \((X,\|\cdot\|_X), (Y,\|\cdot\|_Y)\) dos espacios de Banach. En el producto cartesiano 
-        define 
-        \begin{eqnarray*} 
-        \|(x,y)\|_1&=&\|x\|_X+\|y\|_y \\
-        \|(x,y)\|_\infty &=& \max\{\|x\|_X, \|y\|_Y \}
-        \end{eqnarray*}
-        Prueba que ambas normas hacen \(X\times Y\) un espacio de Banach y que 
-        el dual de \((X\times Y,\|\cdot\|_1)\)  es \((X^*\times Y^*, \|\cdot\|_\infty)\).
-      </p>
-
-
-    </div>
-
-
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio </h2>
-      <p>
-        Sea \((X,\|\cdot\|)\) un espacio de Banach y \(X^*\) su dual. Prueba que si \(X^*\) es separable 
-        entonces \(X\) también es separable. 
-      </p>
-      <p>
-        Sugerencia: sea \(\{\varphi_n\}_{n=1}^\infty\) un subconjunto denso en \(X^*\). Para todo 
-        \(n\in \mathbb{N}\) asegura de que existe un vector  unitario \(x_n\in X\) 
-        tal que \(|\varphi(x_n)| \geq \frac{1}{2}\|\varphi_n\|\). Prueba que el 
-        espacio vectorial generado por \(\{x_n\}_{n=1}^\infty\) es denso en \(X\).
-      </p>
-      <p>
-        El regreso no es cierto. Por ejemplo \(\ell_1(\mathbb{Z})\) es separable 
-        pero \(\ell_\infty(\mathbb{Z})\) no es separable.
-      </p>
-
-    </div>
 
 </body>

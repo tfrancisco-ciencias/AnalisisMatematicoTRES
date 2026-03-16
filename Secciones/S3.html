@@ -335,13 +335,23 @@
       </li>
       
     </ol>
+    <h3> No ejemplo </h3>
+    <p>
+      En el espacio \(\ell_1(\mathbb{N})\) denotamos por \(e_n\) a la sucesión donde todos sus valores 
+      son cero excepto en la entrada \(n\)-ésima donde es \(1\). Denotemos \(V\)
+      al espacio vectorial generado por \(\{e_n\}_{n\in \mathbb{N}}\). Entonces \((V,\|\cdot\|_1)\)
+      es un espacio vectorial normado. Como \(\{e_n\}_{n\in \mathbb{N}}\)
+      es una base de \(V\) (como espacio vectorial), existe una función lineal 
+      \(\varphi:V\to \mathbb{F}\) tal que \(\varphi(e_n)=n\). Entonces \(\varphi\) no 
+      es acotada  pues \(\|e_n\|_1=1\) para toda \(n\) pero \(|\varphi(e_n)|=n\) para toda \(n\).
+    </p>
     </div>
 
 
     <div class="prop-box">
       <h2 class="number-title"> Proposición</h2>
       <p>
-        Sea \(\varphi: X\to \mathbb{F}\) una funcional lineal. Las siguientes condiciones son 
+        Sea \(\varphi: X\to \mathbb{F}\) una funcional lineal distinta de cero. Las siguientes condiciones son 
         equivalentes.
       </p>
       <ol>
@@ -353,6 +363,9 @@
         </li>
         <li>
           \(\varphi\) es continua en  \(0\).
+        </li>
+        <li>
+          \(\ker(\varphi)\) es cerrado.
         </li>
       </ol>
 </div>
