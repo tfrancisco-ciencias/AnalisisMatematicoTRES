@@ -234,7 +234,7 @@
 <div class="teorema-box">
   <h2 class="number-title"> Teorema </h2> 
   <p>
-    Sean \(X,Y\) espacios vectoriales normados y \(T: D(T)\subseteq X \to Y\)
+    Sean \(X,Y\) espacios vectoriales normados con \(Y\) de Banach y \(T: D(T)\subseteq X \to Y\)
     un operador lineal acotado. Entonces existe un único operador lineal 
     acotado \(\overline{T}:\overline{D(T)} \to Y\) tal que 
     <ol>
@@ -253,14 +253,16 @@
   <h2 class="number-title"> Nota </h2>
   <p>
     Por el teorema anterior siempre que tenemos un operador lineal acotado 
-    \(T:D(T)\subseteq X \to Y\), el espacio ambiente \(X\) pasa a segundo plano
+    \(T:D(T)\subseteq X \to Y\), donde \(X\) y \(Y\) son de Banach, 
+    el espacio ambiente \(X\) pasa a segundo plano
     pues siempre podemos extender \(T\) a \(\overline{D(T)}\) y seguimos 
-    obteniendo un operador lineal acotado con la misma norma. Además si 
-    el espacio ambiente \(X\) es de Banach entonces \(\overline{D(T)}\) también 
-    es de Banach. 
+    obteniendo un operador lineal acotado con la misma norma ahora definido
+    en un espacio de Banach.
    </p>
    <p>
-    Así pues, siempre que hablamos de un operador lineal acotado  
+    Además como siempre podemos pensar a \(X\) e \(Y\) como 
+    subespacios de sus completaciones, sín perdida de generalidad 
+    siempre que hablamos de un operador lineal acotado  
     podemos pensar el operador como \(T:X\to Y\).
    </p>
 </div>
@@ -270,8 +272,21 @@
   <p>
     Sean \(X,Y\) espacios vectoriales normados. Por \(B(X,Y)\) denotamos 
     al conjunto de los operadores lineales acotados con dominio \(X\) y codominio \(Y\). 
-    Con la norma de operadores \(B(X,Y)\) es un espacio vectorial normado.
+    
   </p>
+  <ol>
+    <li>
+      Con la norma de operadores \(B(X,Y)\) es un espacio vectorial normado.
+    </li>
+    <p></p>
+    <li>
+      Si \(Z\) es un espacio vectorial normado,  \(T\in B(X,Y)\) y \(S\in B(Y,Z)\)
+      entonces, \(S \circ T \in B(X,Z)\) y además 
+      \[
+      \|S\circ T\| \leq \|S\|\|T\|
+      \]
+    </li>
+  </ol>
 </div>
 
 
