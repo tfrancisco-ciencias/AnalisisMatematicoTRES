@@ -105,7 +105,7 @@
     \(T\) es un operador lineal con \(D(T)\subseteq X\) y \(R(T) \subseteq Y\) decimos 
     que \(T\) es acotado (o está acotado) si existe \(M>0\) tal que 
     \[
-    \|Tx\|_Y \leq M \|x\|_X
+    \|Tx\|_Y \leq M \|x\|_X,
     \]
     para todo \(x\in D(T)\). Lo anterior también se puede reescribir como 
     \[
@@ -115,7 +115,7 @@
   <p>
     Si \(T\) es un operador lineal acotado denotamos 
     \[
-    \|T\|=\sup_{x\in D(T), \|x\|_X \leq 1}\{ \|Tx\|_Y\}
+    \|T\|=\sup_{x\in D(T), \|x\|_X \leq 1}\{ \|Tx\|_Y\},
     \]
     al cual llamamos la norma del operador.
   </p>
@@ -125,17 +125,17 @@
   
   <ol>
     <li>
-    Por definición de la norma de operador tenemos la siguiente desigualdad 
+    Por definición de la norma de operador tenemos la siguiente desigualdad: 
     \[
-    \|Tx\|_Y \leq \|T\| \|x\|_X
+    \|Tx\|_Y \leq \|T\| \|x\|_X,
     \]
-    para toda \(x\in X\).
+    válida para toda \(x\in X\).
   </li>
     <li>
     Al igual que en las funcionales lineales acotadas también se 
-    puede calcular la norma como 
+    puede calcular la norma como: 
     \[
-    \|T\|=\sup_{x\in D(T), \|x\|_X = 1}\{ \|Tx\|_Y\}
+    \|T\|=\sup_{x\in D(T), \|x\|_X = 1}\{ \|Tx\|_Y\}.
     \]
   </li>
   </ol>
@@ -151,7 +151,7 @@
 </div>
 
 <div class="info-box">
-  <h2 class="number-title"> Ejemplos </h2>
+  <h2 class="number-title" id="Ejemplos:OperadoresAcotados"> Ejemplos </h2>
   <ol>
     <li>
       El operador cero: \(T:X \to Y\), \(Tx=0\) para todo \(x\in X\). Es claro que 
@@ -164,7 +164,35 @@
       ver que \(\|T\|=1\).
     </li>
     <p></p>
+    
     <li>
+      Sea \(\lambda\) la medida de Lebesgue en \(\mathbb{R}\). Los espacios \(\mathcal{L}_2\)
+    que vamos a considerar van a ser con respecto a \(\lambda\) o la 
+    medida producto \(\lambda\otimes \lambda\), según sea necesario. Dada 
+    \(K\in \mathcal{L}_2([a,b]\times [a,b])\) consideramos la función 
+    \(T_K:\mathcal{L}_2([0,1]) \to \mathcal{L}_2([0,1])\) dada por 
+    \[
+    (T_kf)(x)=\int_{[0,1]}K(x,y)f(y)d\lambda(y)
+    \]
+    Por el Teorema de Fubinni, para casi toda \(x\), 
+    la función \(y\mapsto K(x,y)\) está en \(\mathcal{L}_2([a,b])\) y por Cauchy-Schwartz 
+    \[
+    \left| \int_{[a,b]} K(x,y) f(y) d\lambda(y) \right|^2 \leq 
+    \left( \int_{[a,b]}|K(x,y)|^2d\lambda(y) \right) \left(\int_{[a,b]}|f(y)|^2d\lambda(y) \right)
+    \]
+    por lo tanto \((T_kf)(x)\) está bien definida para casi toda \(x\). Además 
+    \begin{eqnarray*} 
+    \int_{[a,b]}|(Tf)(x)|^2 d\lambda(x)&=&\int_{[a,b]}\left|\int_{[a,b]} K(x,y)f(y) d\lambda(y)\right|^2 d\lambda(x) \\
+    &\leq &  \int_{[a,b]} \left( \int_{[a,b]}|K(x,y)|^2d\lambda(y) \right) \left(\int_{[a,b]}|f(y)|^2d\lambda(y) \right) d\lambda(x)\\
+    &=& \|f\|_2^2  \int_{[a,b]} \left( \int_{[a,b]}|K(x,y)|^2d\lambda(y) \right)  d\lambda(x)\\
+    &=& \|f\|_2^2\|K\|_2^2
+    \end{eqnarray*}
+    por lo tanto, sacando raíz llegamos a \(\|T_Kf\|_2\leq \|K\|_2 \|f\|_2\). Al ser \(f\)
+    arbitraria concluimos que \(T_K\) está acotado con \(\|T_K\|\leq \|K\|_2\).
+    </li>
+  </ol>
+  <h3> No ejemplo</h3>
+  <p>
       Tomamos \(X=Y=C([0,1])\) con la norma uniforme. Por \(T\) denotamos el operador derivada con dominio 
       \(D(T)\) igual al  espacio de  polinomios de una variable. Es decir \(Tx=x'\). El operador 
       \(T\) no es acotado. En efecto, para 
@@ -173,8 +201,7 @@
       \[
       \sup_{x\in D(T),\|x\|=1}\{\|Tx\|\}=\infty.
       \]
-    </li>
-  </ol>
+  </p>
 </div>
 
 
@@ -190,7 +217,7 @@
 
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title" id="Teo:EquivalenciaContinuasAcotados"> Teorema </h2>
   <p>
     Sean \(X,Y\) espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal.
     Las siguientes condiciones son equivalentes:
@@ -202,13 +229,6 @@
   </p>
 </div>
 
-<div class="coro-box">
-  <h2 class="number-title"> Corolario </h2>
-  <p>
-    Sean \(X,Y\) espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal acotdo.
-    Entonces \(\ker(T)\) es un subconjunto cerrado de \(D(T)\).
-  </p>
-</div>
 
 
 
@@ -247,7 +267,7 @@
 </div>
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title" id="Teo:NormaOperadores"> Teorema </h2>
   <p>
     Sean \(X,Y\) espacios vectoriales normados. Por \(B(X,Y)\) denotamos 
     al conjunto de los operadores lineales acotados con dominio \(X\) y codominio \(Y\). 
@@ -258,7 +278,7 @@
 
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title" id="Teo:OperadoresAcotadosFormanBanach"> Teorema </h2>
   <p>
     Sean \(X,Y\) espacios vectoriales normados. Si 
     \(Y\) es un espacio de Banach entonces \(B(X,Y)\), con la norma de operadores, 
@@ -304,6 +324,80 @@
 </div>
 
 
+
+<div class="definicion-box">
+  <h2 class="number-title"> Definición </h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados. Por \((X)_1\)
+    denotamos la bola cerrada unitaria en \(X\).
+  </p>
+  <p>
+    Un operador lineal 
+    \(T:X\to Y\) se llama compacto si \(T((X)_1)\) tiene cerradura compacta en \(Y\).
+  </p>
+</div>
+
+
+<div class="prop-box">
+  <h2 class="number-title"> Proposición </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) un operador 
+    lineal compacto. Entonces \(T\) está acotado.
+  </p>
+</div>
+
+
+<div class="prop-box">
+  <h2 class="number-title" id="Prop:CaracterizacionOpCompactosSuceciones"> Proposición </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) un operador lineal.
+  </p>
+  <p>
+    \(T\) es compacto si y sólo si para toda sucesión acotada \((x_n)_{n=1}^\infty \subset X\)
+    la subsucesión \((Tx_n)_{n=1}^\infty \subset Y\) admite una subsucesión convergente a punto de \(Y\).
+  </p>
+</div>
+
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y  \(T:X\to Y\) un operador lineal. Llamamos 
+    a \(T\) de rango finito si \(R(T)\) tiene dimensión finita.
+  </p>
+  <p>
+    Todo operador de rango finito es compacto.
+  </p>
+</div>
+
+<div class="teorema-box">
+  <h2 class="number-title" id="Teo:CerraduraOpCompactos"> Teorema </h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados con \(Y\) de Banach.
+  </p>
+  <p>
+    Si \((T_n)_{n=1}^\infty \subseteq B(X,Y)\) es una sucesión de operadores lineales compactos 
+    con \(\lim_{n\to \infty}\|T_n-T\|=0\), para algún \(T\in B(X,Y)\) entonces, \(T\) también es 
+    compacto.
+  </p>
+  <p>
+    En otras palabras, el subconjunto de \(B(X,Y)\) consitente de los 
+    operadores lineales compactos es un subespacio cerrado.
+  </p>
+</div>
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Prueba el <a href="#Teo:EquivalenciaContinuasAcotados"> Teorema 4.4</a>.
+  </p>
+</div>
+
+
+
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
   <p>
@@ -323,12 +417,42 @@
   </p>
 </div>
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal acotdo.
+    Prueba que \(\ker(T)\) es un subconjunto cerrado de \(D(T)\).
+  </p>
+  <p>
+    Da un ejemplo de un operador lineal \(T\) con \(\ker(T)\) cerrado pero donde 
+    \(T\) no es acotado.
+  </p>
+</div>
+
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
     Sea \(X\) un espacio vectorial normado de dimensión infinita y \(Y\) un espacio 
     vectorial normado no trivial. Prueba que existe \(T:X\to Y\) 
     un operador lineal no acotado.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Prueba el <a href="#Teo:OperadoresAcotadosFormanBanach"> Teorema 4.8</a>.
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados. Prueba que si \(B(X,Y)\), dotado 
+    con la norma de operadores, es un espacio de Banach  entonces \(Y\) también es de Banach.
   </p>
 </div>
 
@@ -388,30 +512,6 @@
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio</h2>
-  <p>
-    Sea \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) lineal.
-  </p>
-  <ol>
-    <li>
-      \(T\in B(X,Y)\) es un isomorfismo isométrico si y sólo si \(T^*\in B(Y^*,X^*) \)
-      es un isomorfismo isométrico. 
-      <p>
-        Nota: una función lineal es un isomorfismo isométrico 
-      sii es inyectivo, suprayectivo y preserva las normas.
-      </p>
-    </li>
-    <p></p>
-    <li>
-      Si \(T\in B(X,Y)\) entonces \(\overline{R(T)}=^{\perp}(\ker(T^*))\).
-    </li>
-    <p></p>
-    <li>
-      Si \(Y=\mathbb{F}\) entonces \(T^*\psi =\psi(1)T \) para todo \(\psi \in \mathbb{F}^*\).
-    </li>
-  </ol>
-</div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
@@ -451,7 +551,136 @@
 </div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) lineal.
+  </p>
+  <ol>
+    <li>
+      \(T\in B(X,Y)\) es un isomorfismo isométrico si y sólo si \(T^*\in B(Y^*,X^*) \)
+      es un isomorfismo isométrico. 
+      <p>
+        Nota: una función lineal es un isomorfismo isométrico 
+      sii es inyectivo, suprayectivo y preserva las normas.
+      </p>
+    </li>
+    <p></p>
+    <li>
+      Si \(T\in B(X,Y)\) entonces \( ^\perp(\ker(T^*))=\overline{R(T)}\).
+    </li>
+    <p></p>
+    <li>
+      Si \(Y=\mathbb{F}\) entonces \(T^*\psi =\psi(1)T \) para todo \(\psi \in \mathbb{F}^*\).
+    </li>
+  </ol>
+</div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado y \(M\subset X\) un espacio cerrado propio. Prueba 
+    <ol>
+      <li>
+        \(((X/M)^*, \|\cdot\|_{(X/M)^*})\) es isométricamente isomorfo a 
+        \((M^\perp, \|\cdot\|_{M^\perp})\).
+      </li>
+      <li>
+        Para cualquier \(x\in X\), 
+        \[
+        \|[x]\|_{X/M}=\max\{|\varphi(x)|: \varphi\in M^\perp, \|\varphi\|=1 \}
+        \]
+        donde \([x]\) denota la clase de \(x\) en \(X/M\).
+      </li>
+    </ol>
+  </p>
+</div>
+
+
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados y \(S,T:X\to Y\) dos operadores 
+    lineales compactos. Prueba que \(\alpha T+ S\) también es compacto (aqui \(\alpha\in \mathbb{F}\) es un escalar fijo y arbitrario). 
+  </p>
+  <p>
+    Hint: usa la <a href="#Prop:CaracterizacionOpCompactosSuceciones">Proposición 4.13</a>.
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Fija \(1\leq p \leq \infty\) y define \(T:\ell_p(\mathbb{N}) \to \ell_p(\mathbb{N})\)
+    por \(Tx=(\frac{x(j)}{j})_{j=1}^\infty\).   
+  </p>
+  <p>
+    Prueba que \(Tx \in \ell_p(\mathbb{N})\) (así \(T\) está bien definido) y 
+    que \(T\) es un operador lineal compacto.
+  </p>
+  <p>
+    Hint: Para \(n\in \mathbb{N}\) considera el operador lineal \(T_n:\ell_p(\mathbb{N})\to \ell_p(\mathbb{N})\)
+    dado por 
+    \[
+    T_nx=\left(x(1), \frac{x(2)}{2}, \dots, \frac{x(n)}{n}, 0,0,\cdots \right)
+    \]
+    y usa el <a href="#Teo:CerraduraOpCompactos">Teorema 4.15</a>.
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(\lambda\) la medida de Lebesgue en \(\mathbb{R}\). Los espacios \(\mathcal{L}_2\)
+    que vamos a considerar van a ser con respecto a \(\lambda\) o la 
+    medida producto \(\lambda\otimes \lambda\), según sea necesario. Dada 
+    \(K\in \mathcal{L}_2([a,b]\times [a,b])\) consideramos el operador integral 
+    \(T_K:\mathcal{L}_2([0,1]) \to \mathcal{L}_2([0,1])\)
+    \[
+    (T_kf)(x)=\int_{[0,1]}K(x,y)f(y)d\lambda(y)
+    \]
+  </p>
+  <p>
+    Este ejercicio prueba que \(T_K\) es compacto.
+  </p>
+  <p>
+    Considera la función \(\Phi:\mathcal{L}_2([a,b]\times [a,b]) \to B(\mathcal{L}_2([a,b]), \mathcal{L}_2([a,b]))\)
+    dada por \(\Phi(K)=T_K\). Es directo probar que \(\Phi\) es un operador lineal 
+    y el <a>Ejemplo</a> muestra que \(\|\Phi(K)\|\leq \|K\|_2\), es decir, \(\Phi\)
+    es acotada con norma menor o igual a 1.
+  </p>
+  <ol>
+    <li>
+      Por \(\mathcal{A}\) denotamos al cojunto de funciones de la forma 
+      \[
+      H(x,y)=\sum_{i=1}^n f(x)g(y)
+      \]
+      donde \(f,g:[a,b]\to \mathbb{F}\) son continuas. Prueba que \(\mathcal{A}\)
+      es un subconjunto  uniformemente denso de \(C([a,b]\times [a,b])\).
+    </li>
+    <li>
+      Prueba que \(\mathcal{A}\) es un subconjunto denso de \(\mathcal{L}_2([a.b]\times [a,b])\).
+    </li>
+    <li>
+      Prueba que para todo \(H\in \mathcal{A}\), \(T_H\) es de rango 1.
+    </li>
+    <li>
+      Prueba que 
+      \[
+      \Phi(\mathcal{L}_2([a,b]\times [a,b]))\subseteq \overline{\Phi(\mathcal{A})}
+      \]
+    </li>
+    <li>
+      Concluye que todo elemento de \(\Phi(\mathcal{L}_2([a,b]\times [a,b]))\)
+      es un operador lineal compacto.
+    </li>
+  </ol>
+
+</div>
 
 </body>
