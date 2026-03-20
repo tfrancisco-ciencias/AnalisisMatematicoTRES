@@ -465,7 +465,7 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
   <p>
-    Sean \(X,Y\) dos espacios vectoriales normados. Prueba que si \(B(X,Y)\), dotado 
+    Sean \(X,Y\) dos espacios vectoriales normados con \(X\) no trivial. Prueba que si \(B(X,Y)\), dotado 
     con la norma de operadores, es un espacio de Banach  entonces \(Y\) también es de Banach.
   </p>
 </div>
@@ -474,38 +474,46 @@
   <h2 class="number-title"> Ejercicio </h2>
   <h3> El adjunto en espacios vectoriales normados</h3>
   <p>
-    Sean \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) un operador lineal.
+    Sean \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) un operador lineal acotado.
     Definimos el operador adjunto de \(T\) como la función \(T^*:Y^*\to X^*\) donde 
     dado \(\psi \in Y^*\), \(T^*\psi\) es la funcional lineal en \(X^*\) dada por 
-    \((T\psi)(x)=\psi(Tx)\). Prueba 
+    \((T^*\psi)(x)=\psi(Tx)\). Prueba 
   </p>
   <ol>
+    <li>
+      \(T^*\in B(Y^*,X^*)\) y \(\|T\|=\|T^*\|\).
+    </li>
+    <p></p>
     <li>
       \(T^*\) es lineal.
     </li>
     <p></p>
     <li>
-      Si \(S:X\to Y\) es un operador lineal y \(\alpha \in \mathbb{F}\) entonces, 
+      Si \(S:X\to Y\) es un operador lineal acotado y \(\alpha \in \mathbb{F}\) entonces, 
       \((T+\alpha S)^*=T^*+\alpha S^*\).
     </li>
     <p></p>
     <li>
       Si \(T:X\to Y\) es invertible (es decir, inyectiva y suprayectiva) entonces 
       \(T^*\) es invertible con \((T^*)^{-1}=(T^{-1})^*\).
+      <p>
+        Nota: más adelante vamos a probar que si \(T\) es acotado e invertible 
+        entonces \(T^{-1}\) también es acotado (Teorema del mapeo abierto).
+      </p>
     </li>
     <p></p>
     <li>
-      Si \(R:Y \to Z\) es un operador lineal entonces \((R\circ T)^*=T^*\circ S^*\).
+      Si \(R:Y \to Z\) es un operador lineal acotado entonces \((R\circ T)^*=T^*\circ S^*\).
     </li>
     <p></p>
-    <li>
-      Si \(T\in B(X,Y)\) entonces \(T^*\in B(Y^*,X^*)\) y \(\|T\|=\|T^*\|\).
-    </li>
+    
+      
+    
     
   </ol>
   <p>
     Nota: los incisos anteriores muestran que el operador \(*:B(X,Y)\to B(Y^*, X^*)\)
-    es lineal acotado con norma igual a 1.
+    es una isometria lineal con norma igual a 1.
   </p>
 </div>
 
