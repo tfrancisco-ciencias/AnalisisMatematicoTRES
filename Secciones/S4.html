@@ -576,7 +576,7 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
   <p>
-    Sea \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) lineal.
+    Sea \(X,Y\) dos espacios vectoriales normados, con \(X\) de Banach y \(T:X\to Y\) lineal acotada.
   </p>
   <ol>
     <li>
@@ -662,9 +662,9 @@
     que vamos a considerar van a ser con respecto a \(\lambda\) o la 
     medida producto \(\lambda\otimes \lambda\), según sea necesario. Dada 
     \(K\in \mathcal{L}_2([a,b]\times [a,b])\) consideramos el operador integral 
-    \(T_K:\mathcal{L}_2([0,1]) \to \mathcal{L}_2([0,1])\)
+    \(T_K:\mathcal{L}_2([a,b]) \to \mathcal{L}_2([a,b])\)
     \[
-    (T_Kf)(x)=\int_{[0,1]}K(x,y)f(y)d\lambda(y)
+    (T_Kf)(x)=\int_{[a,b]}K(x,y)f(y)d\lambda(y)
     \]
   </p>
   <p>
@@ -680,9 +680,9 @@
     <li>
       Por \(\mathcal{A}\) denotamos al cojunto de funciones de la forma 
       \[
-      H(x,y)=\sum_{i=1}^n f(x)g(y)
+      H(x,y)=\sum_{i=1}^n f_i(x)g_i(y)
       \]
-      donde \(f,g:[a,b]\to \mathbb{F}\) son continuas. Prueba que \(\mathcal{A}\)
+      donde \(f_i,g_i:[a,b]\to \mathbb{F}\) son continuas. Prueba que \(\mathcal{A}\)
       es un subconjunto  uniformemente denso de \(C([a,b]\times [a,b])\).
     </li>
     <li>
