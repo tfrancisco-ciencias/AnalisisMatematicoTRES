@@ -475,7 +475,7 @@
     </div>
 
     <div class="prop-box">
-      <h2 class="number-title"> Corolario </h2>
+      <h2 class="number-title" id="Coro:LiearizacionNorma"> Corolario </h2>
       <p>
         Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
         existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
@@ -562,6 +562,120 @@
     </div>
 
 
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <h3> Inclusión canónica </h3>
+      <p>
+        Sea \((X,\|\cdot\|_X)\) un espacio vectorial normado y \((X^*,\|\cdot\|_{X^*})\) su dual. 
+      </p>
+      <p>
+        Ya que asi vez \(X^*\) es un espacio vectorial normado podemos tomar su dual, denotado \(X^{**}\)
+        llamado el segundo o doble dual de \(X\). El segundo dual de \(X\) 
+        es interesante pues hay una relación con \(X\). Dado \(x\in X\) definimos 
+        \(i_x:X^* \to \mathbb{F}\) por \(i_x(\varphi)=\varphi(x)\). Claramente 
+        \(i_x\) es una función lineal de \(X^*\) a \(\mathbb{F}\) y es acotada pues 
+        usando que \(|\varphi(x)|\leq \|\varphi\|\|x\|\) para todo \(\varphi\in X^*\) llegamos a 
+        \[
+        \|i_x\|=\sup_{\|\varphi\| \leq 1}\{|i_x(\varphi)|\}\leq \sup_{\|\varphi\| \leq 1}\{\|\varphi\|\|x\|\}\leq \|x\|
+        \]
+        Así pues tenemos que \(i_x\in X^{**}\) con \(\|i_x\|\leq \|x\|\). Es más la siguiente 
+        proposición prueba que \(\|i_x\|=\|x\|\).
+      </p>
+      <p>
+        Al mapeo \(i:X \to X^{**} \) tal que \(x\mapsto i_x\) se le conoce como el mapeo canónico 
+        o la inclusión canónica. 
+      </p>
+     
+    </div>
+
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(X\) un espacio vectorial normado. Entonces la 
+        inclusión canónica \(i:X\to X^{**}\) es una isometría lineal. 
+      </p>
+            
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+  
+      
+      <p>
+        Para la linealidad de \(i\) debemos probar que \(i_{\alpha x+y}=\alpha i_x+i_y\). Como 
+        éstas últimas son funciones de \(X^*\) a \(\mathbb{F}\) para probar la igualdad 
+        debemos evaluar en una \(\varphi\in X^*\) arbitraria. Pero evaluando y 
+        usando la linealidad de \(\varphi\) obtenemos 
+        \begin{eqnarray*} 
+        i_{\alpha x+y}(\varphi)&=& \varphi(\alpha x+y)\\
+        &=& \alpha \varphi(x)+\varphi(y) \\
+        &=& \alpha i_x(\varphi)+i_y(\varphi)
+        \end{eqnarray*}
+        Lo que prueba la linealidad de \(i\). 
+      </p>
+      <p>
+        Para ver que \(i\) es una isometría debemos probar \(\|x\|=\|i_x\|\) lo cual 
+        se puede reescribir como 
+        \begin{eqnarray*} 
+        \|x\|&=& \sup_{\varphi \in X^*,\|\varphi\|\leq 1 }\{|i_x(\varphi)|\} \\ 
+        &=&\sup_{\varphi \in X^*,\|\varphi\| \leq 1 }\{|\varphi(x)|\}
+        \end{eqnarray*}
+        pero precisamente por el Corolario 3.13 tenemos 
+        \[
+        \|x\|=\sup_{\varphi \in X^*,\|\varphi\| \leq 1 }\{|\varphi(x)|\}
+        \]
+        lo que prueba que \(i\) es una isometría. 
+      </p>
+      
+      </div>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <p>
+        Todo espacio vectorial normado tiene una completación.
+      </p>
+      <p>
+        Es decir dado un espacio vectorial normado \((X,\|\cdot\|_X)\)
+        existe un espacio de Banach \((\hat{X},\|\cdot\|_{\hat{X}})\) y 
+        una función lineal \(\iota: X\to \hat{X}\) tal que:
+        <ol>
+          <li>
+            para cualquier \(x\in X\),
+        \(\|\iota(x)\|_{\hat{X}}=\|x\|_X\),
+          </li>
+          <li>
+            \(\iota(X)\) es denso en \(\hat{X}\).
+          </li>
+        </ol> 
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        
+      <p>
+        Consideramos la inclusión canónica \(i:X\to X^{**}\). Sabemos que \(i\) es lineal 
+        y una isometría y que \(X^{**}\) es de Banach. Asi que podríamos definir 
+        \(\iota=i\) pero el problema es que \(i(X)\) no es necesariamente denso en \(X^{**}\).
+        Para solucionarlo tomamos \(\hat{X}=\overline{i(X)} \subseteq X^{**}\). Al ser un 
+        espacio cerrado en un espacio de Banach es automáticamente de Banach. Por lo tanto 
+        \(\iota:X\to \hat{X}\), dado por \(\iota(x)=i(x)\) produce una completación. 
+      </p>
+      </div>
+    </div>
+
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <h3> Espacios reflexivos</h3>
+         <p>
+        Decimos que un espacio vectorial normado \(X\) es reflexivo si la inclusión 
+        canónica, \(i\), es suprayectivo. Es decir \(X\) es reflexivo si y sólo si 
+        para todo \(\Lambda: X^* \to \mathbb{F}\) funcional lineal acotada existe 
+        \(x\in X\) tal que \(\Lambda(\varphi)=\varphi(x)\), para todo \(\varphi \in X^*\).
+      </p>
+      
+    </div>
 
 
     <div class="ejercicio-box">
@@ -707,9 +821,15 @@
     <div class="ejercicio-box">
       <h2 class="number-title"> Ejercicio </h2>
       <p>
-        Sea \((X,\Sigma, \mu)\) un espacio de medida \(\sigma\)-finito y \(1< p < +\infty\) con \(1< q < +\infty\) su exponente 
-        conjugado. Prueba que \((L_p(X), \|\cdot\|_p)^*\) es linealmente isométricamente isomorfo a 
-        \((L_q(X),\|\cdot\|_q)\).
+        Sean \(p,q\in (1,\infty)\) con \(\frac{1}{p}+\frac{1}{q}=1\). Prueba que 
+        \((\ell_p,\|\cdot\|_p)^*\) es linealmente isométricamente isomorfo 
+        a \((\ell_q, \|\cdot\|_q)\).
+      </p>
+      <p>
+        El resultado anterior se puede generalizar como sigue. Sea \((X,\Sigma, \mu)\) un espacio de medida \(\sigma\)-finito y \(1< p < +\infty\) con \(1< q < +\infty\) su exponente 
+        conjugado. Entonces \((L_p(X), \|\cdot\|_p)^*\) es linealmente isométricamente isomorfo a 
+        \((L_q(X),\|\cdot\|_q)\). Para probar este resultado se necesita resultados de teoría de la medida como 
+        el Teorema de Radon-Nikodym.
       </p>
 
     </div>
@@ -797,6 +917,12 @@
     </div>
 
 
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \(p\in (1,\infty)\). Prueba que \((\ell_p, \|\cdot\|_p)\) es reflexivo.
+      </p>
+    </div>
 
     <div class="quiz-box">
       <h2> Quiz  </h2>

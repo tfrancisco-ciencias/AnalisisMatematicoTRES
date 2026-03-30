@@ -76,527 +76,500 @@
     </label>
 
   </header>
-  
-  <!-- This part is for title in tab-->
-  <title id="Sec"> § 5 </title>
-  
-  
-  <body class="fondo-body">
-  
-  
-    <div class="flexbox">
-      <h1 class="number-title flexbox"> Topologías débiles  </h1>     
-  
-      <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
-      <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
-  
-  
-    <!--    Contenido empiaza abajo
-   ///////////////////////////////// -->
+
+<!-- This part is for title in tab-->
+<title id="Sec"> § 5 </title>
 
 
-   <div class="definicion-box">
-    <h2 class="number-title" id="Lema:DefIniciales"> Definición </h2>
-
-    <p>
-        Sea \(X\) un conjunto. Una topología en \(X\) es una familia de subcojuntos de  
-        \(X\), \(\tau\),  que satisface 
-        <ol>
-            <li>
-                \(\tau\) es cerrado bajo uniones arbitrarias, es decir si 
-                \(\{U_i\}_{i\in I}\subset \tau\) es una colección arbitraria 
-                (numerable, no numerable, etc) entonces \(\cup_{i\in I}U_i \in \tau\).
-            </li>
-            <li>
-                \(\tau\) es cerrado bajo intersecciones finitas, es decir si \(n\) es un natural 
-                arbitrario y 
-                \(U_1,\dots, U_n \in \tau \) entonces \(\cap_{i=1}^n U_i \in \tau\).
-            </li>
-            <li>
-                \(\emptyset, X \in \tau\).
-            </li>
-        </ol>
-        A los subconjuntos de \(\tau\) se les llama subconjuntos abiertos. Un conjunto se llama cerrado si 
-        su complemento es abierto.
-    </p>
-    <p>
-        El interior de un subconjunto \(A \subseteq X\) es la unión de todos los subconjuntos 
-        abiertos contenidos de \(A\):
-        \(\textrm{int}(A)=\cup \{ U\in \tau : U \subseteq A\}\).
-    </p>
-    <p>
-        La cerradura de un subconjunto \(A\subseteq X\) es la intersección de todos los subconjuntos 
-        cerrados que contienen a \(A\): \(\overline{A}=\cap\{ F: A\subseteq F, F^c \in \tau\}\).
-    </p>
-    <h3> Ejemplos </h3>
-    <ol type="a">
-        <li>
-            Las familias  \(\tau = \{\emptyset, X\}\) y \(\tau=P(X)\) (la potencia de \(X\)) son dos topologías 
-            en \(X\). Tomando el orden dadan por la contención, la primera es la más pequeña y la segunda la más grande.
-        </li>
-        <li>
-            Sea \((X,d)\) un espacio métrico. Definimos una topología en \(X\) de la siguiente manera:
-            un subconjunto \(U\subseteq X\) es abierto si para todo \(x_0\in U\) existe 
-            \(r>0\) tal que \(B_r(x_0)\subseteq U\).
-        </li>
-    </ol>
-    <h3> Base </h3>
-       <p>
-        Una base para la topología \(\tau\) es una familia de abiertos, \(\beta \subseteq \tau \)
-        que satisface: para todo \(U\in \tau\) existen una familia de elementos de la 
-        base \(\{ V_j\}_{j\in J} \subset \beta\) tal que \(U=\cup_{j\in I}V_j\). Por 
-        ejemplo para la topología generada por un espacio métrico \((X,d)\), una base es la 
-        familia de bolas abiertas, \(\beta=\{ B_r(x): r>0, x\in X\}\).
-       </p> 
-       <p>
-        Son equivalentes:
-        <ol>
-            <li>
-                \(\beta\) es una base.
-            </li>
-            <li>
-                para toda \(U\in \tau \) y para todo \(x\in U\) existe \(V \in \beta\) tal que 
-                \(x\in V \subseteq U\).
-            </li>
-        </ol>
-       </p>
-       <h3> Topología generada </h3>
-       <p>
-        Observación: la intersección arbitraria de topologías en un conjunto \(X\) es de nuevo  una topología 
-        en \(X\). Así pues dado una familia de subsonjuntos  \( \mathcal{U} \subseteq P(X)\) se define la 
-        topología generada por \(\mathcal{U}\) como 
-        \[
-        \tau_{\mathcal{U}}=\cap\{ \tau \subseteq P(X): \textrm{\(\tau\) es topología y \(\mathcal{U}\subseteq \tau \)} \} 
-        \]
-        Nota que si tomamos \(\tau\) como el conjunto potencia de \(X\) entonces 
-        en la definición anterior \(\mathcal{U}\subseteq \tau\). En particular 
-             la 
-            familia que estamos intersectando para la definición de \(\tau_{\mathcal{U}}\)
-            es no vacía y por lo tanto \(\tau_{\mathcal{U}}\) está bien definida.
-       </p>
-       <h3> Continuidad</h3>
-       <p>
-        Sean \((X,\tau_X)\) y \((Y,\tau_Y)\) dos espacios  topológicos. Decimos que una función 
-        \(f:X\to Y\) es continua (con respecto a las topologías \(\tau_X\), \(\tau_Y\)) sii 
-        para todo \(U\in \tau_Y\), \(f^{-1}(U)\in \tau_X\). Es decir, imagen inversa de abiertos es abierta.
-    </p>
-   </div>
+<body class="fondo-body">
 
 
+  <div class="flexbox">
+    <h1 class="number-title flexbox"> El principio de acotación uniforme  </h1>     
 
-   <div class="definicion-box">
-    <h2 class="number-title" id="Lema:DefPuntuales"> Definición </h2>
-    <p>
-        Sea \((X,\tau)\) un espacio topológico y \(x_0\in X\). Una vecindad de \(x_0\) es un subconjunto 
-        \( A \subseteq X\) para el cual existe un  \(U  \in \tau \) con \(x\in U \subseteq A\). En otras palabras 
-        es un conjunto para el cual \(x\) está en su interior. 
-    </p>
-    <p>
-        Una base de vecindades de \(x_0\) es una  familia de vecindades, \(\beta_{x_0}\), 
-        con la propiedad de que dada \(A\), cualquier vecindad de \(x_0\), existe \(B \in \beta_{x_0}\),
-        con la propiedad de que \(B \subseteq A\).
-    </p>
-    <p>
-        Por ejemplo para la topología generada por un espacio métrico, \((X,d)\), 
-        la familia \(\{B_{1/n}(x) \}_{n=1}^\infty\), es una base de vecindades en \(x_0\).
-    </p>
+    <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
+    <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
 
-    <h3> Continuidad puntual</h3>
-    <p>
-        Sean \((X,\tau_X)\), \((Y,\tau_Y)\) espacios topológico y 
-        \(f:X\to Y\) una función. La función \(f\) es continua en 
-        \(x_0\in X\) sii para toda \(U\) vecindad de \(f(x_0)\) existe una vecindad \(V\), de \(x_0\), 
-        tal que \(V\subseteq f^{-1}(U)\).
-    </p>
-    <p>
-        La condición \(V\subseteq f^{-1}(U)\) es equivalente a \(f(V)\subseteq U\).
-    </p>
-</div>
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->
+
+
+    
+
+
 
 <div class="lema-box">
-    <h2 class="number-title"> Lema </h2>
-    <p>
-        Sean \((X,\tau_X)\), \((Y,\tau_Y)\) espacios topológico y 
-        \(f:X\to Y\) una función.
-    </p>
-    <p>
-        Entonces \(f\) es continua en \(X\) (ver <a href="#Lema:DefIniciales"> Definición 5.1</a>) si y sólo si \(f\) es continua en \(x\) 
-        para todo \(x\in X\) (ver <a href="#Lema:DefPuntuales"> Definición 5.2</a>).
-    </p>
+  <h2 class="number-title"> Lema</h2>
+  <p>
+    Sean \(X,Y\) espacios vectoriales normados y \(T\in \mathbb{B}(X,Y)\). Para todo 
+    \(x_0\in X\) y \(r_0>0 \) se tiene 
+    \[
+    \sup_{x\in B_{r_0}(x_0)}\{\|Tx\| \}\geq r_0\|T\|.
+    \]
+  </p>
 
 </div>
+
+<div class="teorema-box">
+  <h2 class="number-title"> Teorema </h2>
+  <h3> Banach-Steinhauss o principio de acotación uniforme</h3>
+  <p>
+    Sea \(X\) un espacio de Banach y \(Y\) un espacio vectorial normado. Considera 
+    una familia de operadores lineales acotados \( \{ T_\alpha:X\to Y\}_{\alpha \in \Lambda }\) con la 
+    siguiente propiedad: para todo \(x\in X\), 
+    \[
+    \sup_{\alpha \in \Lambda }\{\|T_\alpha x\| \} < +\infty \quad \textrm{(acotación puntual).}
+    \]
+    Entonces 
+    \[
+    \sup_{\alpha \in \Lambda }\{\|T_\alpha \| \}< + \infty \quad \textrm{(acotación uniforme).}
+    \]
+  </p>
+  <!-- <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=2419" allowfullscreen="true"> 
+      </iframe>
+    </div>
+  </div>-->
+</div>
+
+
+
+<div class="prop-box">
+  <h2 class="number-title"> Proposición </h2>
+  <h3>Límite puntual de operadores acotados es acotado</h3>
+  <p>
+      Sea \(X\) un espacio de Banach y \(Y\) un espacio vectorial normado.
+  </p>
+  
+  <p>
+      Sea \((T_n:X\to Y)_{n=1}^\infty\) una sucesión de operadores lineales 
+      acotados tal que, para todo \(x\in X\) el límite \(\lim_{n\to \infty}T_nx\)
+      existe en \(Y\).
+  </p>
+  <p>
+      Entonces la función \(T:X\to Y\) dado por \(Tx:=\lim_{n\to \infty} T_nx\)
+      es un operador lineal y además es acotado.
+  </p>
+
+  <!-- <button class="respButton hvr-grow felxbox"> Demostración </button>
+  <div class="resp-box flexbox">
+    <div class="flexbox">
+      <iframe width="500" height="400" class="video"
+      src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=3458" allowfullscreen="true"> 
+      </iframe>
+    </div>--> 
+  </div>
+
 
 <div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
+    <h2 class="number-title"> Definición  </h2>
     <p>
-        Sea \((X,\tau)\) un espacio topológico y \((x_\lambda)_{\lambda \in \Lambda}\) una red en \(X\). 
-        Decimos que la red converge al punto \(x\in X\) si para toda \(V\), vecindad de \(x\), 
-        existe \(\lambda_0 \in \Lambda\) que satisface, \(x_\lambda \in V\) para todo \(\lambda \geq \lambda_0\).
+        Sea \((X, d)\) un espacio métrico.
     </p>
-    <p>
-        En tal caso escribimos \(\lim_{\lambda} x_\lambda = x\) o si queremos aclarar la topología 
-        que se usa podemos escribir \(\lim_{\lambda} x_\lambda \overset{\tau}{=} x \).
-    </p>
+    <ol>
+        <li>
+            \(E\subseteq \) se llama denso en ninguna parte sii \(\textrm{int}(\overline{E})=\emptyset\).
+        </li>
+        <li>
+            \(A\subseteq X\) es de la primera categoría en \(X\) (ó "flaco") sii 
+            \[
+            A=\cup_{n=1}^\infty E_n
+            \]
+            donde cada \(E_n\) es denso en ninguna parte.
+        </li>
+        <li>
+            \(Y\subseteq X\) es de la segunda categoría en \(X\) (ó "gordo") sii no es de la 
+            primera categoría.
+        </li>
+    </ol>
+
+<!--     <button class="respButton hvr-grow felxbox"> Explicación  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=791" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>-->
+
+    
 </div>
+
+<div class="info-box">
+  <h2 class="number-title"> Ejemplo  </h2>
+  <p>
+    <ol>
+      <li>
+        Cualquier subconjunto finito de \(\mathbb{R}\) es denso en ninguna parte.
+      </li>
+      <li>
+          La frontera de un conjunto abierto es densa en ninguna parte.
+      </li>
+      <li>
+          Unión finita de subconjuntos densos en ninguna parte es 
+          densa en ninguna parte.
+          <p>
+            Nota: la unión numerable de conjuntos densos en ninguna parte 
+            no necesariamente es denso en ninguna parte. Por ejemplo, en 
+            \(\mathbb{R}\) con la métrica usual, 
+            \(\mathbb{Q}\) es la unión numerable de conjuntos densos en ninguna 
+            parte (los singuletes) pero \(\overline{\mathbb{Q}}=\mathbb{R}\).
+          </p>
+      </li>
+      
+  </ol>
+  
+  </p>
+</div>
+
+    <!-- <button class="respButton hvr-grow felxbox"> Explicación  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=936" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>-->
+    
+
+<div class="prop-box">
+    <h2 class="number-title"> Lema</h2>
+    <p>
+        Sea \((X,d)\) un espacio métrico.
+    </p>
+    <ol>
+        <li>
+            Un subconjunto \(D\subseteq X\) se llama denso si \(\overline{D}=X\). Entonces \(D\)
+            es densi si y sólo si para todo abierto no vacío \(U\subseteq X\), 
+            \(U\cap D \ne \emptyset\).
+        </li>
+        <li>
+            \(E\subseteq X\) es denso en ninguna parte sii \(X\setminus \overline{E}\)
+            es denso en \(X\).
+        </li>
+    </ol>
+    
+
+</div>
+
 
 <div class="teorema-box">
-    <h2 class="number-title"> Teorema </h2>
+    <h2 class="number-title"> Teorema de Categoría de Baire</h2>
     <p>
-        Sea \((X,\tau)\) un espacio topológico y \(E\subseteq X\).
+        Sea \((X,d)\) un espacio métrico completo.
     </p>
     <p>
-        Enotnces \(x\in \overline{E}\) si y sólo si existe una red de 
-        elementos de \(E\), \((x_\lambda)_{\lambda \in \Lambda} \subset E\), tal que \(\lim_{\lambda}x_\lambda =x\).
+        Entonces la intersección contable de subconjuntos abiertos y densos 
+        es densa.
+    </p>
+    <button class="respButton hvr-grow felxbox"> Demostración </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=1241" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+</div>
+
+<div class="nota-box">
+    <h2 class="number-title"> Nota</h2>
+    <p>
+        El Teorema de Categoría de Baire también se vale para espacios topológicos 
+        localmente compactos.
     </p>
 
 </div>
 
-
-
-<div class="teorema-box">
-    <h2 class="number-title"> Teorema </h2>
+<div class="prop-box">
+    <h2 class="number-title"> Corolario</h2>
     <p>
-        Sean \((X,\tau_X)\), \((Y,\tau_y)\)  espacios topológicos y \(f:X\to Y\). 
-    </p>
-    <p>
-        Enotnces \(f\) es continua en \(x_0\) si y sólo si para toda red en \(X\), 
-        \((x_\lambda)_{\lambda \in \Lambda}\) con \(\lim_{\lambda} x_\lambda =x_0 \)
-        se cumple \(\lim_{\lambda }f(x_\lambda)=f(x_0)\).
-
-    </p>
-
-</div>
-
-
-   <div class="teorema-box">
-    <h2 class="number-title"> Teorema </h2>
-    <p>
-      Sea \(X\) un conjunto y \(\tau_1, \tau_2\) dos topologías en \(X\). 
-    </p>
-    <p>
-      Las topologías son iguales si y sólo si tienen las mismas redes convergentes.
-    </p>
-    <p>
-        Es decir
+        Sea \((X,d)\) un espacio métrico completo. Si 
         \[
-        \lim_{\lambda} x_\lambda \overset{\tau_1}{=}x \Leftrightarrow \lim_{\lambda} x_\lambda \overset{\tau_2}{=}x
+            X=\cup_{n=1}^\infty F_n
         \]
+        donde cada \(F_n\) es cerrado entonces existe un \(F_{n_0}\) tal que 
+        \(\textrm{int}(F_{n_0})\ne \emptyset\).
+    </p>
+    <p>
+        En particular \(X\) es de la segunda categoría.
+    </p>
+    <button class="respButton hvr-grow felxbox"> Demostración  </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/zhmHtfMP-Z4?start=2137" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+</div>
+
+
+<div class="teorema-box">
+    <h2 class="number-title"> Teorema de acotación uniforme </h2>
+    <h3> Segunda demostración (usando Teorema de Categoria de Baire) </h3>
+    <p>
+
     </p>
   </div>
 
 
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado y \(X^*\) su dual. Sea \(A\subseteq X\) distinto del vacío con la 
+    propiedad de que, para toda \(\varphi \in X^* \), 
+    \[
+    \sup_{x\in A}\{|\varphi(x)| \} < \infty
+    \]
+  </p>
+  <p>
+    Prueba que \(A\) está acotado.
+  </p>
+  <p>
+    Hint: considera la inclusión canónica \(i:X\to X^{**}\).
+  </p>
+
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(X,Y\) dos espacios vectoriales normados. Prueba que 
+    \(T\in B(X,Y)\) si y sólo si  \(\varphi \circ T \in X^*\),
+    para toda \(\varphi\in Y^*\),.
+  </p>
+  <p>
+    Hint: usa el ejercicio anterior.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sean \(X\) y\(Y\) dos espacios vectorial normados. Dada una red 
+    de operadores  acotados, \((T_\alpha)_{\alpha \in A} \subset \mathbb{B}(X,Y)\) 
+    decimos que converte en SOT (o puntualmente) al operador \(T\in \mathbb{B}(X,Y)\) si y sólo si 
+    para todo \(x\in X\), \(\lim_{\alpha}\| T_\alpha x - Tx\| =0\).
+  </p>
+  <ol>
+    <li>
+      Para \(X=\ell_p\), \(1\leq p < \infty\) definimos el operador desplazamiento haia la izquierda
+      \(L:\ell_p \to \ell_p\), por 
+      \[
+      Lx=(x(2), x(3), \dots )
+      \]
+      donde \(x=(x(1),x(2),x(3),\dots)\). Define \(T_n=L\circ \cdots \circ L\) (\(L\) compuesto consigo mismo 
+      n-veces). Prueba que \((T_n)_{n=1}^\infty\) converge al operador \(0\) en SOT pero no converge al operador 
+      \(0\) en norma de operadores.
+    </li>
+    <li>
+      Si \(X\) es de Banach y \((T_n)_{n=1}^\infty \subset \mathbb{B}(X,Y)\) es una sucesón de operadores 
+      que converge en SOT al operador \(T\) prueba que \(\sup_{n\in \mathbb{N}}\| T_n\| < \infty\).
+    </li>
+  </ol>
   
 
-    <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>
-            Sea \(X\) un conjunto cualquiera y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos
-            (nota: los espacios \(Y_i\) pueden repetirse). 
-            Para cada \(i\in I\) supón que tenemos \(f_i: X\to Y_i\)  una función cualquiera
-            y denotemos \(\mathcal{F}=\{f_i\}_{i\in I}\). 
-        </p>
-        <p>
-            La 
-            topología débil generada por la familia \(\mathcal{F}\) se define como la 
-            topología más débil (más chica) que hace a todas las funciones de \(\mathcal{F}\) continuas.
-            Es decir es la topología generada por la familia de subconjuntos:
-            \[
-            \{f_i^{-1}(U_i): f_i:X\to Y_i, U_i \in \tau_i, i\in I\}
-            \]
-        </p>
-        <p>
-            Otra forma de escribirlo es: 
-            \[
-            \tau_{\mathcal{F}}:=\cap\left\{\tau \subset P(X): \textrm{\(\tau\) es topología y} 
-            \,  f_i^{-1}(\tau_i)\subseteq \tau, \forall i \in I
-             \right\}
-            \]
-        </p>
-        <p>
-            
-        </p>
-        
-    </div>
+</div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <ol>
+    <li>
+      Sea \(X\) un espacio vectorial normado y \(M\subseteq X\) un subespacio. Prueba que 
+      si  el interior de \(M\) es no vacío entonces  \(M=X\).
+    </li>
+    <li>
+      Sea \(X\) un espacio de Banach y \(T:X\to X\) un operador lineal acotado. Prueba que 
+      si para todo \(x\in X\) existe un \(n\in \mathbb{N}\) tal que \(T^nx=0\) entonces existe un 
+      \(N\in \mathbb{N}\) tal que \(T^Nx=0\), para toda \(x\in X\).
+
+    </li>
+  </ol>
+  <p>
+    Sugerencia: usar el Teorema de categoría de Baire.
+  </p>
+</div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un espacio vectorial normado. Una sucesión \((x_n)_{n=1}^\infty \subset X\)
+    se llama débilmente Cauchy si para toda \(\varphi \in X^*\), la sucesión de escalares 
+    \((\varphi(x_n))_{n=1}^\infty\) es de Cauchy.
+  </p>
+  <p>
+    Prueba que si \((x_n)_{n=1}^\infty\subset X\) es débilmente Cauchy entonces 
+    está acotada.
+  </p>
 
-    <div class="info-box">
-        <h2 class="number-title"> Ejemplo</h2>
-        <p>
-            Sea \(\{(X_i,\tau_i)\}_{i\in I}\) una familia es espacios topológicos. Denotamos  
-            el espacio producto como \(X=\Pi_{i\in I}X_i\). Recordamos que los 
-            elementos de \(X\) son simplemente funciones de \(I\) en \(\cup_{i\in I}X_i\)
-            tal que el valor en  \(i\) pertenece en \(X_i\). Dado \(x\in X\) escribimos 
-            \(x=(x_i)_{i\in I}\) donde, para toda \(i\in I\), \(x_i\) es el valor de \(x\)
-            en \(i\).
-        </p>
-        <p>
-            Para cada \(i\in I\) definimos \(p_i:X\to X_i\) por 
-            \(p_i(x)=x_i\). La topología dada por la familia \(\mathcal{F}=\{p_i\}_{i \in I}\)
-            se llama la topología producto. Los elementos de la base del lema anterior 
-            son de la forma 
-            \[
-            p_{i_1}^{-1}(U_{i_1}) \cap \cdots \cap p_{i_n}^{-1}(U_{i_n})=U_{i_1}\times \cdots \times U_{i_n} \times \Pi_{i\ne i_1,\dots, i_n }X_i
-            \]
-        </p>
-
-    </div>
-
-    
-    <div class="prop-box">
-        <h2 class="number-title" id="Lema:BaseTopoDebil"> Lema</h2>
-        <p>
-            Sea \(X\ne \emptyset\), \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de 
-            espacios topológicos y \(\mathcal{F}=\{f_i:X\to Y_i\}\) una familia de funciones. 
-            Para cada \(i\) supongamos que \(\beta_i\) es una 
-            base para \(\tau_i\). La familia 
-            \[
-            \beta:=\left\{\cap_{s=1}^n f_{i_s}^{-1}(U_{i_s}): n\in \mathbb{N},
-            i_1,\dots, i_n \in I, U_{i_s}\in \beta_{i_s} \right\}
-            \]
-            es una base para \(\tau_{\mathcal{F}}\), es decir, para todo \(V \in \tau_{\mathcal{F}}\)
-            existe una familia de conjuntos \( \{V_j\}_{j\in J}\subseteq  \beta\) tal que 
-            \(V=\cup_{i\in I}V_i\).
-        </p>
-    </div>
+</div>
 
 
-    <div class="teorema-box">
-        <h2 class="number-title"> Teorema </h2>
-        <h3> Teorema de Tychonoff</h3>
-        <p>
-            Un espacio topológico se llama compacto si toda cubierta abierta del espacios 
-            admite una subcubierta finita. 
-        </p>
-        <p>
-            Para cada \(i\in I\) sea \((X_i,\tau_i)\) un espacio compacto no vacío. Entonces  
-            el espacio producto \(X=\Pi_{i\in I}X_i\), con la topología producto (la del ejemplo anterior), 
-            es compacto.
-        </p>
-        <p>
-            Referencias: 
-            <oL>
-                <li>Willard, "General Topology", Teorema 17.8</li>
-                <li> <a href="http://math.hunter.cuny.edu/mbenders/notes4.pdf">Notas de John Terilla.</a>  </li>
-            </oL>
-        </p>
-    </div>
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X\) un espacio de Banach de dimensión infinita. Prueba que toda 
+    base de \(X\) (como espacio vectorial) es necesariamente no-numerable.
+  </p>
+  <p>
+    Hint:  suponga lo contrario y escriba a \(X\) como una unión numerable creciente de 
+    subespacios de dimensión finita, luego aplica el Teorema de categoría de Baire. 
+  </p>
+</div>
 
-    <div class="prop-box">
-        <h2 class="number-title" id="Prop:RedesConvergentesTopDebil"> Proposición </h2>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X:=\{x:[a,b]\to \mathbb{R}: \textrm{\(x\) es continua}\}\) y 
+    \(\|x\|=\max_{t\in [a,b]}\{|x(t)|\}\).
+  </p>
+  <p>
+    Para cada \(n\in \mathbb{N}\) define 
+    \[
+    X_n=\{x\in X: \exists t_0\in [a,b), |x(t)-x(t_0)|\leq n(t-t_0), \forall t\in [t_0,b]\}.
+    \]
+    Prueba 
+    <ol>
+      <li>
+        \(X_n\) es denso en ninguna parte. 
         <p>
-            Sea \(X\) un conjunto y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
-            Sea  \(\mathcal{F}=\{f_i:X\to Y_i\}_{i\in I}\) una familia de funciones y 
-            dotemos a \(X\) con la topología débil generada por \(\mathcal{F}\).
+          Sugerencia: dada \(n\in \mathbb{N}, \varepsilon >0, x\in X_n\) 
+          construye una función lineal a trozos \(y\in X\), con \(\|x-y\|< \varepsilon\)
+          y con valor absoluto de sus derivadas laterales derechas mayor a \(n\).
         </p>
-        <p>
-            Una red \((x_\alpha)_{\alpha\in A}\) en \(X\) converge a 
-            un punto \(x\) en la topología débil \(\tau_{\mathcal{F}}\) si y sólo si,
-            para toda \(f_i\in \mathcal{F}\), \(\lim_{\alpha \in A}f_i(x_\alpha)\overset{\tau_i}{=}f_i(x)\)
-            en \(Y_i\).
-        </p>
-    </div>
+      </li>
+      <li>
+        Por \(X'\) denotamos al conjunto de funciones en \(x\in X\) tal que 
+        \(x\) no es diferenciable en ningún punto de \((a,b)\). Prueba que \(X'\)
+        contiene un subconjunto denso en \(X\) de tipo \(G_\delta\).
+      </li>
+    </ol>
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X:=\{x:[a,b]\to \mathbb{R}: \textrm{\(x\) es continua}\}\) y 
+    \(\|x\|=\max_{t\in [a,b]}\{|x(t)|\}\).
+  </p>
+  <p>
+    Por \(CBV([a,b])\) denotamos al conjunto de funciones continuas de variación acotada en \([a,b]\). 
+    Prueba que \(CBV([a,b])\) es denso y de la primera categoria. 
+  </p>
+  <p>
+    Hint: Para \(n\in \mathbb{N}\) define \(X_n\) al conjunto de \(x\in CBV([a,b])\)
+    con \(V_a^b(x)\leq n\). Prueba que \(X_n\) es cerrado con interior vacío.
+  </p>
+
+  </div>
+
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+    <p>
+       Sean \(X\) un espacio de Banach, \(Y\) un espacio vectorial normado y 
+       \((T_n)_{n=1}^\infty \subset \mathbb{B}(X,Y)\) 
+       una sucesión de operadores lineales acotados.
+    </p>
+    <p>
+        Supón que existe un subconjunto \(E \subseteq X\) que es de la segunda categoría en 
+        \(X\) tal que, para todo \(x \in E\), 
+        se tiene:
+        \[
+        \sup_{n \in \mathbb{N}} \|T_n x\| < \infty
+        \]
+        Demuestra que $\sup_{n \in \mathbb{N}} \|T_n\| < \infty$.
+    </p>
+  </div>
  
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+    <p>
+      Sea \(X\) el subespacio de \(\ell_1(\mathbb{N})\) consistente de las sucesiones \(x\in \ell_1(\mathbb{N})\) 
+      que cumnplen  
+      \(x(n)=0\), para todo \(n\in \mathbb{N}\) excepto en un subconjunto finito. Sea \(e_k\in X\)
+      tal que \(e_k(n)=\delta_{n,k}\). 
+    </p>
+    <p>
+      Define \(T_n:X\to \mathbb{F}\) poniendo \(T_n(e_k)=n\delta_{n,k}\) y extendiendo \(T\) 
+      linealmente a todo \(X\).
+    </p>
+    <p>
+      Prueba que para todo \(x\in X\), \(\sup_{n\in \mathbb{N}}\{|T_n(x)|\} < \infty\), 
+      pero \(\sup_{n\in \mathbb{N}}\{\|T_n\|\}=\infty\).
+    </p>
+    <p>
+      ¿Contradice esto el Teorema de Banach-Steinhauss?
+    </p>
+  </div>
 
-    <div class="prop-box">
-        <h2 class="number-title"> Proposición </h2>
-        <p>
-            Sea \(X\) un conjunto y \(\{(Y_i,\tau_i)\}_{i\in I}\) una familia de espacios topológicos. 
-            Sea  \(\mathcal{F}=\{f_i:X\to Y_i\}_{i\in I}\) una familia de funciones y 
-            dotemos a \(X\) con la topología débil generada por \(\mathcal{F}\).
-        </p>
-        <p>
-            Decimos que \(\mathcal{F}\) separa los puntos de \(X\) si 
-            dados \(x_1,x_2\in X\) distintos existe \(f\in \mathcal{F}\)
-            tal que \(f(x_1)\ne f(x_2)\).
-        </p>
-        <p>
-            Si \((Y_i,\tau_i)\) es Hausdorff para todo \(i\) y \(\mathcal{F}\) separa los 
-            puntos de \(X\) entonces \((X,\tau_{\mathcal{F}})\) es Hausdorff.
-        </p>
-    </div>
-
-    <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>
-            Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
-            y \(X^*\) su dual. Dado \(x\in X\) definimos \(\hat{x}:X^*\to \mathbb{F}\)
-            por \(\hat{x}(\varphi)=\varphi(x)\). También se suele denotar \(\iota_x=\hat{x}\).
-        </p>
-        <p>
-            La topología débil generada por 
-            familia \(\{\hat{x}\}_{x\in X}\) se llama la topología débil estrella
-            en \(X^*\) o simplemente  débil-* y se denota por \(\omega^*\).</p>
-        <p>
-            Por la <a href="#Prop:RedesConvergentesTopDebil">Proposición 5.6<a> tenemos que una red de funcionales lineales, \((\varphi_{\alpha})_{\alpha \in A}\),
-            converge a la funcional \(\varphi\) en la topología \(\omega^*\) sii para toda \(x\in X\) 
-            \[
-                \lim_{\alpha \in A}\varphi_\alpha(x)=\varphi(x). 
-            \]
-            Nota que éste último límite es en \(\mathbb{F}\).
-        </p>
-
-    </div>
-
-
-
-    <div class="prop-box">
-        <h2 class="number-title"> Proposición </h2>
-        <p>
-            Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
-            y \(X^*\) su dual dotado con la topología \(\omega^*\). Entonces las operaciones de suma 
-            y producto escalar son continuas en la topología \(\omega^*\).
-        </p>
-        
-        
-    </div>
-
-    <!--     <button class="respButton hvr-grow "> Demostración </button>
-        <div class="resp-box flexbox ">
-        <p>
-            Usando redes es suficiente probar que si \((\varphi_\alpha)_{\alpha \in A}\)
-            y \((\psi_{\beta})_{\beta \in B}\) son redes en \(X^*\) tal que 
-            \begin{equation}\label{Eqn:redesParaCombinacionLineal}
-            \lim_{\alpha \in A} \varphi_\alpha = \varphi, \quad \lim_{\beta \in B} \varphi_\beta = \psi, 
-            \quad  \textrm{en  \((X^*,\omega^*)\)} 
-            \end{equation}
-            entonces, para todo \(a \in \mathbb{F}\) 
-            \[
-            \lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)=a\varphi+\psi \quad \textrm{en \((X^*,\omega^*)\)}.
-            \]
-            Nota: estamos tomando la red sobre el conjunto dirigido 
-            \(A\times B\) donde \((\alpha,\beta)\leq (\alpha', \beta')\)
-            sii \(\alpha \leq \alpha '\) y \(\beta \leq \beta '\).
-        </p>
-        <p>
-            Por la  Proposición 5.6
-            es suficiente probar  que para todo \(x\in X\)
-            \[
-            \lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)(x)=(a\varphi+\psi)(x) \quad \textrm{en \(\mathbb{F}\)}.
-            \]
-            
-        </p>
-        <p>
-            Se sigue que para toda \((\alpha, \beta) \geq (\alpha_0, \beta_0)\)
-            \[
-            |(a \varphi_\alpha + \psi_\beta)(x) - (a\varphi+\psi)(x)|< \varepsilon
-            \]
-            por lo que \(\lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)(x)=(a\varphi+\psi)(x)\)
-            en \(\mathbb{F}\).
-        </p>
-        <p>
-            De nuevo por la Proposición 6.6 
-            y por   \eqref{Eqn:redesParaCombinacionLineal} tenemos 
-            \[
-            \lim_{\alpha \in A}\varphi_\alpha(x)=\varphi(x), \lim_{\beta \in B}\psi_{\beta}(x)=\psi(x)
-            \]
-            por lo tanto, dado \(\varepsilon >0\) existen \(\alpha_0\in A, \beta_0\in B\) tal que 
-            si \(\alpha \geq \alpha_0\) y \(\beta \geq \beta_0\) entonces 
-            \[
-            |\varphi_\alpha(x)-\varphi(x)|< \frac{\varepsilon}{2(|a|+1)}, |\psi_\beta(x)-\psi(x)| < \frac{\varepsilon}{2}
-            \]
-        </p>
-        
-        </div>
-        
-        
-     </div>-->
-
-    <div class="nota-box">
-        <h2 class="number-title"> Nota</h2>
-        <p>
-            Por la proposición anterior, las vecindades en la topología \(\omega^*\) de un
-            punto \(\varphi_0\in X^*\) son de la forma \(\varphi_0+V\), 
-            donde \(V\) es una vecindad del cero. 
-        </p>
-        <p>
-            Por el <a href="#Lema:BaseTopoDebil"> Lema 5.3</a> las vecindades de la funcional cero son e la forma 
-            \[
-            \cap_{i=1}^n \iota_{x_i}^{-1}(B_{r_i}(0))=\{\varphi\in X^*: |\varphi(x_i)|< r_i, i=1,\dots, n\}.
-            \]
-            donde \(B_r(0)=\{a \in \mathbb{F} : |a|< r\}\).
-            
-        </p>
-        <p>
-            Además nota que los conjuntos \(\cap_{i=1}^n \iota_{x_i}^{-1}(B_{r_i}(0))\)
-            son convexos y balanceados. 
-        </p>
-        <p>
-            Denotamos 
-            \[
-            V_r(\varphi_0;x_1,\dots, x_n)=\{\varphi\in X^*: |\varphi(x_i)-\varphi_0(x_i)|< r, i=1,\dots, n\}.
-            \]
-            Estos conjuntos pueden pensarse como las "bolas abiertas de radio \(r\) centradas en cero"
-            en la topología \(\omega^*\).
-        </p>
-        
-    </div>
-
-    <div class="teorema-box">
-        <h2 class="number-title"> Teorema </h2>
-        <h3> Teorema de Alaoglu</h3>
-        <p>
-            Por \((X^*)_1\) denotamos la bola unitaria cerrada en dual de un espacio vectorial normado,
-            es decir  
-            \[
-            (X^*)_1=\{\varphi \in X^*: \|\varphi\|\leq 1\}.
-            \]
-            En la topología \(\omega^*\) la bola cerrada \((X^*)_1\) es compacta.
-        </p>
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sean \(X,Y\) espacios de Banach y sea \(\Phi:X\times Y \to \mathbb{F}\) 
+    una función bilineal que satisface:
+    <ol type="i">
+      <li>
+        para todo \(x\in X\) existe \(A_x>0\) tal que \(|\Phi(x,y)|\leq A_x\|y\|\)
+        para toda \(y\in Y\).
+      </li>
+      <li>
+        para todo \(y\in Y\) existe \(B_y >0\) tal que \(|\Phi(x,y)|\leq B_y\|x\|\)
+        para toda \(x\in X\).
+      </li>
+    </ol>
+    <p>
+      Prueba que existe \(K>0\) tal que \(|\Phi(x,y)|\leq K\|x\|\|y\|\) 
+      para todos \(x\in X, y\in Y\).
+    </p>
+  </p>
+</div>
 
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(X = C([a,b])\) el espacio de funciones continuas con la norma del supremo. 
+    Considera una sucesión de reglas de integración numérica dadas por funcionales 
+    lineales \(I_n: X \to \mathbb{R}\) de la forma:
+    \[
+    I_n(f) = \sum_{k=1}^{m_n} w_{n,k} f(t_{n,k})
+    \]
+    donde $w_{n,k} \in \mathbb{R}$ son pesos y $t_{n,k} \in [a,b]$ son nodos. 
+  </p>
+  <p>
+    Sea \(I(f) = \int_a^b f(t) dt\).Prueba que 
+    \(I_n(f)\) converge a \(I(f)\) para toda función \(f \in C([a,b])\) 
+    si y sólo si se cumplen las dos condiciones siguientes:
+    <ol>
+      <li>
+        \(I_n(p) \to I(p)\) para todo polinomio \(p\).
+      </li>
+      <li>
+        \( \sup_{n \in \mathbb{N}} \sum_{k=1}^{m_n} |w_{n,k}| < \infty\).
+      </li>
+    </ol>
+    <p>
+      Hint: para la ida, nota que la norma del funcional es 
+      \(\|I_n\| = \sum_{k=1}^{m_n} |w_{n,k}|\) y aplica el Principio de Acotación Uniforme.
+      Para el regreso utiliza el Teorema de Aproximación de Weierstrass y 
+      un argumento de tipo \(\frac{\varepsilon}{3}\).
+    </p>
+  
+  </p>
+</div>
 
-        <button class="respButton hvr-grow felxbox"> Demostración </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/KLCjRxQU3z0" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
 
-    </div>
-
-
-
-    <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio </h2> 
-        <p>
-            Sabemos que \((\ell_1(\mathbb{N}),\|\cdot\|_1 )^*\) es linealmente 
-            isométricamente isomorfo a \((\ell_\infty, \|\cdot\|)\), donde la 
-            identificación está dada por \(y\in \ell_1(\mathbb{N}) \mapsto \varphi_y \in \ell_\infty(\mathbb{N})\)
-            donde 
-            \[
-            \varphi(y)=\sum_{k=1}^\infty x(k)y(k)
-            \]
-        </p>
-        <p>
-            Por lo tanto, con este isomorfismo, podemos pasar la topología \(\omega^*\) en \(\ell_1(\mathbb{N})\)
-            a \(\ell_\infty(\mathbb{N})\), a la cual vamos a seguir llamando la topología \(\omega^*\). Es decir, 
-            dada una red \((x_\lambda)_{\lambda \in \Lambda} \subset \ell_\infty(\mathbb{N})\) y 
-             \(x\in \ell_\infty(\mathbb{N})\) entonces: 
-             \begin{eqnarray*} 
-             \lim_\lambda x_\lambda & = & x \quad \textrm{en \((\ell_\infty(\mathbb{N}), \omega^*)\)} \\
-             & \Leftrightarrow  & \\
-             \lim_{\lambda }\varphi_{x_\lambda} &=& \varphi_x \quad \textrm{ en \((\ell_1(\mathbb{N}), \omega^*) \) } \\
-             & \Leftrightarrow & \\
-            \lim_{\lambda} \sum_{n=1}^\infty x_\lambda(k)y(k) &= &\sum_{n=1}^\infty x(k)y(k), \quad \textrm{para todo \(y\in \ell_1(\mathbb{Z})\)}
-             \end{eqnarray*} 
-            Nota: lo importante para entender la convergencia en \((\ell_\infty(N), \omega^*)\) son la primera y última equivalencias.
-        </p>
-       
-            <p> 
-                Sea \((x_\lambda)_{\lambda \in \Lambda } \subset \ell_\infty(\mathbb{N})\) una red tal que 
-                existe \(M>0 \) con, \(\|x_\lambda \|_\infty \leq M\), para toda \(\lambda\). Prueba que 
-                \(\lim_{\lambda}x_\lambda=x\) en \((\ell_\infty(\mathbb{N}), \omega^*)\) si y sólo si, para toda \(k\in \mathbb{N}\), 
-                \(\lim_{\lambda}x_\lambda(k)=x(k)\) en el campo. Es decir, en conjuntos acotados convergencia en la topología 
-                \(\omega^*\) coincide con la convergencia puntual.
-            </p>
-        
-
-    </div>
+</div>
 </body>
-
-

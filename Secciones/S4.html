@@ -252,18 +252,23 @@
 <div class="nota-box">
   <h2 class="number-title"> Nota </h2>
   <p>
-    Por el teorema anterior siempre que tenemos un operador lineal acotado 
-    \(T:D(T)\subseteq X \to Y\), donde \(X\) y \(Y\) son de Banach, 
-    el espacio ambiente \(X\) pasa a segundo plano
-    pues siempre podemos extender \(T\) a \(\overline{D(T)}\) y seguimos 
-    obteniendo un operador lineal acotado con la misma norma ahora definido
-    en un espacio de Banach.
+    Si \(T:D(T)\subseteq X \to Y\) es un operador lineal acotado. Ssando la 
+    completación de un espacio siempre podemos suponer:
+    \(X\subseteq \hat{X}, Y\subseteq \hat{Y}\), donde tanto \(\hat{X}\) como 
+    \(\hat{Y}\) son espacios de Banach.
    </p>
    <p>
-    Además como siempre podemos pensar a \(X\) e \(Y\) como 
-    subespacios de sus completaciones, sín perdida de generalidad 
-    siempre que hablamos de un operador lineal acotado  
-    podemos pensar el operador como \(T:X\to Y\).
+    Por lo tanto podemos pensar a \(T\) como una función \(T:D(T)\subseteq \hat{X} \to \hat{Y}\). 
+    Por el teorema anterior podemos extender \(T\) a un operador lineal acotado 
+    \[
+    \overline{T}: \overline{D(T)}\subseteq \hat{X} \to \hat{Y} 
+    \]
+    con \(\|\overline{T}\|=\|T\|\). Ahora, como \(\hat{X}\) es de Banach también se tiene que 
+    \(\overline{D(T)}\) es de Banach. Entonces \(\overline{T}\) se puede pensar 
+    como una función lineal entre espacios de Banach.
+   </p>
+   <p>
+    En resumen, para un operador lineal acotado siempre podemos pensar que \(D(T)=X\). 
    </p>
 </div>
 
@@ -702,7 +707,53 @@
       es un operador lineal compacto.
     </li>
   </ol>
-
 </div>
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sean \(X,Y\) dos espacios vectoriales normados y \(T:X\to Y\) un operador 
+        lineal. Prueba que las siguientes condiciones son equivalentes.
+      </p>
+      <ol>
+          <li>
+        \(T\) preserva subconjuntos acotados. Es decir, si \(A\subseteq X\)
+        es acotado entonces \(T(A)\) también es acotado.
+      </li>
+      <li>
+        \(T\) es un operador lineal acotado. Es decir 
+        \[
+        \sup_{\|x\| \leq 1}\{\|Tx\|\} < +\infty
+        \]
+      </li>
+      </ol>
+      
+    </div>
+
+
+
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      <p>
+        Sea \((T_n:\mathbb{F}^p \to \mathbb{F}^q)_{n=1}^\infty\) una sucesión de funciones lineales 
+        y \(T:\mathbb{F}^p \to \mathbb{F}^q\) lineal.
+      </p>
+      <p>
+        Supongamos que con respecto algunas bases las matrices asociadas a \(T_n\) y \(T\) son 
+        \[
+        [T_n]=[t_{i,j}^{(n)}], \, [T]=[t_{i,j}], \, 1\leq i \leq q, 1\leq j \leq p
+        \]
+      </p>
+      <p>
+        Entonces \(\lim_{n\to \infty}\|T_n-T\|=0\) si y sólo si para todo \(i,j\),
+        \(\lim_{n\to \infty}t_{i,j}^{(n)}=t_{i,j}\).
+      </p>
+
+    </div>
+
 
 </body>
