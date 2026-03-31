@@ -109,6 +109,24 @@
     \]
   </p>
 
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+  <p>
+    Para \(z\in B_{r_0}(0)\) tenemos: 
+    \begin{eqnarray*} 
+    \max\{\|T(x_0+z)\|, \|T(x_0-z)\|\} & \geq &\frac{1}{2}(\|T(x_0+z)\|+\|T(x_0-z)\|)  \\
+    &\geq & \frac{1}{2}\| T(x_0+z)-T(x_0-z)\|\\
+    &=&\frac{1}{2}\|2T(z)\| \\
+    &=& \|T(z)\| .
+    \end{eqnarray*}
+    Finalmente usando que \(B_{r_0}(x_0)=x_0+B_{r_0}(0)\) y \(B_{r_0}(0)=r_0B_1(0)\) llegamos a 
+    \begin{eqnarray*} 
+    \sup_{x\in B_{r_0}(x_0)}\{\|T(x)\|\} & \geq  & \sup_{z\in B_{r_0}(0)}\{\|T(z)\|\} \\
+    &=& r_0 \sup_{y\in B_1(0)}\{\|T(y)\|\} \\
+    &=& r_0\|T\|.
+    \end{eqnarray*}
+  </p>
+  </div>
 </div>
 
 <div class="teorema-box">
@@ -126,6 +144,80 @@
     \sup_{\alpha \in \Lambda }\{\|T_\alpha \| \}< + \infty \quad \textrm{(acotación uniforme).}
     \]
   </p>
+
+  <button class="respButton hvr-grow felxbox"> Demostración  </button>
+  <div class="resp-box flexbox">
+  <p>
+    Para llegar a una contradicción supongamos que \(\sup_{\alpha \in \Lambda}\{\|T_\alpha\|\}=\infty\).
+    Entonces podemos encontrar una sucesión de índices \((\alpha_n)_{n=1}^\infty\) 
+    tal que \(\|T_{\alpha_n}\| > 5^n\). Ahora vamos a usar el lema anterior como una maquinita 
+    para construir una sucesión \((x_n)_{n=0}^\infty\) convergente a un punto \(x\)
+    con \(\sup_{\alpha\in \Lambda}\{|T_\alpha(x)|\}=\infty\), contradiciendo la hipótesis.
+  </p>
+  <p>
+    Para la construcción fijamos \(\alpha \in (1/2,1)\), para que \(\alpha -1/2 >0\).
+  </p>
+  <p>
+    Tomamos \(x_0=0\). Por el lema aplicado a \(T_{\alpha_1}\) tenemos:
+    \[
+    \sup_{x\in B_{1/3}(x_0)}\{\|T_{\alpha_1}x\|\} \geq \frac{1}{3}\|T_{\alpha_1}\|.
+    \]
+    Por lo tanto existe \(x_1\in B_{1/3}(x_0)\) con \(\|T_{\alpha_1}(x_1)\|> \alpha \frac{1}{3}\|T_{\alpha_1}\|\).
+  </p>
+  <p>
+    Por el lema aplicado a \(T_{\alpha_2}\) tenemos:
+    \[
+    \sup_{x\in B_{1/3^2}(x_1)}\{\|T_{\alpha_2}x\|\} \geq \frac{1}{3^2}\|T_{\alpha_2}\|.
+    \]
+    Por lo tanto existe \(x_2\in B_{1/3^2}(x_1)\) con \(\|T_{\alpha_2}(x_2)\| > \alpha \frac{1}{3^2}\|T_{\alpha_2}\| \). 
+  </p>
+  <p>
+    Continuando por inducción obtenemos una subsucesión \((x_n)_{n=0}^\infty\) que 
+    satisface 
+    \begin{eqnarray*} 
+    \|x_{n+1}-x_n\| & \leq & 1/3^{n+1} \\ 
+    \|T_{\alpha_n}(x_n)\|& >  & \alpha \frac{1}{3^n}\|T_{\alpha_n}\| 
+    \end{eqnarray*}
+    De la primera desigualdad se sigue que para todo natural \(p \geq 1\):
+    \begin{equation}\label{Eqn:Aux1BS}
+    \|x_{n+p}-x_n\| \leq \sum_{k=1}^p\frac{1}{3^{n+k}}=\frac{1}{3^n}\sum_{k=1}^p \frac{1}{3^k}
+    \end{equation}
+    Se sigue que \((x_n)_{n=0}^\infty\) es una sucesión de Cauchy. 
+    Al ser \(X\) de Cauchy existe \(x\in X\) tal que \(\lim_{n\to \infty}x_n=x\) y por la desigualdad anterior,
+    al tomar límite cuando \(p\to \infty\), resulta que \(\|x-x_n\|\leq (1/2)(1/3^n)\). 
+
+  </p>
+  <p>
+    Ahora 
+    estimamos la distancia entre \(T_{\alpha_n}(x)\) y \(T_{\alpha_n}(x_n)\). Por las 
+    estimaciones anteriores:
+    \begin{eqnarray*} 
+    \|T_{\alpha_n}(x)-T_{\alpha_n}(x_n)\| \leq \|T_{\alpha_n}\| \|x-x_n\| \leq  \frac{1}{2}\frac{1}{3^n}\|T_{\alpha_n}\|.
+    \end{eqnarray*}
+    Por la otra desigualdad del triángulo llegamos a que 
+    \begin{eqnarray*} 
+    |\|T_{\alpha_n}(x)\|-\|T_{\alpha_n}(x)\| | \leq  \frac{1}{2}\frac{1}{3^n} \|T_{\alpha_n}\|\\
+    \Rightarrow -\frac{1}{2}\frac{1}{3^n}\|T_{\alpha_n}\| + \|T_{\alpha_n}(x_n)\| \leq  \|T_{\alpha_n}(x)\|.
+    \end{eqnarray*}
+    Pero por construcción, \(\alpha (1/3^n)\|T_{\alpha_n}\| \leq \|T_{\alpha_n}(x_n)\|\), por lo tanto 
+    llegamos a 
+    \begin{eqnarray*} 
+    \left( \alpha -\frac{1}{2}\right)\frac{1}{3^n}\|T_{\alpha_n}\|  
+    &=& -\frac{1}{2}\frac{1}{3^n}\|T_{\alpha_n}\| + \alpha\frac{1}{3^n} \|T_{\alpha_n}\|   \\
+    &\leq &  -\frac{1}{2}\frac{1}{3^n}\|T_{\alpha_n}\| + \|T_{\alpha_n}(x)\| \\
+    &\leq & \|T_{\alpha_n}(x)\|.
+    \end{eqnarray*}
+    Finalmente usando que \(5^n \leq \|T_{\alpha_n}\|\) concluimos,
+    \[
+    \left( \alpha -\frac{1}{2}\right)\frac{5^n}{3^n}\leq \|T_{\alpha_n}(x)\|
+    \]
+    válida para todo \(n\in \mathbb{N}\) lo que nos lleva a 
+    \[
+    \sup_{\alpha \in \Lambda}\{\|T(x)\|\}=\infty,
+    \]
+    contradiciendo la hipótesis.
+  </p>
+  </div>
   <!-- <button class="respButton hvr-grow felxbox"> Demostración  </button>
   <div class="resp-box flexbox">
     <div class="flexbox">
