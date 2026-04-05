@@ -403,9 +403,20 @@
 
 <div class="teorema-box">
     <h2 class="number-title"> Teorema de acotación uniforme </h2>
-    <h3> Segunda demostración (usando Teorema de Categoria de Baire) </h3>
-    <p>
+    <h3> Segunda versión usando Teorema de Categoria de Baire </h3>
 
+    <p>
+       Sean \(X\) un espacio de Banach, \(Y\) un espacio vectorial normado y 
+       \(\{T_\alpha\}_{\alpha\in \Lambda } \subset \mathbb{B}(X,Y)\).
+    </p>
+    <p>
+        Supón que existe un subconjunto \(E \subseteq X\) que es de la segunda categoría en 
+        \(X\) tal que, para todo \(x \in E\), 
+        se tiene:
+        \[
+        \sup_{\alpha \in \Lambda} \|T_\alpha x\| < \infty
+        \]
+        Demuestra que $\sup_{\alpha \in \Lambda} \|T_\alpha\| < \infty$.
     </p>
   </div>
 
@@ -568,22 +579,55 @@
 
 
   <div class="ejercicio-box">
-    <h2 class="number-title"> Ejercicio </h2>
+    <h2 class="number-title"> Ejercicio </h2> 
     <p>
-       Sean \(X\) un espacio de Banach, \(Y\) un espacio vectorial normado y 
-       \((T_n)_{n=1}^\infty \subset \mathbb{B}(X,Y)\) 
-       una sucesión de operadores lineales acotados.
+      Sea \(\mathcal{P}[a,b]\) el espacio vectorial de todos 
+      los polinomios con coeficientes reales definidos sobre 
+      el intervalo \([a,b]\). 
+       Equipamos a este espacio con la norma del supremo 
+       \(\|p\| = \max_{t \in [a,b]} |p(t)|\). 
     </p>
     <p>
-        Supón que existe un subconjunto \(E \subseteq X\) que es de la segunda categoría en 
-        \(X\) tal que, para todo \(x \in E\), 
-        se tiene:
-        \[
-        \sup_{n \in \mathbb{N}} \|T_n x\| < \infty
-        \]
-        Demuestra que $\sup_{n \in \mathbb{N}} \|T_n\| < \infty$.
+       Utilizando el Teorema de Categoría de Baire, 
+       demuestra que \(\mathcal{P}[a,b]\) no es un espacio de Banach.
     </p>
   </div>
+
+  <!-- <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+
+    <p>
+      Sea \(X = \{f \in C([-\pi, \pi]) : f(-\pi) = f(\pi)\}\) 
+      con la norma del supremo.  Para \(n\in \mathbb{N}\) define 
+      \[
+      S_n(f)=\sum_{k=0}^n a_k(f)\cos(kt) + b_k(f)\sin(kt)
+      \]
+      donde \(a_k(f)=\frac{1}{\pi}\int_{-\pi}^\pi f(t)\cos(kt) dt\) y \(b_k(f)=\frac{1}{\pi}\int_{-\pi}^\pi f(t)\sin(kt) dt\). 
+      Esta se conoce como la \(n\)-ésima suma parcial de la serie de Fourier de \(f\).
+    </p>
+    <p>
+      Nota que podemos pensar \(S_n:X\to X\) como un operador lineal acotado,
+      ya que \(S_n(f)\) es una función continua y periódica con periodo \(2\pi\) para cada \(f\in X\).
+    </p>
+    <p>
+      Para cada \(f \in X\), el valor de la \(n\)-
+      ésima suma parcial de su serie de Fourier evaluada en 
+      \(t=0\) está dada por el funcional lineal:
+      \[
+      S_n(f) = \frac{1}{2\pi} \int_{-\pi}^\pi f(t) D_n(t) dt
+      \]
+      donde \(D_n(t) = \frac{\sin((n + 1/2)t)}{\sin(t/2)}\) 
+      es el núcleo de Dirichlet.
+    </p>
+    <p>
+      Usando que la norma de estos funcionales cumple que 
+      \(\|S_n\| = \frac{1}{2\pi} \int_{-\pi}^\pi |D_n(t)| dt \to \infty\) 
+      cuando \(n \to \infty\), 
+      prueba que existe al menos una función continua \(f \in X\) 
+      cuya serie de Fourier diverge en el origen.
+    </p>
+    
+  </div>-->
  
   <div class="ejercicio-box">
     <h2 class="number-title"> Ejercicio </h2>
