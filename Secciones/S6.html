@@ -48,10 +48,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
       body.number-title{
-        counter-reset: sectionCounter 6 cardCounter ;
+        counter-reset: sectionCounter 5 cardCounter ;
       }
       h1.number-title{
-        counter-reset: sectionCounter 6 cardCounter ;
+        counter-reset: sectionCounter 5 cardCounter ;
       }
     </style>
 
@@ -78,7 +78,7 @@
   </header>
   
   <!-- This part is for title in tab-->
-  <title id="Sec"> § 7 </title>
+  <title id="Sec"> § 6 </title>
   
   
   <body class="fondo-body">
@@ -94,53 +94,7 @@
     <!--    Contenido empiaza abajo
    ///////////////////////////////// -->       
   
-          <div class="definicion-box">
-            <h2 class="number-title"> Definición </h2>
-            <p>
-              Sea \(X\) un espacio vectorial normado y \(M\leq X\) un subespacio cerrado. En
-              el espacio cociente \(X/M\) definimos 
-              \begin{equation}\label{Eqn:DefiNormaCociente}
-              \|[x]\|=\inf_{m\in M}\{ \|x-m\| \}
-              \end{equation}
-              Notamos que si \([x]=[x']\) entonces \(x'=x-m_0\), para algún \(m_0\in M\) por lo tanto
-              \[
-              \inf_{m\in M}\{ \|x'-m\| \}=\inf_{m\in M}\{ \|x-(m_0+m)\|\}= \inf_{m\in M}\{\|x-m\|\}
-              \]
-              por lo tanto \(\|[x]\|\) está bien definido.
-            </p>
-            <p>
-              Observación: \(\|[x]\| \leq \|x\|\) para todo \(x\in X\).
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/bY0F49TkNZA?start=3" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-            
-          </div>
-  
-          <div class="teorema-box">
-            <h2 class="number-title"> Teorema </h2>
-            <p>
-              Sea \(X\) un espacio vectorial normado y \(M\leq X\)
-              un subespacio cerrado. La ecuación \eqref{Eqn:DefiNormaCociente} define una norma en 
-              \(X/M\). Si además \(X\) es de Banach 
-              entonces \(X/M\) también.
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/bY0F49TkNZA?start=405" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-          </div>
-  
-  
+          
   
           <div class="definicion-box">
             <h2 class="number-title"> Definición</h2>
@@ -149,38 +103,52 @@
               se llama abierta si \(f(U)\in \tau_Y\) para todo \(U\in \tau_X\).
             </p>
             <p>
-              Observación: supongamos que \(f:X\to Y\) es biyectiva, entonces \(f\)
-              es continua sii \(f^{-1}\) es abierta.
+              Observaciónes: 
+              <ol>
+                <li>Supongamos que \(f:X\to Y\) es biyectiva, entonces \(f\)
+                es continua sii \(f^{-1}\) es abierta.
+                </li>
+                <li>
+                  Si \(f:X\to Y\) es biyectiva, abierta y continua entonces \(f\) es un homeomorfismo.
+                </li>
+                <li>
+                  Por el <a href="./S4.html#Teo:MapeoCociente">Teorema 4.9</a>, si \(X\) es un espacio vectorial normado y \(M\) es un 
+                  subespacio cerrado, entonces el mapeo cociente \(\pi:X\to X/M\) es abierto.
+                </li>
+              </ol>
             </p>
             
           </div>
   
-          <div class="prop-box">
-            <h2 class="number-title"> Proposición </h2>
-            <p>
-              Sea \(X\) un espacio vectorial normado y \(M\leq X\) un subespacio cerrado de \(X\).
-              Entonces la proyección natural, \(\pi:X\to X/M\), \(\pi(x)=[x]\) es lineal acotada 
-              y abierta. Es más 
-              \[
-              \pi(B_r(x_0))=B_r(\pi(x_0))
-              \]
-            </p>
-            <button class="respButton hvr-grow felxbox"> Demostración  </button>
-            <div class="resp-box flexbox">
-              <div class="flexbox">
-                <iframe width="500" height="400" class="video"
-                src="https://www.youtube.com/embed/bY0F49TkNZA?start=1326" allowfullscreen="true"> 
-                </iframe>
-              </div>
-            </div>
-  
-          </div>
           
           <div class="teorema-box">
             <h2 class="number-title" id="Teo:BanachIsomorfismo"> Teorema </h2>
             <p>
               Sean \(X\), \(Y\) espacios de Banach y sea \(T:X\to Y\) lineal acotada. Si 
               \(T\) es biyectiva entonces \(T^{-1}\) existe y es lineal acotada.
+            </p>
+            <p>
+              Nota.
+            </p>
+            <p>
+              En análisis funcional ser biyectiva es una condición que rinde muchos frutos. 
+              Inicianto an la categoría de conjuntos, dados \(X, Y\) dos conjuntos y 
+              \(T:X\to Y\) una función, \(T\) tiene inversa en la categoría de conjuntos si 
+              y sólo si \(T\) es biyectiva. 
+            </p>
+            <p>
+              Subiendo de categoría,  
+              en la categoría de espacios vectoriales, si ahora \(X,Y\) son 
+              dos espacios vectoriales y \(T:X\to Y\) es una función lineal, 
+              \(T\) tiene inversa en la categoría de espacios vectoriales si y sólo si 
+              \(T\) es biyectiva. 
+            </p>
+            <p>
+              Por último, en la categoría de espacios de Banach, 
+              si \(X,Y\) son dos espacios de Banach y \(T:X\to Y\) es una 
+              función lineal acotada, el Teorma del mapeo abierto nos dice que 
+              \(T\) tiene inversa en la categoría de espacios de Banach 
+              si y sólo si \(T\) es biyectiva. 
             </p>
             <button class="respButton hvr-grow felxbox"> Demostración  </button>
             <div class="resp-box flexbox">
@@ -192,26 +160,6 @@
             </div>
           </div>
   
-
-
-          <div class="lema-box">
-            <h2 class="number-title"> Lema </h2>
-            <p>
-              Sean \(X,Y\) espacios vectoriales y \(T:X\to Y\) una función lineal. Denotamos
-              \(M=\ker(T)\). Para \([x]\in X/M\) denota \(S([x])=Tx\). 
-            </p>
-            <ol>
-              <li>
-                Prueba que \(S\) no depende 
-              del representante de la clase \([x]\) y que define una función
-              \(S:X/M \to T(Y)\) que es lineal y biyectiva.
-              </li>
-              <li>
-                Prueba que si además \(T\) es acotada entonces \(S\) también y 
-                \(\|T\|=\|S\|\).
-              </li>
-            </ol>
-          </div>
 
 
 
@@ -256,7 +204,7 @@
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Prueba que \(C[a,b]\) equipado con la normas \(\|\cdot\|_p\), \(1\leq p < +\infty\) no es un espacio de Banach.
+              Prueba que \(C[a,b]\) equipado con la normas \(\|\cdot\|_p\), \(1\leq p < +\infty\), no es un espacio de Banach.
             </p>
           </div>
   
@@ -312,19 +260,11 @@
               acotado y suprayectivo \(T:\ell_1(\mathbb{N})\to X\).
             </p>
             <p>
-              Sugerencia: usa el <a href="#Ejer:Vecindades&Suprayectividad">Ejercicio 7.10</a>
+              Por lo tanto, todo espacio de Banach separable es isomorfo a un 
+              cociente de \(\ell_1(\mathbb{N})\).
             </p>
-          </div>
-
-
-
-
-          <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \(X\) un espacio de Banach separable. Prueba que existe, \(Y\), un subespacio cerrado de 
-              \(\ell_1(\mathbb{N})\), tal que \(X\) es isomorfo a \(\ell_1(\mathbb{N})/Y\), en la categoría de 
-              espacios de Banach.
+              Sugerencia: usa el <a href="#Ejer:Vecindades&Suprayectividad">Ejercicio 6.10</a>
             </p>
           </div>
 
@@ -333,55 +273,6 @@
 
 
 
-
-          <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
-            <p>
-                Sea \(X\) un espacio de Banach y \(M \subseteq X\) un espacio finito dimensional. Prueba que 
-                para cualquier \(x_0\in X\) existe un \(m_0\in M\) tal que 
-                \[
-                \| [x_0]\|=\|x_0-m_0\|.
-                \]
-            </p>
-            <p>
-              Sugerencia: utiliza la compacidad de las bolas cerradas relativas a \(M\).
-            </p>
-
-          </div>
-
-          <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio</h2>
-            <p>
-              Sea \(X\) un epacio vectorial normado y \(M\subseteq X\) un subespacio cerrado. Prueba 
-              que si \(X\) es separable entonces \(X/M\) también.
-            </p>
-
-          </div>
-
-          <div class="ejercicio-box">
-            <h2 class="number-title"> Ejercicio </h2>
-            <p>
-              Sea \(X\) un espacio vectorial normado y \(M\subseteq X\) un subespacio 
-              cerrado propio de \(X\). 
-            </p>
-            <p>
-              Por \(M^\perp\) denotamos al conjuntos de \(f\in X^*\) tal que 
-              restringidas a \(M\) sean idénticamente cero. Nota que \(M^\perp\)
-              es un subespacio cerrado de \(X^*\).
-            </p>
-            <ol>
-              <li>
-                Prueba que \((X/M)^*\) es isométricamente isomorfo a 
-                \(M^\perp\). Sugerencia: considera la función 
-                \(T:M^\perp (X/M)^*\), dada por \((Tf)([x])=f(x)\), para 
-                \(f\in M^\perp\). Inicia probando que \(T\) está bien definida.
-              </li>
-              <li>
-                Prueba que \(\|[x]\|=\max\{ |f(x)|: f\in M^\perp, \|f\|=1\}\). Sugerencia:
-                usa el Teorema de Extensión de Hahn-Banach.
-              </li>
-            </ol>
-          </div>
 
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio</h2>
@@ -396,6 +287,29 @@
           </div>
 
 
+
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sean \(X\) y \(Y\) espacios vectoriales normados sonbre \(\mathbb{R}\), con \(\dim(Y)<+\infty\) y 
+              \(T:X\to Y\) una función lineal y suprayectiva. 
+              <ol>
+                <li>
+                  Prueba que \(T\) es una función abierta.
+                </li>
+                <li>
+                  Prueba que \(T:X\to Y\) es un operador lineal acotado si y sólo si \(\ker(T)\) es cerrado en \(X\).
+                </li>
+              </ol>
+            </p>
+            <p>
+              Nota: en ambos casos es suficiente probar el caso de \(\dim(Y)=1\).
+            </p>
+           <p>
+            Advertencia: NO se usa el teorema del mapeo abierto.
+           </p> 
+          </div>
         </body>
       
     </head>

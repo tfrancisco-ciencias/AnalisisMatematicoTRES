@@ -307,7 +307,7 @@
 
 
 <div class="teorema-box">
-  <h2 class="number-title"> Teorema </h2>
+  <h2 class="number-title" id="Teo:MapeoCociente"> Teorema </h2>
   <p>
     Sea \(X\) un espacio vectorial normado y \(M\subseteq X\) un subespacio cerrado. 
     Por \(\pi:X\to X/M\) denotamos el mapeo cociente, es decir \(\pi(x)=[x]\).
@@ -316,7 +316,10 @@
     Entonces \(\pi\) es un operador lineal acotado y si \(M\ne X\), \(\|\pi\|=1\).
   </p>
   <p>
-    Además \(\pi\) es un mapeo abierto (es decir, manda conjuntos abiertos en conjuntos abiertos).
+    Además \(\pi\) es un mapeo abierto (es decir, manda conjuntos abiertos en conjuntos abiertos). Es más 
+              \[
+              \pi(B_r(x_0))=B_r(\pi(x_0))
+              \]
   </p>
 
 </div>
@@ -326,7 +329,7 @@
   <p>
     Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) un operador lineal 
     acotado. Por el <a>Corolario </a>, \(\ker(T)\) es cerrado y con la norma cociente 
-    (ver <a>Ejercicio</a>) \(X/\ker(T)\) se vuelve un espacio vectorial normado. 
+    (ver <a href="./S2.html#Ejer:NormaEspacioCociente">Ejercicio 2.31</a>) \(X/\ker(T)\) se vuelve un espacio vectorial normado. 
     Sea \(\pi:X\to X/\ker(T)\) el mapeo cociente.
   </p>
     <p>
@@ -756,4 +759,28 @@
     </div>
 
 
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+                Sea \(X\) un espacio de Banach y \(M \subseteq X\) un espacio finito dimensional. Prueba que 
+                para cualquier \(x_0\in X\) existe un \(m_0\in M\) tal que 
+                \[
+                \| [x_0]\|=\|x_0-m_0\|.
+                \]
+            </p>
+            <p>
+              Sugerencia: utiliza la compacidad de las bolas cerradas relativas a \(M\).
+            </p>
+
+          </div>
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Sea \(X\) un epacio vectorial normado y \(M\subseteq X\) un subespacio cerrado. Prueba 
+              que si \(X\) es separable entonces \(X/M\) también.
+            </p>
+
+          </div>
 </body>
