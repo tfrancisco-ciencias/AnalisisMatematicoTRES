@@ -206,6 +206,11 @@
             <p>
               Prueba que \(C[a,b]\) equipado con la normas \(\|\cdot\|_p\), \(1\leq p < +\infty\), no es un espacio de Banach.
             </p>
+            <p>
+              Sugerencia: usa el ejercicio anterior para probar que si 
+              \(C[a,b]\) equipado con \(\|\cdot\|_p\) es un espacio de Banach entonces 
+              \(\|\cdot\|_p\) es equivalente a \(\|\cdot\|_\infty\) y deduce una contradicción.
+            </p>
           </div>
   
 
@@ -244,7 +249,7 @@
                 \]
                 Prueba que \(T\) es suprayectiva.
                 <p>
-                  Sugerencia: revisa la prueba del <a href="#Teo:BanachIsomorfismo"> Teorema 7.5</a> 
+                  Sugerencia: revisa la prueba del <a href="#Teo:BanachIsomorfismo"> Teorema 6.2</a> 
                   para probar que existe \(M>0\) tal que \((Y)_1 \subseteq T((X)_M)\) y de ésta última 
                   contención prueba que \(T\) es suprayectiva.
                 </p>
@@ -253,10 +258,12 @@
             </ol>
           </div>
 
-          <div class="ejercicio-box">
+
+
+            <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sea \(X\) un espacio de Banach separable. Pruba que existe un operador lineal 
+              Sea \(X\) un espacio de Banach separable. Prueba que existe un operador lineal 
               acotado y suprayectivo \(T:\ell_1(\mathbb{N})\to X\).
             </p>
             <p>
@@ -264,13 +271,15 @@
               cociente de \(\ell_1(\mathbb{N})\).
             </p>
             <p>
-              Sugerencia: usa el <a href="#Ejer:Vecindades&Suprayectividad">Ejercicio 6.10</a>
+              Sugerencia: usa que si \(X\) es seprable entonces
+              \((X)_1\) también y define 
+              \[
+              T((a_n)_{n=1}^\infty)=\sum_{n=1}^\infty a_n x_n
+              \]
+              donde \(\{x_n\}_{n=1}^\infty\) es un subconjunto denso en \(X_1\). 
+              Después usa el <a href="#Ejer:Vecindades&Suprayectividad">Ejercicio 6.7</a>
             </p>
           </div>
-
-
-
-
 
 
 
@@ -289,10 +298,18 @@
 
 
 
+
+
+
+
+
+
+
+
           <div class="ejercicio-box">
             <h2 class="number-title"> Ejercicio </h2>
             <p>
-              Sean \(X\) y \(Y\) espacios vectoriales normados sonbre \(\mathbb{R}\), con \(\dim(Y)<+\infty\) y 
+              Sean \(X\) y \(Y\) espacios vectoriales normados sobre  con \(\dim(Y)<+\infty\) y 
               \(T:X\to Y\) una función lineal y suprayectiva. 
               <ol>
                 <li>
@@ -304,12 +321,75 @@
               </ol>
             </p>
             <p>
-              Nota: en ambos casos es suficiente probar el caso de \(\dim(Y)=1\).
+              Sugerencia: para la primera parte usa la suprayectividad de \(T\) para encontrar 
+              un subespacio vectorial de \(X\), de dimensión finita tal que \(T\) restringida a ese subespacio es un isomorfismo
+              de espacios vectoriales y utiliza el Teorema del mapeo abierto. Para la segunda parte inicia con el caso \(\dim(Y)=1\).
             </p>
            <p>
-            Advertencia: NO se usa el teorema del mapeo abierto.
+            Advertencia: \(T\) no es necesariamente un operador lineal acotado. 
            </p> 
           </div>
+
+          
+
+          <div class="ejercicio-box">
+            <h2 class="number-title"> Ejercicio </h2>
+            <p>
+              Sea \(X\) un espacio de Banach y sean  \(Y\) y \(Z\) 
+              dos subespacios cerrados de \(X\) tal que  \(X = Y \oplus Z\) 
+              (es decir, para todo \(x \in X\) se puede escribir de manera única como 
+              \(x = y + z\) con  \(y \in Y\)  y \(z \in Z\)).
+            </p>
+            <p>
+              Sea \(P: X \to Y\) la proyección definida por \(P(y+z) = y\). 
+              Prueba que \(P\) es un operador lineal acotado. 
+            </p>
+            <p>
+              Sugerencia: Considera el espacio producto 
+              \(Y \times Z\) equipado con la norma 
+              \(\|(y,z)\| = \|y\|_X + \|z\|_X\). 
+              Entonces  \(Y \times Z\) es un espacio de Banach y 
+              define el operador \(T: Y \times Z \to X\) por \(T(y,z) = y+z\). 
+              Prueba que \(T^{-1}\) es continuo y deduce de ésto la continuidad de \(P\).
+            </p>
+            </div>
+
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+                Sea \(X\)  y \(Y\) espacios de Banach y sea 
+                \(T \in \mathcal{B}(X,Y)\) un operador lineal acotado y suprayectivo. 
+                Prueba que existe una constante \(M > 0\) tal que para 
+                todo \(y \in Y\), la ecuación \(Tx = y\) 
+                tiene una solución \(x \in X\) que satisface: 
+                \[ 
+                \|x\|_X \le M \|y\|_Y
+                \]
+              </p>
+            </div>
+
+            <div class="ejercicio-box">
+              <h2 class="number-title"> Ejercicio </h2>
+              <p>
+              Sean \(X\) y \(Y\) dos espacios de  Banach y sea \(T \in \mathcal{B}(X,Y)\). 
+              Supon que el rango de \(T\), \(T(X)\), es de la segunda categoría en \(Y\). 
+              Prueba que \(T\) es suprayectivo  y que \(T\) es una aplicación abierta.
+              </p>
+              </div>
+
+              <div class="ejercicio-box">
+                <h2 class="number-title"> Ejercicio </h2>
+                <p>
+                  Sea \(X\) un espacio de Banach y sea 
+                  \((X_n)_{n=1}^\infty\) una sucesión de espacios de Banach. 
+                  Para cada \(n\), sea \(T_n: X_n \to X\) un operador lineal acotado. 
+                  Supongamos que:
+                  \[
+                  X = \bigcup_{n=1}^\infty T_n(X_n)
+                  \]
+                  Prueba que existe al menos un entero \(N\) tal que \(T_N\) es suprayectivo.
+                </p>
+              </div>
         </body>
       
     </head>
