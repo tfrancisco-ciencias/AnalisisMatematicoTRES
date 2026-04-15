@@ -541,12 +541,19 @@
     \[
     X_n=\{x\in X: \exists t_0\in [a,b), |x(t)-x(t_0)|\leq n(t-t_0), \forall t\in [t_0,b]\}.
     \]
+    y para \(n,m\in \mathbb{N}\) con \(\frac{1}{m}< b-a\) define 
+    \[
+    X_{n,m}=\left\{x\in X: \exists t_0\in \left[a,b-\frac{1}{m}\right], |x(t)-x(t_0)|\leq n(t-t_0), \forall t\in [t_0,b]\right\}.
+    \]
     Prueba 
     <ol>
       <li>
-        \(X_n\) es denso en ninguna parte. 
+        \(X_n\) es denso.
+      </li>
+      <li>
+        \(X_{n,m}\) es cerrado y  denso en ninguna parte. 
         <p>
-          Sugerencia: dada \(n\in \mathbb{N}, \varepsilon >0, x\in X_n\) 
+          Sugerencia: dada \(n\in \mathbb{N}, \varepsilon >0, x\in X_{n,m}\) 
           construye una función lineal a trozos \(y\in X\), con \(\|x-y\|< \varepsilon\)
           y con valor absoluto de sus derivadas laterales derechas mayor a \(n\).
         </p>
