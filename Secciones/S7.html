@@ -1,0 +1,440 @@
+<DOCTYPE html>
+  <html lang="es">
+
+
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            cer: "\\operatorname{cer}",
+            inte: "\\operatorname{int}"
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../styles.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      body.number-title{
+        counter-reset: sectionCounter 6 cardCounter ;
+      }
+      h1.number-title{
+        counter-reset: sectionCounter 6 cardCounter ;
+      }
+    </style>
+
+
+
+  <!-- Top Menu -->
+
+  <header class="main-header">
+    <h1 > Análisis Matemático TRES</h1>
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="../Home.html"> Inicio  </a> </li>
+        <li> <a href="../InfoPrimerDia.html"> Información general </a> </li>
+        <li> <a href="../Secciones.html"> Secciones  </a> </li>
+      </ul>
+     
+    </nav>
+
+<label class="switch">
+      <input type="checkbox" onclick="myFunction()">
+      <span class="slider"></span>
+    </label>
+
+  </header>
+
+<!-- This part is for title in tab-->
+<title id="Sec"> § 7 </title>
+
+
+<body class="fondo-body">
+
+
+  <div class="flexbox">
+    <h1 class="number-title flexbox"> Teorema de la gráfica cerrada  </h1>     
+
+    <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
+    <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
+
+
+  <!--    Contenido empiaza abajo
+ ///////////////////////////////// -->       
+
+       
+
+
+        <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+          <p>
+            Sea \(X,Y\) dos conjuntos y \(f:D(f)\subseteq X \to Y\) una función. La gráfica de \(f\) se define como 
+            \[
+            G(f)=\{(x,y)\in X \times Y: x\in D(f), y=f(x)\}.
+            \]
+          </p>
+          <p>
+            Observación:
+          </p>
+          <p>
+            Si \(X,Y\) son espacios vectoriales entonces: 
+             \(f\) es lineal si y sólo si 
+            \(G(f)\) es un subespacio de \(X\times Y\).
+          </p>
+
+        </div>
+        
+        
+       <!--  <div class="prop-box">
+          <h2 class="number-title"> Lema</h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados y \(T:X\to Y\) lineal.
+          </p>
+          <p>
+            En \(X\times Y\) consideramos la norma dada por \(\|(x,y)\|=\|x\|+\|y\|\). Entonces 
+            \(G(T)\) es cerrado en \(X\times Y\) sii siempre que  una sucesión \((x_n)_{n=1}^\infty\subseteq X\)
+            satisface \(\lim_{n\to \infty} x_n=x\) en \(X\) y \(\lim_{n\to \infty}Tx_n=y\) en \(Y\)
+            entonces \(y=Tx\).
+          </p>
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/bY0F49TkNZA?start=4275" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="definicion-box">
+          <h2 class="number-title"> Definición </h2>
+          <p>
+            Sea \(X,Y\) dos espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador 
+            lineal (no necesariamente acotado). 
+            Decimos que \(T\) es cerrado si \(G(T)\) es cerrado en \(X\times Y\).
+          </p>
+          <p>
+            Nota: en \(X\times Y\) consideramos cualquier norma que hace a las proyecciones continuas, 
+            por ejemplo 
+            \[ \|(x,y)\|=\|x\|+\|y\| \quad \textrm{o}  \quad \|(x,y)\|=\max\{\|x\|,\|y\|\}.
+            \]
+          </p>
+          <p>
+            En muchas aplicaciones los operadores lineales no son acotados pero sí son cerrados, 
+            por lo que esta definición es útil para estudiar este tipo de operadores.
+          </p>
+         
+        </div>
+
+
+        <div class="lema-box">
+           <h2 class="number-title"> Lema </h2>
+          <p>
+            Sea \(X,Y\) dos espacios vectoriales normados y \(T:D(T)\subseteq X \to Y\) un operador lineal. 
+          </p>
+          <p>
+            \(T\) es cerrado si y sólo si satisface la siguiente propiedad: 
+            si \((x_n)_{n=1}^\infty\subseteq D(T)\) es una sucesión tal que 
+            \(\lim_{n\to \infty} x_n=x\) en \(X\) y \(\lim_{n\to \infty} Tx_n=y\) en \(Y\) 
+            entonces \(x\in D(T)\) y \(Tx=y\).
+          </p>
+
+          </div>
+
+
+
+        <div class="info-box">
+          <h2 class="number-title"> Ejemplo </h2>
+          <p>
+            Tomamos \(X=Y=C[0,1]\) con la norma uniforme y consideramos el subespacio \(D\)
+            como las funciones de clase \(C^1\). Definimos \(T:D\to Y\) por \(Tf=f'\). Entonces 
+            \(T\) es un operador cerrado y ya vimos que \(T\) no es acotado 
+            (ver <a href="./S4.html#Ejemplos:OperadoresAcotados">Ejemplo 4.2</a>).
+          </p>
+
+        </div>
+
+
+        <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <h3>Teorema de la gráfica cerrada.</h3>
+          <p>
+            Sea \(X,Y\) espacios de Banach y \(T:D(T) \to Y\) un operador lineal, 
+            donde \(D(T)\subseteq X\). Si \(D(T)\) es cerrado en \(X\), entonces
+             \(T\) es acotado si y sólo si \(T\) es cerrado.
+          </p>
+          
+        </div>
+
+        <div class="info-box">
+          <h2 class="number-title"> Ejemplo </h2>
+          <p>
+            Si el dominio de un operador es cerrado el teorema anterior 
+            nos dice que ser acotado y cerrado son equivalentes. Sin embargo, si el dominio no es cerrado, entonces
+            ser acotado y cerrado no son equivalentes. 
+          </p>
+          <p>
+            Por ejemplo, si \(X=Y=C[0,1]\) con la norma uniforme y \(D\) es el subespacio 
+            de las funciones de clase \(C^1\) el operador derivada es cerrado y no acotado. 
+          </p>
+          <p>
+            Para la otra implicación si \(X\) es cualquier espacio vectorial normado y 
+            \(D\) un subespacio denso no cerrado, si consideramos el operador 
+            identidad \(Id:D\to X\) entonces \(Id\) es acotado pero no cerrado.
+          </p>
+        </div>
+
+
+
+
+        <div class="coro-box">
+          <h2 class="number-title"> Corolario </h2>
+          <p>
+            Sean \(X,Y\) espacios de Banach y \(T:X\to Y\) lineal. \(T\) es acotado sii \(G(T)\) es cerrada.
+          </p>
+        </div>
+
+
+        
+        <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \(X\) un espacio de Banach y \(Y,Z\) subespacios cerrados de \(X\) 
+            tal que \(X=Y \oplus Z\), es decir 
+            <ul>
+              <li>
+                \(X=Y+Z\).
+              </li>
+              <li>
+                \(Y\cap Z=\{0\}\).
+              </li>
+            </ul>
+            Entonces la proyección \(E:X\to Y\) es acotada.
+          </p>
+
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/95twdVecbIQ?start=202" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+          
+
+        </div>
+
+
+        <div class="prop-box">
+          <h2 class="number-title"> Corolario</h2>
+          <p>
+            Sea \(X\) un espacio de Banach y \(Y,Z\leq X\) subespacios cerrados de \(X\)
+            con \(Y\cap Z=\{0\}\).
+          </p>
+          <p>
+            \(Y+Z\) es cerrado sii existe \(C>0\) tal que 
+            \(\|y\| \leq C\|y+z\|\), para todos \(y\in Y,z\in Z\).
+          </p>
+          <button class="respButton hvr-grow felxbox"> Demostración  </button>
+          <div class="resp-box flexbox">
+            <div class="flexbox">
+              <iframe width="500" height="400" class="video"
+              src="https://www.youtube.com/embed/95twdVecbIQ?start=831" allowfullscreen="true"> 
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="lema-box">
+          <h2 class="number-title"> Lema  </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados, \(D(T) \subseteq X\) un subespacio y 
+            \(T:D(T) \to Y\) un operador lineal cerrado. Si \(T\) es inyectivo y 
+            \(T^{-1}:R(T) \to X\) es su inversa  entonces \(T^{-1}\) también 
+            es un operador lineal cerrado.
+          </p>
+
+        </div>
+
+
+        <div class="teorema-box">
+          <h2 class="number-title"> Teorema </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados con \(X\) de Banach. Sea 
+            \(D(T)\subseteq X\) un subespacio y \(T:D(T) \to Y\) un operador lineal cerrado e 
+            inyectivo.
+          </p>
+          <p>
+            Si \(R(T)\) es de la segunda categoría en \(Y\) entonces: 
+          </p>
+          <ol>
+            <li>
+              \(R(T)=Y\), es decir, \(T\) es suprayectivo.
+            </li>
+            <li>
+              Existe una constante \(m>0\) tal que para todo \(x\in D\), \(\|Tx\| \geq m \|x\|\).
+            </li>
+            <li>
+              \(T^{-1}:Y\to X\) existe y es un operador lineal acotado.
+            </li>
+          </ol>
+
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados y \(T:D(T) \to Y\) un operador lineal cerrado.
+            Prueba que el kernel de \(T\) es un subespacio cerrado de \(D(T)\).
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio</h2>
+  
+          <p>
+            Sean \(X,Y\) espacios de Banach y \(T:X\to Y\) un operador lineal acotado y suprayectivo. 
+            Usa el teorema de la gráfica cerrada para probar que \(T\) es un mapeo abierto.
+          </p>
+          
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados con \(X\) finito dimensional. Prueba que 
+            toda función lineal \(T:X\to Y\) es acotada.
+          </p>
+
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios métricos con \(Y\) compacto. Supón que la gráfica de 
+            la función \(f:X\to Y\) es cerrada. Prueba que \(f\) es continua en \(X\).
+          </p>
+          <p>
+            Da un ejemplo que muestre que la compacidad de \(Y\) no puede ser omitida.
+          </p>
+          <p>
+            Este en un análogo al teorema de la gráfica cerrada en espacios métricos.
+          </p>
+        </div>
+
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title">  Ejercicio </h2>
+          <p>
+            Sea \(X\) un espacio vectorial normado y \(D(T)\subseteq X\) un subespacio. Prueba que si 
+            \(T:D(T)\to X\) es un operador cerrado entonces \(T-\lambda I\) tambien es cerrado. Nota: por \(I\)
+            denotamos a la función identidad en \(X\) y \(\lambda\) denota un escalar.
+          </p>
+
+        </div>
+
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(X\) un espacio vectorial normado y \(D(T)\subseteq X\) un subespacio. Prueba que si 
+            \(T:D(T)\to X\) es un operador cerrado entonces \(T^n\) también es cerrado, para todo \(n\in \mathbb{N}\).
+          </p>
+          <p>
+            Nota: se define \(D(T^n):=\{x\in D(T): T^k x \in D(T), k=1,2,\ldots,n\}\). Comienza notando que 
+            \(D(T^n)\) es un subespacio de \(X\) y que \(T^n:D(T^n)\to X\) es un operador lineal.
+          </p>
+
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios vectoriales normados y \(D(T)\subseteq X\) un subespacio. Prueba que si 
+            \(T:D(T)\to Y\) es un operador cerrado y \(S:X\to Y\) es un operador lineal acotado, entonces 
+            \(T+S\) es un operador cerrado.
+          </p>
+          
+        </div>
+
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(X\) un espacio vectorial normado y \(D(T),D(S)\subseteq X\) dos subespacios. 
+            Si \(T:D(T) \to X\) y \(S:D(S)\to X\) son dos operadores cerrados ¿ se sigue que 
+            la suma \(T+S\), definida en \(D(T)\cap D(S)\), es un operador cerrado?
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X\) un espacio de Banach  y \(Y\) un espacio vectorial normado. Sea 
+            \(T:D(T)\subseteq X \to Y\) un operador lineal cerrado. Prueba que si 
+            \(T^{-1}\) existe y es un operador lineal acotado entonces \(R(T)\) es cerrado en \(Y\).
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sean \(X,Y\) espacios de Banach y \(T:D(T)\subseteq X \to Y\) un operador lineal.
+          </p>
+          <p>
+            Prueba que existe un operador lineal cerrado \(\overline{T}:D(\overline{T})\subseteq X \to Y\) 
+            tal que \(D(T)\subseteq D(\overline{T})\), \(\overline{T}x=Tx\) para todo \(x\in D(T)\) y 
+            \[
+            G(\overline{T})=\overline{G(T)}, 
+              \]
+            si y sólo si \(\overline{G(T)}\) no contiene elementos de la 
+            forma \((0,y)\) con \(y\neq 0\).
+          </p>
+        </div>
+
+      </body>
+    
+  </head>
+
+
+
