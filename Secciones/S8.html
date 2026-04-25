@@ -20,7 +20,7 @@
           macros: {
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
-            cer: "\\operatorname{cer}",
+            span: "\\operatorname{span}",
             inte: "\\operatorname{int}"
           },
           tags: "ams" /* this part is for numbered equations */
@@ -29,7 +29,7 @@
     </script>
 
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <!-- This part is for using single $ for latex input, instead of \(\) 
     <script>
         MathJax = {
         tex: {
@@ -39,7 +39,7 @@
             fontCache: 'global'
         }
     };
-    </script>
+    </script>-->
 
     <!-- CSS -->
 
@@ -594,11 +594,11 @@
     <li>
       para \(p\in (1,\infty)\), \(q\in (1,\infty)\) su exponente conjugado y \(x\in \ell_p, y\in \ell_q\),
       \[
-      \sum_{i=1}^\infty |x(i)||y(i)|\leq \|x\|_p\|y\|_q.
+      \sum_{i=1}^\infty |\langle x(i), y(i)\rangle|\leq \|x\|_p\|y\|_q.
       \]
     </li>
     <li>
-      \((H,\|\cdot\|_p)\) es un espacio de Banach que es de Hilbert si y sólo si \(p=2\).
+      \((\ell_p(H),\|\cdot\|_p)\) es un espacio de Banach que es de Hilbert si y sólo si \(p=2\).
     </li>
     <li>
       Halla la condición sobre \(x\) y \(y\) que garantice la igualdad en el primer inciso.
@@ -606,12 +606,32 @@
   </ol>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    <p>
+    Sea \(H\) un espacio ode Hilbert y \(\|\cdot\|\) la norma generada por su producto interior.
+    Imitanto el ejercicio anterior define \(\ell_\infty(H)\) y su norma \(\|\cdot\|_\infty\).
+  </p>
+  <ol>
+    <li>
+      Prueba que \((\ell_\infty(H), \|\cdot\|_\infty)\) es un espacio de Banach.
+    </li>
+    <li>
+      Prueba la desigualdad de Holder correspondiente a \(p=1, q=\infty\).
+    </li>
+  </ol>
+  </p>
+</div>
+
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Sea \(H\) un espacio de Hilbert, \(M\subseteq H\) un subespacio cerrado y \(P:H\to M\) 
-    la proyección ortogonal sobre \(M\). Prueba 
+    Sea \(H\) un espacio de Hilbert, \(M\subseteq H\) un subespacio cerrado. Entonces 
+    sabemos que \(H=M\oplus M^\perp\). Sea \(P:H\to M\) 
+    la proyección ortogonal sobre \(M\). Por la <a href="./S7.html#Prop:ProyeccionAcotada"> Proposición 7.8</a> sabemos 
+    que es un operador lineal acotado. Prueba 
   </p>
   <ol>
       <li>
@@ -634,10 +654,19 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
   <p>
-    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i\in I}\) una familia de subespacios cerrados que 
-    satisfacen \(M_i \perp M_j\), para todo \(i\ne j\). Prueba que 
+    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i\in \mathbb{N}}\) una familia de subespacios cerrados que 
+    satisfacen \(M_i \perp M_j\), para todo \(i\ne j\). Define 
     \[
-    \overline{\span(\cup_{i\in I}M_i)}=\oplus_{i\in I } M_i 
+    \oplus_{i\in \mathbb{N} } M_i =\left\{x\in X: x=\sum_{i=1}^\infty x_i, \quad x_i\in M_i \right\}
+    \]
+    
+    
+    
+  </p>
+  <p>
+    Prueba que 
+    \[
+    \overline{\span(\cup_{i\in \mathbb{N}} M_i)}=\oplus_{i\in \mathbb{N} } M_i 
     \]
   </p>
 </div>
@@ -675,6 +704,35 @@
   </p>
 </div>
 
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \((X,\langle ,\rangle)\) un espacio con producto 
+    interior sobre \(\mathbb{F}\). Pruebe que \(z\) es un <a href="./S2.html#Ejer:PuntosExtremos">punto extremo</a> 
+    de la bola cerrada unitaria  \(\{x \in  X : \|x\| \leq 1\}\)  si y sólo si 
+   \(\|z\|=1\).
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \((X,\langle ,\rangle)\) un espacio con producto 
+    interior sobre \(\mathbb{F}\). Sean \(x_1,\dots, x_n\in X\). Prueba que 
+    \(\{x_1,\dots, x_n\}\) es linealmente independiente si y sólo si 
+    el determinante de Gramm, dado por \(\Delta_n=\det([\langle x_i,x_j \rangle]_{i,j=1}^n)\)
+    es diferente de cero. 
+  </p>
+  <p>
+    Sugerencia: toma \(\alpha_1,\dots, \alpha_n \in \mathbb{F}\) tal que 
+    \[
+    \sum_{i=1}^n \alpha_i x_i=0
+    \]
+    ahora haz producto interior con los \(x_1,\dots, x_n\) y examina 
+    el sistema de ecuaciones resultante.
+  </p>
+</div>
 
     </body>
   </head>
