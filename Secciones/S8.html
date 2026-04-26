@@ -625,20 +625,52 @@
 </div>
 
 
+
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
   <p>
-    Sea \(H\) un espacio de Hilbert, \(M\subseteq H\) un subespacio cerrado. Entonces 
+    En el espacio de Hilbert \(\ell_2(\mathbb{N})\) define 
+    \[ 
+    L=\{x\in \ell_2(\mathbb{N}): |x(i)|\leq \frac{1}{i}, \forall i\in \mathbb{N}\}
+    \]
+    (el ladrillo de Hilbert). Prueba 
+  </p>
+  <ol>
+    <li>
+      \(L\) es compacto. Sugerencia: prueba que es totalmente acotado.
+    </li>
+    <li>
+      \(\textrm{int}(L)=\emptyset\).
+    </li>
+  </ol>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(H\) un espacio de Hilbert, \(M\subseteq H\) un subespacio cerrado, \(M\ne \{0\}\). Entonces 
     sabemos que \(H=M\oplus M^\perp\). Sea \(P:H\to M\) 
     la proyección ortogonal sobre \(M\). Por la <a href="./S7.html#Prop:ProyeccionAcotada"> Proposición 7.8</a> sabemos 
     que es un operador lineal acotado. Prueba 
   </p>
   <ol>
+    <li>
+      \(\|P\|=1\).
+    </li>
+    <li>
+      \(P(P(x))=P(x)\), para toda \(x\in H\).
+    </li>
+    <li>
+      \(z\in M^\perp \) si y sólo si \(P(z)=0\). 
+    </li>
+    <li>
+      \(x-Px \in M^\perp\), para toda \(x\in H\).
+    </li>
       <li>
         \( \|x-Px\|\leq \|x-m\|\), para toda \(m\in M\).
       </li>
       <li>
-        \( \|x-Px\|\leq \sqrt{ \|x\|^2 \|Px\|^2 \|}\), para toda \(m\in M\).
+        \( \|x-Px\|= \sqrt{ \|x\|^2 - \|Px\|^2 }\).
       </li>
       <li>
         \((H/M, \|\cdot\|_{H/M})\) es un espacio de Hilbert con el producto interior 
@@ -654,10 +686,10 @@
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio</h2>
   <p>
-    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i\in \mathbb{N}}\) una familia de subespacios cerrados que 
+    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i=}^N \) una familia de subespacios cerrados que 
     satisfacen \(M_i \perp M_j\), para todo \(i\ne j\). Define 
     \[
-    \oplus_{i\in \mathbb{N} } M_i =\left\{x\in X: x=\sum_{i=1}^\infty x_i, \quad x_i\in M_i \right\}
+    \oplus_{i=1}^N M_i =\left\{x\in X: x=\sum_{i=1}^N x_i, \quad x_i\in M_i \right\}
     \]
     
     
@@ -666,30 +698,12 @@
   <p>
     Prueba que 
     \[
-    \overline{\span(\cup_{i\in \mathbb{N}} M_i)}=\oplus_{i\in \mathbb{N} } M_i 
+    \overline{\span(\cup_{i=1}^N M_i)}=\oplus_{i\in \mathbb{N} } M_i 
     \]
   </p>
 </div>
 
 
-<div class="ejercicio-box">
-  <h2 class="number-title"> Ejercicio </h2>
-  <p>
-    En el espacio de Hilbert \(\ell_2(\mathbb{N})\) define 
-    \[ 
-    L=\{x\in \ell_2(\mathbb{N}): |x(i)|\leq \frac{1}{i}, \forall i\in \mathbb{N}\}
-    \]
-    (el ladrillo de Hilbert). Prueba 
-  </p>
-  <ol>
-    <li>
-      \(L\) es compacto.
-    </li>
-    <li>
-      \(\textrm{int}(L)=\emptyset\).
-    </li>
-  </ol>
-</div>
 
 <div class="ejercicio-box">
   <h2 class="number-title"> Ejercicio </h2>
