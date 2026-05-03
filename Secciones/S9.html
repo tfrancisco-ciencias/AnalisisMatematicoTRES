@@ -20,7 +20,7 @@
           macros: {
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
-            cer: "\\operatorname{cer}",
+            span: "\\operatorname{span}",            
             inte: "\\operatorname{int}"
           },
           tags: "ams" /* this part is for numbered equations */
@@ -29,7 +29,7 @@
     </script>
 
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <!-- This part is for using single $ for latex input, instead of \(\) 
     <script>
         MathJax = {
         tex: {
@@ -39,7 +39,7 @@
             fontCache: 'global'
         }
     };
-    </script>
+    </script>-->
 
     <!-- CSS -->
 
@@ -637,6 +637,127 @@
         </div>
 
 
+
+        <div class="ejercicio-box"> 
+          <h2 class="number-title"> Ejercicio </h2>
+          <p> 
+            Sea \(H\) un espacio de Hilbert y \(\{e_n\}_{n\in \mathbb{N}}\) 
+            una base ortonormal de \(H\). Sea \(\{y_n\}_{n\in \mathbb{N}}\) una 
+            sucesón ortonormal de \(H\) que satisface 
+            \[
+            \sum_{n\in \mathbb{N}} \|e_n-y_n\|^2 < 1.
+            \]
+            Prueba que \(\{y_n\}_{n\in \mathbb{N}}\) también es una base 
+            ortonormal de \(H\).
+
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <h3> Resultado de Vitalli </h3>
+          <p>
+            Una sucesión ortonormal \(\{x_n\}_{n\in \mathbb{N}}\) es una 
+            base de \(L_2([a,b])\) si y sólo si para todo \(t\in [a,b]\) se tiene que
+            \[
+            \sum_{n=1}^\infty \left| \int_{[a,t]}x_n(t)d\lambda(t)\right|^2 =t-a.
+            \]
+          </p>
+          <p>
+            Sugerencia: \(\int_{[a,t]}x_n(t)d\lambda(t)=\langle x_n, \chi_{[a,t]} \rangle\).
+          </p>
+        </div>
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(H\) un espacio de Hilbert. Prueba que \(H\) es separable si y sólo si 
+             \(H\) toda  base de Hilbert es numerable.
+          </p>
+
+        </div>
+
+
+        <div class="ejercicio-box">
+          <h2 class="number-title"> Ejercicio </h2>
+          <p>
+            Sea \(H\) un espacio de hilbert y sea \(\{y_i\}_{i\in I}\) una base de Hilbert, de cardinalidad infinita. 
+            Prueba que \(\{y_i\}_{i\in I }\) NO es una base como espacio vectorial para \(H\).
+          </p>
+          <p>
+            Sugerencia: sea \(\{y_{n_j}\}_{j\in \mathbb{N}}\) un subconjunto infinito numerable de \(\{y_i\}_{i\in I}\). Prueba 
+            que \(\sum_{j=1}^\infty \frac{1}{j}y_{n_j}\) define un elemento de \(H\) pero no 
+            está en el espacio vectorial generado por \(\{y_i\}_{i\in I}\).  
+          </p>
+        </div>
+
+
+        <div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio</h2>
+  <p>
+    Sea \(H\) un espacio de Hilbert y \(\{M_i\}_{i\in I} \) una familia arbitraria de subespacios cerrados que 
+    satisfacen \(M_i \perp M_j\), para todo \(i\ne j\). Define 
+    \[
+    \oplus_{i\in I} M_i :=\left\{x\in X: x=\sum_{i\in I} x_i, \quad x_i\in M_i \right\}
+    \]
+    
+  </p>
+  <p>
+    Prueba que 
+    \[
+    \overline{\span(\cup_{i\in I} M_i)}=\oplus_{i\in I } M_i 
+    \]
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  <p>
+    Sea \(S\) un conjunto cualquiera. Recuerda que se define 
+
+                \[
+                  \ell^2(S)=\{x:S\to \mathbb{C}: \sum_{s\in S}|x(x)|^2< +\infty\}  
+                \]
+  y con el producto interior      
+  \[
+    \langle x, y\rangle =\sum_{s\in S}x(s)\overline{y(s) }
+  \]
+  \(\ell^2(S)\) es un espacio de Hilbert. Prueba que la dimensión de \(\ell^2(S)\)  
+  como espacio de Hilbert es \(\#(S)\).       
+  </p>
+  </div>
+
+  <div class="ejercicio-box"> 
+    <h2 class="number-title"> Ejercicio </h2>
+    
+    <p> 
+      Sea \(M\) un subespacio de \(L_2([0,1])\) y supón que existe una constante  \(A >0 \) 
+      que satisface: para toda \(x\in M\) se tiene \(|x(t)| \leq A \|x\|_2 \) para casi todo \(t \in [0,1]\).
+      </p>
+      <p>
+        Prueba que \(M\) es un subespacio de dimensión finita.
+      </p>
+      <p>
+        Sugerencia: sea \(\{x_1,\dots, x_n\}\subset M\) un sistema ortonormal finito. Usa 
+        la desigualdad de Bessel y el teorema de representación de Riesz para probar que 
+        \(\sum_{i=1}^n |x_i(t)|^2 \leq A^2\) para casi todo \(t \in [0,1]\). 
+      </p>
+  </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio </h2>
+    <h3> Groethendieck  (1954)</h3>
+    <p>
+      Sea \(M\) un subespacio de \(L_\infty([0,1])\) que es cerrado como 
+      subespacio de \(L_2([0,1])\). Prueba que \(M\) es un subespacio finito dimensional.
+    </p>
+    <p>
+      Sugerencia:  prueba que \(M\) es cerrado en \(L_\infty([0,1])\) con la 
+      norma infinito, luego usa el teorema del mapeo abierto para probar que 
+      \(M\) satisface la hipótesis del ejercicio anterior.
+      </p>
+  </div>
+      
 
 </body>
 

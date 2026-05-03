@@ -153,7 +153,7 @@
             <p>
                 Para \(x,y\in \ell^2(S)\) definimos 
                 \[
-                \langle x, y\rangle =\sum_{s\in S}x(s)y(s) 
+                \langle x, y\rangle =\sum_{s\in S}x(s)\overline{y(s) }
                 \]
                 Con estas definiciones \((\ell^2(S),\langle \cdot, \cdot \rangle)\) es un 
                 espacio con producto interior. 
@@ -572,6 +572,51 @@
     \(x\in H\). Además \(\|\varphi\|=\|x_0\|\).
   </p>
 </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(H\) un espacio de Hilbert. Definimos \(J:H\to H^*\)  por 
+            \(J(y)=J_y\) donde \(J_y: H\to \mathbb{C}\) está dada por 
+            \(J_y(x)=\langle x, y \rangle\). Entonces 
+            <ol>
+                <li>
+                    \(J_{y_1+\alpha y_2}=J_{y_1}+\overline{\alpha} J_{y_2}\).
+                </li>
+                <li>
+                    \(\|J_y\|=\|y\|\).
+                </li>
+                <li>
+                    Por el Teorema de representación de Riesz, \(J\) es suprayectivo.
+                </li>
+            </ol>
+        </p>
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/NF7UoqOavrY?start=940" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+        
+
+    </div>
+
+    <div class="coro-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Todo espacio de Hilbert es reflexivo.
+        </p>
+        <button class="respButton hvr-grow felxbox"> Demostración  </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/NF7UoqOavrY?start=1102" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+    </div>
 
 
 <div class="ejercicio-box">

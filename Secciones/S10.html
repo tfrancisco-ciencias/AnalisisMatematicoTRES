@@ -20,7 +20,7 @@
           macros: {
             sen: "\\operatorname{sen}",
             seg: ["\\overrightarrow{#1}", 1],
-            cer: "\\operatorname{cer}",
+            span: "\\operatorname{span}",            
             inte: "\\operatorname{int}"
           },
           tags: "ams" /* this part is for numbered equations */
@@ -29,7 +29,7 @@
     </script>
 
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <!-- This part is for using single $ for latex input, instead of \(\) 
     <script>
         MathJax = {
         tex: {
@@ -39,7 +39,7 @@
             fontCache: 'global'
         }
     };
-    </script>
+    </script>-->
 
     <!-- CSS -->
 
@@ -48,10 +48,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
       body.number-title{
-        counter-reset: sectionCounter 12 cardCounter ;
+        counter-reset: sectionCounter 9 cardCounter ;
       }
       h1.number-title{
-        counter-reset: sectionCounter 12 cardCounter ;
+        counter-reset: sectionCounter 9 cardCounter ;
       }
     </style>
 
@@ -78,14 +78,14 @@
   </header>
 
 <!-- This part is for title in tab-->
-<title id="Sec"> § 13 </title>
+<title id="Sec"> § 10 </title>
 
 
 <body class="fondo-body">
 
 
   <div class="flexbox">
-    <h1 class="number-title flexbox"> Funcionales lineales y bilineales en espacios de Hilbert  </h1>     
+    <h1 class="number-title flexbox"> Operadores lineales en espacios de Hilbert  </h1>     
 
     <button  onclick="nextS()" class="fixed-btn-r flexbox button2">siguiente §  </button> 
     <button  onclick="prevS()" class="fixed-btn-l flexbox button2"> § previa </button>
@@ -93,95 +93,7 @@
 
   <!--    Contenido empiaza abajo
  ///////////////////////////////// -->
-    <div class="prop-box">
-        <h2 class="number-title"> Proposición </h2>
-        <p>
-            Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio con producto interior
-            positivo definido y \(x\in H\).
-        </p>
-        <p>
-            Definimos \(\varphi_x:H\to \mathbb{C}\) por \(\varphi_x(y)=\langle y, x\rangle \). 
-            Entonces \(\varphi_x\in H^*\) y \(\|\varphi_x\|=\|x\|\).
-        </p>
-
-
-        <button class="respButton hvr-grow felxbox"> Demostración  </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/kSCmX6w8ZUI?start=4126" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
-        
-    </div>
-
-    <div class="teorema-box"> 
-        <h2 class="number-title"> Teorema </h2>    
-        <h3> Teorema de Representación de Riesz</h3>
-        <p>
-            Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.  
-        </p>
-        <p>
-            Sea \(\varphi:H\to \mathbb{C}\) una funcional lineal acotada. Entonces existe un único
-            \(x\in H\) tal que \(\varphi(y)=\langle y, x \rangle\) para toda \(y\in H\).
-        </p>
-
-        <button class="respButton hvr-grow felxbox"> Demostración  </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/NF7UoqOavrY?start=104" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
-        
-    </div>
-
-    <div class="prop-box">
-        <h2 class="number-title"> Proposición</h2>
-        <p>
-            Sea \(H\) un espacio de Hilbert. Definimos \(J:H\to H^*\)  por 
-            \(J(y)=J_y\) donde \(J_y: H\to \mathbb{C}\) está dada por 
-            \(J_y(x)=\langle x, y \rangle\). Entonces 
-            <ol>
-                <li>
-                    \(J_{y_1+\alpha y_2}=J_{y_1}+\overline{\alpha} J_{y_2}\).
-                </li>
-                <li>
-                    \(\|J_y\|=\|y\|\).
-                </li>
-                <li>
-                    Por el Teorema de representación de Riesz, \(J\) es suprayectivo.
-                </li>
-            </ol>
-        </p>
-        <button class="respButton hvr-grow felxbox"> Demostración  </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/NF7UoqOavrY?start=940" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
-        
-
-    </div>
-
-    <div class="ejercicio-box">
-        <h2 class="number-title"> Corolario</h2>
-        <p>
-            Todo espacio de Hilbert es reflexivo.
-        </p>
-        <button class="respButton hvr-grow felxbox"> Demostración  </button>
-        <div class="resp-box flexbox">
-          <div class="flexbox">
-            <iframe width="500" height="400" class="video"
-            src="https://www.youtube.com/embed/NF7UoqOavrY?start=1102" allowfullscreen="true"> 
-            </iframe>
-          </div>
-        </div>
-    </div>
+    
 
     <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
