@@ -13,6 +13,44 @@
         h1 {
             color: #333;
         }
+        /* Style for the login/search container */
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        input [type="text"] {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+        /* Hide the table container by default */
+        #table-container {
+            display: none;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -37,24 +75,34 @@
 
     <h1>Student Grade Tracker</h1>
     
-    <table>
-        <thead>
+    <div class="login-container">
+        <label for="student-id-input"><b>Enter your Student ID:</b></label><br><br>
+        <input type="text" id="student-id-input" placeholder="e.g., S101">
+        <button onclick="handleLogin()">View Grades</button>
+        <div id="error-msg" class="error-message">ID not found. Please try again.</div>
+    </div>
+
+    <div id="table-container">
+        <table>
             <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Weekly Quizzes</th>
-        <th>Exam 1</th>
-        <th>Exam 2</th>
-        <th>Exam 3</th>
-        <th>Repo (Exam #)</th>   <th>Quiz Avg (Top 80%)</th>
-        <th>Exam Avg</th>
-        <th>Final Grade</th>
-    </tr>
-</thead>
-        <tbody id="student-table-body">
-            </tbody>
-    </table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Weekly Quizzes</th>
+                    <th>Exam 1</th>
+                    <th>Exam 2</th>
+                    <th>Exam 3</th>
+                    <th>Repo (Exam #)</th>
+                    <th>Final Test</th>
+                    <th>Quiz Avg (Top 80%)</th>
+                    <th>Exam Avg</th>
+                    <th>Final Grade</th>
+                </tr>
+            </thead>
+            <tbody id="student-table-body">
+                </tbody>
+        </table>
+    </div>
 
     <script src="script.js"></script>
 </body>
